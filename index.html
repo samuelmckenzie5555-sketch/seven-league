@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>7L SEVEN LEAGUE - Match Center</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d32f2f">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0c;
+      --card-bg: #141419;
+      --card-border: #262630;
+      --accent-red: #e53935;
+      --accent-gold: #ffb300;
+      --text-main: #f5f5f7;
+      --text-muted: #8e8e93;
+      --green-gol: #00e676;
+      --yellow-card: #ffea00;
+      --red-card: #ff1744;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); -webkit-tap-highlight-color: transparent; }
+    body { background-color: var(--bg-dark); color: var(--text-main); padding: 12px; max-width: 650px; margin: 0 auto; min-height: 100vh; padding-bottom: 40px; }
+
+    header { text-align: center; padding: 12px 0 16px 0; border-bottom: 2px solid var(--accent-red); margin-bottom: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    header img.app-logo { height: 52px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(229,57,53,0.4)); }
+
+    /* Tabs */
+    .tabs-nav { display: flex; background: var(--card-bg); border-radius: 10px; padding: 4px; border: 1px solid var(--card-border); margin-bottom: 16px; gap: 4px; }
+    .tab-button { flex: 1; padding: 10px 0; background: none; border: none; color: var(--text-muted); font-size: 0.65rem; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 6px; transition: all 0.2s ease; }
+    .tab-button.active { color: #fff; background-color: var(--accent-red); box-shadow: 0 2px 10px rgba(229,57,53,0.4); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Scoreboard Broadcast */
+    .scoreboard-box { background: linear-gradient(180deg, #181820 0%, #0d0d12 100%); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); position: relative; overflow: hidden; }
+    .scoreboard-box::before { content:''; position: absolute; top:0; left:0; width:100%; height:3px; background: linear-gradient(90deg, var(--accent-red), var(--accent-gold), var(--accent-red)); }
+    .teams-vs { display: flex; justify-content: space-between; align-items: center; }
+    .team-item { text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; }
+    .team-logo-wrapper { width: 64px; height: 64px; border-radius: 50%; background: #1f1f28; display: flex; align-items: center; justify-content: center; border: 2px solid var(--card-border); margin-bottom: 8px; }
+    .team-logo-wrapper img, .team-logo-wrapper svg { width: 44px; height: 44px; object-fit: contain; }
+    .team-title { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 0.5px; }
+    .score-num { font-family: var(--font-display); font-size: 3.5rem; line-height: 1; color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.2); }
+    .score-num.pulse { animation: pulseScore 0.5s ease-out; color: var(--green-gol); }
+    @keyframes pulseScore { 0% { transform: scale(1); } 50% { transform: scale(1.4); } 100% { transform: scale(1); } }
+    .vs-badge { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-muted); padding: 0 8px; }
+
+    /* Timer Precision Display */
+    .timer-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 16px; }
+    .timer-period { font-size: 0.75rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; }
+    .timer-clock { font-family: var(--font-display); font-size: 3rem; letter-spacing: 2px; color: #fff; line-height: 1; margin: 4px 0; }
+    .timer-btn-row { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
+    .btn-t { background: #22222d; color: #fff; border: 1px solid var(--card-border); padding: 8px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase; }
+    .btn-t.active { background: var(--accent-red); border-color: var(--accent-red); }
+
+    /* Referee Pro Mode Controls */
+    .referee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .ref-btn { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; text-align: center; cursor: pointer; transition: transform 0.1s; }
+    .ref-btn:active { transform: scale(0.96); }
+    .ref-btn-icon { font-size: 2rem; margin-bottom: 4px; }
+    .ref-btn-title { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.5px; }
+
+    /* General Cards & Forms */
+    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    .card-head { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-red); border-bottom: 1px solid var(--card-border); padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
+    input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--card-border); background: #1c1c24; color: #fff; font-size: 0.9rem; font-weight: 600; }
+    .form-row { display: flex; gap: 10px; }
+    .form-row .form-group { flex: 1; }
+
+    button.btn-act { width: 100%; padding: 14px; background: var(--accent-red); color: white; border: none; border-radius: 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(229,57,53,0.3); }
+    button.btn-sec { width: 100%; padding: 12px; background: #22222d; color: white; border: 1px solid var(--card-border); border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; margin-top: 8px; }
+
+    /* Timeline */
+    .timeline-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
+    .timeline-badge { font-family: var(--font-display); font-size: 1rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
+    .bg-gol { background: var(--green-gol); color: #000; }
+    .bg-a { background: var(--yellow-card); color: #000; }
+    .bg-r { background: var(--red-card); color: #fff; }
+
+    /* Checklist */
+    .check-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
+    .check-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; flex: 1; }
+    .gk-btn { font-size: 0.7rem; background: #22222d; border: 1px solid var(--card-border); color: var(--accent-gold); padding: 4px 8px; border-radius: 4px; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="seven.png" alt="7L Seven League" class="app-logo">
+  </header>
+
+  <!-- Navegación por Pestañas -->
+  <nav class="tabs-nav">
+    <button class="tab-button active" onclick="switchTab('tab-partido')">1. Partido</button>
+    <button class="tab-button" onclick="switchTab('tab-referee')">⚡ Árbitro Pro</button>
+    <button class="tab-button" onclick="switchTab('tab-asistencia')">2. Lista</button>
+    <button class="tab-button" onclick="switchTab('tab-historial')">3. Historial</button>
+  </nav>
+
+  <!-- PESTAÑA 1: MATCH CENTER -->
+  <div id="tab-partido" class="tab-content active">
+    
+    <!-- Marcador Broadcast TV -->
+    <div class="scoreboard-box">
+      <div class="teams-vs">
+        <div class="team-item">
+          <div class="team-logo-wrapper" id="logoWrap1"></div>
+          <div class="team-title" id="nameTeam1">LOCAL</div>
+          <div class="score-num" id="score1">0</div>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="team-item">
+          <div class="team-logo-wrapper" id="logoWrap2"></div>
+          <div class="team-title" id="nameTeam2">VISITANTE</div>
+          <div class="score-num" id="score2">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cronómetro Inmortal Precision -->
+    <div class="timer-card">
+      <div class="timer-period" id="periodDisplay">1er Tiempo (25 Min)</div>
+      <div class="timer-clock" id="timerDisplay">00:00</div>
+      <div class="timer-btn-row">
+        <button class="btn-t" id="btnStart" onclick="toggleTimer()">▶ Iniciar</button>
+        <button class="btn-t" onclick="setPeriod(1)">1T</button>
+        <button class="btn-t" onclick="setPeriod(2)">2T</button>
+      </div>
+    </div>
+
+    <!-- Seleccionar Partido -->
+    <div class="card">
+      <div class="card-head">Configurar Partido</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Equipo Local</label>
+          <select id="matchTeam1Select" onchange="setupMatchTeams()"></select>
+        </div>
+        <div class="form-group">
+          <label>Equipo Visitante</label>
+          <select id="matchTeam2Select" onchange="setupMatchTeams()"></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registro Rápido de Incidencias -->
+    <div class="card">
+      <div class="card-head">Registrar Incidencia</div>
+      <div class="form-group">
+        <label>Equipo</label>
+        <select id="teamSelect" onchange="updatePlayerDropdowns()"></select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Minuto</label>
+          <input type="number" id="minuteInput" value="1" min="1" max="60">
+        </div>
+        <div class="form-group">
+          <label>Evento</label>
+          <select id="typeSelect" onchange="toggleAssistField()">
+            <option value="GOL">⚽ GOL</option>
+            <option value="A">🟨 Amarilla (A)</option>
+            <option value="R">🟥 Roja (R)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Jugador</label>
+        <select id="playerSelect"></select>
+      </div>
+      <div class="form-group" id="assistGroup">
+        <label>Asistencia (Opcional)</label>
+        <select id="assistSelect"></select>
+      </div>
+      <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
+    </div>
+
+    <!-- Línea de Tiempo Interactiva -->
+    <div class="card">
+      <div class="card-head">Match Timeline</div>
+      <div id="eventsListContainer">Sin incidencias.</div>
+    </div>
+
+    <!-- MVP -->
+    <div class="card">
+      <div class="card-head">Jugador del Partido (MVP)</div>
+      <select id="mvpSelect" onchange="saveMVP()"><option value="">-- Seleccionar MVP --</option></select>
+    </div>
+
+    <button class="btn-act" style="background:#2e7d32;" onclick="exportSummary()">📲 Copiar Acta para WhatsApp</button>
+    <button class="btn-act" style="background:#ffb300; color:#000; margin-top:8px;" onclick="speakSummary()">🗣️ Dictar Acta por Audio</button>
+    <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido</button>
+  </div>
+
+  <!-- PESTAÑA 2: MODO ÁRBITRO "EN CANCHA" (BOTONERA GIGANTE) -->
+  <div id="tab-referee" class="tab-content">
+    <div class="card">
+      <div class="card-head">Modo Árbitro Rápido</div>
+      <div class="referee-grid">
+        <div class="ref-btn" style="border-color:var(--green-gol);" onclick="quickEvent('GOL', '1')">
+          <div class="ref-btn-icon">⚽</div>
+          <div class="ref-btn-title">GOL LOCAL</div>
+        </div>
+        <div class="ref-btn" style="border-color:var(--green-gol);" onclick="quickEvent('GOL', '2')">
+          <div class="ref-btn-icon">⚽</div>
+          <div class="ref-btn-title">GOL VISITANTE</div>
+        </div>
+        <div class="ref-btn" style="border-color:var(--yellow-card);" onclick="quickEvent('A', '1')">
+          <div class="ref-btn-icon">🟨</div>
+          <div class="ref-btn-title">AMARILLA (LOCAL)</div>
+        </div>
+        <div class="ref-btn" style="border-color:var(--yellow-card);" onclick="quickEvent('A', '2')">
+          <div class="ref-btn-icon">🟨</div>
+          <div class="ref-btn-title">AMARILLA (VIS.)</div>
+        </div>
+        <div class="ref-btn" style="border-color:var(--red-card);" onclick="quickEvent('R', '1')">
+          <div class="ref-btn-icon">🟥</div>
+          <div class="ref-btn-title">ROJA (LOCAL)</div>
+        </div>
+        <div class="ref-btn" style="border-color:var(--red-card);" onclick="quickEvent('R', '2')">
+          <div class="ref-btn-icon">🟥</div>
+          <div class="ref-btn-title">ROJA (VISITANTE)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PESTAÑA 3: ASISTENCIA Y PLANTILLAS -->
+  <div id="tab-asistencia" class="tab-content">
+    <div class="card">
+      <div class="card-head"><span id="attTitle1">LOCAL</span></div>
+      <div id="list-att-1"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span id="attTitle2">VISITANTE</span></div>
+      <div id="list-att-2"></div>
+    </div>
+  </div>
+
+  <!-- PESTAÑA 4: HISTORIAL -->
+  <div id="tab-historial" class="tab-content">
+    <div class="card">
+      <div class="card-head">Partidos Archivados</div>
+      <div id="savedMatchesContainer">Sin partidos archivados.</div>
+    </div>
+  </div>
+
+  <script>
+    // Generador de Escudos SVG Vectoriales de Alta Definición
+    function makeSVGShield(bg, initials) {
+      return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5 L90 20 L90 70 L50 95 L10 70 L10 20 Z" fill="${bg}" stroke="#ffffff" stroke-width="3"/>
+        <text x="50" y="60" fill="#ffffff" font-family="'Bebas Neue', sans-serif" font-size="32" font-weight="bold" text-anchor="middle">${initials}</text>
+      </svg>`;
+    }
+
+    const defaultTeams = {
+      "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", initials: "IYM", color: "#0288d1", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
+      "eq_2": { id: "eq_2", name: "Rhine Lions FC", initials: "RL", color: "#1a237e", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo"] },
+      "eq_3": { id: "eq_3", name: "FC Sportfreunde", initials: "FCS", color: "#d32f2f", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
+      "eq_4": { id: "eq_4", name: "FC Max Basel", initials: "MAX", color: "#fbc02d", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
+      "eq_5": { id: "eq_5", name: "FC Baselona", initials: "FCB", color: "#880e4f", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
+      "eq_6": { id: "eq_6", name: "Joga Bonito FC", initials: "JBG", color: "#ff6f00", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques", "Lendrick Machado", "André Filipe da Silva", "Edson Alex Panta", "Eduardo Pereira da Silva", "Igor Mateus Silva", "Leomir Casagrande", "Leonardo da Silva", "Maxsuel Santos", "Maxwell Stanyo Alves", "Raphael Aflalo Lopes", "Sergio Marconi Fonseca", "Silvio Patrício"] },
+      "eq_7": { id: "eq_7", name: "BG FC", initials: "BG", color: "#00838f", players: ["Emilio Miró", "Javier Calderón", "Juan Rodriguez", "Gabriele Iannucci", "Genni Mariniello", "Armando Babayan", "Christian Stevens", "Louis Vanoise", "Pablo Cabrales", "Romain de Guillebon", "Victor Costé de Bagneaux", "Virgile Soubiran", "Álvaro Morcillo"] },
+      "eq_8": { id: "eq_8", name: "DPS Basel FC", initials: "DPS", color: "#00acc1", players: ["Jaroslaw Strygner", "Simon Nobel", "Brian Wickham", "Oliver Dowling", "Pablo Lora", "Patrick Kellehan", "Diogo Ladeiras", "Filippo Busu", "Ibrahima Sow", "Jacopo Bernasconi", "Juan Francisco Moreno", "Mike Topjian", "Nils Chartier", "Simon Blanche", "Cagatay Cinar", "Jorge Garcia", "Jetmir Xhema", "Conor Maye", "Jaleel Ashik", "Noah Jose Carlos Bellakovics", "Panagiotis Panos"] },
+      "eq_9": { id: "eq_9", name: "Rhine Madrid", initials: "RMA", color: "#d4af37", players: ["Hamed Goudarzi", "Nicolas Wehrli", "Christian Schlote", "Joonatan Van Eecke", "Khamlek Chaton", "Steven Munyoo", "Franklyn Sciberras", "Jonathan Osaigbovo", "Junica Lucian", "Jürgen Schneider", "Logan Jungen", "Luca Sieber", "Marc Zuger", "Matthias Vogler", "Rharin", "Steiner"] },
+      "eq_10": { id: "eq_10", name: "Inter Basel", initials: "IB", color: "#212121", players: ["Anas Moutacharrif", "Ahmed Tawfik", "Athithiyan Senthilkumar", "Elleno Noviello", "Jamal Budair", "Karim Zahra", "Marvin Meier", "Marwan Ibrahim", "Micha Gelencser", "Oualid El Hafian", "Samuel Mc'Kenzie", "Victor Melado"] }
+    };
+
+    let allTeams = JSON.parse(localStorage.getItem('sl_teams')) || defaultTeams;
+    let currentTeam1Id = localStorage.getItem('sl_t1') || "eq_1";
+    let currentTeam2Id = localStorage.getItem('sl_t2') || "eq_2";
+
+    let attendance = JSON.parse(localStorage.getItem('sl_att')) || { 1: [], 2: [] };
+    let events = JSON.parse(localStorage.getItem('sl_ev')) || [];
+    let selectedMVP = localStorage.getItem('sl_mvp') || '';
+    let savedMatches = JSON.parse(localStorage.getItem('sl_hist')) || [];
+
+    // Temporizador basado en Timestamp Real
+    let timerRunning = false;
+    let startTime = 0;
+    let elapsedTimeBeforePause = 0;
+    let timerInterval = null;
+    let currentPeriod = 1;
+
+    // Motor de Audio Sintético (Web Audio API)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeep(freq = 600, duration = 0.15) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function playWhistle() {
+      playBeep(1800, 0.4);
+      setTimeout(() => playBeep(2200, 0.6), 150);
+    }
+
+    function init() {
+      renderTeamSelectors();
+      setupMatchTeams();
+      renderHistory();
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+      playBeep(800, 0.05);
+    }
+
+    function renderTeamSelectors() {
+      const s1 = document.getElementById('matchTeam1Select');
+      const s2 = document.getElementById('matchTeam2Select');
+      let opts = '';
+      Object.values(allTeams).forEach(t => opts += `<option value="${t.id}">${t.name}</option>`);
+      s1.innerHTML = opts; s2.innerHTML = opts;
+      s1.value = currentTeam1Id; s2.value = currentTeam2Id;
+    }
+
+    function setupMatchTeams() {
+      currentTeam1Id = document.getElementById('matchTeam1Select').value;
+      currentTeam2Id = document.getElementById('matchTeam2Select').value;
+
+      localStorage.setItem('sl_t1', currentTeam1Id);
+      localStorage.setItem('sl_t2', currentTeam2Id);
+
+      const t1 = allTeams[currentTeam1Id];
+      const t2 = allTeams[currentTeam2Id];
+
+      document.getElementById('nameTeam1').innerText = t1.name;
+      document.getElementById('nameTeam2').innerText = t2.name;
+      document.getElementById('logoWrap1').innerHTML = makeSVGShield(t1.color, t1.initials);
+      document.getElementById('logoWrap2').innerHTML = makeSVGShield(t2.color, t2.initials);
+
+      document.getElementById('attTitle1').innerText = t1.name;
+      document.getElementById('attTitle2').innerText = t2.name;
+
+      if (!attendance[1] || attendance[1].length === 0) attendance[1] = [...t1.players];
+      if (!attendance[2] || attendance[2].length === 0) attendance[2] = [...t2.players];
+
+      renderAttendanceLists();
+      updateTeamDropdown();
+      updatePlayerDropdowns();
+      populateMVPSelect();
+      renderEvents();
+    }
+
+    /* CRONÓMETRO PRECISO CON TIMESTAMP */
+    function toggleTimer() {
+      if (timerRunning) {
+        // Pausar
+        timerRunning = false;
+        elapsedTimeBeforePause += Date.now() - startTime;
+        clearInterval(timerInterval);
+        document.getElementById('btnStart').innerText = "▶ Reanudar";
+        playBeep(400, 0.2);
+      } else {
+        // Iniciar
+        timerRunning = true;
+        startTime = Date.now();
+        playWhistle();
+        document.getElementById('btnStart').innerText = "⏸ Pausa";
+        timerInterval = setInterval(updateTimerClock, 250);
+      }
+    }
+
+    function updateTimerClock() {
+      if (!timerRunning) return;
+      const totalElapsedMs = elapsedTimeBeforePause + (Date.now() - startTime);
+      const totalSec = Math.floor(totalElapsedMs / 1000);
+      const m = String(Math.floor(totalSec / 60)).padStart(2, '0');
+      const s = String(totalSec % 60).padStart(2, '0');
+      document.getElementById('timerDisplay').innerText = `${m}:${s}`;
+      document.getElementById('minuteInput').value = Math.max(1, Math.ceil(totalSec / 60));
+    }
+
+    function setPeriod(p) {
+      timerRunning = false;
+      clearInterval(timerInterval);
+      elapsedTimeBeforePause = 0;
+      currentPeriod = p;
+      document.getElementById('timerDisplay').innerText = "00:00";
+      document.getElementById('periodDisplay').innerText = p === 1 ? "1er Tiempo (25 Min)" : "2do Tiempo (25 Min)";
+      document.getElementById('btnStart').innerText = "▶ Iniciar";
+      playWhistle();
+    }
+
+    /* ASISTENCIA */
+    function renderAttendanceLists() {
+      [1, 2].forEach(num => {
+        const teamId = num === 1 ? currentTeam1Id : currentTeam2Id;
+        const container = document.getElementById(`list-att-${num}`);
+        container.innerHTML = '';
+        if (allTeams[teamId]) {
+          allTeams[teamId].players.forEach(p => {
+            const isAtt = attendance[num] && attendance[num].includes(p);
+            container.innerHTML += `
+              <div class="check-row">
+                <label class="check-label">
+                  <input type="checkbox" ${isAtt ? 'checked' : ''} onchange="toggleAttendance(${num}, '${p}')"> ${p}
+                </label>
+              </div>`;
+          });
+        }
+      });
+    }
+
+    function toggleAttendance(num, player) {
+      if (attendance[num].includes(player)) {
+        attendance[num] = attendance[num].filter(p => p !== player);
+      } else {
+        attendance[num].push(player);
+      }
+      saveAllData();
+      updatePlayerDropdowns();
+    }
+
+    /* REGISTRO DE EVENTOS */
+    function updateTeamDropdown() {
+      const ts = document.getElementById('teamSelect');
+      if (allTeams[currentTeam1Id] && allTeams[currentTeam2Id]) {
+        ts.innerHTML = `
+          <option value="1">${allTeams[currentTeam1Id].name}</option>
+          <option value="2">${allTeams[currentTeam2Id].name}</option>`;
+      }
+    }
+
+    function updatePlayerDropdowns() {
+      const num = document.getElementById('teamSelect').value;
+      const playerSelect = document.getElementById('playerSelect');
+      const assistSelect = document.getElementById('assistSelect');
+      const available = attendance[num] || [];
+      const opts = available.map(p => `<option value="${p}">${p}</option>`).join('');
+
+      playerSelect.innerHTML = opts || '<option value="">Sin jugadores</option>';
+      assistSelect.innerHTML = '<option value="">-- Ninguna --</option>' + opts;
+    }
+
+    function toggleAssistField() {
+      document.getElementById('assistGroup').style.display = (document.getElementById('typeSelect').value === 'GOL') ? 'block' : 'none';
+    }
+
+    function addEvent() {
+      const minute = document.getElementById('minuteInput').value || 1;
+      const num = document.getElementById('teamSelect').value;
+      const type = document.getElementById('typeSelect').value;
+      const player = document.getElementById('playerSelect').value;
+      const assist = type === 'GOL' ? document.getElementById('assistSelect').value : '';
+
+      if (!player) return alert("Selecciona un jugador.");
+
+      events.push({ id: Date.now(), minute: parseInt(minute), num, type, player, assist });
+      events.sort((a, b) => a.minute - b.minute);
+
+      if (type === 'GOL') triggerGolCelebration(num);
+
+      saveAllData();
+      renderEvents();
+    }
+
+    function quickEvent(type, num) {
+      const minute = document.getElementById('minuteInput').value || 1;
+      const available = attendance[num] || [];
+      const player = available.length > 0 ? available[0] : "Jugador #";
+
+      events.push({ id: Date.now(), minute: parseInt(minute), num, type, player, assist: '' });
+      events.sort((a, b) => a.minute - b.minute);
+
+      if (type === 'GOL') triggerGolCelebration(num);
+
+      saveAllData();
+      renderEvents();
+    }
+
+    function triggerGolCelebration(num) {
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      playBeep(900, 0.3);
+      const scoreEl = document.getElementById(`score${num}`);
+      scoreEl.classList.add('pulse');
+      setTimeout(() => scoreEl.classList.remove('pulse'), 600);
+    }
+
+    function deleteEvent(id) {
+      events = events.filter(e => e.id !== id);
+      saveAllData();
+      renderEvents();
+    }
+
+    function renderEvents() {
+      const container = document.getElementById('eventsListContainer');
+      let score1 = 0, score2 = 0;
+
+      if (events.length === 0) {
+        container.innerHTML = "<small style='color:var(--text-muted);'>Sin incidencias registradas.</small>";
+      } else {
+        container.innerHTML = '';
+        events.forEach(e => {
+          if (e.type === 'GOL') { if (e.num === '1') score1++; if (e.num === '2') score2++; }
+          const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
+          const teamName = e.num === '1' ? allTeams[currentTeam1Id].name : allTeams[currentTeam2Id].name;
+
+          container.innerHTML += `
+            <div class="timeline-item">
+              <div>
+                <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
+                <b style="margin-left:6px;">${e.player}</b> <small style="color:var(--text-muted);">(${teamName})</small>
+              </div>
+              <button style="background:none; border:none; color:var(--accent-red); cursor:pointer;" onclick="deleteEvent(${e.id})">✕</button>
+            </div>`;
+        });
+      }
+
+      document.getElementById('score1').innerText = score1;
+      document.getElementById('score2').innerText = score2;
+    }
+
+    function populateMVPSelect() {
+      const mvpSelect = document.getElementById('mvpSelect');
+      let opts = '<option value="">-- Seleccionar MVP --</option>';
+      [1, 2].forEach(num => {
+        const teamId = num === 1 ? currentTeam1Id : currentTeam2Id;
+        if (allTeams[teamId]) {
+          opts += `<optgroup label="${allTeams[teamId].name}">`;
+          (attendance[num] || []).forEach(p => opts += `<option value="${p} (${allTeams[teamId].name})">${p}</option>`);
+          opts += `</optgroup>`;
+        }
+      });
+      mvpSelect.innerHTML = opts;
+    }
+
+    function saveMVP() {
+      selectedMVP = document.getElementById('mvpSelect').value;
+      saveAllData();
+    }
+
+    function exportSummary() {
+      const t1 = allTeams[currentTeam1Id].name;
+      const t2 = allTeams[currentTeam2Id].name;
+      const s1 = document.getElementById('score1').innerText;
+      const s2 = document.getElementById('score2').innerText;
+
+      let text = `📋 *SEVEN LEAGUE - ACTA DIGITAL*\n`;
+      text += `⚽ *${t1} (${s1}) VS (${s2}) ${t2}*\n\n`;
+      events.forEach(e => {
+        text += `- ${e.minute}' ${e.type}: ${e.player} ${e.assist ? '(Asist: ' + e.assist + ')' : ''}\n`;
+      });
+      if (selectedMVP) text += `\n⭐ *MVP:* ${selectedMVP}\n`;
+
+      navigator.clipboard.writeText(text);
+      alert("✅ ¡Acta copiada para WhatsApp!");
+    }
+
+    function speakSummary() {
+      const t1 = allTeams[currentTeam1Id].name;
+      const t2 = allTeams[currentTeam2Id].name;
+      const s1 = document.getElementById('score1').innerText;
+      const s2 = document.getElementById('score2').innerText;
+
+      const speech = new SpeechSynthesisUtterance(`Resultado final. ${t1} ${s1}, ${t2} ${s2}. ${selectedMVP ? 'Jugador del partido: ' + selectedMVP : ''}`);
+      speech.lang = 'es-ES';
+      window.speechSynthesis.speak(speech);
+    }
+
+    function archiveMatch() {
+      const matchData = {
+        date: new Date().toLocaleString(),
+        t1: allTeams[currentTeam1Id].name, t2: allTeams[currentTeam2Id].name,
+        s1: document.getElementById('score1').innerText, s2: document.getElementById('score2').innerText,
+        mvp: selectedMVP
+      };
+      savedMatches.push(matchData);
+      localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
+      renderHistory();
+      alert("💾 Partido archivado.");
+    }
+
+    function renderHistory() {
+      const container = document.getElementById('savedMatchesContainer');
+      if (savedMatches.length === 0) { container.innerHTML = "Sin partidos archivados."; return; }
+      container.innerHTML = '';
+      savedMatches.forEach(m => {
+        container.innerHTML += `<div style="border-bottom:1px solid #222; padding:8px 0;"><b>${m.t1} ${m.s1} - ${m.s2} ${m.t2}</b><br><small style="color:var(--text-muted);">${m.date} | ⭐ MVP: ${m.mvp || 'N/A'}</small></div>`;
+      });
+    }
+
+    function saveAllData() {
+      localStorage.setItem('sl_teams', JSON.stringify(allTeams));
+      localStorage.setItem('sl_att', JSON.stringify(attendance));
+      localStorage.setItem('sl_ev', JSON.stringify(events));
+      localStorage.setItem('sl_mvp', selectedMVP);
+    }
+
+    init();
+  </script>
+</body>
+</html>
