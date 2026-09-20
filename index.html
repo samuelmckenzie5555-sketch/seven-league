@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>7L SEVEN LEAGUE - Match Center</title>
-  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#d32f2f">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,11 +31,11 @@
     body { background-color: var(--bg-dark); color: var(--text-main); padding: 12px; max-width: 650px; margin: 0 auto; min-height: 100vh; padding-bottom: 40px; }
 
     header { text-align: center; padding: 12px 0 16px 0; border-bottom: 2px solid var(--accent-red); margin-bottom: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    header img.app-logo { height: 52px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(229,57,53,0.4)); }
+    header img.app-logo { height: 55px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(229,57,53,0.4)); }
 
     /* Tabs */
     .tabs-nav { display: flex; background: var(--card-bg); border-radius: 10px; padding: 4px; border: 1px solid var(--card-border); margin-bottom: 16px; gap: 4px; }
-    .tab-button { flex: 1; padding: 10px 0; background: none; border: none; color: var(--text-muted); font-size: 0.65rem; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 6px; transition: all 0.2s ease; }
+    .tab-button { flex: 1; padding: 10px 0; background: none; border: none; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 6px; transition: all 0.2s ease; }
     .tab-button.active { color: #fff; background-color: var(--accent-red); box-shadow: 0 2px 10px rgba(229,57,53,0.4); }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
@@ -46,13 +45,40 @@
     .scoreboard-box::before { content:''; position: absolute; top:0; left:0; width:100%; height:3px; background: linear-gradient(90deg, var(--accent-red), var(--accent-gold), var(--accent-red)); }
     .teams-vs { display: flex; justify-content: space-between; align-items: center; }
     .team-item { text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; }
-    .team-logo-wrapper { width: 64px; height: 64px; border-radius: 50%; background: #1f1f28; display: flex; align-items: center; justify-content: center; border: 2px solid var(--card-border); margin-bottom: 8px; }
-    .team-logo-wrapper img, .team-logo-wrapper svg { width: 44px; height: 44px; object-fit: contain; }
+    
+    /* Sprite de Logos de Equipos basados en Equipos_2.jpg */
+    .team-logo-sprite { 
+      width: 60px; 
+      height: 60px; 
+      border-radius: 50%; 
+      border: 2px solid var(--card-border); 
+      background-image: url('Equipos_2.jpg'); 
+      background-repeat: no-repeat;
+      background-size: 500% 200%;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    
+    /* Posiciones específicas en la imagen Equipos_2.jpg */
+    .logo-eq_5  { background-position: 0% 0%; }     /* FC BASELONA (1) */
+    .logo-eq_4  { background-position: 25% 0%; }    /* FC MAX BASEL (2) */
+    .logo-eq_6  { background-position: 50% 0%; }    /* JOGA BONITO FC (3) */
+    .logo-eq_3  { background-position: 75% 0%; }    /* FC SPORTFREUNDE (4) */
+    .logo-eq_2  { background-position: 100% 0%; }   /* RHINE LIONS FC (5) */
+    .logo-eq_7  { background-position: 0% 100%; }   /* BG FC (6) */
+    .logo-eq_8  { background-position: 25% 100%; }  /* DPS BASEL FC (7) */
+    .logo-eq_1  { background-position: 50% 100%; }  /* INTER YA MA FC (8) */
+    .logo-eq_9  { background-position: 75% 100%; }  /* RHINE MADRID (9) */
+    .logo-eq_10 { background-position: 100% 100%; } /* INTER BASEL (10) */
+
     .team-title { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 0.5px; }
     .score-num { font-family: var(--font-display); font-size: 3.5rem; line-height: 1; color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.2); }
     .score-num.pulse { animation: pulseScore 0.5s ease-out; color: var(--green-gol); }
     @keyframes pulseScore { 0% { transform: scale(1); } 50% { transform: scale(1.4); } 100% { transform: scale(1); } }
     .vs-badge { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-muted); padding: 0 8px; }
+
+    /* Ref Info Header Badge */
+    .ref-badge { background: #1c1c24; border: 1px solid var(--card-border); color: var(--accent-gold); border-radius: 8px; padding: 6px 12px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; text-align: center; }
 
     /* Timer Precision Display */
     .timer-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 16px; }
@@ -61,13 +87,6 @@
     .timer-btn-row { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
     .btn-t { background: #22222d; color: #fff; border: 1px solid var(--card-border); padding: 8px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase; }
     .btn-t.active { background: var(--accent-red); border-color: var(--accent-red); }
-
-    /* Referee Pro Mode Controls */
-    .referee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-    .ref-btn { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; text-align: center; cursor: pointer; transition: transform 0.1s; }
-    .ref-btn:active { transform: scale(0.96); }
-    .ref-btn-icon { font-size: 2rem; margin-bottom: 4px; }
-    .ref-btn-title { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.5px; }
 
     /* General Cards & Forms */
     .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
@@ -83,7 +102,7 @@
 
     /* Timeline */
     .timeline-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
-    .timeline-badge { font-family: var(--font-display); font-size: 1rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
+    .timeline-badge { font-family: var(--font-display); font-size: 0.9rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
     .bg-gol { background: var(--green-gol); color: #000; }
     .bg-a { background: var(--yellow-card); color: #000; }
     .bg-r { background: var(--red-card); color: #fff; }
@@ -91,20 +110,22 @@
     /* Checklist */
     .check-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
     .check-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; flex: 1; }
-    .gk-btn { font-size: 0.7rem; background: #22222d; border: 1px solid var(--card-border); color: var(--accent-gold); padding: 4px 8px; border-radius: 4px; font-weight: 700; }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="seven.png" alt="7L Seven League" class="app-logo">
+    <img src="seven_2.png" alt="7L Seven League" class="app-logo">
   </header>
+
+  <div class="ref-badge">
+    👨‍⚖️ Árbitro Oficial: <span id="refereeNameDisplay">SAMUEL MCKENZIE</span>
+  </div>
 
   <!-- Navegación por Pestañas -->
   <nav class="tabs-nav">
     <button class="tab-button active" onclick="switchTab('tab-partido')">1. Partido</button>
-    <button class="tab-button" onclick="switchTab('tab-referee')">⚡ Árbitro Pro</button>
-    <button class="tab-button" onclick="switchTab('tab-asistencia')">2. Lista</button>
+    <button class="tab-button" onclick="switchTab('tab-asistencia')">2. Asistencia</button>
     <button class="tab-button" onclick="switchTab('tab-historial')">3. Historial</button>
   </nav>
 
@@ -115,20 +136,20 @@
     <div class="scoreboard-box">
       <div class="teams-vs">
         <div class="team-item">
-          <div class="team-logo-wrapper" id="logoWrap1"></div>
+          <div class="team-logo-sprite" id="logoWrap1"></div>
           <div class="team-title" id="nameTeam1">LOCAL</div>
           <div class="score-num" id="score1">0</div>
         </div>
         <div class="vs-badge">VS</div>
         <div class="team-item">
-          <div class="team-logo-wrapper" id="logoWrap2"></div>
+          <div class="team-logo-sprite" id="logoWrap2"></div>
           <div class="team-title" id="nameTeam2">VISITANTE</div>
           <div class="score-num" id="score2">0</div>
         </div>
       </div>
     </div>
 
-    <!-- Cronómetro Inmortal Precision -->
+    <!-- Cronómetro Precision -->
     <div class="timer-card">
       <div class="timer-period" id="periodDisplay">1er Tiempo (25 Min)</div>
       <div class="timer-clock" id="timerDisplay">00:00</div>
@@ -152,13 +173,17 @@
           <select id="matchTeam2Select" onchange="setupMatchTeams()"></select>
         </div>
       </div>
+      <div class="form-group">
+        <label>Nombre del Árbitro</label>
+        <input type="text" id="refNameInput" value="SAMUEL MCKENZIE" onchange="updateRefName()">
+      </div>
     </div>
 
-    <!-- Registro Rápido de Incidencias -->
+    <!-- Registro de Incidencias con Filtro Estricto -->
     <div class="card">
       <div class="card-head">Registrar Incidencia</div>
       <div class="form-group">
-        <label>Equipo</label>
+        <label>Equipo que la comete</label>
         <select id="teamSelect" onchange="updatePlayerDropdowns()"></select>
       </div>
       <div class="form-row">
@@ -176,17 +201,17 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Jugador</label>
+        <label>Jugador (Solo Asistentes del Equipo)</label>
         <select id="playerSelect"></select>
       </div>
       <div class="form-group" id="assistGroup">
-        <label>Asistencia (Opcional)</label>
+        <label>Asistencia (Opcional - Solo del Mismo Equipo)</label>
         <select id="assistSelect"></select>
       </div>
       <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
     </div>
 
-    <!-- Línea de Tiempo Interactiva -->
+    <!-- Línea de Tiempo -->
     <div class="card">
       <div class="card-head">Match Timeline</div>
       <div id="eventsListContainer">Sin incidencias.</div>
@@ -198,45 +223,12 @@
       <select id="mvpSelect" onchange="saveMVP()"><option value="">-- Seleccionar MVP --</option></select>
     </div>
 
-    <button class="btn-act" style="background:#2e7d32;" onclick="exportSummary()">📲 Copiar Acta para WhatsApp</button>
-    <button class="btn-act" style="background:#ffb300; color:#000; margin-top:8px;" onclick="speakSummary()">🗣️ Dictar Acta por Audio</button>
-    <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido</button>
+    <button class="btn-act" style="background:#2e7d32;" onclick="exportSummary()">📲 Copiar Acta Oficial para WhatsApp</button>
+    <button class="btn-act" style="background:#ffb300; color:#000; margin-top:8px;" onclick="speakSummary()">🗣️ Dictar Resumen por Audio</button>
+    <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
   </div>
 
-  <!-- PESTAÑA 2: MODO ÁRBITRO "EN CANCHA" (BOTONERA GIGANTE) -->
-  <div id="tab-referee" class="tab-content">
-    <div class="card">
-      <div class="card-head">Modo Árbitro Rápido</div>
-      <div class="referee-grid">
-        <div class="ref-btn" style="border-color:var(--green-gol);" onclick="quickEvent('GOL', '1')">
-          <div class="ref-btn-icon">⚽</div>
-          <div class="ref-btn-title">GOL LOCAL</div>
-        </div>
-        <div class="ref-btn" style="border-color:var(--green-gol);" onclick="quickEvent('GOL', '2')">
-          <div class="ref-btn-icon">⚽</div>
-          <div class="ref-btn-title">GOL VISITANTE</div>
-        </div>
-        <div class="ref-btn" style="border-color:var(--yellow-card);" onclick="quickEvent('A', '1')">
-          <div class="ref-btn-icon">🟨</div>
-          <div class="ref-btn-title">AMARILLA (LOCAL)</div>
-        </div>
-        <div class="ref-btn" style="border-color:var(--yellow-card);" onclick="quickEvent('A', '2')">
-          <div class="ref-btn-icon">🟨</div>
-          <div class="ref-btn-title">AMARILLA (VIS.)</div>
-        </div>
-        <div class="ref-btn" style="border-color:var(--red-card);" onclick="quickEvent('R', '1')">
-          <div class="ref-btn-icon">🟥</div>
-          <div class="ref-btn-title">ROJA (LOCAL)</div>
-        </div>
-        <div class="ref-btn" style="border-color:var(--red-card);" onclick="quickEvent('R', '2')">
-          <div class="ref-btn-icon">🟥</div>
-          <div class="ref-btn-title">ROJA (VISITANTE)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PESTAÑA 3: ASISTENCIA Y PLANTILLAS -->
+  <!-- PESTAÑA 2: ASISTENCIA DE JUGADORES -->
   <div id="tab-asistencia" class="tab-content">
     <div class="card">
       <div class="card-head"><span id="attTitle1">LOCAL</span></div>
@@ -248,7 +240,7 @@
     </div>
   </div>
 
-  <!-- PESTAÑA 4: HISTORIAL -->
+  <!-- PESTAÑA 3: HISTORIAL -->
   <div id="tab-historial" class="tab-content">
     <div class="card">
       <div class="card-head">Partidos Archivados</div>
@@ -257,30 +249,23 @@
   </div>
 
   <script>
-    // Generador de Escudos SVG Vectoriales de Alta Definición
-    function makeSVGShield(bg, initials) {
-      return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 5 L90 20 L90 70 L50 95 L10 70 L10 20 Z" fill="${bg}" stroke="#ffffff" stroke-width="3"/>
-        <text x="50" y="60" fill="#ffffff" font-family="'Bebas Neue', sans-serif" font-size="32" font-weight="bold" text-anchor="middle">${initials}</text>
-      </svg>`;
-    }
-
     const defaultTeams = {
-      "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", initials: "IYM", color: "#0288d1", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
-      "eq_2": { id: "eq_2", name: "Rhine Lions FC", initials: "RL", color: "#1a237e", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo"] },
-      "eq_3": { id: "eq_3", name: "FC Sportfreunde", initials: "FCS", color: "#d32f2f", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
-      "eq_4": { id: "eq_4", name: "FC Max Basel", initials: "MAX", color: "#fbc02d", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
-      "eq_5": { id: "eq_5", name: "FC Baselona", initials: "FCB", color: "#880e4f", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
-      "eq_6": { id: "eq_6", name: "Joga Bonito FC", initials: "JBG", color: "#ff6f00", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques", "Lendrick Machado", "André Filipe da Silva", "Edson Alex Panta", "Eduardo Pereira da Silva", "Igor Mateus Silva", "Leomir Casagrande", "Leonardo da Silva", "Maxsuel Santos", "Maxwell Stanyo Alves", "Raphael Aflalo Lopes", "Sergio Marconi Fonseca", "Silvio Patrício"] },
-      "eq_7": { id: "eq_7", name: "BG FC", initials: "BG", color: "#00838f", players: ["Emilio Miró", "Javier Calderón", "Juan Rodriguez", "Gabriele Iannucci", "Genni Mariniello", "Armando Babayan", "Christian Stevens", "Louis Vanoise", "Pablo Cabrales", "Romain de Guillebon", "Victor Costé de Bagneaux", "Virgile Soubiran", "Álvaro Morcillo"] },
-      "eq_8": { id: "eq_8", name: "DPS Basel FC", initials: "DPS", color: "#00acc1", players: ["Jaroslaw Strygner", "Simon Nobel", "Brian Wickham", "Oliver Dowling", "Pablo Lora", "Patrick Kellehan", "Diogo Ladeiras", "Filippo Busu", "Ibrahima Sow", "Jacopo Bernasconi", "Juan Francisco Moreno", "Mike Topjian", "Nils Chartier", "Simon Blanche", "Cagatay Cinar", "Jorge Garcia", "Jetmir Xhema", "Conor Maye", "Jaleel Ashik", "Noah Jose Carlos Bellakovics", "Panagiotis Panos"] },
-      "eq_9": { id: "eq_9", name: "Rhine Madrid", initials: "RMA", color: "#d4af37", players: ["Hamed Goudarzi", "Nicolas Wehrli", "Christian Schlote", "Joonatan Van Eecke", "Khamlek Chaton", "Steven Munyoo", "Franklyn Sciberras", "Jonathan Osaigbovo", "Junica Lucian", "Jürgen Schneider", "Logan Jungen", "Luca Sieber", "Marc Zuger", "Matthias Vogler", "Rharin", "Steiner"] },
-      "eq_10": { id: "eq_10", name: "Inter Basel", initials: "IB", color: "#212121", players: ["Anas Moutacharrif", "Ahmed Tawfik", "Athithiyan Senthilkumar", "Elleno Noviello", "Jamal Budair", "Karim Zahra", "Marvin Meier", "Marwan Ibrahim", "Micha Gelencser", "Oualid El Hafian", "Samuel Mc'Kenzie", "Victor Melado"] }
+      "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", initials: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
+      "eq_2": { id: "eq_2", name: "Rhine Lions FC", initials: "RL", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo"] },
+      "eq_3": { id: "eq_3", name: "FC Sportfreunde", initials: "FCS", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
+      "eq_4": { id: "eq_4", name: "FC Max Basel", initials: "MAX", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
+      "eq_5": { id: "eq_5", name: "FC Baselona", initials: "FCB", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
+      "eq_6": { id: "eq_6", name: "Joga Bonito FC", initials: "JBG", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques", "Lendrick Machado", "André Filipe da Silva", "Edson Alex Panta", "Eduardo Pereira da Silva", "Igor Mateus Silva", "Leomir Casagrande", "Leonardo da Silva", "Maxsuel Santos", "Maxwell Stanyo Alves", "Raphael Aflalo Lopes", "Sergio Marconi Fonseca", "Silvio Patrício"] },
+      "eq_7": { id: "eq_7", name: "BG FC", initials: "BG", players: ["Emilio Miró", "Javier Calderón", "Juan Rodriguez", "Gabriele Iannucci", "Genni Mariniello", "Armando Babayan", "Christian Stevens", "Louis Vanoise", "Pablo Cabrales", "Romain de Guillebon", "Victor Costé de Bagneaux", "Virgile Soubiran", "Álvaro Morcillo"] },
+      "eq_8": { id: "eq_8", name: "DPS Basel FC", initials: "DPS", players: ["Jaroslaw Strygner", "Simon Nobel", "Brian Wickham", "Oliver Dowling", "Pablo Lora", "Patrick Kellehan", "Diogo Ladeiras", "Filippo Busu", "Ibrahima Sow", "Jacopo Bernasconi", "Juan Francisco Moreno", "Mike Topjian", "Nils Chartier", "Simon Blanche", "Cagatay Cinar", "Jorge Garcia", "Jetmir Xhema", "Conor Maye", "Jaleel Ashik", "Noah Jose Carlos Bellakovics", "Panagiotis Panos"] },
+      "eq_9": { id: "eq_9", name: "Rhine Madrid", initials: "RMA", players: ["Hamed Goudarzi", "Nicolas Wehrli", "Christian Schlote", "Joonatan Van Eecke", "Khamlek Chaton", "Steven Munyoo", "Franklyn Sciberras", "Jonathan Osaigbovo", "Junica Lucian", "Jürgen Schneider", "Logan Jungen", "Luca Sieber", "Marc Zuger", "Matthias Vogler", "Rharin", "Steiner"] },
+      "eq_10": { id: "eq_10", name: "Inter Basel", initials: "IB", players: ["Anas Moutacharrif", "Ahmed Tawfik", "Athithiyan Senthilkumar", "Elleno Noviello", "Jamal Budair", "Karim Zahra", "Marvin Meier", "Marwan Ibrahim", "Micha Gelencser", "Oualid El Hafian", "Samuel Mc'Kenzie", "Victor Melado"] }
     };
 
     let allTeams = JSON.parse(localStorage.getItem('sl_teams')) || defaultTeams;
     let currentTeam1Id = localStorage.getItem('sl_t1') || "eq_1";
     let currentTeam2Id = localStorage.getItem('sl_t2') || "eq_2";
+    let refereeName = localStorage.getItem('sl_ref') || "SAMUEL MCKENZIE";
 
     let attendance = JSON.parse(localStorage.getItem('sl_att')) || { 1: [], 2: [] };
     let events = JSON.parse(localStorage.getItem('sl_ev')) || [];
@@ -292,21 +277,22 @@
     let startTime = 0;
     let elapsedTimeBeforePause = 0;
     let timerInterval = null;
-    let currentPeriod = 1;
 
     // Motor de Audio Sintético (Web Audio API)
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     function playBeep(freq = 600, duration = 0.15) {
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
+      try {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch(e) {}
     }
 
     function playWhistle() {
@@ -315,10 +301,17 @@
     }
 
     function init() {
+      document.getElementById('refNameInput').value = refereeName;
+      document.getElementById('refereeNameDisplay').innerText = refereeName;
       renderTeamSelectors();
       setupMatchTeams();
       renderHistory();
-      if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+    }
+
+    function updateRefName() {
+      refereeName = document.getElementById('refNameInput').value || "SAMUEL MCKENZIE";
+      document.getElementById('refereeNameDisplay').innerText = refereeName;
+      localStorage.setItem('sl_ref', refereeName);
     }
 
     function switchTab(tabId) {
@@ -350,12 +343,17 @@
 
       document.getElementById('nameTeam1').innerText = t1.name;
       document.getElementById('nameTeam2').innerText = t2.name;
-      document.getElementById('logoWrap1').innerHTML = makeSVGShield(t1.color, t1.initials);
-      document.getElementById('logoWrap2').innerHTML = makeSVGShield(t2.color, t2.initials);
+
+      // Aplicar clases de Sprites CSS de Equipos_2.jpg
+      const logo1 = document.getElementById('logoWrap1');
+      const logo2 = document.getElementById('logoWrap2');
+      logo1.className = `team-logo-sprite logo-${t1.id}`;
+      logo2.className = `team-logo-sprite logo-${t2.id}`;
 
       document.getElementById('attTitle1').innerText = t1.name;
       document.getElementById('attTitle2').innerText = t2.name;
 
+      // Inicializar asistencia por defecto con toda la plantilla si está vacía
       if (!attendance[1] || attendance[1].length === 0) attendance[1] = [...t1.players];
       if (!attendance[2] || attendance[2].length === 0) attendance[2] = [...t2.players];
 
@@ -366,17 +364,15 @@
       renderEvents();
     }
 
-    /* CRONÓMETRO PRECISO CON TIMESTAMP */
+    /* CRONÓMETRO */
     function toggleTimer() {
       if (timerRunning) {
-        // Pausar
         timerRunning = false;
         elapsedTimeBeforePause += Date.now() - startTime;
         clearInterval(timerInterval);
         document.getElementById('btnStart').innerText = "▶ Reanudar";
         playBeep(400, 0.2);
       } else {
-        // Iniciar
         timerRunning = true;
         startTime = Date.now();
         playWhistle();
@@ -399,14 +395,13 @@
       timerRunning = false;
       clearInterval(timerInterval);
       elapsedTimeBeforePause = 0;
-      currentPeriod = p;
       document.getElementById('timerDisplay').innerText = "00:00";
       document.getElementById('periodDisplay').innerText = p === 1 ? "1er Tiempo (25 Min)" : "2do Tiempo (25 Min)";
       document.getElementById('btnStart').innerText = "▶ Iniciar";
       playWhistle();
     }
 
-    /* ASISTENCIA */
+    /* ASISTENCIA Y LISTAS */
     function renderAttendanceLists() {
       [1, 2].forEach(num => {
         const teamId = num === 1 ? currentTeam1Id : currentTeam2Id;
@@ -434,9 +429,10 @@
       }
       saveAllData();
       updatePlayerDropdowns();
+      populateMVPSelect();
     }
 
-    /* REGISTRO DE EVENTOS */
+    /* FILTRADO DE JUGADORES */
     function updateTeamDropdown() {
       const ts = document.getElementById('teamSelect');
       if (allTeams[currentTeam1Id] && allTeams[currentTeam2Id]) {
@@ -446,14 +442,22 @@
       }
     }
 
+    // CORRECCIÓN SOLICITADA: Muestra ÚNICAMENTE los jugadores que asisten del equipo seleccionado
     function updatePlayerDropdowns() {
       const num = document.getElementById('teamSelect').value;
       const playerSelect = document.getElementById('playerSelect');
       const assistSelect = document.getElementById('assistSelect');
-      const available = attendance[num] || [];
-      const opts = available.map(p => `<option value="${p}">${p}</option>`).join('');
+      
+      const availablePlayers = attendance[num] || [];
+      
+      if (availablePlayers.length === 0) {
+        playerSelect.innerHTML = '<option value="">-- Sin Jugadores Asistentes --</option>';
+        assistSelect.innerHTML = '<option value="">-- Ninguna --</option>';
+        return;
+      }
 
-      playerSelect.innerHTML = opts || '<option value="">Sin jugadores</option>';
+      const opts = availablePlayers.map(p => `<option value="${p}">${p}</option>`).join('');
+      playerSelect.innerHTML = opts;
       assistSelect.innerHTML = '<option value="">-- Ninguna --</option>' + opts;
     }
 
@@ -468,7 +472,7 @@
       const player = document.getElementById('playerSelect').value;
       const assist = type === 'GOL' ? document.getElementById('assistSelect').value : '';
 
-      if (!player) return alert("Selecciona un jugador.");
+      if (!player) return alert("Por favor selecciona un jugador asistente.");
 
       events.push({ id: Date.now(), minute: parseInt(minute), num, type, player, assist });
       events.sort((a, b) => a.minute - b.minute);
@@ -479,22 +483,8 @@
       renderEvents();
     }
 
-    function quickEvent(type, num) {
-      const minute = document.getElementById('minuteInput').value || 1;
-      const available = attendance[num] || [];
-      const player = available.length > 0 ? available[0] : "Jugador #";
-
-      events.push({ id: Date.now(), minute: parseInt(minute), num, type, player, assist: '' });
-      events.sort((a, b) => a.minute - b.minute);
-
-      if (type === 'GOL') triggerGolCelebration(num);
-
-      saveAllData();
-      renderEvents();
-    }
-
     function triggerGolCelebration(num) {
-      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      try { confetti({ particleCount: 90, spread: 60, origin: { y: 0.6 } }); } catch(e){}
       playBeep(900, 0.3);
       const scoreEl = document.getElementById(`score${num}`);
       scoreEl.classList.add('pulse');
@@ -525,8 +515,9 @@
               <div>
                 <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
                 <b style="margin-left:6px;">${e.player}</b> <small style="color:var(--text-muted);">(${teamName})</small>
+                ${e.assist ? `<small style="color:var(--accent-gold); display:block; font-size:0.75rem;">👟 Asist: ${e.assist}</small>` : ''}
               </div>
-              <button style="background:none; border:none; color:var(--accent-red); cursor:pointer;" onclick="deleteEvent(${e.id})">✕</button>
+              <button style="background:none; border:none; color:var(--accent-red); cursor:pointer; font-weight:bold; font-size:1.1rem;" onclick="deleteEvent(${e.id})">✕</button>
             </div>`;
         });
       }
@@ -547,6 +538,7 @@
         }
       });
       mvpSelect.innerHTML = opts;
+      mvpSelect.value = selectedMVP;
     }
 
     function saveMVP() {
@@ -560,15 +552,24 @@
       const s1 = document.getElementById('score1').innerText;
       const s2 = document.getElementById('score2').innerText;
 
-      let text = `📋 *SEVEN LEAGUE - ACTA DIGITAL*\n`;
-      text += `⚽ *${t1} (${s1}) VS (${s2}) ${t2}*\n\n`;
-      events.forEach(e => {
-        text += `- ${e.minute}' ${e.type}: ${e.player} ${e.assist ? '(Asist: ' + e.assist + ')' : ''}\n`;
-      });
-      if (selectedMVP) text += `\n⭐ *MVP:* ${selectedMVP}\n`;
+      let text = `📋 *SEVEN LEAGUE - ACTA OFICIAL DE PARTIDO*\n`;
+      text += `👨‍⚖️ *Árbitro:* ${refereeName}\n`;
+      text += `⚽ *${t1} [ ${s1} - ${s2} ] ${t2}*\n`;
+      text += `-----------------------------------\n\n`;
+      
+      if (events.length === 0) {
+        text += `_Sin incidencias ni goles registrados._\n`;
+      } else {
+        events.forEach(e => {
+          const tName = e.num === '1' ? t1 : t2;
+          text += `• ${e.minute}' ${e.type}: *${e.player}* (${tName}) ${e.assist ? '👟 Asist: ' + e.assist : ''}\n`;
+        });
+      }
+
+      if (selectedMVP) text += `\n⭐ *MVP DEL PARTIDO:* ${selectedMVP}\n`;
 
       navigator.clipboard.writeText(text);
-      alert("✅ ¡Acta copiada para WhatsApp!");
+      alert("✅ ¡Acta oficial copiada con éxito! Ya puedes pegarla en WhatsApp.");
     }
 
     function speakSummary() {
@@ -577,7 +578,7 @@
       const s1 = document.getElementById('score1').innerText;
       const s2 = document.getElementById('score2').innerText;
 
-      const speech = new SpeechSynthesisUtterance(`Resultado final. ${t1} ${s1}, ${t2} ${s2}. ${selectedMVP ? 'Jugador del partido: ' + selectedMVP : ''}`);
+      const speech = new SpeechSynthesisUtterance(`Resultado final. ${t1} ${s1}, ${t2} ${s2}. Árbitro: ${refereeName}. ${selectedMVP ? 'Jugador del partido: ' + selectedMVP : ''}`);
       speech.lang = 'es-ES';
       window.speechSynthesis.speak(speech);
     }
@@ -585,6 +586,7 @@
     function archiveMatch() {
       const matchData = {
         date: new Date().toLocaleString(),
+        referee: refereeName,
         t1: allTeams[currentTeam1Id].name, t2: allTeams[currentTeam2Id].name,
         s1: document.getElementById('score1').innerText, s2: document.getElementById('score2').innerText,
         mvp: selectedMVP
@@ -592,7 +594,7 @@
       savedMatches.push(matchData);
       localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
       renderHistory();
-      alert("💾 Partido archivado.");
+      alert("💾 Partido guardado en el historial local.");
     }
 
     function renderHistory() {
@@ -600,7 +602,11 @@
       if (savedMatches.length === 0) { container.innerHTML = "Sin partidos archivados."; return; }
       container.innerHTML = '';
       savedMatches.forEach(m => {
-        container.innerHTML += `<div style="border-bottom:1px solid #222; padding:8px 0;"><b>${m.t1} ${m.s1} - ${m.s2} ${m.t2}</b><br><small style="color:var(--text-muted);">${m.date} | ⭐ MVP: ${m.mvp || 'N/A'}</small></div>`;
+        container.innerHTML += `
+          <div style="border-bottom:1px solid #222; padding:8px 0;">
+            <b>${m.t1} ${m.s1} - ${m.s2} ${m.t2}</b><br>
+            <small style="color:var(--text-muted);">${m.date} | 👨‍⚖️ Árbitro: ${m.referee || 'SAMUEL MCKENZIE'} | ⭐ MVP: ${m.mvp || 'N/A'}</small>
+          </div>`;
       });
     }
 
