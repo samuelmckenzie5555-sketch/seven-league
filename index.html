@@ -166,7 +166,7 @@
 
     <!-- Cronómetro -->
     <div class="timer-card">
-      <div class="timer-period" id="periodDisplay">1er Tiempo (25 Min)</div>
+      <div class="timer-period" id="periodDisplay">1er Tiempo</div>
       <div class="timer-clock" id="timerDisplay">00:00</div>
       <div class="timer-btn-row">
         <button class="btn-t" id="btnStart" onclick="toggleTimer()">▶ Iniciar</button>
@@ -211,7 +211,7 @@
         </div>
         <div class="form-group">
           <label>Minuto</label>
-          <input type="number" id="minuteInput" value="1" min="1" max="60">
+          <input type="number" id="minuteInput" value="1" min="1" max="120">
         </div>
         <div class="form-group">
           <label>Evento</label>
@@ -290,12 +290,12 @@
   <!-- TAB 4: HISTORIAL -->
   <div id="tab-historial" class="tab-content">
     <div class="card" style="border: 1px solid var(--accent-gold);">
-      <div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar Acta de WhatsApp</div>
+      <div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar / Reconstruir Acta</div>
       <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
-        Si tienes un acta enviada por WhatsApp, pégala aquí abajo y la app reconstruirá automáticamente todos los goles y minutos en el historial:
+        Pega un texto de WhatsApp para recuperar incidencias y tiempos automáticamente:
       </p>
-      <textarea id="importWhatsappText" rows="4" placeholder="Pega aquí el texto del acta de WhatsApp..."></textarea>
-      <button class="btn-act" style="background:var(--accent-gold); color:#000; margin-top:8px;" onclick="importFromWhatsappText()">⚡ Reconstruir Partido e Incidencias</button>
+      <textarea id="importWhatsappText" rows="4" placeholder="Pega el acta copiada de WhatsApp aquí..."></textarea>
+      <button class="btn-act" style="background:var(--accent-gold); color:#000; margin-top:8px;" onclick="importFromWhatsappText()">⚡ Reconstruir Partido</button>
     </div>
 
     <div class="card">
@@ -340,9 +340,6 @@
       renderTeamSelectors();
       setupMatchTeams();
       renderTeamManagement();
-      
-      // Auto-reconstruir partidos antiguos guardados en texto si existen
-      autoRepairHistoricalMatches();
       renderHistory();
     }
 
@@ -527,9 +524,11 @@
       clearInterval(timerInterval);
       elapsedTimeBeforePause = 0;
       document.getElementById('timerDisplay').innerText = "00:00";
-      document.getElementById('periodDisplay').innerText = p === 1 ? "1er Tiempo (25 Min)" : "2do Tiempo (25 Min)";
+      document.getElementById('periodDisplay').innerText = p === 1 ? "1er Tiempo" : "2do Tiempo";
       document.getElementById('btnStart').innerText = "▶ Iniciar";
-      document.getElementById('eventPeriodSelect').value = p === 1 ? "1T" : "2T";
+      
+      const periodSelect = document.getElementById('eventPeriodSelect');
+      if (periodSelect) periodSelect.value = p === 1 ? "1T" : "2T";
 
       document.getElementById('btnPeriod1').classList.toggle('active-period', p === 1);
       document.getElementById('btnPeriod2').classList.toggle('active-period', p === 2);
@@ -609,8 +608,8 @@
     }
 
     function addEvent() {
-      const minute = document.getElementById('minuteInput').value || 1;
-      const period = document.getElementById('eventPeriodSelect').value || '1T';
+      const minuteVal = parseInt(document.getElementById('minuteInput').value || 1);
+      const periodVal = document.getElementById('eventPeriodSelect').value || '1T';
       const teamId = document.getElementById('teamSelect').value;
       const type = document.getElementById('typeSelect').value;
       const player = document.getElementById('playerSelect').value;
@@ -618,7 +617,7 @@
 
       if (!player) return alert("Por favor selecciona un jugador.");
 
-      events.push({ id: Date.now(), minute: parseInt(minute), period, teamId, type, player, assist });
+      events.push({ id: Date.now(), minute: minuteVal, period: periodVal, teamId, type, player, assist });
       
       events.sort((a, b) => {
         if (a.period !== b.period) return a.period === '1T' ? -1 : 1;
@@ -690,6 +689,7 @@
       saveAllData();
     }
 
+    /* GENERADOR DE ACTA EXPRESA */
     function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal) {
       let text = `📋 *SEVEN LEAGUE - ACTA OFICIAL DE PARTIDO*\n`;
       text += `👨‍⚖️ *Árbitro:* ${referee}\n`;
@@ -701,7 +701,7 @@
       } else {
         evtsList.forEach(e => {
           const tName = teams[e.teamId] ? teams[e.teamId].name : (e.teamName || '');
-          const pText = e.period ? `(${e.period})` : '';
+          const pText = `(${e.period || '1T'})`;
           text += `• ${e.minute}' ${pText} ${e.type}: *${e.player}* ${tName ? '(' + tName + ')' : ''} ${e.assist ? '👟 Asist: ' + e.assist : ''}\n`;
         });
       }
@@ -719,7 +719,7 @@
       const summaryText = generateSummaryText(t1, t2, s1, s2, refereeName, events, selectedMVP);
 
       navigator.clipboard.writeText(summaryText);
-      alert("✅ ¡Acta oficial copiada con éxito!");
+      alert("✅ ¡Acta oficial copiada con distinción de 1T y 2T!");
     }
 
     function archiveMatch() {
@@ -758,46 +758,37 @@
       const m = savedMatches[index];
       const summaryText = generateSummaryText(m.t1, m.t2, m.s1, m.s2, m.referee || 'SAMUEL MCKENZIE', m.events || [], m.mvp || '');
       navigator.clipboard.writeText(summaryText);
-      alert("✅ Acta del partido archivado copiada para WhatsApp.");
+      alert("✅ Acta copiada con desglose de períodos.");
     }
 
-    // EXTRACTOR/RECONSTRUCTOR DE TEXTO WHATSAPP CON REGEX AVANZADA
     function parseWhatsappText(text) {
       if (!text) return { t1: 'LOCAL', t2: 'VISITANTE', s1: '0', s2: '0', referee: 'SAMUEL MCKENZIE', mvp: '', events: [] };
 
-      // Extraer Titulo Equipos
       let t1 = 'LOCAL', t2 = 'VISITANTE', s1 = '0', s2 = '0';
       const scoreMatch = text.match(/⚽\s*\*?([^*\[]+)\[\s*(\d+)\s*-\s*(\d+)\s*\]\s*([^*]+)\*?/i);
       if (scoreMatch) {
-        t1 = scoreMatch[1].trim();
-        s1 = scoreMatch[2].trim();
-        s2 = scoreMatch[3].trim();
-        t2 = scoreMatch[4].trim();
+        t1 = scoreMatch[1].trim(); s1 = scoreMatch[2].trim(); s2 = scoreMatch[3].trim(); t2 = scoreMatch[4].trim();
       }
 
-      // Extraer Arbitro
       let referee = 'SAMUEL MCKENZIE';
       const refMatch = text.match(/Árbitro:\*?\s*([^\n\r]+)/i);
       if (refMatch) referee = refMatch[1].trim();
 
-      // Extraer MVP
       let mvp = '';
       const mvpMatch = text.match(/MVP DEL PARTIDO:\*?\s*([^\n\r]+)/i);
       if (mvpMatch) mvp = mvpMatch[1].trim();
 
-      // Extraer Linea por Linea los Eventos
       const eventsParsed = [];
       const lines = text.split('\n');
 
       lines.forEach(line => {
-        // Regex flexible para min, periodo, tipo, jugador y asistencia
-        const evMatch = line.match(/•?\s*(\d+)'\s*(\((1T\vert{}2T)\))?\s*(⚽|🟨|🟥|GOL|A|R|Amarilla|Roja)?[:\s]*\*?([^*()\n]+)\*?\s*(\(([^()]+)\))?/i);
-        if (evMatch && (line.includes('GOL') || line.includes('⚽') || line.includes('🟨') || line.includes('🟥') || line.includes('Amarilla') || line.includes('Roja'))) {
+        const evMatch = line.match(/•?\s*(\d+)'\s*(\((1T\vert{}2T)\))?\s*(⚽|🟨|🟥|GOL|A|R)?[:\s]*\*?([^*()\n]+)\*?\s*(\(([^()]+)\))?/i);
+        if (evMatch && (line.includes('GOL') || line.includes('⚽') || line.includes('🟨') || line.includes('🟥'))) {
           const minute = parseInt(evMatch[1]) || 1;
-          const period = evMatch[3] || '1T';
+          let period = evMatch[3] || '1T';
           let type = 'GOL';
-          if (line.includes('🟨') || line.includes('Amarilla') || line.includes(' A:')) type = 'A';
-          if (line.includes('🟥') || line.includes('Roja') || line.includes(' R:')) type = 'R';
+          if (line.includes('🟨') || line.includes('A:')) type = 'A';
+          if (line.includes('🟥') || line.includes('R:')) type = 'R';
 
           const player = evMatch[5] ? evMatch[5].trim() : 'Jugador';
 
@@ -805,34 +796,11 @@
           const assistMatch = line.match(/Asist:\s*([^\n\r]+)/i);
           if (assistMatch) assist = assistMatch[1].trim();
 
-          eventsParsed.push({
-            id: Date.now() + Math.random(),
-            minute,
-            period,
-            type,
-            player,
-            assist
-          });
+          eventsParsed.push({ id: Date.now() + Math.random(), minute, period, type, player, assist });
         }
       });
 
       return { t1, t2, s1, s2, referee, mvp, events: eventsParsed, summaryText: text };
-    }
-
-    function autoRepairHistoricalMatches() {
-      let modified = false;
-      savedMatches.forEach(m => {
-        if ((!m.events || m.events.length === 0) && m.summaryText) {
-          const parsed = parseWhatsappText(m.summaryText);
-          if (parsed.events.length > 0) {
-            m.events = parsed.events;
-            modified = true;
-          }
-        }
-      });
-      if (modified) {
-        localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
-      }
     }
 
     function importFromWhatsappText() {
@@ -848,11 +816,11 @@
       document.getElementById('importWhatsappText').value = '';
       
       renderHistory();
-      alert("⚡ ¡Partido e incidencias importados e integrados al historial correctamente!");
+      alert("⚡ ¡Partido e incidencias importados!");
     }
 
     function addHistoricalEvent(index) {
-      const minInput = document.getElementById(`hMin-${index}`).value || 1;
+      const minInput = parseInt(document.getElementById(`hMin-${index}`).value || 1);
       const periodVal = document.getElementById(`hPeriod-${index}`).value || '1T';
       const typeVal = document.getElementById(`hType-${index}`).value || 'GOL';
       const playerVal = document.getElementById(`hPlayer-${index}`).value.trim();
@@ -863,7 +831,7 @@
 
       savedMatches[index].events.push({
         id: Date.now(),
-        minute: parseInt(minInput),
+        minute: minInput,
         period: periodVal,
         type: typeVal,
         player: playerVal,
@@ -918,7 +886,7 @@
         let eventsHtml = '';
         if (evList.length > 0) {
           evList.forEach(e => {
-            const periodBadge = e.period ? `<span class="period-chip">${e.period}</span>` : '';
+            const periodBadge = `<span class="period-chip">${e.period || '1T'}</span>`;
             const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
             eventsHtml += `
               <div style="font-size:0.8rem; margin-bottom:4px; border-bottom:1px solid #222; padding-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
@@ -931,7 +899,7 @@
               </div>`;
           });
         } else {
-          eventsHtml = "<small style='color:var(--text-muted);'>Sin incidencias registradas aún en este partido.</small>";
+          eventsHtml = "<small style='color:var(--text-muted);'>Sin incidencias registradas en este partido.</small>";
         }
 
         container.innerHTML += `
@@ -954,9 +922,8 @@
                 <div style="margin-top:6px;">${eventsHtml}</div>
               </div>
 
-              <!-- Formulario de edición rápida -->
               <div class="add-hist-box">
-                <small style="color:var(--accent-gold); font-weight:bold; display:block; margin-bottom:6px;">➕ Agregar / Corregir Incidencia a este Partido:</small>
+                <small style="color:var(--accent-gold); font-weight:bold; display:block; margin-bottom:6px;">➕ Agregar / Editar Tiempo a este Partido:</small>
                 <div class="form-row">
                   <div class="form-group" style="margin-bottom:6px;">
                     <label>Tiempo</label>
