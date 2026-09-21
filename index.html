@@ -31,7 +31,10 @@
     body { background-color: var(--bg-dark); color: var(--text-main); padding: 12px; max-width: 650px; margin: 0 auto; min-height: 100vh; padding-bottom: 40px; }
 
     header { text-align: center; padding: 12px 0 16px 0; border-bottom: 2px solid var(--accent-red); margin-bottom: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    header img.app-logo { height: 60px; object-fit: contain; }
+    
+    /* Shield Placeholder en CSS/SVG si la foto falta */
+    .app-logo-box { font-family: var(--font-display); font-size: 2rem; color: #fff; letter-spacing: 2px; }
+    .app-logo-box span { color: var(--accent-red); }
 
     /* Tabs */
     .tabs-nav { display: flex; background: var(--card-bg); border-radius: 10px; padding: 4px; border: 1px solid var(--card-border); margin-bottom: 16px; gap: 4px; }
@@ -45,18 +48,22 @@
     .teams-vs { display: flex; justify-content: space-between; align-items: center; }
     .team-item { text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; }
     
-    /* Contenedor de Logo de Equipo con fallback seguro */
-    .team-logo-img { 
-      width: 60px; 
-      height: 60px; 
-      object-fit: contain; 
-      border-radius: 50%; 
-      background: #1c1c24; 
+    .team-logo-wrapper {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #1c1c24;
       border: 2px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 8px;
+      overflow: hidden;
     }
+    .team-logo-img { width: 100%; height: 100%; object-fit: contain; }
+    .team-logo-fallback { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-gold); }
 
-    .team-title { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 0.5px; }
+    .team-title { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.5px; line-height: 1.1; }
     .score-num { font-family: var(--font-display); font-size: 3.5rem; line-height: 1; color: #fff; }
     .vs-badge { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-muted); padding: 0 8px; }
 
@@ -80,6 +87,7 @@
 
     button.btn-act { width: 100%; padding: 14px; background: var(--accent-red); color: white; border: none; border-radius: 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; text-transform: uppercase; }
     button.btn-sec { width: 100%; padding: 12px; background: #22222d; color: white; border: 1px solid var(--card-border); border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; margin-top: 8px; }
+    button.btn-danger { width: 100%; padding: 10px; background: #3b1113; color: #ff5252; border: 1px solid #5c1d1f; border-radius: 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer; margin-top: 12px; }
 
     /* Timeline */
     .timeline-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
@@ -95,7 +103,7 @@
 <body>
 
   <header>
-    <img src="seven_2.png" alt="7L Seven League" class="app-logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/180x60/141419/e53935?text=SEVEN+LEAGUE';">
+    <div class="app-logo-box">7L <span>SEVEN LEAGUE</span></div>
   </header>
 
   <div class="ref-badge">
@@ -103,9 +111,9 @@
   </div>
 
   <nav class="tabs-nav">
-    <button class="tab-button active" onclick="switchTab('tab-partido')">1. Partido</button>
-    <button class="tab-button" onclick="switchTab('tab-asistencia')">2. Asistencia</button>
-    <button class="tab-button" onclick="switchTab('tab-historial')">3. Historial</button>
+    <button class="tab-button active" onclick="switchTab('tab-partido', event)">1. Partido</button>
+    <button class="tab-button" onclick="switchTab('tab-asistencia', event)">2. Asistencia</button>
+    <button class="tab-button" onclick="switchTab('tab-historial', event)">3. Historial</button>
   </nav>
 
   <!-- TAB 1: PARTIDO -->
@@ -114,13 +122,13 @@
     <div class="scoreboard-box">
       <div class="teams-vs">
         <div class="team-item">
-          <img id="logo1" class="team-logo-img" src="" alt="Local" onerror="this.src='https://via.placeholder.com/60/1c1c24/ffffff?text=LOC';">
+          <div class="team-logo-wrapper" id="logoWrap1"></div>
           <div class="team-title" id="nameTeam1">LOCAL</div>
           <div class="score-num" id="score1">0</div>
         </div>
         <div class="vs-badge">VS</div>
         <div class="team-item">
-          <img id="logo2" class="team-logo-img" src="" alt="Visitante" onerror="this.src='https://via.placeholder.com/60/1c1c24/ffffff?text=VIS';">
+          <div class="team-logo-wrapper" id="logoWrap2"></div>
           <div class="team-title" id="nameTeam2">VISITANTE</div>
           <div class="score-num" id="score2">0</div>
         </div>
@@ -144,11 +152,11 @@
       <div class="form-row">
         <div class="form-group">
           <label>Equipo Local</label>
-          <select id="matchTeam1Select" onchange="setupMatchTeams()"></select>
+          <select id="matchTeam1Select" onchange="changeMatchTeams()"></select>
         </div>
         <div class="form-group">
           <label>Equipo Visitante</label>
-          <select id="matchTeam2Select" onchange="setupMatchTeams()"></select>
+          <select id="matchTeam2Select" onchange="changeMatchTeams()"></select>
         </div>
       </div>
       <div class="form-group">
@@ -179,11 +187,11 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Jugador (Solo del Equipo Seleccionado)</label>
+        <label>Jugador (Filtrado por equipo)</label>
         <select id="playerSelect"></select>
       </div>
       <div class="form-group" id="assistGroup">
-        <label>Asistencia (Opcional - Mismo Equipo)</label>
+        <label>Asistencia (Opcional - Mismo equipo)</label>
         <select id="assistSelect"></select>
       </div>
       <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
@@ -201,6 +209,7 @@
 
     <button class="btn-act" style="background:#2e7d32;" onclick="exportSummary()">📲 Copiar Acta para WhatsApp</button>
     <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
+    <button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar memoria de la App (Solucionar Errores)</button>
   </div>
 
   <!-- TAB 2: ASISTENCIA -->
@@ -224,26 +233,24 @@
   </div>
 
   <script>
-    // Configuración Base de Equipos y Jugadores
     const defaultTeams = {
-      "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
-      "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo"] },
-      "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
-      "eq_4": { id: "eq_4", name: "FC Max Basel", logo: "logo_max_basel.png", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
-      "eq_5": { id: "eq_5", name: "FC Baselona", logo: "logo_baselona.png", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
-      "eq_6": { id: "eq_6", name: "Joga Bonito FC", logo: "logo_joga_bonito.png", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques", "Lendrick Machado", "André Filipe da Silva", "Edson Alex Panta", "Eduardo Pereira da Silva", "Igor Mateus Silva", "Leomir Casagrande", "Leonardo da Silva", "Maxsuel Santos", "Maxwell Stanyo Alves", "Raphael Aflalo Lopes", "Sergio Marconi Fonseca", "Silvio Patrício"] },
-      "eq_7": { id: "eq_7", name: "BG FC", logo: "logo_bg_fc.png", players: ["Emilio Miró", "Javier Calderón", "Juan Rodriguez", "Gabriele Iannucci", "Genni Mariniello", "Armando Babayan", "Christian Stevens", "Louis Vanoise", "Pablo Cabrales", "Romain de Guillebon", "Victor Costé de Bagneaux", "Virgile Soubiran", "Álvaro Morcillo"] },
-      "eq_8": { id: "eq_8", name: "DPS Basel FC", logo: "logo_dps_basel.png", players: ["Jaroslaw Strygner", "Simon Nobel", "Brian Wickham", "Oliver Dowling", "Pablo Lora", "Patrick Kellehan", "Diogo Ladeiras", "Filippo Busu", "Ibrahima Sow", "Jacopo Bernasconi", "Juan Francisco Moreno", "Mike Topjian", "Nils Chartier", "Simon Blanche", "Cagatay Cinar", "Jorge Garcia", "Jetmir Xhema", "Conor Maye", "Jaleel Ashik", "Noah Jose Carlos Bellakovics", "Panagiotis Panos"] },
-      "eq_9": { id: "eq_9", name: "Rhine Madrid", logo: "logo_rhine_madrid.png", players: ["Hamed Goudarzi", "Nicolas Wehrli", "Christian Schlote", "Joonatan Van Eecke", "Khamlek Chaton", "Steven Munyoo", "Franklyn Sciberras", "Jonathan Osaigbovo", "Junica Lucian", "Jürgen Schneider", "Logan Jungen", "Luca Sieber", "Marc Zuger", "Matthias Vogler", "Rharin", "Steiner"] },
-      "eq_10": { id: "eq_10", name: "Inter Basel", logo: "logo_inter_basel.png", players: ["Anas Moutacharrif", "Ahmed Tawfik", "Athithiyan Senthilkumar", "Elleno Noviello", "Jamal Budair", "Karim Zahra", "Marvin Meier", "Marwan Ibrahim", "Micha Gelencser", "Oualid El Hafian", "Samuel Mc'Kenzie", "Victor Melado"] }
+      "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", short: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
+      "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo"] },
+      "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", short: "SPO", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
+      "eq_4": { id: "eq_4", name: "FC Max Basel", logo: "logo_max_basel.png", short: "MAX", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
+      "eq_5": { id: "eq_5", name: "FC Baselona", logo: "logo_baselona.png", short: "BAS", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
+      "eq_6": { id: "eq_6", name: "Joga Bonito FC", logo: "logo_joga_bonito.png", short: "JOG", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques", "Lendrick Machado", "André Filipe da Silva", "Edson Alex Panta", "Eduardo Pereira da Silva", "Igor Mateus Silva", "Leomir Casagrande", "Leonardo da Silva", "Maxsuel Santos", "Maxwell Stanyo Alves", "Raphael Aflalo Lopes", "Sergio Marconi Fonseca", "Silvio Patrício"] },
+      "eq_7": { id: "eq_7", name: "BG FC", logo: "logo_bg_fc.png", short: "BG", players: ["Emilio Miró", "Javier Calderón", "Juan Rodriguez", "Gabriele Iannucci", "Genni Mariniello", "Armando Babayan", "Christian Stevens", "Louis Vanoise", "Pablo Cabrales", "Romain de Guillebon", "Victor Costé de Bagneaux", "Virgile Soubiran", "Álvaro Morcillo"] },
+      "eq_8": { id: "eq_8", name: "DPS Basel FC", logo: "logo_dps_basel.png", short: "DPS", players: ["Jaroslaw Strygner", "Simon Nobel", "Brian Wickham", "Oliver Dowling", "Pablo Lora", "Patrick Kellehan", "Diogo Ladeiras", "Filippo Busu", "Ibrahima Sow", "Jacopo Bernasconi", "Juan Francisco Moreno", "Mike Topjian", "Nils Chartier", "Simon Blanche", "Cagatay Cinar", "Jorge Garcia", "Jetmir Xhema", "Conor Maye", "Jaleel Ashik", "Noah Jose Carlos Bellakovics", "Panagiotis Panos"] },
+      "eq_9": { id: "eq_9", name: "Rhine Madrid", logo: "logo_rhine_madrid.png", short: "RMA", players: ["Hamed Goudarzi", "Nicolas Wehrli", "Christian Schlote", "Joonatan Van Eecke", "Khamlek Chaton", "Steven Munyoo", "Franklyn Sciberras", "Jonathan Osaigbovo", "Junica Lucian", "Jürgen Schneider", "Logan Jungen", "Luca Sieber", "Marc Zuger", "Matthias Vogler", "Rharin", "Steiner"] },
+      "eq_10": { id: "eq_10", name: "Inter Basel", logo: "logo_inter_basel.png", short: "INB", players: ["Anas Moutacharrif", "Ahmed Tawfik", "Athithiyan Senthilkumar", "Elleno Noviello", "Jamal Budair", "Karim Zahra", "Marvin Meier", "Marwan Ibrahim", "Micha Gelencser", "Oualid El Hafian", "Samuel Mc'Kenzie", "Victor Melado"] }
     };
 
-    let allTeams = defaultTeams;
     let currentTeam1Id = localStorage.getItem('sl_t1') || "eq_1";
     let currentTeam2Id = localStorage.getItem('sl_t2') || "eq_2";
     let refereeName = localStorage.getItem('sl_ref') || "SAMUEL MCKENZIE";
 
-    let attendance = JSON.parse(localStorage.getItem('sl_att')) || { 1: [], 2: [] };
+    let attendance = JSON.parse(localStorage.getItem('sl_att')) || {};
     let events = JSON.parse(localStorage.getItem('sl_ev')) || [];
     let selectedMVP = localStorage.getItem('sl_mvp') || '';
     let savedMatches = JSON.parse(localStorage.getItem('sl_hist')) || [];
@@ -261,51 +268,68 @@
       renderHistory();
     }
 
+    function resetAppData() {
+      if (confirm("¿Quieres borrar la memoria interna de la app? Esto solucionará problemas de sincronización.")) {
+        localStorage.clear();
+        location.reload();
+      }
+    }
+
     function updateRefName() {
       refereeName = document.getElementById('refNameInput').value || "SAMUEL MCKENZIE";
       document.getElementById('refereeNameDisplay').innerText = refereeName;
       localStorage.setItem('sl_ref', refereeName);
     }
 
-    function switchTab(tabId) {
+    function switchTab(tabId, ev) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
-      event.currentTarget.classList.add('active');
+      ev.currentTarget.classList.add('active');
     }
 
     function renderTeamSelectors() {
       const s1 = document.getElementById('matchTeam1Select');
       const s2 = document.getElementById('matchTeam2Select');
       let opts = '';
-      Object.values(allTeams).forEach(t => opts += `<option value="${t.id}">${t.name}</option>`);
+      Object.values(defaultTeams).forEach(t => opts += `<option value="${t.id}">${t.name}</option>`);
       s1.innerHTML = opts; s2.innerHTML = opts;
       s1.value = currentTeam1Id; s2.value = currentTeam2Id;
     }
 
-    function setupMatchTeams() {
+    function changeMatchTeams() {
       currentTeam1Id = document.getElementById('matchTeam1Select').value;
       currentTeam2Id = document.getElementById('matchTeam2Select').value;
-
       localStorage.setItem('sl_t1', currentTeam1Id);
       localStorage.setItem('sl_t2', currentTeam2Id);
+      setupMatchTeams();
+    }
 
-      const t1 = allTeams[currentTeam1Id];
-      const t2 = allTeams[currentTeam2Id];
+    function setTeamLogo(containerId, team) {
+      const wrapper = document.getElementById(containerId);
+      wrapper.innerHTML = `
+        <img class="team-logo-img" src="${team.logo}" alt="${team.name}" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="team-logo-fallback" style="display:none;">${team.short}</div>
+      `;
+    }
+
+    function setupMatchTeams() {
+      const t1 = defaultTeams[currentTeam1Id];
+      const t2 = defaultTeams[currentTeam2Id];
 
       document.getElementById('nameTeam1').innerText = t1.name;
       document.getElementById('nameTeam2').innerText = t2.name;
 
-      // Asignar logos con fallback
-      document.getElementById('logo1').src = t1.logo;
-      document.getElementById('logo2').src = t2.logo;
+      setTeamLogo('logoWrap1', t1);
+      setTeamLogo('logoWrap2', t2);
 
       document.getElementById('attTitle1').innerText = t1.name;
       document.getElementById('attTitle2').innerText = t2.name;
 
-      // Inicializar asistencia por defecto si no existe
-      if (!attendance[1] || attendance[1].length === 0) attendance[1] = [...t1.players];
-      if (!attendance[2] || attendance[2].length === 0) attendance[2] = [...t2.players];
+      // Asistencia base
+      if (!attendance[currentTeam1Id]) attendance[currentTeam1Id] = [...t1.players];
+      if (!attendance[currentTeam2Id]) attendance[currentTeam2Id] = [...t2.players];
 
       renderAttendanceLists();
       updateTeamDropdown();
@@ -348,19 +372,20 @@
       document.getElementById('btnStart').innerText = "▶ Iniciar";
     }
 
-    /* LISTA DE ASISTENCIA */
+    /* ASISTENCIA */
     function renderAttendanceLists() {
       [1, 2].forEach(num => {
         const teamId = num === 1 ? currentTeam1Id : currentTeam2Id;
         const container = document.getElementById(`list-att-${num}`);
         container.innerHTML = '';
-        if (allTeams[teamId]) {
-          allTeams[teamId].players.forEach(p => {
-            const isAtt = attendance[num] && attendance[num].includes(p);
+        
+        if (defaultTeams[teamId]) {
+          defaultTeams[teamId].players.forEach(p => {
+            const isAtt = attendance[teamId] && attendance[teamId].includes(p);
             container.innerHTML += `
               <div class="check-row">
                 <label class="check-label">
-                  <input type="checkbox" ${isAtt ? 'checked' : ''} onchange="toggleAttendance(${num}, '${p}')"> ${p}
+                  <input type="checkbox" ${isAtt ? 'checked' : ''} onchange="toggleAttendance('${teamId}', '${p}')"> ${p}
                 </label>
               </div>`;
           });
@@ -368,47 +393,54 @@
       });
     }
 
-    function toggleAttendance(num, player) {
-      if (attendance[num].includes(player)) {
-        attendance[num] = attendance[num].filter(p => p !== player);
+    function toggleAttendance(teamId, player) {
+      if (!attendance[teamId]) attendance[teamId] = [];
+      
+      if (attendance[teamId].includes(player)) {
+        attendance[teamId] = attendance[teamId].filter(p => p !== player);
       } else {
-        attendance[num].push(player);
+        attendance[teamId].push(player);
       }
+      
       saveAllData();
       updatePlayerDropdowns();
       populateMVPSelect();
     }
 
-    /* FILTRADO LÓGICO DE JUGADORES POR EQUIPO */
+    /* FILTRADO DE JUGADORES */
     function updateTeamDropdown() {
       const ts = document.getElementById('teamSelect');
-      if (allTeams[currentTeam1Id] && allTeams[currentTeam2Id]) {
-        ts.innerHTML = `
-          <option value="1">${allTeams[currentTeam1Id].name}</option>
-          <option value="2">${allTeams[currentTeam2Id].name}</option>`;
-      }
+      ts.innerHTML = `
+        <option value="${currentTeam1Id}">${defaultTeams[currentTeam1Id].name}</option>
+        <option value="${currentTeam2Id}">${defaultTeams[currentTeam2Id].name}</option>`;
     }
 
     function updatePlayerDropdowns() {
-      const selectedTeamNum = document.getElementById('teamSelect').value; // '1' o '2'
+      const selectedTeamId = document.getElementById('teamSelect').value;
       const playerSelect = document.getElementById('playerSelect');
       const assistSelect = document.getElementById('assistSelect');
       
-      // VACIALO COMPLETAMENTE PRIMERO PARA EVITAR JUGADORES MEZCLADOS
+      // LIMPIEZA ABSOLUTA
       playerSelect.innerHTML = '';
       assistSelect.innerHTML = '<option value="">-- Ninguna --</option>';
 
-      // Obtener la lista de los jugadores marcados como presentes
-      const currentTeamPlayers = attendance[selectedTeamNum] || [];
+      const activePlayers = attendance[selectedTeamId] || [];
 
-      if (currentTeamPlayers.length === 0) {
+      if (activePlayers.length === 0) {
         playerSelect.innerHTML = '<option value="">-- No hay jugadores marcados en lista --</option>';
         return;
       }
 
-      currentTeamPlayers.forEach(player => {
-        playerSelect.innerHTML += `<option value="${player}">${player}</option>`;
-        assistSelect.innerHTML += `<option value="${player}">${player}</option>`;
+      activePlayers.forEach(player => {
+        const opt = document.createElement('option');
+        opt.value = player;
+        opt.innerText = player;
+        playerSelect.appendChild(opt);
+
+        const optA = document.createElement('option');
+        optA.value = player;
+        optA.innerText = player;
+        assistSelect.appendChild(optA);
       });
     }
 
@@ -418,14 +450,14 @@
 
     function addEvent() {
       const minute = document.getElementById('minuteInput').value || 1;
-      const num = document.getElementById('teamSelect').value;
+      const teamId = document.getElementById('teamSelect').value;
       const type = document.getElementById('typeSelect').value;
       const player = document.getElementById('playerSelect').value;
       const assist = type === 'GOL' ? document.getElementById('assistSelect').value : '';
 
       if (!player) return alert("Por favor selecciona un jugador.");
 
-      events.push({ id: Date.now(), minute: parseInt(minute), num, type, player, assist });
+      events.push({ id: Date.now(), minute: parseInt(minute), teamId, type, player, assist });
       events.sort((a, b) => a.minute - b.minute);
 
       if (type === 'GOL') { try { confetti({ particleCount: 80, spread: 60 }); } catch(e){} }
@@ -449,9 +481,12 @@
       } else {
         container.innerHTML = '';
         events.forEach(e => {
-          if (e.type === 'GOL') { if (e.num === '1') score1++; if (e.num === '2') score2++; }
+          if (e.type === 'GOL') { 
+            if (e.teamId === currentTeam1Id) score1++; 
+            if (e.teamId === currentTeam2Id) score2++; 
+          }
           const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
-          const teamName = e.num === '1' ? allTeams[currentTeam1Id].name : allTeams[currentTeam2Id].name;
+          const teamName = defaultTeams[e.teamId] ? defaultTeams[e.teamId].name : 'Equipo';
 
           container.innerHTML += `
             <div class="timeline-item">
@@ -472,11 +507,10 @@
     function populateMVPSelect() {
       const mvpSelect = document.getElementById('mvpSelect');
       let opts = '<option value="">-- Seleccionar MVP --</option>';
-      [1, 2].forEach(num => {
-        const teamId = num === 1 ? currentTeam1Id : currentTeam2Id;
-        if (allTeams[teamId]) {
-          opts += `<optgroup label="${allTeams[teamId].name}">`;
-          (attendance[num] || []).forEach(p => opts += `<option value="${p} (${allTeams[teamId].name})">${p}</option>`);
+      [currentTeam1Id, currentTeam2Id].forEach(teamId => {
+        if (defaultTeams[teamId]) {
+          opts += `<optgroup label="${defaultTeams[teamId].name}">`;
+          (attendance[teamId] || []).forEach(p => opts += `<option value="${p} (${defaultTeams[teamId].name})">${p}</option>`);
           opts += `</optgroup>`;
         }
       });
@@ -490,8 +524,8 @@
     }
 
     function exportSummary() {
-      const t1 = allTeams[currentTeam1Id].name;
-      const t2 = allTeams[currentTeam2Id].name;
+      const t1 = defaultTeams[currentTeam1Id].name;
+      const t2 = defaultTeams[currentTeam2Id].name;
       const s1 = document.getElementById('score1').innerText;
       const s2 = document.getElementById('score2').innerText;
 
@@ -504,7 +538,7 @@
         text += `_Sin incidencias ni goles registrados._\n`;
       } else {
         events.forEach(e => {
-          const tName = e.num === '1' ? t1 : t2;
+          const tName = defaultTeams[e.teamId] ? defaultTeams[e.teamId].name : '';
           text += `• ${e.minute}' ${e.type}: *${e.player}* (${tName}) ${e.assist ? '👟 Asist: ' + e.assist : ''}\n`;
         });
       }
@@ -519,14 +553,14 @@
       const matchData = {
         date: new Date().toLocaleString(),
         referee: refereeName,
-        t1: allTeams[currentTeam1Id].name, t2: allTeams[currentTeam2Id].name,
+        t1: defaultTeams[currentTeam1Id].name, t2: defaultTeams[currentTeam2Id].name,
         s1: document.getElementById('score1').innerText, s2: document.getElementById('score2').innerText,
         mvp: selectedMVP
       };
       savedMatches.push(matchData);
       localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
       renderHistory();
-      alert("💾 Partido guardado en el historial local.");
+      alert("💾 Partido guardado en el historial.");
     }
 
     function renderHistory() {
