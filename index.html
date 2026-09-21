@@ -111,6 +111,7 @@
     .history-title { font-family: var(--font-display); font-size: 1.2rem; color: #fff; }
     .history-details { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--card-border); display: none; }
     .history-details.open { display: block; }
+    .add-hist-box { background: #121216; border: 1px solid #2a2a36; padding: 10px; border-radius: 8px; margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -715,7 +716,6 @@
       const s1Val = document.getElementById('score1').innerText;
       const s2Val = document.getElementById('score2').innerText;
 
-      // Generar también el texto del acta para guardarlo directamente
       const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP);
 
       const matchData = {
@@ -744,43 +744,64 @@
 
     function copyHistoricalActa(index) {
       const m = savedMatches[index];
-      let textToCopy = m.summaryText;
-      if (!textToCopy) {
-        textToCopy = generateSummaryText(m.t1, m.t2, m.s1, m.s2, m.referee || 'SAMUEL MCKENZIE', m.events || [], m.mvp || '');
-      }
-      navigator.clipboard.writeText(textToCopy);
+      const summaryText = generateSummaryText(m.t1, m.t2, m.s1, m.s2, m.referee || 'SAMUEL MCKENZIE', m.events || [], m.mvp || '');
+      navigator.clipboard.writeText(summaryText);
       alert("✅ Acta del partido archivado copiada para WhatsApp.");
     }
 
-    // PARSER/ANALIZADOR DE TEXTO: Recupera goles/minutos de actas antiguas en texto plano
-    function parseEventsFromSummaryText(summaryText) {
-      if (!summaryText) return [];
-      const lines = summaryText.split('\n');
-      const parsedEvents = [];
+    /* AÑADIR/CORREGIR INCIDENCIA A PARTIDO PASADO EN EL HISTORIAL */
+    function addHistoricalEvent(index) {
+      const minInput = document.getElementById(`hMin-${index}`).value || 1;
+      const periodVal = document.getElementById(`hPeriod-${index}`).value || '1T';
+      const typeVal = document.getElementById(`hType-${index}`).value || 'GOL';
+      const playerVal = document.getElementById(`hPlayer-${index}`).value.trim();
 
-      lines.forEach(line => {
-        // Ejemplo de linea: "• 14' (1T) GOL: Juan Perez (FC Barcelona) 👟 Asist: Pedro"
-        // o "• 14' GOL: Juan Perez"
-        const eventMatch = line.match(/•\s*(\d+)'\s*(\((1T\vert{}2T)\))?\s*(GOL|A|🟨|🟥|Roja|Amarilla|Amarilla \(A\)|Roja \(R\))[:\s]+(?:\*)?([^*()]+)(?:\*)?/i);
-        if (eventMatch) {
-          const minute = eventMatch[1];
-          const period = eventMatch[3] || '1T';
-          let rawType = eventMatch[4].toUpperCase();
-          let type = 'GOL';
-          if (rawType.includes('AMARILLA') || rawType.includes('🟨') || rawType === 'A') type = 'A';
-          if (rawType.includes('ROJA') || rawType.includes('🟥') || rawType === 'R') type = 'R';
+      if (!playerVal) return alert("Por favor escribe el nombre del jugador.");
 
-          const player = eventMatch[5].trim();
+      if (!savedMatches[index].events) savedMatches[index].events = [];
 
-          let assist = '';
-          const assistMatch = line.match(/Asist:\s*([^\n\r]+)/i);
-          if (assistMatch) assist = assistMatch[1].trim();
-
-          parsedEvents.push({ minute, period, type, player, assist });
-        }
+      savedMatches[index].events.push({
+        id: Date.now(),
+        minute: parseInt(minInput),
+        period: periodVal,
+        type: typeVal,
+        player: playerVal,
+        assist: ''
       });
 
-      return parsedEvents;
+      savedMatches[index].events.sort((a, b) => {
+        if (a.period !== b.period) return a.period === '1T' ? -1 : 1;
+        return a.minute - b.minute;
+      });
+
+      // Actualizar texto almacenado
+      savedMatches[index].summaryText = generateSummaryText(
+        savedMatches[index].t1, savedMatches[index].t2, 
+        savedMatches[index].s1, savedMatches[index].s2, 
+        savedMatches[index].referee || 'SAMUEL MCKENZIE', 
+        savedMatches[index].events, 
+        savedMatches[index].mvp
+      );
+
+      localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
+      renderHistory();
+      toggleHistoryDetail(savedMatches[index].id || index);
+    }
+
+    function deleteHistoricalEvent(matchIndex, eventId) {
+      savedMatches[matchIndex].events = savedMatches[matchIndex].events.filter(e => e.id !== eventId);
+      
+      savedMatches[matchIndex].summaryText = generateSummaryText(
+        savedMatches[matchIndex].t1, savedMatches[matchIndex].t2, 
+        savedMatches[matchIndex].s1, savedMatches[matchIndex].s2, 
+        savedMatches[matchIndex].referee || 'SAMUEL MCKENZIE', 
+        savedMatches[matchIndex].events, 
+        savedMatches[matchIndex].mvp
+      );
+
+      localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
+      renderHistory();
+      toggleHistoryDetail(savedMatches[matchIndex].id || matchIndex);
     }
 
     function renderHistory() {
@@ -792,27 +813,25 @@
 
       container.innerHTML = '';
       savedMatches.forEach((m, idx) => {
-        let evList = m.events;
-
-        // Si el objeto archivado antiguo no tenía el arreglo de eventos, se extraen del texto del acta guardada
-        if (!evList || evList.length === 0) {
-          evList = parseEventsFromSummaryText(m.summaryText || m.text || '');
-        }
+        let evList = m.events || [];
 
         let eventsHtml = '';
-        if (evList && evList.length > 0) {
+        if (evList.length > 0) {
           evList.forEach(e => {
             const periodBadge = e.period ? `<span class="period-chip">${e.period}</span>` : '';
             const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
             eventsHtml += `
-              <div style="font-size:0.8rem; margin-bottom:4px; border-bottom:1px solid #222; padding-bottom:4px; display:flex; align-items:center; gap:6px;">
-                ${periodBadge}
-                <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
-                <b>${e.player}</b> ${e.assist ? '<small style="color:var(--accent-gold);">(Asist: ' + e.assist + ')</small>' : ''}
+              <div style="font-size:0.8rem; margin-bottom:4px; border-bottom:1px solid #222; padding-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
+                <div>
+                  ${periodBadge}
+                  <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
+                  <b style="margin-left:4px;">${e.player}</b>
+                </div>
+                <button style="background:none; border:none; color:var(--accent-red); cursor:pointer; font-weight:bold;" onclick="deleteHistoricalEvent(${idx}, ${e.id})">✕</button>
               </div>`;
           });
         } else {
-          eventsHtml = "<small style='color:var(--text-muted);'>Sin incidencias registradas en este partido.</small>";
+          eventsHtml = "<small style='color:var(--text-muted);'>Sin incidencias registradas aún en este partido.</small>";
         }
 
         container.innerHTML += `
@@ -822,18 +841,51 @@
                 <div class="history-title">${m.t1} ${m.s1} - ${m.s2} ${m.t2}</div>
                 <small style="color:var(--text-muted);">${m.date} | Árbitro: ${m.referee || 'SAMUEL MCKENZIE'}</small>
               </div>
-              <span style="color:var(--accent-red); font-weight:bold; font-size:0.85rem;">▼ Ver Detalles</span>
+              <span style="color:var(--accent-red); font-weight:bold; font-size:0.85rem;">▼ Ver / Editar</span>
             </div>
 
             <div class="history-details" id="hist-detail-${m.id || idx}">
               <div style="margin-bottom:8px; font-size:0.85rem; color:var(--accent-gold);">
                 <b>⭐ MVP:</b> ${m.mvp || 'No asignado'}
               </div>
+              
               <div style="margin-bottom:8px;">
-                <b style="font-size:0.8rem; color:var(--accent-red); text-transform:uppercase;">Incidencias Minuto a Minuto:</b>
+                <b style="font-size:0.8rem; color:var(--accent-red); text-transform:uppercase;">Incidencias Registradas:</b>
                 <div style="margin-top:6px;">${eventsHtml}</div>
               </div>
-              <button class="btn-sec" style="font-size:0.75rem; padding:8px; margin-top:6px;" onclick="copyHistoricalActa(${idx})">📋 Copiar Acta para WhatsApp</button>
+
+              <!-- Formulario para Agregar/Corregir Incidencia a este Partido -->
+              <div class="add-hist-box">
+                <small style="color:var(--accent-gold); font-weight:bold; display:block; margin-bottom:6px;">➕ Agregar / Corregir Incidencia a este Partido:</small>
+                <div class="form-row">
+                  <div class="form-group" style="margin-bottom:6px;">
+                    <label>Tiempo</label>
+                    <select id="hPeriod-${idx}" style="padding:6px; font-size:0.8rem;">
+                      <option value="1T">1T</option>
+                      <option value="2T">2T</option>
+                    </select>
+                  </div>
+                  <div class="form-group" style="margin-bottom:6px;">
+                    <label>Minuto</label>
+                    <input type="number" id="hMin-${idx}" value="1" style="padding:6px; font-size:0.8rem;">
+                  </div>
+                  <div class="form-group" style="margin-bottom:6px;">
+                    <label>Evento</label>
+                    <select id="hType-${idx}" style="padding:6px; font-size:0.8rem;">
+                      <option value="GOL">⚽ GOL</option>
+                      <option value="A">🟨 Amarilla</option>
+                      <option value="R">🟥 Roja</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom:6px;">
+                  <label>Nombre del Jugador</label>
+                  <input type="text" id="hPlayer-${idx}" placeholder="Ej: Juan Pérez" style="padding:6px; font-size:0.8rem;">
+                </div>
+                <button class="btn-act" style="padding:8px; font-size:0.75rem; background:#1976d2;" onclick="addHistoricalEvent(${idx})">Guardar en este Partido</button>
+              </div>
+
+              <button class="btn-sec" style="font-size:0.75rem; padding:8px; margin-top:10px;" onclick="copyHistoricalActa(${idx})">📋 Copiar Acta para WhatsApp</button>
             </div>
           </div>`;
       });
