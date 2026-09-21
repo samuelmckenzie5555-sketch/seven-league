@@ -289,6 +289,10 @@
 
   <!-- TAB 4: HISTORIAL -->
   <div id="tab-historial" class="tab-content">
+    <button class="btn-act" style="background:#00897b; margin-bottom: 12px;" onclick="exportarTodoElHistorial()">
+      📄 Descargar / Ver Cronología Completa de Memoria
+    </button>
+
     <div class="card" style="border: 1px solid var(--accent-gold);">
       <div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar / Reconstruir Acta</div>
       <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
@@ -689,7 +693,7 @@
       saveAllData();
     }
 
-    /* GENERADOR DE ACTA EXPRESA */
+    /* GENERADOR DE ACTA EXPRESA CON DESGLOSE DE PERÍODO */
     function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal) {
       let text = `📋 *SEVEN LEAGUE - ACTA OFICIAL DE PARTIDO*\n`;
       text += `👨‍⚖️ *Árbitro:* ${referee}\n`;
@@ -870,6 +874,41 @@
       localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
       renderHistory();
       toggleHistoryDetail(savedMatches[matchIndex].id || matchIndex);
+    }
+
+    /* EXPORTAR CRONOLOGÍA DE MEMORIA DE NAVEGADOR COMPLETA Y SEGURA */
+    function exportarTodoElHistorial() {
+      const partidos = JSON.parse(localStorage.getItem('sl_hist')) || [];
+      
+      if (partidos.length === 0) {
+        alert("⚠️ No hay partidos guardados en la memoria local.");
+        return;
+      }
+
+      let reporte = `📋 SEVEN LEAGUE - REPORTE COMPLETO DE MEMORIA (${partidos.length} Partidos)\n\n`;
+
+      partidos.forEach((p, idx) => {
+        reporte += `===================================\n`;
+        reporte += `⚽ ${p.t1} [ ${p.s1} - ${p.s2} ] ${p.t2}\n`;
+        reporte += `📅 Fecha: ${p.date || 'N/A'}\n`;
+        reporte += `👨‍⚖️ Árbitro: ${p.referee || 'SAMUEL MCKENZIE'}\n`;
+        if (p.mvp) reporte += `⭐ MVP: ${p.mvp}\n`;
+        reporte += `⏱️ Incidencias Cronológicas:\n`;
+
+        if (p.events && p.events.length > 0) {
+          p.events.forEach(e => {
+            const pText = `(${e.period || '1T'})`;
+            const aText = e.assist ? ` 👟 Asist: ${e.assist}` : '';
+            reporte += `  • ${e.minute}' ${pText} ${e.type}: ${e.player}${aText}\n`;
+          });
+        } else {
+          reporte += `  (Sin eventos detallados registrados)\n`;
+        }
+        reporte += `\n`;
+      });
+
+      navigator.clipboard.writeText(reporte);
+      alert("✅ ¡Se ha copiado el historial completo de la memoria a tu portapapeles! Ya puedes pegarlo donde quieras.");
     }
 
     function renderHistory() {
