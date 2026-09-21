@@ -30,13 +30,22 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); -webkit-tap-highlight-color: transparent; }
     body { background-color: var(--bg-dark); color: var(--text-main); padding: 12px; max-width: 650px; margin: 0 auto; min-height: 100vh; padding-bottom: 40px; }
 
-    header { text-align: center; padding: 12px 0 16px 0; border-bottom: 2px solid var(--accent-red); margin-bottom: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    
-    /* Shield Placeholder en CSS/SVG si la foto falta */
-    .app-logo-box { font-family: var(--font-display); font-size: 2rem; color: #fff; letter-spacing: 2px; }
-    .app-logo-box span { color: var(--accent-red); }
+    /* Header & Menú Hamburguesa */
+    header { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 2px solid var(--accent-red); margin-bottom: 14px; }
+    .menu-btn { background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; padding: 0 8px; }
+    .app-title { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 2px; text-align: center; flex: 1; }
+    .app-title span { color: var(--accent-red); }
 
-    /* Tabs */
+    /* Menú Lateral Desplegable (Drawer) */
+    .drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99; display: none; }
+    .drawer-overlay.active { display: block; }
+    .drawer-menu { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: var(--card-bg); border-right: 1px solid var(--card-border); z-index: 100; transition: left 0.3s ease; padding: 20px 16px; display: flex; flex-direction: column; }
+    .drawer-menu.active { left: 0; }
+    .drawer-header { font-family: var(--font-display); font-size: 1.5rem; color: var(--accent-red); margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
+    .drawer-item { padding: 12px; border-radius: 8px; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 8px; cursor: pointer; background: #1c1c24; display: flex; align-items: center; gap: 10px; }
+    .drawer-item:hover, .drawer-item.active { background: var(--accent-red); }
+
+    /* Tabs Nav */
     .tabs-nav { display: flex; background: var(--card-bg); border-radius: 10px; padding: 4px; border: 1px solid var(--card-border); margin-bottom: 16px; gap: 4px; }
     .tab-button { flex: 1; padding: 10px 0; background: none; border: none; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 6px; }
     .tab-button.active { color: #fff; background-color: var(--accent-red); box-shadow: 0 2px 10px rgba(229,57,53,0.4); }
@@ -98,12 +107,31 @@
 
     .check-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
     .check-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; flex: 1; }
+
+    /* Gestión de Equipos */
+    .player-chip { display: inline-flex; align-items: center; background: #1c1c24; border: 1px solid var(--card-border); padding: 6px 10px; border-radius: 20px; font-size: 0.8rem; margin: 3px; }
+    .player-chip span { margin-left: 6px; color: var(--accent-red); cursor: pointer; font-weight: bold; }
   </style>
 </head>
 <body>
 
+  <!-- Overlay y Menú Lateral -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+  <div class="drawer-menu" id="drawerMenu">
+    <div class="drawer-header">7L MATCH CENTER</div>
+    <div class="drawer-item" onclick="switchTabNav('tab-partido')">⚽ Partido en Vivo</div>
+    <div class="drawer-item" onclick="switchTabNav('tab-equipos')">🛡️ Gestión de Equipos</div>
+    <div class="drawer-item" onclick="switchTabNav('tab-asistencia')">📋 Lista de Asistencia</div>
+    <div class="drawer-item" onclick="switchTabNav('tab-historial')">📁 Historial de Actas</div>
+    <div style="margin-top:auto;">
+      <button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar Memoria App</button>
+    </div>
+  </div>
+
   <header>
-    <div class="app-logo-box">7L <span>SEVEN LEAGUE</span></div>
+    <button class="menu-btn" onclick="toggleDrawer()">☰</button>
+    <div class="app-title">7L <span>SEVEN LEAGUE</span></div>
+    <div style="width: 32px;"></div>
   </header>
 
   <div class="ref-badge">
@@ -111,14 +139,14 @@
   </div>
 
   <nav class="tabs-nav">
-    <button class="tab-button active" onclick="switchTab('tab-partido', event)">1. Partido</button>
-    <button class="tab-button" onclick="switchTab('tab-asistencia', event)">2. Asistencia</button>
-    <button class="tab-button" onclick="switchTab('tab-historial', event)">3. Historial</button>
+    <button class="tab-button active" id="btn-tab-partido" onclick="switchTab('tab-partido')">1. Partido</button>
+    <button class="tab-button" id="btn-tab-equipos" onclick="switchTab('tab-equipos')">2. Equipos</button>
+    <button class="tab-button" id="btn-tab-asistencia" onclick="switchTab('tab-asistencia')">3. Asistencia</button>
+    <button class="tab-button" id="btn-tab-historial" onclick="switchTab('tab-historial')">4. Historial</button>
   </nav>
 
   <!-- TAB 1: PARTIDO -->
   <div id="tab-partido" class="tab-content active">
-    
     <div class="scoreboard-box">
       <div class="teams-vs">
         <div class="team-item">
@@ -187,11 +215,11 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Jugador (Filtrado por equipo)</label>
+        <label>Jugador (Solo del equipo seleccionado)</label>
         <select id="playerSelect"></select>
       </div>
       <div class="form-group" id="assistGroup">
-        <label>Asistencia (Opcional - Mismo equipo)</label>
+        <label>Asistencia (Opcional)</label>
         <select id="assistSelect"></select>
       </div>
       <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
@@ -209,10 +237,37 @@
 
     <button class="btn-act" style="background:#2e7d32;" onclick="exportSummary()">📲 Copiar Acta para WhatsApp</button>
     <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
-    <button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar memoria de la App (Solucionar Errores)</button>
   </div>
 
-  <!-- TAB 2: ASISTENCIA -->
+  <!-- TAB 2: GESTIÓN DE EQUIPOS -->
+  <div id="tab-equipos" class="tab-content">
+    <div class="card">
+      <div class="card-head">Administrar Plantilla y Logo</div>
+      <div class="form-group">
+        <label>Seleccionar Equipo a Modificar</label>
+        <select id="manageTeamSelect" onchange="renderTeamManagement()"></select>
+      </div>
+
+      <div style="text-align: center; margin: 16px 0;">
+        <div class="team-logo-wrapper" id="manageLogoWrap" style="width: 80px; height: 80px; margin: 0 auto 8px auto;"></div>
+        <label for="uploadLogoInput" class="btn-sec" style="display: inline-block; width: auto; padding: 8px 16px; cursor: pointer;">🖼️ Subir/Cambiar Logo de Equipo</label>
+        <input type="file" id="uploadLogoInput" accept="image/*" style="display: none;" onchange="handleLogoUpload(event)">
+      </div>
+
+      <div class="form-group" style="margin-top: 20px;">
+        <label>Agregar Nuevo Jugador</label>
+        <div class="form-row">
+          <input type="text" id="newPlayerName" placeholder="Nombre y Apellido">
+          <button class="btn-act" style="width: 100px;" onclick="addNewPlayer()">Añadir</button>
+        </div>
+      </div>
+
+      <label style="margin-top: 16px;">Jugadores Registrados:</label>
+      <div id="managePlayersList" style="margin-top: 8px;"></div>
+    </div>
+  </div>
+
+  <!-- TAB 3: ASISTENCIA -->
   <div id="tab-asistencia" class="tab-content">
     <div class="card">
       <div class="card-head"><span id="attTitle1">LOCAL</span></div>
@@ -224,7 +279,7 @@
     </div>
   </div>
 
-  <!-- TAB 3: HISTORIAL -->
+  <!-- TAB 4: HISTORIAL -->
   <div id="tab-historial" class="tab-content">
     <div class="card">
       <div class="card-head">Partidos Archivados</div>
@@ -233,7 +288,7 @@
   </div>
 
   <script>
-    const defaultTeams = {
+    const defaultTeamsData = {
       "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", short: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
       "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo"] },
       "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", short: "SPO", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
@@ -246,6 +301,8 @@
       "eq_10": { id: "eq_10", name: "Inter Basel", logo: "logo_inter_basel.png", short: "INB", players: ["Anas Moutacharrif", "Ahmed Tawfik", "Athithiyan Senthilkumar", "Elleno Noviello", "Jamal Budair", "Karim Zahra", "Marvin Meier", "Marwan Ibrahim", "Micha Gelencser", "Oualid El Hafian", "Samuel Mc'Kenzie", "Victor Melado"] }
     };
 
+    // Carga de Equipos Guardados o Valores por Defecto
+    let teams = JSON.parse(localStorage.getItem('sl_teams_data')) || defaultTeamsData;
     let currentTeam1Id = localStorage.getItem('sl_t1') || "eq_1";
     let currentTeam2Id = localStorage.getItem('sl_t2') || "eq_2";
     let refereeName = localStorage.getItem('sl_ref') || "SAMUEL MCKENZIE";
@@ -265,11 +322,31 @@
       document.getElementById('refereeNameDisplay').innerText = refereeName;
       renderTeamSelectors();
       setupMatchTeams();
+      renderTeamManagement();
       renderHistory();
     }
 
+    function toggleDrawer() {
+      document.getElementById('drawerOverlay').classList.toggle('active');
+      document.getElementById('drawerMenu').classList.toggle('active');
+    }
+
+    function switchTabNav(tabId) {
+      toggleDrawer();
+      switchTab(tabId);
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      
+      const btn = document.getElementById(`btn-${tabId}`);
+      if (btn) btn.classList.add('active');
+    }
+
     function resetAppData() {
-      if (confirm("¿Quieres borrar la memoria interna de la app? Esto solucionará problemas de sincronización.")) {
+      if (confirm("¿Quieres borrar la memoria interna de la app? Esto borrará jugadores agregados y logos personalizados.")) {
         localStorage.clear();
         location.reload();
       }
@@ -281,19 +358,15 @@
       localStorage.setItem('sl_ref', refereeName);
     }
 
-    function switchTab(tabId, ev) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      ev.currentTarget.classList.add('active');
-    }
-
     function renderTeamSelectors() {
       const s1 = document.getElementById('matchTeam1Select');
       const s2 = document.getElementById('matchTeam2Select');
+      const sm = document.getElementById('manageTeamSelect');
+      
       let opts = '';
-      Object.values(defaultTeams).forEach(t => opts += `<option value="${t.id}">${t.name}</option>`);
-      s1.innerHTML = opts; s2.innerHTML = opts;
+      Object.values(teams).forEach(t => opts += `<option value="${t.id}">${t.name}</option>`);
+      
+      s1.innerHTML = opts; s2.innerHTML = opts; sm.innerHTML = opts;
       s1.value = currentTeam1Id; s2.value = currentTeam2Id;
     }
 
@@ -315,8 +388,8 @@
     }
 
     function setupMatchTeams() {
-      const t1 = defaultTeams[currentTeam1Id];
-      const t2 = defaultTeams[currentTeam2Id];
+      const t1 = teams[currentTeam1Id];
+      const t2 = teams[currentTeam2Id];
 
       document.getElementById('nameTeam1').innerText = t1.name;
       document.getElementById('nameTeam2').innerText = t2.name;
@@ -327,7 +400,6 @@
       document.getElementById('attTitle1').innerText = t1.name;
       document.getElementById('attTitle2').innerText = t2.name;
 
-      // Asistencia base
       if (!attendance[currentTeam1Id]) attendance[currentTeam1Id] = [...t1.players];
       if (!attendance[currentTeam2Id]) attendance[currentTeam2Id] = [...t2.players];
 
@@ -336,6 +408,75 @@
       updatePlayerDropdowns();
       populateMVPSelect();
       renderEvents();
+    }
+
+    /* GESTIÓN DE EQUIPOS Y LOGOS EN BASE64 */
+    function renderTeamManagement() {
+      const teamId = document.getElementById('manageTeamSelect').value;
+      const team = teams[teamId];
+
+      setTeamLogo('manageLogoWrap', team);
+
+      const playersContainer = document.getElementById('managePlayersList');
+      playersContainer.innerHTML = '';
+      
+      team.players.forEach((p, idx) => {
+        playersContainer.innerHTML += `
+          <div class="player-chip">
+            ${p} <span onclick="removePlayer('${teamId}', ${idx})">✕</span>
+          </div>`;
+      });
+    }
+
+    function handleLogoUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const teamId = document.getElementById('manageTeamSelect').value;
+        teams[teamId].logo = evt.target.result; // Convierte imagen a Base64 guardable
+        localStorage.setItem('sl_teams_data', JSON.stringify(teams));
+        setupMatchTeams();
+        renderTeamManagement();
+        alert("✅ Logo subido y guardado con éxito.");
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function addNewPlayer() {
+      const teamId = document.getElementById('manageTeamSelect').value;
+      const nameInput = document.getElementById('newPlayerName');
+      const name = nameInput.value.trim();
+
+      if (!name) return alert("Ingresa el nombre del jugador.");
+
+      teams[teamId].players.push(name);
+      
+      // Auto-agregar a la lista de asistencia activa
+      if (!attendance[teamId]) attendance[teamId] = [];
+      attendance[teamId].push(name);
+
+      localStorage.setItem('sl_teams_data', JSON.stringify(teams));
+      saveAllData();
+
+      nameInput.value = '';
+      renderTeamManagement();
+      setupMatchTeams();
+    }
+
+    function removePlayer(teamId, index) {
+      const playerName = teams[teamId].players[index];
+      teams[teamId].players.splice(index, 1);
+
+      if (attendance[teamId]) {
+        attendance[teamId] = attendance[teamId].filter(p => p !== playerName);
+      }
+
+      localStorage.setItem('sl_teams_data', JSON.stringify(teams));
+      saveAllData();
+      renderTeamManagement();
+      setupMatchTeams();
     }
 
     /* CRONÓMETRO */
@@ -379,8 +520,8 @@
         const container = document.getElementById(`list-att-${num}`);
         container.innerHTML = '';
         
-        if (defaultTeams[teamId]) {
-          defaultTeams[teamId].players.forEach(p => {
+        if (teams[teamId]) {
+          teams[teamId].players.forEach(p => {
             const isAtt = attendance[teamId] && attendance[teamId].includes(p);
             container.innerHTML += `
               <div class="check-row">
@@ -407,12 +548,12 @@
       populateMVPSelect();
     }
 
-    /* FILTRADO DE JUGADORES */
+    /* INCIDENCIAS CON FILTRADO SEGURO */
     function updateTeamDropdown() {
       const ts = document.getElementById('teamSelect');
       ts.innerHTML = `
-        <option value="${currentTeam1Id}">${defaultTeams[currentTeam1Id].name}</option>
-        <option value="${currentTeam2Id}">${defaultTeams[currentTeam2Id].name}</option>`;
+        <option value="${currentTeam1Id}">${teams[currentTeam1Id].name}</option>
+        <option value="${currentTeam2Id}">${teams[currentTeam2Id].name}</option>`;
     }
 
     function updatePlayerDropdowns() {
@@ -420,7 +561,6 @@
       const playerSelect = document.getElementById('playerSelect');
       const assistSelect = document.getElementById('assistSelect');
       
-      // LIMPIEZA ABSOLUTA
       playerSelect.innerHTML = '';
       assistSelect.innerHTML = '<option value="">-- Ninguna --</option>';
 
@@ -486,7 +626,7 @@
             if (e.teamId === currentTeam2Id) score2++; 
           }
           const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
-          const teamName = defaultTeams[e.teamId] ? defaultTeams[e.teamId].name : 'Equipo';
+          const teamName = teams[e.teamId] ? teams[e.teamId].name : 'Equipo';
 
           container.innerHTML += `
             <div class="timeline-item">
@@ -508,9 +648,9 @@
       const mvpSelect = document.getElementById('mvpSelect');
       let opts = '<option value="">-- Seleccionar MVP --</option>';
       [currentTeam1Id, currentTeam2Id].forEach(teamId => {
-        if (defaultTeams[teamId]) {
-          opts += `<optgroup label="${defaultTeams[teamId].name}">`;
-          (attendance[teamId] || []).forEach(p => opts += `<option value="${p} (${defaultTeams[teamId].name})">${p}</option>`);
+        if (teams[teamId]) {
+          opts += `<optgroup label="${teams[teamId].name}">`;
+          (attendance[teamId] || []).forEach(p => opts += `<option value="${p} (${teams[teamId].name})">${p}</option>`);
           opts += `</optgroup>`;
         }
       });
@@ -524,8 +664,8 @@
     }
 
     function exportSummary() {
-      const t1 = defaultTeams[currentTeam1Id].name;
-      const t2 = defaultTeams[currentTeam2Id].name;
+      const t1 = teams[currentTeam1Id].name;
+      const t2 = teams[currentTeam2Id].name;
       const s1 = document.getElementById('score1').innerText;
       const s2 = document.getElementById('score2').innerText;
 
@@ -538,7 +678,7 @@
         text += `_Sin incidencias ni goles registrados._\n`;
       } else {
         events.forEach(e => {
-          const tName = defaultTeams[e.teamId] ? defaultTeams[e.teamId].name : '';
+          const tName = teams[e.teamId] ? teams[e.teamId].name : '';
           text += `• ${e.minute}' ${e.type}: *${e.player}* (${tName}) ${e.assist ? '👟 Asist: ' + e.assist : ''}\n`;
         });
       }
@@ -553,7 +693,7 @@
       const matchData = {
         date: new Date().toLocaleString(),
         referee: refereeName,
-        t1: defaultTeams[currentTeam1Id].name, t2: defaultTeams[currentTeam2Id].name,
+        t1: teams[currentTeam1Id].name, t2: teams[currentTeam2Id].name,
         s1: document.getElementById('score1').innerText, s2: document.getElementById('score2').innerText,
         mvp: selectedMVP
       };
