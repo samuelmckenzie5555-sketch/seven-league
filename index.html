@@ -290,7 +290,7 @@
   <!-- TAB 4: HISTORIAL -->
   <div id="tab-historial" class="tab-content">
     <button class="btn-act" style="background:#00897b; margin-bottom: 12px;" onclick="exportarTodoElHistorial()">
-      📄 Descargar / Ver Cronología Completa de Memoria
+      📄 Copiar Cronología Completa de Memoria
     </button>
 
     <div class="card" style="border: 1px solid var(--accent-gold);">
@@ -344,6 +344,9 @@
       renderTeamSelectors();
       setupMatchTeams();
       renderTeamManagement();
+      
+      // Auto-reconstruir partidos antiguos guardados en texto si existen
+      autoRepairHistoricalMatches();
       renderHistory();
     }
 
@@ -693,7 +696,6 @@
       saveAllData();
     }
 
-    /* GENERADOR DE ACTA EXPRESA CON DESGLOSE DE PERÍODO */
     function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal) {
       let text = `📋 *SEVEN LEAGUE - ACTA OFICIAL DE PARTIDO*\n`;
       text += `👨‍⚖️ *Árbitro:* ${referee}\n`;
@@ -765,6 +767,17 @@
       alert("✅ Acta copiada con desglose de períodos.");
     }
 
+    function deleteMatchFromHistory(index) {
+      const match = savedMatches[index];
+      const confirmDelete = confirm(`¿Estás seguro de que deseas eliminar el partido entre ${match.t1} vs ${match.t2}?`);
+      if (confirmDelete) {
+        savedMatches.splice(index, 1);
+        localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
+        renderHistory();
+        alert("🗑️ Partido eliminado correctamente.");
+      }
+    }
+
     function parseWhatsappText(text) {
       if (!text) return { t1: 'LOCAL', t2: 'VISITANTE', s1: '0', s2: '0', referee: 'SAMUEL MCKENZIE', mvp: '', events: [] };
 
@@ -805,6 +818,22 @@
       });
 
       return { t1, t2, s1, s2, referee, mvp, events: eventsParsed, summaryText: text };
+    }
+
+    function autoRepairHistoricalMatches() {
+      let modified = false;
+      savedMatches.forEach(m => {
+        if ((!m.events || m.events.length === 0) && m.summaryText) {
+          const parsed = parseWhatsappText(m.summaryText);
+          if (parsed.events.length > 0) {
+            m.events = parsed.events;
+            modified = true;
+          }
+        }
+      });
+      if (modified) {
+        localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
+      }
     }
 
     function importFromWhatsappText() {
@@ -876,7 +905,6 @@
       toggleHistoryDetail(savedMatches[matchIndex].id || matchIndex);
     }
 
-    /* EXPORTAR CRONOLOGÍA DE MEMORIA DE NAVEGADOR COMPLETA Y SEGURA */
     function exportarTodoElHistorial() {
       const partidos = JSON.parse(localStorage.getItem('sl_hist')) || [];
       
@@ -991,7 +1019,10 @@
                 <button class="btn-act" style="padding:8px; font-size:0.75rem; background:#1976d2;" onclick="addHistoricalEvent(${idx})">Guardar en este Partido</button>
               </div>
 
-              <button class="btn-sec" style="font-size:0.75rem; padding:8px; margin-top:10px;" onclick="copyHistoricalActa(${idx})">📋 Copiar Acta para WhatsApp</button>
+              <div style="display:flex; gap:8px; margin-top:10px;">
+                <button class="btn-sec" style="font-size:0.75rem; padding:8px; flex:1;" onclick="copyHistoricalActa(${idx})">📋 Copiar Acta</button>
+                <button class="btn-danger" style="font-size:0.75rem; padding:8px; margin-top:0; width:auto;" onclick="deleteMatchFromHistory(${idx})">🗑️ Eliminar</button>
+              </div>
             </div>
           </div>`;
       });
