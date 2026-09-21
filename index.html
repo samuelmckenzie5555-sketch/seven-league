@@ -106,7 +106,6 @@
     .player-chip { display: inline-flex; align-items: center; background: #1c1c24; border: 1px solid var(--card-border); padding: 6px 10px; border-radius: 20px; font-size: 0.8rem; margin: 3px; }
     .player-chip span { margin-left: 6px; color: var(--accent-red); cursor: pointer; font-weight: bold; }
 
-    /* Estilos Historial Ampliado */
     .history-card { background: #181820; border: 1px solid var(--card-border); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
     .history-head { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
     .history-title { font-family: var(--font-display); font-size: 1.2rem; color: #fff; }
@@ -116,7 +115,7 @@
 </head>
 <body>
 
-  <!-- Overlay y Menú Lateral -->
+  <!-- Drawer Menu -->
   <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
   <div class="drawer-menu" id="drawerMenu">
     <div class="drawer-header">7L MATCH CENTER</div>
@@ -418,7 +417,6 @@
       renderEvents();
     }
 
-    /* GESTIÓN DE EQUIPOS Y LOGOS */
     function renderTeamManagement() {
       const teamId = document.getElementById('manageTeamSelect').value;
       const team = teams[teamId];
@@ -486,7 +484,6 @@
       setupMatchTeams();
     }
 
-    /* CRONÓMETRO Y TIEMPOS */
     function toggleTimer() {
       if (timerRunning) {
         timerRunning = false;
@@ -525,7 +522,6 @@
       document.getElementById('btnPeriod2').classList.toggle('active-period', p === 2);
     }
 
-    /* ASISTENCIA */
     function renderAttendanceLists() {
       [1, 2].forEach(num => {
         const teamId = num === 1 ? currentTeam1Id : currentTeam2Id;
@@ -560,7 +556,6 @@
       populateMVPSelect();
     }
 
-    /* INCIDENCIAS CON DISTINCIÓN DE TIEMPO (1T / 2T) */
     function updateTeamDropdown() {
       const ts = document.getElementById('teamSelect');
       ts.innerHTML = `
@@ -612,7 +607,6 @@
 
       events.push({ id: Date.now(), minute: parseInt(minute), period, teamId, type, player, assist });
       
-      // Ordenar por tiempo y luego por minuto
       events.sort((a, b) => {
         if (a.period !== b.period) return a.period === '1T' ? -1 : 1;
         return a.minute - b.minute;
@@ -712,20 +706,29 @@
       const summaryText = generateSummaryText(t1, t2, s1, s2, refereeName, events, selectedMVP);
 
       navigator.clipboard.writeText(summaryText);
-      alert("✅ ¡Acta oficial con desglose de 1T/2T copiada con éxito!");
+      alert("✅ ¡Acta oficial copiada con éxito!");
     }
 
     function archiveMatch() {
+      const t1Name = teams[currentTeam1Id].name;
+      const t2Name = teams[currentTeam2Id].name;
+      const s1Val = document.getElementById('score1').innerText;
+      const s2Val = document.getElementById('score2').innerText;
+
+      // Generar también el texto del acta para guardarlo directamente
+      const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP);
+
       const matchData = {
         id: Date.now(),
         date: new Date().toLocaleString(),
         referee: refereeName,
-        t1: teams[currentTeam1Id].name, 
-        t2: teams[currentTeam2Id].name,
-        s1: document.getElementById('score1').innerText, 
-        s2: document.getElementById('score2').innerText,
+        t1: t1Name, 
+        t2: t2Name,
+        s1: s1Val, 
+        s2: s2Val,
         mvp: selectedMVP,
-        events: JSON.parse(JSON.stringify(events)) // Copia completa de eventos
+        summaryText: summaryFormatted,
+        events: JSON.parse(JSON.stringify(events))
       };
 
       savedMatches.unshift(matchData);
@@ -741,9 +744,43 @@
 
     function copyHistoricalActa(index) {
       const m = savedMatches[index];
-      const summaryText = generateSummaryText(m.t1, m.t2, m.s1, m.s2, m.referee || 'SAMUEL MCKENZIE', m.events || [], m.mvp || '');
-      navigator.clipboard.writeText(summaryText);
+      let textToCopy = m.summaryText;
+      if (!textToCopy) {
+        textToCopy = generateSummaryText(m.t1, m.t2, m.s1, m.s2, m.referee || 'SAMUEL MCKENZIE', m.events || [], m.mvp || '');
+      }
+      navigator.clipboard.writeText(textToCopy);
       alert("✅ Acta del partido archivado copiada para WhatsApp.");
+    }
+
+    // PARSER/ANALIZADOR DE TEXTO: Recupera goles/minutos de actas antiguas en texto plano
+    function parseEventsFromSummaryText(summaryText) {
+      if (!summaryText) return [];
+      const lines = summaryText.split('\n');
+      const parsedEvents = [];
+
+      lines.forEach(line => {
+        // Ejemplo de linea: "• 14' (1T) GOL: Juan Perez (FC Barcelona) 👟 Asist: Pedro"
+        // o "• 14' GOL: Juan Perez"
+        const eventMatch = line.match(/•\s*(\d+)'\s*(\((1T\vert{}2T)\))?\s*(GOL|A|🟨|🟥|Roja|Amarilla|Amarilla \(A\)|Roja \(R\))[:\s]+(?:\*)?([^*()]+)(?:\*)?/i);
+        if (eventMatch) {
+          const minute = eventMatch[1];
+          const period = eventMatch[3] || '1T';
+          let rawType = eventMatch[4].toUpperCase();
+          let type = 'GOL';
+          if (rawType.includes('AMARILLA') || rawType.includes('🟨') || rawType === 'A') type = 'A';
+          if (rawType.includes('ROJA') || rawType.includes('🟥') || rawType === 'R') type = 'R';
+
+          const player = eventMatch[5].trim();
+
+          let assist = '';
+          const assistMatch = line.match(/Asist:\s*([^\n\r]+)/i);
+          if (assistMatch) assist = assistMatch[1].trim();
+
+          parsedEvents.push({ minute, period, type, player, assist });
+        }
+      });
+
+      return parsedEvents;
     }
 
     function renderHistory() {
@@ -755,17 +792,27 @@
 
       container.innerHTML = '';
       savedMatches.forEach((m, idx) => {
+        let evList = m.events;
+
+        // Si el objeto archivado antiguo no tenía el arreglo de eventos, se extraen del texto del acta guardada
+        if (!evList || evList.length === 0) {
+          evList = parseEventsFromSummaryText(m.summaryText || m.text || '');
+        }
+
         let eventsHtml = '';
-        if (m.events && m.events.length > 0) {
-          m.events.forEach(e => {
+        if (evList && evList.length > 0) {
+          evList.forEach(e => {
             const periodBadge = e.period ? `<span class="period-chip">${e.period}</span>` : '';
+            const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
             eventsHtml += `
-              <div style="font-size:0.8rem; margin-bottom:4px; border-bottom:1px solid #222; padding-bottom:2px;">
-                ${periodBadge} <b>${e.minute}'</b> - ${e.type}: <b>${e.player}</b> ${e.assist ? '(Asist: ' + e.assist + ')' : ''}
+              <div style="font-size:0.8rem; margin-bottom:4px; border-bottom:1px solid #222; padding-bottom:4px; display:flex; align-items:center; gap:6px;">
+                ${periodBadge}
+                <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
+                <b>${e.player}</b> ${e.assist ? '<small style="color:var(--accent-gold);">(Asist: ' + e.assist + ')</small>' : ''}
               </div>`;
           });
         } else {
-          eventsHtml = "<small style='color:var(--text-muted);'>Sin incidencias detalladas registradas.</small>";
+          eventsHtml = "<small style='color:var(--text-muted);'>Sin incidencias registradas en este partido.</small>";
         }
 
         container.innerHTML += `
@@ -773,9 +820,9 @@
             <div class="history-head" onclick="toggleHistoryDetail(${m.id || idx})">
               <div>
                 <div class="history-title">${m.t1} ${m.s1} - ${m.s2} ${m.t2}</div>
-                <small style="color:var(--text-muted);">${m.date} | Árbitro: ${m.referee || 'N/A'}</small>
+                <small style="color:var(--text-muted);">${m.date} | Árbitro: ${m.referee || 'SAMUEL MCKENZIE'}</small>
               </div>
-              <span style="color:var(--accent-red); font-weight:bold;">▼ Ver</span>
+              <span style="color:var(--accent-red); font-weight:bold; font-size:0.85rem;">▼ Ver Detalles</span>
             </div>
 
             <div class="history-details" id="hist-detail-${m.id || idx}">
@@ -786,7 +833,7 @@
                 <b style="font-size:0.8rem; color:var(--accent-red); text-transform:uppercase;">Incidencias Minuto a Minuto:</b>
                 <div style="margin-top:6px;">${eventsHtml}</div>
               </div>
-              <button class="btn-sec" style="font-size:0.75rem; padding:8px;" onclick="copyHistoricalActa(${idx})">📋 Copiar Acta de este Partido</button>
+              <button class="btn-sec" style="font-size:0.75rem; padding:8px; margin-top:6px;" onclick="copyHistoricalActa(${idx})">📋 Copiar Acta para WhatsApp</button>
             </div>
           </div>`;
       });
