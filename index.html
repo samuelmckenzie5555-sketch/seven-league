@@ -85,7 +85,7 @@
     .card-head { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-red); border-bottom: 1px solid var(--card-border); padding-bottom: 8px; margin-bottom: 12px; }
     .form-group { margin-bottom: 12px; }
     label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
-    input, select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--card-border); background: #1c1c24; color: #fff; font-size: 0.9rem; font-weight: 600; }
+    input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--card-border); background: #1c1c24; color: #fff; font-size: 0.9rem; font-weight: 600; }
     .form-row { display: flex; gap: 10px; }
     .form-row .form-group { flex: 1; }
 
@@ -289,6 +289,15 @@
 
   <!-- TAB 4: HISTORIAL -->
   <div id="tab-historial" class="tab-content">
+    <div class="card" style="border: 1px solid var(--accent-gold);">
+      <div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar Acta de WhatsApp</div>
+      <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
+        Si tienes un acta enviada por WhatsApp, pégala aquí abajo y la app reconstruirá automáticamente todos los goles y minutos en el historial:
+      </p>
+      <textarea id="importWhatsappText" rows="4" placeholder="Pega aquí el texto del acta de WhatsApp..."></textarea>
+      <button class="btn-act" style="background:var(--accent-gold); color:#000; margin-top:8px;" onclick="importFromWhatsappText()">⚡ Reconstruir Partido e Incidencias</button>
+    </div>
+
     <div class="card">
       <div class="card-head">Partidos Archivados</div>
       <div id="savedMatchesContainer">Sin partidos archivados.</div>
@@ -331,6 +340,9 @@
       renderTeamSelectors();
       setupMatchTeams();
       renderTeamManagement();
+      
+      // Auto-reconstruir partidos antiguos guardados en texto si existen
+      autoRepairHistoricalMatches();
       renderHistory();
     }
 
@@ -749,7 +761,96 @@
       alert("✅ Acta del partido archivado copiada para WhatsApp.");
     }
 
-    /* AÑADIR/CORREGIR INCIDENCIA A PARTIDO PASADO EN EL HISTORIAL */
+    // EXTRACTOR/RECONSTRUCTOR DE TEXTO WHATSAPP CON REGEX AVANZADA
+    function parseWhatsappText(text) {
+      if (!text) return { t1: 'LOCAL', t2: 'VISITANTE', s1: '0', s2: '0', referee: 'SAMUEL MCKENZIE', mvp: '', events: [] };
+
+      // Extraer Titulo Equipos
+      let t1 = 'LOCAL', t2 = 'VISITANTE', s1 = '0', s2 = '0';
+      const scoreMatch = text.match(/⚽\s*\*?([^*\[]+)\[\s*(\d+)\s*-\s*(\d+)\s*\]\s*([^*]+)\*?/i);
+      if (scoreMatch) {
+        t1 = scoreMatch[1].trim();
+        s1 = scoreMatch[2].trim();
+        s2 = scoreMatch[3].trim();
+        t2 = scoreMatch[4].trim();
+      }
+
+      // Extraer Arbitro
+      let referee = 'SAMUEL MCKENZIE';
+      const refMatch = text.match(/Árbitro:\*?\s*([^\n\r]+)/i);
+      if (refMatch) referee = refMatch[1].trim();
+
+      // Extraer MVP
+      let mvp = '';
+      const mvpMatch = text.match(/MVP DEL PARTIDO:\*?\s*([^\n\r]+)/i);
+      if (mvpMatch) mvp = mvpMatch[1].trim();
+
+      // Extraer Linea por Linea los Eventos
+      const eventsParsed = [];
+      const lines = text.split('\n');
+
+      lines.forEach(line => {
+        // Regex flexible para min, periodo, tipo, jugador y asistencia
+        const evMatch = line.match(/•?\s*(\d+)'\s*(\((1T\vert{}2T)\))?\s*(⚽|🟨|🟥|GOL|A|R|Amarilla|Roja)?[:\s]*\*?([^*()\n]+)\*?\s*(\(([^()]+)\))?/i);
+        if (evMatch && (line.includes('GOL') || line.includes('⚽') || line.includes('🟨') || line.includes('🟥') || line.includes('Amarilla') || line.includes('Roja'))) {
+          const minute = parseInt(evMatch[1]) || 1;
+          const period = evMatch[3] || '1T';
+          let type = 'GOL';
+          if (line.includes('🟨') || line.includes('Amarilla') || line.includes(' A:')) type = 'A';
+          if (line.includes('🟥') || line.includes('Roja') || line.includes(' R:')) type = 'R';
+
+          const player = evMatch[5] ? evMatch[5].trim() : 'Jugador';
+
+          let assist = '';
+          const assistMatch = line.match(/Asist:\s*([^\n\r]+)/i);
+          if (assistMatch) assist = assistMatch[1].trim();
+
+          eventsParsed.push({
+            id: Date.now() + Math.random(),
+            minute,
+            period,
+            type,
+            player,
+            assist
+          });
+        }
+      });
+
+      return { t1, t2, s1, s2, referee, mvp, events: eventsParsed, summaryText: text };
+    }
+
+    function autoRepairHistoricalMatches() {
+      let modified = false;
+      savedMatches.forEach(m => {
+        if ((!m.events || m.events.length === 0) && m.summaryText) {
+          const parsed = parseWhatsappText(m.summaryText);
+          if (parsed.events.length > 0) {
+            m.events = parsed.events;
+            modified = true;
+          }
+        }
+      });
+      if (modified) {
+        localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
+      }
+    }
+
+    function importFromWhatsappText() {
+      const input = document.getElementById('importWhatsappText').value;
+      if (!input.trim()) return alert("Por favor pega primero el texto de un acta de WhatsApp.");
+
+      const parsedData = parseWhatsappText(input);
+      parsedData.id = Date.now();
+      parsedData.date = new Date().toLocaleString();
+
+      savedMatches.unshift(parsedData);
+      localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
+      document.getElementById('importWhatsappText').value = '';
+      
+      renderHistory();
+      alert("⚡ ¡Partido e incidencias importados e integrados al historial correctamente!");
+    }
+
     function addHistoricalEvent(index) {
       const minInput = document.getElementById(`hMin-${index}`).value || 1;
       const periodVal = document.getElementById(`hPeriod-${index}`).value || '1T';
@@ -774,7 +875,6 @@
         return a.minute - b.minute;
       });
 
-      // Actualizar texto almacenado
       savedMatches[index].summaryText = generateSummaryText(
         savedMatches[index].t1, savedMatches[index].t2, 
         savedMatches[index].s1, savedMatches[index].s2, 
@@ -854,7 +954,7 @@
                 <div style="margin-top:6px;">${eventsHtml}</div>
               </div>
 
-              <!-- Formulario para Agregar/Corregir Incidencia a este Partido -->
+              <!-- Formulario de edición rápida -->
               <div class="add-hist-box">
                 <small style="color:var(--accent-gold); font-weight:bold; display:block; margin-bottom:6px;">➕ Agregar / Corregir Incidencia a este Partido:</small>
                 <div class="form-row">
