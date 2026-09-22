@@ -3,115 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>7L SEVEN LEAGUE - Match Center</title>
+  <title>7L SEVEN LEAGUE - Cyber Match Center</title>
   <meta name="theme-color" content="#d32f2f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <style>
     :root {
-      --bg-dark: #0a0a0c;
-      --card-bg: #141419;
-      --card-border: #262630;
-      --accent-red: #e53935;
-      --accent-gold: #ffb300;
+      --bg-dark: #050508;
+      --card-bg: rgba(20, 20, 28, 0.65);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --accent-red: #ff2a4b;
+      --accent-gold: #ffd700;
+      --neon-cyan: #00f3ff;
+      --team1-color: #ff2a4b;
+      --team2-color: #00f3ff;
       --text-main: #f5f5f7;
-      --text-muted: #8e8e93;
-      --green-gol: #00e676;
+      --text-muted: #8a8a9a;
+      --green-gol: #00ff88;
       --yellow-card: #ffea00;
       --red-card: #ff1744;
       --font-display: 'Bebas Neue', sans-serif;
-      --font-sans: 'Inter', sans-serif;
+      --font-cyber: 'Orbitron', sans-serif;
+      --font-sans: 'Rajdhani', sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); -webkit-tap-highlight-color: transparent; }
-    body { background-color: var(--bg-dark); color: var(--text-main); padding: 12px; max-width: 650px; margin: 0 auto; min-height: 100vh; padding-bottom: 40px; }
+    body { 
+      background-color: var(--bg-dark); 
+      background-image: radial-gradient(circle at 50% 0%, #15102a 0%, #050508 75%);
+      color: var(--text-main); 
+      padding: 12px; 
+      max-width: 650px; 
+      margin: 0 auto; 
+      min-height: 100vh; 
+      padding-bottom: 50px; 
+    }
 
     header { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 2px solid var(--accent-red); margin-bottom: 14px; }
     .menu-btn { background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; padding: 0 8px; }
-    .app-title { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 2px; text-align: center; flex: 1; }
+    .app-title { font-family: var(--font-cyber); font-size: 1.4rem; font-weight: 900; letter-spacing: 2px; text-align: center; flex: 1; text-shadow: 0 0 10px var(--accent-red); }
     .app-title span { color: var(--accent-red); }
 
-    .drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99; display: none; }
+    .drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 99; display: none; }
     .drawer-overlay.active { display: block; }
-    .drawer-menu { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: var(--card-bg); border-right: 1px solid var(--card-border); z-index: 100; transition: left 0.3s ease; padding: 20px 16px; display: flex; flex-direction: column; }
+    .drawer-menu { position: fixed; top: 0; left: -290px; width: 290px; height: 100%; background: rgba(15, 15, 22, 0.95); border-right: 1px solid var(--accent-red); z-index: 100; transition: left 0.3s ease; padding: 20px 16px; display: flex; flex-direction: column; }
     .drawer-menu.active { left: 0; }
-    .drawer-header { font-family: var(--font-display); font-size: 1.5rem; color: var(--accent-red); margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
-    .drawer-item { padding: 12px; border-radius: 8px; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 8px; cursor: pointer; background: #1c1c24; display: flex; align-items: center; gap: 10px; }
-    .drawer-item:hover, .drawer-item.active { background: var(--accent-red); }
+    .drawer-header { font-family: var(--font-cyber); font-size: 1.2rem; color: var(--accent-red); margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
+    .drawer-item { padding: 12px; border-radius: 8px; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 8px; cursor: pointer; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 10px; }
+    .drawer-item:hover, .drawer-item.active { background: var(--accent-red); border-color: var(--accent-red); }
 
-    .tabs-nav { display: flex; background: var(--card-bg); border-radius: 10px; padding: 4px; border: 1px solid var(--card-border); margin-bottom: 16px; gap: 4px; }
-    .tab-button { flex: 1; padding: 10px 0; background: none; border: none; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 6px; }
-    .tab-button.active { color: #fff; background-color: var(--accent-red); box-shadow: 0 2px 10px rgba(229,57,53,0.4); }
+    .tabs-nav { display: flex; background: var(--card-bg); backdrop-filter: blur(10px); border-radius: 12px; padding: 4px; border: 1px solid var(--card-border); margin-bottom: 16px; gap: 4px; }
+    .tab-button { flex: 1; padding: 10px 0; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 8px; }
+    .tab-button.active { color: #fff; background-color: var(--accent-red); box-shadow: 0 0 15px rgba(255, 42, 75, 0.5); }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    .scoreboard-box { background: linear-gradient(180deg, #181820 0%, #0d0d12 100%); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
-    .teams-vs { display: flex; justify-content: space-between; align-items: center; }
+    /* Cyber Glass Cards */
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .scoreboard-box {
+      position: relative;
+      background: linear-gradient(135deg, rgba(255,42,75,0.15) 0%, rgba(5,5,8,0.8) 50%, rgba(0,243,255,0.15) 100%);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    #particlesCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.4; }
+
+    .teams-vs { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
     .team-item { text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; }
     
     .team-logo-wrapper {
-      width: 64px;
-      height: 64px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
-      background: #1c1c24;
+      background: rgba(0,0,0,0.6);
       border: 2px solid var(--card-border);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 8px;
       overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.8);
     }
     .team-logo-img { width: 100%; height: 100%; object-fit: contain; }
-    .team-logo-fallback { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-gold); }
+    .team-logo-fallback { font-family: var(--font-cyber); font-size: 1.2rem; color: var(--accent-gold); }
 
-    .team-title { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.5px; line-height: 1.1; }
-    .score-num { font-family: var(--font-display); font-size: 3.5rem; line-height: 1; color: #fff; }
-    .vs-badge { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-muted); padding: 0 8px; }
+    .team-title { font-family: var(--font-cyber); font-size: 1rem; font-weight: 700; letter-spacing: 0.5px; }
+    .score-num { font-family: var(--font-cyber); font-size: 3.8rem; font-weight: 900; line-height: 1; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.6); }
+    .vs-badge { font-family: var(--font-cyber); font-size: 1.1rem; color: var(--text-muted); padding: 0 8px; }
 
-    .ref-badge { background: #1c1c24; border: 1px solid var(--card-border); color: var(--accent-gold); border-radius: 8px; padding: 8px 12px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; text-align: center; }
+    /* Voice Bar */
+    .voice-control-box {
+      background: linear-gradient(90deg, rgba(0,243,255,0.1) 0%, rgba(255,42,75,0.1) 100%);
+      border: 1px solid var(--neon-cyan);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .btn-voice {
+      background: linear-gradient(135deg, #00f3ff 0%, #0066ff 100%);
+      color: #000;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-family: var(--font-cyber);
+      font-weight: 900;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-voice.listening { animation: pulseVoice 1s infinite alternate; background: var(--accent-red); color: #fff; box-shadow: 0 0 20px var(--accent-red); }
+    @keyframes pulseVoice { from { transform: scale(1); } to { transform: scale(1.05); } }
 
-    .timer-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 16px; }
-    .timer-period { font-size: 0.75rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; }
-    .timer-clock { font-family: var(--font-display); font-size: 3rem; letter-spacing: 2px; color: #fff; line-height: 1; margin: 4px 0; }
-    .timer-btn-row { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
-    .btn-t { background: #22222d; color: #fff; border: 1px solid var(--card-border); padding: 8px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase; }
-    .btn-t.active-period { background: var(--accent-red); border-color: var(--accent-red); }
+    /* Momentum Bar */
+    .momentum-box { margin-bottom: 16px; background: rgba(0,0,0,0.5); border-radius: 10px; padding: 10px; border: 1px solid var(--card-border); }
+    .momentum-header { display: flex; justify-content: space-between; font-size: 0.75rem; font-family: var(--font-cyber); color: var(--text-muted); margin-bottom: 6px; }
+    .momentum-bar-wrap { height: 10px; width: 100%; background: #1a1a24; border-radius: 5px; overflow: hidden; display: flex; }
+    .momentum-fill-1 { height: 100%; background: var(--team1-color); transition: width 0.5s ease; box-shadow: 0 0 10px var(--team1-color); }
+    .momentum-fill-2 { height: 100%; background: var(--team2-color); transition: width 0.5s ease; box-shadow: 0 0 10px var(--team2-color); }
 
-    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
-    .card-head { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-red); border-bottom: 1px solid var(--card-border); padding-bottom: 8px; margin-bottom: 12px; }
+    .ref-badge { background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); color: var(--accent-gold); border-radius: 8px; padding: 8px 12px; font-size: 0.85rem; font-family: var(--font-cyber); margin-bottom: 12px; text-align: center; }
+
+    /* Timer Card */
+    .timer-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 16px; text-align: center; margin-bottom: 16px; }
+    .timer-card.timer-ended { border-color: var(--accent-gold); box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); animation: pulseTimer 1s infinite alternate; }
+    @keyframes pulseTimer { from { background: rgba(40, 30, 0, 0.8); } to { background: rgba(80, 50, 0, 0.9); } }
+    
+    .timer-period { font-size: 0.8rem; font-family: var(--font-cyber); color: var(--accent-gold); text-transform: uppercase; }
+    .timer-clock { font-family: var(--font-cyber); font-size: 3.5rem; font-weight: 900; letter-spacing: 2px; color: #fff; line-height: 1; margin: 6px 0; text-shadow: 0 0 15px rgba(255,255,255,0.5); }
+    .timer-btn-row { display: flex; gap: 8px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+    .btn-t { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--card-border); padding: 8px 14px; border-radius: 8px; font-size: 0.75rem; font-family: var(--font-cyber); font-weight: 700; cursor: pointer; }
+    .btn-t.active-period { background: var(--accent-red); border-color: var(--accent-red); box-shadow: 0 0 10px var(--accent-red); }
+    .btn-add-time { background: rgba(0, 243, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; cursor: pointer; }
+
+    .card-head { font-family: var(--font-cyber); font-size: 1.1rem; color: var(--accent-red); border-bottom: 1px solid var(--card-border); padding-bottom: 8px; margin-bottom: 12px; }
     .form-group { margin-bottom: 12px; }
-    label { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
-    input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--card-border); background: #1c1c24; color: #fff; font-size: 0.9rem; font-weight: 600; }
+    label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
+    input, select, textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--card-border); background: rgba(0,0,0,0.5); color: #fff; font-size: 0.9rem; font-weight: 600; }
     .form-row { display: flex; gap: 10px; }
     .form-row .form-group { flex: 1; }
 
-    button.btn-act { width: 100%; padding: 14px; background: var(--accent-red); color: white; border: none; border-radius: 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; text-transform: uppercase; }
-    button.btn-sec { width: 100%; padding: 12px; background: #22222d; color: white; border: 1px solid var(--card-border); border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; margin-top: 8px; }
-    button.btn-danger { width: 100%; padding: 10px; background: #3b1113; color: #ff5252; border: 1px solid #5c1d1f; border-radius: 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer; margin-top: 12px; }
+    button.btn-act { width: 100%; padding: 14px; background: var(--accent-red); color: white; border: none; border-radius: 10px; font-family: var(--font-cyber); font-weight: 900; font-size: 0.85rem; cursor: pointer; text-transform: uppercase; box-shadow: 0 4px 15px rgba(255,42,75,0.4); }
+    button.btn-sec { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--card-border); border-radius: 10px; font-weight: 700; font-size: 0.85rem; cursor: pointer; margin-top: 8px; }
+    button.btn-danger { width: 100%; padding: 10px; background: rgba(255, 23, 68, 0.2); color: #ff5252; border: 1px solid var(--red-card); border-radius: 10px; font-weight: 700; font-size: 0.75rem; cursor: pointer; margin-top: 12px; }
 
-    .timeline-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
-    .timeline-badge { font-family: var(--font-display); font-size: 0.85rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
-    .period-chip { font-size: 0.7rem; background: #2a2a36; color: var(--accent-gold); padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-right: 4px; }
-    .bg-gol { background: var(--green-gol); color: #000; }
+    .timeline-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .timeline-badge { font-family: var(--font-cyber); font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
+    .period-chip { font-size: 0.7rem; font-family: var(--font-cyber); background: rgba(255,215,0,0.15); color: var(--accent-gold); padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-right: 4px; border: 1px solid var(--accent-gold); }
+    .bg-gol { background: var(--green-gol); color: #000; box-shadow: 0 0 8px var(--green-gol); }
     .bg-a { background: var(--yellow-card); color: #000; }
     .bg-r { background: var(--red-card); color: #fff; }
 
-    .check-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1f1f28; }
-    .check-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; flex: 1; }
+    .check-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .check-label { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer; flex: 1; }
 
-    .player-chip { display: inline-flex; align-items: center; background: #1c1c24; border: 1px solid var(--card-border); padding: 6px 10px; border-radius: 20px; font-size: 0.8rem; margin: 3px; }
-    .player-chip span { margin-left: 6px; color: var(--accent-red); cursor: pointer; font-weight: bold; }
+    .player-chip { display: inline-flex; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 3px; }
+    .player-chip span { margin-left: 8px; color: var(--accent-red); cursor: pointer; font-weight: bold; }
 
-    .history-card { background: #181820; border: 1px solid var(--card-border); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+    .history-card { background: rgba(15, 15, 22, 0.7); border: 1px solid var(--card-border); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
     .history-head { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-    .history-title { font-family: var(--font-display); font-size: 1.2rem; color: #fff; }
+    .history-title { font-family: var(--font-cyber); font-size: 1.1rem; color: #fff; }
     .history-details { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--card-border); display: none; }
     .history-details.open { display: block; }
-    .add-hist-box { background: #121216; border: 1px solid #2a2a36; padding: 10px; border-radius: 8px; margin-top: 10px; }
+    .add-hist-box { background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); padding: 12px; border-radius: 10px; margin-top: 10px; }
+
+    /* Ultimate Team MVP Canvas Modal */
+    .fut-card-modal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .fut-card-modal.active { display: flex; }
   </style>
 </head>
 <body>
@@ -124,14 +218,18 @@
     <div class="drawer-item" onclick="switchTabNav('tab-equipos')">🛡️ Gestión de Equipos</div>
     <div class="drawer-item" onclick="switchTabNav('tab-asistencia')">📋 Lista de Asistencia</div>
     <div class="drawer-item" onclick="switchTabNav('tab-historial')">📁 Historial de Actas</div>
+    
     <div style="margin-top:auto;">
+      <button class="btn-sec" style="background:#0288d1; margin-bottom:6px;" onclick="exportBackupData()">📥 Descargar Backup (JSON)</button>
+      <label for="importBackupInput" class="btn-sec" style="display:block; text-align:center; background:#7b1fa2; cursor:pointer; margin-top:0;">📤 Cargar Backup (JSON)</label>
+      <input type="file" id="importBackupInput" accept=".json" style="display:none;" onchange="importBackupData(event)">
       <button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar Memoria App</button>
     </div>
   </div>
 
   <header>
     <button class="menu-btn" onclick="toggleDrawer()">☰</button>
-    <div class="app-title">7L <span>SEVEN LEAGUE</span></div>
+    <div class="app-title">7L <span>CYBER CENTER</span></div>
     <div style="width: 32px;"></div>
   </header>
 
@@ -146,9 +244,12 @@
     <button class="tab-button" id="btn-tab-historial" onclick="switchTab('tab-historial')">4. Historial</button>
   </nav>
 
-  <!-- TAB 1: PARTIDO -->
+  <!-- TAB 1: PARTIDO EN VIVO -->
   <div id="tab-partido" class="tab-content active">
-    <div class="scoreboard-box">
+    
+    <!-- Marcador Cyber Glass -->
+    <div class="scoreboard-box" id="scoreboardCard">
+      <canvas id="particlesCanvas"></canvas>
       <div class="teams-vs">
         <div class="team-item">
           <div class="team-logo-wrapper" id="logoWrap1"></div>
@@ -164,19 +265,48 @@
       </div>
     </div>
 
+    <!-- Modulo Reconocimiento de Voz -->
+    <div class="voice-control-box">
+      <button class="btn-voice" id="btnVoice" onclick="toggleVoiceRecognition()">
+        🎙️ Dictar Incidencia por Voz
+      </button>
+      <div style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;" id="voiceStatus">
+        Ejemplo: "Gol de Timon Hari" o "Amarilla para Alexis"
+      </div>
+    </div>
+
+    <!-- Barra de Momentum -->
+    <div class="momentum-box">
+      <div class="momentum-header">
+        <span id="mName1">LOCAL (50%)</span>
+        <span>MATCH MOMENTUM</span>
+        <span id="mName2">VISITANTE (50%)</span>
+      </div>
+      <div class="momentum-bar-wrap">
+        <div class="momentum-fill-1" id="mFill1" style="width: 50%;"></div>
+        <div class="momentum-fill-2" id="mFill2" style="width: 50%;"></div>
+      </div>
+    </div>
+
     <!-- Cronómetro -->
-    <div class="timer-card">
-      <div class="timer-period" id="periodDisplay">1er Tiempo</div>
+    <div class="timer-card" id="timerCard">
+      <div class="timer-period" id="periodDisplay">1er Tiempo (25 min)</div>
       <div class="timer-clock" id="timerDisplay">00:00</div>
       <div class="timer-btn-row">
         <button class="btn-t" id="btnStart" onclick="toggleTimer()">▶ Iniciar</button>
         <button class="btn-t active-period" id="btnPeriod1" onclick="setPeriod(1)">1T</button>
         <button class="btn-t" id="btnPeriod2" onclick="setPeriod(2)">2T</button>
       </div>
+      <div style="margin-top:8px; display:flex; gap:6px; justify-content:center;">
+        <span style="font-size:0.7rem; color:var(--text-muted); align-self:center;">Descuento:</span>
+        <button class="btn-add-time" onclick="addExtraTime(1)">+1'</button>
+        <button class="btn-add-time" onclick="addExtraTime(2)">+2'</button>
+        <button class="btn-add-time" onclick="addExtraTime(3)">+3'</button>
+      </div>
     </div>
 
     <!-- Configuración del Partido -->
-    <div class="card">
+    <div class="glass-card">
       <div class="card-head">Configurar Partido</div>
       <div class="form-row">
         <div class="form-group">
@@ -194,9 +324,9 @@
       </div>
     </div>
 
-    <!-- Registro de Incidencias -->
-    <div class="card">
-      <div class="card-head">Registrar Incidencia</div>
+    <!-- Registro de Incidencias Manual -->
+    <div class="glass-card">
+      <div class="card-head">Registrar Incidencia Manual</div>
       <div class="form-group">
         <label>Equipo de la Incidencia</label>
         <select id="teamSelect" onchange="updatePlayerDropdowns()"></select>
@@ -223,7 +353,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Jugador (Solo plantilla de equipo seleccionado)</label>
+        <label>Jugador (Plantilla)</label>
         <select id="playerSelect"></select>
       </div>
       <div class="form-group" id="assistGroup">
@@ -233,23 +363,24 @@
       <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
     </div>
 
-    <div class="card">
+    <div class="glass-card">
       <div class="card-head">Match Timeline</div>
       <div id="eventsListContainer">Sin incidencias.</div>
     </div>
 
-    <div class="card">
+    <div class="glass-card">
       <div class="card-head">Jugador del Partido (MVP)</div>
       <select id="mvpSelect" onchange="saveMVP()"><option value="">-- Seleccionar MVP --</option></select>
     </div>
 
-    <button class="btn-act" style="background:#2e7d32;" onclick="exportSummary()">📲 Copiar Acta para WhatsApp</button>
+    <button class="btn-act" style="background:#2e7d32; margin-bottom:8px;" onclick="exportSummary()">📲 Copiar Acta para WhatsApp</button>
+    <button class="btn-act" style="background:linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color:#000; margin-bottom:8px;" onclick="generateFutMvpCard()">🎴 Generar Carta Ultimate Team MVP</button>
     <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
   </div>
 
   <!-- TAB 2: GESTIÓN DE EQUIPOS -->
   <div id="tab-equipos" class="tab-content">
-    <div class="card">
+    <div class="glass-card">
       <div class="card-head">Administrar Plantilla y Logo</div>
       <div class="form-group">
         <label>Seleccionar Equipo a Modificar</label>
@@ -258,7 +389,7 @@
 
       <div style="text-align: center; margin: 16px 0;">
         <div class="team-logo-wrapper" id="manageLogoWrap" style="width: 80px; height: 80px; margin: 0 auto 8px auto;"></div>
-        <label for="uploadLogoInput" class="btn-sec" style="display: inline-block; width: auto; padding: 8px 16px; cursor: pointer;">🖼️ Subir/Cambiar Logo de Equipo</label>
+        <label for="uploadLogoInput" class="btn-sec" style="display: inline-block; width: auto; padding: 8px 16px; cursor: pointer;">🖼️ Subir Logo de Equipo</label>
         <input type="file" id="uploadLogoInput" accept="image/*" style="display: none;" onchange="handleLogoUpload(event)">
       </div>
 
@@ -277,11 +408,11 @@
 
   <!-- TAB 3: ASISTENCIA -->
   <div id="tab-asistencia" class="tab-content">
-    <div class="card">
+    <div class="glass-card">
       <div class="card-head"><span id="attTitle1">LOCAL</span></div>
       <div id="list-att-1"></div>
     </div>
-    <div class="card">
+    <div class="glass-card">
       <div class="card-head"><span id="attTitle2">VISITANTE</span></div>
       <div id="list-att-2"></div>
     </div>
@@ -293,7 +424,7 @@
       📄 Copiar Cronología Completa de Memoria
     </button>
 
-    <div class="card" style="border: 1px solid var(--accent-gold);">
+    <div class="glass-card" style="border: 1px solid var(--accent-gold);">
       <div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar / Reconstruir Acta</div>
       <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
         Pega un texto de WhatsApp para recuperar incidencias y tiempos automáticamente:
@@ -302,16 +433,31 @@
       <button class="btn-act" style="background:var(--accent-gold); color:#000; margin-top:8px;" onclick="importFromWhatsappText()">⚡ Reconstruir Partido</button>
     </div>
 
-    <div class="card">
+    <div class="glass-card">
       <div class="card-head">Partidos Archivados</div>
       <div id="savedMatchesContainer">Sin partidos archivados.</div>
     </div>
   </div>
 
+  <!-- MODAL CARTA ULTIMATE TEAM MVP -->
+  <div class="fut-card-modal" id="futModal">
+    <canvas id="futCanvas" width="400" height="560" style="max-width:100%; border-radius:16px; box-shadow:0 0 30px var(--accent-gold);"></canvas>
+    <div style="display:flex; gap:10px; margin-top:16px;">
+      <button class="btn-act" style="background:var(--accent-gold); color:#000;" onclick="downloadFutCanvas()">⬇️ Descargar Carta HD</button>
+      <button class="btn-sec" onclick="closeFutModal()">✕ Cerrar</button>
+    </div>
+  </div>
+
   <script>
+    const teamColors = {
+      "eq_1": "#ff2a4b", "eq_2": "#00f3ff", "eq_3": "#00ff88", "eq_4": "#ff8c00",
+      "eq_5": "#ab47bc", "eq_6": "#ffd700", "eq_7": "#26a69a", "eq_8": "#7e57c2",
+      "eq_9": "#ff4081", "eq_10": "#5c6bc0"
+    };
+
     const defaultTeamsData = {
       "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", short: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
-      "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo"] },
+      "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo", "Pajtim Kerimi", "Daniel Wieland", "Nenad Ilic"] },
       "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", short: "SPO", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
       "eq_4": { id: "eq_4", name: "FC Max Basel", logo: "logo_max_basel.png", short: "MAX", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
       "eq_5": { id: "eq_5", name: "FC Baselona", logo: "logo_baselona.png", short: "BAS", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
@@ -337,6 +483,154 @@
     let startTime = 0;
     let elapsedTimeBeforePause = 0;
     let timerInterval = null;
+    let alertSounded = false;
+
+    // Web Speech Recognition
+    let recognition = null;
+    let isListening = false;
+
+    function triggerHaptic() {
+      if (navigator.vibrate) navigator.vibrate(30);
+    }
+
+    function playWhistleSound() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(2800, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(1600, ctx.currentTime + 0.25);
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.25);
+      } catch(e){}
+    }
+
+    function playGoalSound() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(200, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(500, ctx.currentTime + 0.5);
+        osc.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.5);
+      } catch(e){}
+    }
+
+    // Canvas Particles Animation
+    function initParticles() {
+      const canvas = document.getElementById('particlesCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+
+      let particles = Array.from({length: 25}, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: (Math.random() - 0.5) * 0.8
+      }));
+
+      function render() {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = '#00f3ff';
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        requestAnimationFrame(render);
+      }
+      render();
+    }
+
+    // Voice Recognition Setup
+    function initVoice() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.lang = 'es-ES';
+        recognition.continuous = false;
+
+        recognition.onstart = () => {
+          isListening = true;
+          document.getElementById('btnVoice').classList.add('listening');
+          document.getElementById('btnVoice').innerText = '🎙️ Escuchando...';
+          document.getElementById('voiceStatus').innerText = 'Di por ejemplo: "Gol de Timon Hari"';
+        };
+
+        recognition.onresult = (e) => {
+          const transcript = e.results[0][0].transcript.toLowerCase();
+          document.getElementById('voiceStatus').innerText = `Oído: "${transcript}"`;
+          processVoiceCommand(transcript);
+        };
+
+        recognition.onerror = () => stopVoice();
+        recognition.onend = () => stopVoice();
+      } else {
+        document.getElementById('btnVoice').innerText = '🎙️ Voz No Soportada';
+      }
+    }
+
+    function toggleVoiceRecognition() {
+      triggerHaptic();
+      if (!recognition) return alert('Tu navegador no soporta reconocimiento de voz.');
+      if (isListening) recognition.stop();
+      else recognition.start();
+    }
+
+    function stopVoice() {
+      isListening = false;
+      document.getElementById('btnVoice').classList.remove('listening');
+      document.getElementById('btnVoice').innerText = '🎙️ Dictar Incidencia por Voz';
+    }
+
+    function processVoiceCommand(text) {
+      let type = 'GOL';
+      if (text.includes('amarilla') || text.includes('tarjeta amarilla')) type = 'A';
+      if (text.includes('roja') || text.includes('tarjeta roja')) type = 'R';
+
+      // Buscar jugador en ambas plantillas
+      let foundPlayer = null;
+      let foundTeamId = null;
+
+      [currentTeam1Id, currentTeam2Id].forEach(tId => {
+        const pList = attendance[tId] || teams[tId]?.players || [];
+        pList.forEach(p => {
+          if (text.includes(p.toLowerCase())) {
+            foundPlayer = p;
+            foundTeamId = tId;
+          }
+        });
+      });
+
+      if (foundPlayer && foundTeamId) {
+        const minVal = parseInt(document.getElementById('minuteInput').value || 1);
+        const periodVal = document.getElementById('eventPeriodSelect').value || '1T';
+        events.push({ id: Date.now(), minute: minVal, period: periodVal, teamId: foundTeamId, type, player: foundPlayer, assist: '' });
+        
+        events.sort((a, b) => (a.period !== b.period ? (a.period === '1T' ? -1 : 1) : a.minute - b.minute));
+        if (type === 'GOL') playGoalSound();
+
+        saveAllData();
+        renderEvents();
+        updateMomentumBar();
+        alert(`✅ Incidencia reconocida: ${type} de ${foundPlayer}`);
+      } else {
+        alert(`⚠️ No se reconoció ningún jugador en: "${text}"`);
+      }
+    }
 
     function init() {
       document.getElementById('refNameInput').value = refereeName;
@@ -344,13 +638,14 @@
       renderTeamSelectors();
       setupMatchTeams();
       renderTeamManagement();
-      
-      // Auto-reconstruir partidos antiguos guardados en texto si existen
       autoRepairHistoricalMatches();
       renderHistory();
+      initParticles();
+      initVoice();
     }
 
     function toggleDrawer() {
+      triggerHaptic();
       document.getElementById('drawerOverlay').classList.toggle('active');
       document.getElementById('drawerMenu').classList.toggle('active');
     }
@@ -361,6 +656,7 @@
     }
 
     function switchTab(tabId) {
+      triggerHaptic();
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
@@ -370,6 +666,7 @@
     }
 
     function resetAppData() {
+      triggerHaptic();
       if (confirm("¿Quieres borrar la memoria interna de la app? Esto borrará jugadores agregados y logos personalizados.")) {
         localStorage.clear();
         location.reload();
@@ -395,6 +692,7 @@
     }
 
     function changeMatchTeams() {
+      triggerHaptic();
       currentTeam1Id = document.getElementById('matchTeam1Select').value;
       currentTeam2Id = document.getElementById('matchTeam2Select').value;
       localStorage.setItem('sl_t1', currentTeam1Id);
@@ -409,6 +707,44 @@
              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
         <div class="team-logo-fallback" style="display:none;">${team.short}</div>
       `;
+    }
+
+    function applyDynamicSkins() {
+      const color1 = teamColors[currentTeam1Id] || "#ff2a4b";
+      const color2 = teamColors[currentTeam2Id] || "#00f3ff";
+
+      document.documentElement.style.setProperty('--team1-color', color1);
+      document.documentElement.style.setProperty('--team2-color', color2);
+
+      const scoreboard = document.getElementById('scoreboardCard');
+      scoreboard.style.background = `linear-gradient(135deg, ${color1}22 0%, rgba(5,5,8,0.9) 50%, ${color2}22 100%)`;
+      scoreboard.style.borderColor = color1;
+
+      document.getElementById('logoWrap1').style.borderColor = color1;
+      document.getElementById('logoWrap2').style.borderColor = color2;
+    }
+
+    function updateMomentumBar() {
+      let score1 = 0, score2 = 0;
+      events.forEach(e => {
+        if (e.type === 'GOL') {
+          if (e.teamId === currentTeam1Id) score1 += 3;
+          if (e.teamId === currentTeam2Id) score2 += 3;
+        } else {
+          if (e.teamId === currentTeam1Id) score1 += 1;
+          if (e.teamId === currentTeam2Id) score2 += 1;
+        }
+      });
+
+      const total = (score1 + score2) || 1;
+      const pct1 = Math.round((score1 / total) * 100) || 50;
+      const pct2 = 100 - pct1;
+
+      document.getElementById('mFill1').style.width = `${pct1}%`;
+      document.getElementById('mFill2').style.width = `${pct2}%`;
+
+      document.getElementById('mName1').innerText = `${teams[currentTeam1Id].name} (${pct1}%)`;
+      document.getElementById('mName2').innerText = `${teams[currentTeam2Id].name} (${pct2}%)`;
     }
 
     function setupMatchTeams() {
@@ -427,11 +763,13 @@
       if (!attendance[currentTeam1Id]) attendance[currentTeam1Id] = [...t1.players];
       if (!attendance[currentTeam2Id]) attendance[currentTeam2Id] = [...t2.players];
 
+      applyDynamicSkins();
       renderAttendanceLists();
       updateTeamDropdown();
       updatePlayerDropdowns();
       populateMVPSelect();
       renderEvents();
+      updateMomentumBar();
     }
 
     function renderTeamManagement() {
@@ -468,6 +806,7 @@
     }
 
     function addNewPlayer() {
+      triggerHaptic();
       const teamId = document.getElementById('manageTeamSelect').value;
       const nameInput = document.getElementById('newPlayerName');
       const name = nameInput.value.trim();
@@ -488,6 +827,7 @@
     }
 
     function removePlayer(teamId, index) {
+      triggerHaptic();
       const playerName = teams[teamId].players[index];
       teams[teamId].players.splice(index, 1);
 
@@ -502,6 +842,8 @@
     }
 
     function toggleTimer() {
+      triggerHaptic();
+      playWhistleSound();
       if (timerRunning) {
         timerRunning = false;
         elapsedTimeBeforePause += Date.now() - startTime;
@@ -523,15 +865,32 @@
       const s = String(totalSec % 60).padStart(2, '0');
       document.getElementById('timerDisplay').innerText = `${m}:${s}`;
       document.getElementById('minuteInput').value = Math.max(1, Math.ceil(totalSec / 60));
+
+      if (totalSec >= 1500 && !alertSounded) {
+        alertSounded = true;
+        document.getElementById('timerCard').classList.add('timer-ended');
+        playWhistleSound();
+        if (navigator.vibrate) navigator.vibrate([300, 100, 300, 100, 300]);
+      }
+    }
+
+    function addExtraTime(mins) {
+      triggerHaptic();
+      elapsedTimeBeforePause -= mins * 60 * 1000;
+      updateTimerClock();
     }
 
     function setPeriod(p) {
+      triggerHaptic();
+      playWhistleSound();
       currentPeriod = p;
       timerRunning = false;
+      alertSounded = false;
       clearInterval(timerInterval);
       elapsedTimeBeforePause = 0;
+      document.getElementById('timerCard').classList.remove('timer-ended');
       document.getElementById('timerDisplay').innerText = "00:00";
-      document.getElementById('periodDisplay').innerText = p === 1 ? "1er Tiempo" : "2do Tiempo";
+      document.getElementById('periodDisplay').innerText = p === 1 ? "1er Tiempo (25 min)" : "2do Tiempo (25 min)";
       document.getElementById('btnStart').innerText = "▶ Iniciar";
       
       const periodSelect = document.getElementById('eventPeriodSelect');
@@ -562,6 +921,7 @@
     }
 
     function toggleAttendance(teamId, player) {
+      triggerHaptic();
       if (!attendance[teamId]) attendance[teamId] = [];
       
       if (attendance[teamId].includes(player)) {
@@ -590,7 +950,7 @@
       playerSelect.innerHTML = '';
       assistSelect.innerHTML = '<option value="">-- Ninguna --</option>';
 
-      const activePlayers = attendance[selectedTeamId] || [];
+      const activePlayers = attendance[selectedTeamId] || teams[selectedTeamId]?.players || [];
 
       if (activePlayers.length === 0) {
         playerSelect.innerHTML = '<option value="">-- No hay jugadores en lista --</option>';
@@ -615,6 +975,7 @@
     }
 
     function addEvent() {
+      triggerHaptic();
       const minuteVal = parseInt(document.getElementById('minuteInput').value || 1);
       const periodVal = document.getElementById('eventPeriodSelect').value || '1T';
       const teamId = document.getElementById('teamSelect').value;
@@ -631,16 +992,22 @@
         return a.minute - b.minute;
       });
 
-      if (type === 'GOL') { try { confetti({ particleCount: 80, spread: 60 }); } catch(e){} }
+      if (type === 'GOL') {
+        playGoalSound();
+        try { confetti({ particleCount: 80, spread: 60 }); } catch(e){} 
+      }
 
       saveAllData();
       renderEvents();
+      updateMomentumBar();
     }
 
     function deleteEvent(id) {
+      triggerHaptic();
       events = events.filter(e => e.id !== id);
       saveAllData();
       renderEvents();
+      updateMomentumBar();
     }
 
     function renderEvents() {
@@ -683,7 +1050,7 @@
       [currentTeam1Id, currentTeam2Id].forEach(teamId => {
         if (teams[teamId]) {
           opts += `<optgroup label="${teams[teamId].name}">`;
-          (attendance[teamId] || []).forEach(p => opts += `<option value="${p} (${teams[teamId].name})">${p}</option>`);
+          (attendance[teamId] || teams[teamId].players).forEach(p => opts += `<option value="${p} (${teams[teamId].name})">${p}</option>`);
           opts += `</optgroup>`;
         }
       });
@@ -694,6 +1061,68 @@
     function saveMVP() {
       selectedMVP = document.getElementById('mvpSelect').value;
       saveAllData();
+    }
+
+    /* GENERADOR DE CARTA ULTIMATE TEAM EN CANVAS */
+    function generateFutMvpCard() {
+      triggerHaptic();
+      const canvas = document.getElementById('futCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Fondo Oro / Neón
+      const grad = ctx.createLinearGradient(0, 0, 400, 560);
+      grad.addColorStop(0, '#ffd700');
+      grad.addColorStop(0.5, '#b8860b');
+      grad.addColorStop(1, '#111');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 400, 560);
+
+      // Borde Dorado
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 6;
+      ctx.strokeRect(10, 10, 380, 540);
+
+      // Texto de Título
+      ctx.fillStyle = '#000';
+      ctx.font = 'bold 28px Orbitron';
+      ctx.textAlign = 'center';
+      ctx.fillText('7L ULTIMATE MVP', 200, 50);
+
+      // Score / Puntuación
+      ctx.font = 'bold 80px Orbitron';
+      ctx.fillStyle = '#fff';
+      ctx.fillText('99', 200, 150);
+
+      ctx.font = '20px Orbitron';
+      ctx.fillStyle = '#ffd700';
+      ctx.fillText('RATING', 200, 180);
+
+      // Nombre MVP
+      const mvpClean = selectedMVP || 'JUGADOR MVP';
+      ctx.font = 'bold 26px Orbitron';
+      ctx.fillStyle = '#fff';
+      ctx.fillText(mvpClean.split('(')[0].trim(), 200, 260);
+
+      // Stats
+      ctx.font = '16px Rajdhani';
+      ctx.fillStyle = '#ddd';
+      ctx.fillText(`EQUIPO: ${teams[currentTeam1Id].short} vs ${teams[currentTeam2Id].short}`, 200, 310);
+      ctx.fillText(`MARCADOR FINAL: ${document.getElementById('score1').innerText} - ${document.getElementById('score2').innerText}`, 200, 340);
+      ctx.fillText(`ÁRBITRO: ${refereeName}`, 200, 370);
+
+      document.getElementById('futModal').classList.add('active');
+    }
+
+    function closeFutModal() {
+      document.getElementById('futModal').classList.remove('active');
+    }
+
+    function downloadFutCanvas() {
+      const canvas = document.getElementById('futCanvas');
+      const link = document.createElement('a');
+      link.download = `7L_MVP_Card.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
     }
 
     function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal) {
@@ -717,6 +1146,7 @@
     }
 
     function exportSummary() {
+      triggerHaptic();
       const t1 = teams[currentTeam1Id].name;
       const t2 = teams[currentTeam2Id].name;
       const s1 = document.getElementById('score1').innerText;
@@ -729,6 +1159,7 @@
     }
 
     function archiveMatch() {
+      triggerHaptic();
       const t1Name = teams[currentTeam1Id].name;
       const t2Name = teams[currentTeam2Id].name;
       const s1Val = document.getElementById('score1').innerText;
@@ -742,6 +1173,8 @@
         referee: refereeName,
         t1: t1Name, 
         t2: t2Name,
+        t1Id: currentTeam1Id,
+        t2Id: currentTeam2Id,
         s1: s1Val, 
         s2: s2Val,
         mvp: selectedMVP,
@@ -756,11 +1189,13 @@
     }
 
     function toggleHistoryDetail(id) {
+      triggerHaptic();
       const el = document.getElementById(`hist-detail-${id}`);
       if (el) el.classList.toggle('open');
     }
 
     function copyHistoricalActa(index) {
+      triggerHaptic();
       const m = savedMatches[index];
       const summaryText = generateSummaryText(m.t1, m.t2, m.s1, m.s2, m.referee || 'SAMUEL MCKENZIE', m.events || [], m.mvp || '');
       navigator.clipboard.writeText(summaryText);
@@ -768,6 +1203,7 @@
     }
 
     function deleteMatchFromHistory(index) {
+      triggerHaptic();
       const match = savedMatches[index];
       const confirmDelete = confirm(`¿Estás seguro de que deseas eliminar el partido entre ${match.t1} vs ${match.t2}?`);
       if (confirmDelete) {
@@ -837,6 +1273,7 @@
     }
 
     function importFromWhatsappText() {
+      triggerHaptic();
       const input = document.getElementById('importWhatsappText').value;
       if (!input.trim()) return alert("Por favor pega primero el texto de un acta de WhatsApp.");
 
@@ -852,13 +1289,50 @@
       alert("⚡ ¡Partido e incidencias importados!");
     }
 
+    function updateHistPlayerDropdown(matchIndex) {
+      const teamSelect = document.getElementById(`hTeamSelect-${matchIndex}`);
+      const playerSelect = document.getElementById(`hPlayerSelect-${matchIndex}`);
+      const assistSelect = document.getElementById(`hAssistSelect-${matchIndex}`);
+
+      if (!teamSelect || !playerSelect) return;
+
+      const teamName = teamSelect.value;
+      playerSelect.innerHTML = '';
+      if (assistSelect) assistSelect.innerHTML = '<option value="">-- Sin Asistencia --</option>';
+
+      let selectedTeamObj = Object.values(teams).find(t => t.name === teamName);
+      let playerList = selectedTeamObj ? selectedTeamObj.players : [];
+
+      if (playerList.length === 0) {
+        playerSelect.innerHTML = '<option value="">-- Sin jugadores registrados --</option>';
+        return;
+      }
+
+      playerList.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p;
+        opt.innerText = p;
+        playerSelect.appendChild(opt);
+
+        if (assistSelect) {
+          const optA = document.createElement('option');
+          optA.value = p;
+          optA.innerText = p;
+          assistSelect.appendChild(optA);
+        }
+      });
+    }
+
     function addHistoricalEvent(index) {
+      triggerHaptic();
       const minInput = parseInt(document.getElementById(`hMin-${index}`).value || 1);
       const periodVal = document.getElementById(`hPeriod-${index}`).value || '1T';
       const typeVal = document.getElementById(`hType-${index}`).value || 'GOL';
-      const playerVal = document.getElementById(`hPlayer-${index}`).value.trim();
+      const teamVal = document.getElementById(`hTeamSelect-${index}`)?.value || '';
+      const playerVal = document.getElementById(`hPlayerSelect-${index}`)?.value || '';
+      const assistVal = typeVal === 'GOL' ? (document.getElementById(`hAssistSelect-${index}`)?.value || '') : '';
 
-      if (!playerVal) return alert("Por favor escribe el nombre del jugador.");
+      if (!playerVal) return alert("Por favor selecciona un jugador.");
 
       if (!savedMatches[index].events) savedMatches[index].events = [];
 
@@ -868,8 +1342,19 @@
         period: periodVal,
         type: typeVal,
         player: playerVal,
-        assist: ''
+        teamName: teamVal,
+        assist: assistVal
       });
+
+      let s1 = 0, s2 = 0;
+      savedMatches[index].events.forEach(e => {
+        if (e.type === 'GOL') {
+          if (e.teamName === savedMatches[index].t1) s1++;
+          if (e.teamName === savedMatches[index].t2) s2++;
+        }
+      });
+      savedMatches[index].s1 = s1;
+      savedMatches[index].s2 = s2;
 
       savedMatches[index].events.sort((a, b) => {
         if (a.period !== b.period) return a.period === '1T' ? -1 : 1;
@@ -890,8 +1375,19 @@
     }
 
     function deleteHistoricalEvent(matchIndex, eventId) {
+      triggerHaptic();
       savedMatches[matchIndex].events = savedMatches[matchIndex].events.filter(e => e.id !== eventId);
       
+      let s1 = 0, s2 = 0;
+      savedMatches[matchIndex].events.forEach(e => {
+        if (e.type === 'GOL') {
+          if (e.teamName === savedMatches[matchIndex].t1) s1++;
+          if (e.teamName === savedMatches[matchIndex].t2) s2++;
+        }
+      });
+      savedMatches[matchIndex].s1 = s1;
+      savedMatches[matchIndex].s2 = s2;
+
       savedMatches[matchIndex].summaryText = generateSummaryText(
         savedMatches[matchIndex].t1, savedMatches[matchIndex].t2, 
         savedMatches[matchIndex].s1, savedMatches[matchIndex].s2, 
@@ -902,10 +1398,11 @@
 
       localStorage.setItem('sl_hist', JSON.stringify(savedMatches));
       renderHistory();
-      toggleHistoryDetail(savedMatches[matchIndex].id || matchIndex);
+      toggleHistoryDetail(savedMatches[matchIndex].id || index);
     }
 
     function exportarTodoElHistorial() {
+      triggerHaptic();
       const partidos = JSON.parse(localStorage.getItem('sl_hist')) || [];
       
       if (partidos.length === 0) {
@@ -927,7 +1424,8 @@
           p.events.forEach(e => {
             const pText = `(${e.period || '1T'})`;
             const aText = e.assist ? ` 👟 Asist: ${e.assist}` : '';
-            reporte += `  • ${e.minute}' ${pText} ${e.type}: ${e.player}${aText}\n`;
+            const tText = e.teamName ? ` (${e.teamName})` : '';
+            reporte += `  • ${e.minute}' ${pText} ${e.type}: ${e.player}${tText}${aText}\n`;
           });
         } else {
           reporte += `  (Sin eventos detallados registrados)\n`;
@@ -937,6 +1435,47 @@
 
       navigator.clipboard.writeText(reporte);
       alert("✅ ¡Se ha copiado el historial completo de la memoria a tu portapapeles! Ya puedes pegarlo donde quieras.");
+    }
+
+    function exportBackupData() {
+      triggerHaptic();
+      const backup = {
+        teams: teams,
+        attendance: attendance,
+        savedMatches: savedMatches,
+        referee: refereeName
+      };
+
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backup, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `7L_Backup_${new Date().toISOString().slice(0,10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    function importBackupData(e) {
+      triggerHaptic();
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const data = JSON.parse(evt.target.result);
+          if (data.teams) localStorage.setItem('sl_teams_data', JSON.stringify(data.teams));
+          if (data.attendance) localStorage.setItem('sl_att', JSON.stringify(data.attendance));
+          if (data.savedMatches) localStorage.setItem('sl_hist', JSON.stringify(data.savedMatches));
+          if (data.referee) localStorage.setItem('sl_ref', data.referee);
+
+          alert("✅ Copia de seguridad cargada con éxito. La app se reiniciará.");
+          location.reload();
+        } catch(err) {
+          alert("❌ Error: El archivo no es un respaldo válido de Seven League.");
+        }
+      };
+      reader.readAsText(file);
     }
 
     function renderHistory() {
@@ -955,12 +1494,15 @@
           evList.forEach(e => {
             const periodBadge = `<span class="period-chip">${e.period || '1T'}</span>`;
             const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
+            const teamBadge = e.teamName ? `<small style="color:var(--text-muted);">(${e.teamName})</small>` : '';
+            const assistBadge = e.assist ? `<small style="color:var(--accent-gold); display:block;">👟 Asist: ${e.assist}</small>` : '';
             eventsHtml += `
-              <div style="font-size:0.8rem; margin-bottom:4px; border-bottom:1px solid #222; padding-bottom:4px; display:flex; align-items:center; justify-content:space-between;">
+              <div style="font-size:0.8rem; margin-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:6px; display:flex; align-items:center; justify-content:space-between;">
                 <div>
                   ${periodBadge}
                   <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
-                  <b style="margin-left:4px;">${e.player}</b>
+                  <b style="margin-left:4px;">${e.player}</b> ${teamBadge}
+                  ${assistBadge}
                 </div>
                 <button style="background:none; border:none; color:var(--accent-red); cursor:pointer; font-weight:bold;" onclick="deleteHistoricalEvent(${idx}, ${e.id})">✕</button>
               </div>`;
@@ -990,7 +1532,16 @@
               </div>
 
               <div class="add-hist-box">
-                <small style="color:var(--accent-gold); font-weight:bold; display:block; margin-bottom:6px;">➕ Agregar / Editar Tiempo a este Partido:</small>
+                <small style="color:var(--accent-gold); font-weight:bold; display:block; margin-bottom:8px;">➕ Agregar Incidencia Manual (Desglosada):</small>
+                
+                <div class="form-group" style="margin-bottom:6px;">
+                  <label>Equipo</label>
+                  <select id="hTeamSelect-${idx}" style="padding:6px; font-size:0.8rem;" onchange="updateHistPlayerDropdown(${idx})">
+                    <option value="${m.t1}">${m.t1}</option>
+                    <option value="${m.t2}">${m.t2}</option>
+                  </select>
+                </div>
+
                 <div class="form-row">
                   <div class="form-group" style="margin-bottom:6px;">
                     <label>Tiempo</label>
@@ -1012,11 +1563,18 @@
                     </select>
                   </div>
                 </div>
+
                 <div class="form-group" style="margin-bottom:6px;">
-                  <label>Nombre del Jugador</label>
-                  <input type="text" id="hPlayer-${idx}" placeholder="Ej: Juan Pérez" style="padding:6px; font-size:0.8rem;">
+                  <label>Jugador (Desglosado)</label>
+                  <select id="hPlayerSelect-${idx}" style="padding:6px; font-size:0.8rem;"></select>
                 </div>
-                <button class="btn-act" style="padding:8px; font-size:0.75rem; background:#1976d2;" onclick="addHistoricalEvent(${idx})">Guardar en este Partido</button>
+
+                <div class="form-group" style="margin-bottom:6px;">
+                  <label>Asistencia (Opcional)</label>
+                  <select id="hAssistSelect-${idx}" style="padding:6px; font-size:0.8rem;"></select>
+                </div>
+
+                <button class="btn-act" style="padding:8px; font-size:0.75rem; background:#1976d2; margin-top:4px;" onclick="addHistoricalEvent(${idx})">Guardar en este Partido</button>
               </div>
 
               <div style="display:flex; gap:8px; margin-top:10px;">
@@ -1025,6 +1583,8 @@
               </div>
             </div>
           </div>`;
+          
+          setTimeout(() => updateHistPlayerDropdown(idx), 50);
       });
     }
 
