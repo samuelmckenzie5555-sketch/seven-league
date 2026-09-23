@@ -420,8 +420,11 @@
         </div>
       </div>
       <div class="form-group">
-        <label>Nombre del Árbitro</label>
-        <input type="text" id="refNameInput" value="SAMUEL MCKENZIE" onchange="updateRefName()">
+        <label>Árbitro Oficial</label>
+        <select id="refNameInput" onchange="updateRefName()">
+          <option value="SAMUEL MCKENZIE">Samuel McKenzie</option>
+          <option value="CESAR GALERA">César Galera</option>
+        </select>
       </div>
     </div>
 
@@ -579,7 +582,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         const swCode = `
-          const CACHE_NAME = 'seven-league-v3';
+          const CACHE_NAME = 'seven-league-v4';
           self.addEventListener('install', e => {
             self.skipWaiting();
             e.waitUntil(
