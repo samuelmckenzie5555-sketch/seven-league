@@ -1,31 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>7L SEVEN LEAGUE</title>
-
-  <!-- PWA & Mobile Fullscreen Meta Tags con Logo Oficial Seven League -->
-  <meta name="theme-color" content="#050508">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Seven League">
-  
-  <!-- App Icons con el Logo Oficial Seven League -->
-  <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512">
-  <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512">
-
-  <!-- Manifest Inline para standalone estricto -->
-  <link rel="manifest" href='data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Seven%20League%20Match%20Center%22%2C%22short_name%22%3A%22SevenLeague%22%2C%22description%22%3A%22Centro%20de%20mando%20y%20arbitraje%20para%20Seven%20League%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23050508%22%2C%22theme_color%22%3A%22%23d32f2f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518091043644-c1d4457512c6%3Fw%3D512%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D'>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>7L SEVEN LEAGUE</title>
+<!-- PWA & Mobile Fullscreen Meta Tags con Logo Oficial Seven League -->
+<meta content="#050508" name="theme-color"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Seven League" name="apple-mobile-web-app-title"/>
+<!-- App Icons con el Logo Oficial Seven League -->
+<link href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512" rel="apple-touch-icon"/>
+<link href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512" rel="icon" type="image/png"/>
+<!-- Manifest Inline para standalone estricto -->
+<link href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Seven%20League%20Match%20Center%22%2C%22short_name%22%3A%22SevenLeague%22%2C%22description%22%3A%22Centro%20de%20mando%20y%20arbitraje%20para%20Seven%20League%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23050508%22%2C%22theme_color%22%3A%22%23d32f2f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518091043644-c1d4457512c6%3Fw%3D512%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Orbitron:wght@500;700;900&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
     :root {
       --bg-dark: #050508;
       --card-bg: rgba(18, 18, 26, 0.75);
@@ -290,284 +285,257 @@
   </style>
 </head>
 <body>
-
-  <!-- SPLASH SCREEN DE ENTRADA CON LOGO REAL SEVEN LEAGUE -->
-  <div id="splashScreen">
-    <div class="splash-logo-container">
-      <svg class="splash-logo-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g transform="skewX(-18)">
-          <path d="M 120,30 L 230,30 L 160,150 L 120,150 L 175,65 L 120,65 Z" fill="#FFFFFF" />
-          <path d="M 210,30 L 250,30 L 195,120 L 280,120 L 270,150 L 175,150 Z" fill="#D32F2F" />
-        </g>
-        <text x="250" y="190" font-family="'Orbitron', sans-serif" font-weight="900" font-style="italic" font-size="38" text-anchor="middle" letter-spacing="2">
-          <tspan fill="#FFFFFF">SEVEN </tspan>
-          <tspan fill="#D32F2F">LEAGUE</tspan>
-        </text>
-        <line x1="80" y1="212" x2="130" y2="212" stroke="#D32F2F" stroke-width="2"/>
-        <text x="250" y="216" font-family="'Rajdhani', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">
+<!-- SPLASH SCREEN DE ENTRADA CON LOGO REAL SEVEN LEAGUE -->
+<div id="splashScreen">
+<div class="splash-logo-container">
+<svg class="splash-logo-svg" fill="none" viewbox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
+<g transform="skewX(-18)">
+<path d="M 120,30 L 230,30 L 160,150 L 120,150 L 175,65 L 120,65 Z" fill="#FFFFFF"></path>
+<path d="M 210,30 L 250,30 L 195,120 L 280,120 L 270,150 L 175,150 Z" fill="#D32F2F"></path>
+</g>
+<text font-family="'Orbitron', sans-serif" font-size="38" font-style="italic" font-weight="900" letter-spacing="2" text-anchor="middle" x="250" y="190">
+<tspan fill="#FFFFFF">SEVEN </tspan>
+<tspan fill="#D32F2F">LEAGUE</tspan>
+</text>
+<line stroke="#D32F2F" stroke-width="2" x1="80" x2="130" y1="212" y2="212"></line>
+<text fill="#FFFFFF" font-family="'Rajdhani', sans-serif" font-size="14" font-weight="700" letter-spacing="4" text-anchor="middle" x="250" y="216">
           FOOTBALL 7 COMPETITION
         </text>
-        <line x1="370" y1="212" x2="420" y2="212" stroke="#D32F2F" stroke-width="2"/>
-      </svg>
-    </div>
-    <div class="splash-loader-bar">
-      <div class="splash-loader-progress" id="splashProgress"></div>
-    </div>
-    <div class="splash-text">Match Center Loading...</div>
-  </div>
-
-  <!-- Drawer Menu -->
-  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
-  <div class="drawer-menu" id="drawerMenu">
-    <div class="drawer-header">7L MATCH CENTER</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-partido')">⚽ Partido en Vivo</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-equipos')">🛡️ Gestión de Equipos</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-asistencia')">📋 Lista de Asistencia</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-historial')">📁 Historial de Actas</div>
-    
-    <div style="margin-top:auto;">
-      <button class="btn-sec" style="background:#0288d1; margin-bottom:6px;" onclick="exportBackupData()">📥 Descargar Backup (JSON)</button>
-      <label for="importBackupInput" class="btn-sec" style="display:block; text-align:center; background:#7b1fa2; cursor:pointer; margin-top:0;">📤 Cargar Backup (JSON)</label>
-      <input type="file" id="importBackupInput" accept=".json" style="display:none;" onchange="importBackupData(event)">
-      <button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar Memoria App</button>
-    </div>
-  </div>
-
-  <header>
-    <button class="menu-btn" onclick="toggleDrawer()">☰</button>
-    <div class="app-title">7L <span>SEVEN LEAGUE</span></div>
-    <button class="menu-btn" style="font-size: 1.2rem;" onclick="replaySplash()" title="Ver Pantalla de Inicio">🔄</button>
-  </header>
-
-  <div class="ref-badge">
+<line stroke="#D32F2F" stroke-width="2" x1="370" x2="420" y1="212" y2="212"></line>
+</svg>
+</div>
+<div class="splash-loader-bar">
+<div class="splash-loader-progress" id="splashProgress"></div>
+</div>
+<div class="splash-text">Match Center Loading...</div>
+</div>
+<!-- Drawer Menu -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+<div class="drawer-menu" id="drawerMenu">
+<div class="drawer-header">7L MATCH CENTER</div>
+<div class="drawer-item" onclick="switchTabNav('tab-partido')">⚽ Partido en Vivo</div>
+<div class="drawer-item" onclick="switchTabNav('tab-equipos')">🛡️ Gestión de Equipos</div>
+<div class="drawer-item" onclick="switchTabNav('tab-asistencia')">📋 Lista de Asistencia</div>
+<div class="drawer-item" onclick="switchTabNav('tab-historial')">📁 Historial de Actas</div>
+<div style="margin-top:auto;">
+<button class="btn-sec" onclick="exportBackupData()" style="background:#0288d1; margin-bottom:6px;">📥 Descargar Backup (JSON)</button>
+<label class="btn-sec" for="importBackupInput" style="display:block; text-align:center; background:#7b1fa2; cursor:pointer; margin-top:0;">📤 Cargar Backup (JSON)</label>
+<input accept=".json" id="importBackupInput" onchange="importBackupData(event)" style="display:none;" type="file"/>
+<button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar Memoria App</button>
+</div>
+</div>
+<header>
+<button class="menu-btn" onclick="toggleDrawer()">☰</button>
+<div class="app-title">7L <span>SEVEN LEAGUE</span></div>
+<button class="menu-btn" onclick="replaySplash()" style="font-size: 1.2rem;" title="Ver Pantalla de Inicio">🔄</button>
+</header>
+<div class="ref-badge">
     👨‍‍⚖️ Árbitro Oficial: <span id="refereeNameDisplay">SAMUEL MCKENZIE</span>
-  </div>
-
-  <nav class="tabs-nav">
-    <button class="tab-button active" id="btn-tab-partido" onclick="switchTab('tab-partido')">1. Partido</button>
-    <button class="tab-button" id="btn-tab-equipos" onclick="switchTab('tab-equipos')">2. Equipos</button>
-    <button class="tab-button" id="btn-tab-asistencia" onclick="switchTab('tab-asistencia')">3. Asistencia</button>
-    <button class="tab-button" id="btn-tab-historial" onclick="switchTab('tab-historial')">4. Historial</button>
-  </nav>
-
-  <!-- TAB 1: PARTIDO EN VIVO -->
-  <div id="tab-partido" class="tab-content active">
-    
-    <div class="scoreboard-box" id="scoreboardCard">
-      <canvas id="particlesCanvas"></canvas>
-      <div class="teams-vs">
-        <div class="team-item">
-          <div class="team-logo-wrapper" id="logoWrap1"></div>
-          <div class="team-title" id="nameTeam1">LOCAL</div>
-          <div class="score-num" id="score1">0</div>
-        </div>
-        <div class="vs-badge">VS</div>
-        <div class="team-item">
-          <div class="team-logo-wrapper" id="logoWrap2"></div>
-          <div class="team-title" id="nameTeam2">VISITANTE</div>
-          <div class="score-num" id="score2">0</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="momentum-box">
-      <div class="momentum-header">
-        <span id="mName1">LOCAL (50%)</span>
-        <span>MATCH MOMENTUM</span>
-        <span id="mName2">VISITANTE (50%)</span>
-      </div>
-      <div class="momentum-bar-wrap">
-        <div class="momentum-fill-1" id="mFill1" style="width: 50%;"></div>
-        <div class="momentum-fill-2" id="mFill2" style="width: 50%;"></div>
-      </div>
-    </div>
-
-    <!-- Cronómetro Corregido -->
-    <div class="timer-card" id="timerCard">
-      <div class="timer-period" id="periodDisplay">1er Tiempo (25 min)</div>
-      <div class="timer-clock" id="timerDisplay">00:00</div>
-      <div class="timer-btn-row">
-        <button class="btn-t" id="btnStart" onclick="toggleTimer()">▶ Iniciar</button>
-        <button class="btn-t active-period" id="btnPeriod1" onclick="setPeriod(1)">1T</button>
-        <button class="btn-t" id="btnPeriod2" onclick="setPeriod(2)">2T</button>
-      </div>
-      <div style="margin-top:8px; display:flex; gap:6px; justify-content:center;">
-        <span style="font-size:0.7rem; color:var(--text-muted); align-self:center;">Descuento:</span>
-        <button class="btn-add-time" onclick="addExtraTime(1)">+1'</button>
-        <button class="btn-add-time" onclick="addExtraTime(2)">+2'</button>
-        <button class="btn-add-time" onclick="addExtraTime(3)">+3'</button>
-      </div>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Configurar Partido</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Equipo Local</label>
-          <select id="matchTeam1Select" onchange="changeMatchTeams()"></select>
-        </div>
-        <div class="form-group">
-          <label>Equipo Visitante</label>
-          <select id="matchTeam2Select" onchange="changeMatchTeams()"></select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Árbitro Oficial</label>
-        <select id="refNameInput" onchange="updateRefName()">
-          <option value="SAMUEL MCKENZIE">Samuel McKenzie</option>
-          <option value="CESAR GALERA">César Galera</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Registrar Incidencia Manual</div>
-      <div class="form-group">
-        <label>Equipo de la Incidencia</label>
-        <select id="teamSelect" onchange="updatePlayerDropdowns()"></select>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Tiempo</label>
-          <select id="eventPeriodSelect">
-            <option value="1T">1er Tiempo (1T)</option>
-            <option value="2T">2do Tiempo (2T)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Minuto</label>
-          <input type="number" id="minuteInput" value="1" min="1" max="120">
-        </div>
-        <div class="form-group">
-          <label>Evento</label>
-          <select id="typeSelect" onchange="toggleAssistField()">
-            <option value="GOL">⚽ GOL</option>
-            <option value="A">🟨 Amarilla (A)</option>
-            <option value="R">🟥 Roja (R)</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Jugador (Plantilla)</label>
-        <select id="playerSelect"></select>
-      </div>
-      <div class="form-group" id="assistGroup">
-        <label>Asistencia (Opcional)</label>
-        <select id="assistSelect"></select>
-      </div>
-      <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Match Timeline</div>
-      <div id="eventsListContainer">Sin incidencias.</div>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Jugador del Partido (MVP)</div>
-      <select id="mvpSelect" onchange="saveMVP()"><option value="">-- Seleccionar MVP --</option></select>
-    </div>
-
-    <button class="btn-act" style="background:#2e7d32; margin-bottom:8px;" onclick="exportSummary()">📲 Copiar Texto para WhatsApp</button>
-    <button class="btn-act" style="background:linear-gradient(135deg, #00f3ff 0%, #0066ff 100%); color:#fff; margin-bottom:8px;" onclick="generateMatchGraphicCard()">🖼️ Generar Imagen de Acta HD</button>
-    <button class="btn-act" style="background:linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color:#000; margin-bottom:8px;" onclick="generateFutMvpCard()">🎴 Generar Carta FUT MVP HD</button>
-    <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
-  </div>
-
-  <!-- TAB 2: GESTIÓN DE EQUIPOS -->
-  <div id="tab-equipos" class="tab-content">
-    <div class="glass-card">
-      <div class="card-head">Administrar Plantilla y Logo</div>
-      <div class="form-group">
-        <label>Seleccionar Equipo a Modificar</label>
-        <select id="manageTeamSelect" onchange="renderTeamManagement()"></select>
-      </div>
-
-      <div style="text-align: center; margin: 16px 0;">
-        <div class="team-logo-wrapper" id="manageLogoWrap" style="width: 80px; height: 80px; margin: 0 auto 8px auto;"></div>
-        <label for="uploadLogoInput" class="btn-sec" style="display: inline-block; width: auto; padding: 8px 16px; cursor: pointer;">🖼️ Subir Logo de Equipo</label>
-        <input type="file" id="uploadLogoInput" accept="image/*" style="display: none;" onchange="handleLogoUpload(event)">
-      </div>
-
-      <div class="form-group" style="margin-top: 20px;">
-        <label>Agregar Nuevo Jugador</label>
-        <div class="form-row">
-          <input type="text" id="newPlayerName" placeholder="Nombre y Apellido">
-          <button class="btn-act" style="width: 100px;" onclick="addNewPlayer()">Añadir</button>
-        </div>
-      </div>
-
-      <label style="margin-top: 16px;">Jugadores Registrados:</label>
-      <div id="managePlayersList" style="margin-top: 8px;"></div>
-    </div>
-  </div>
-
-  <!-- TAB 3: ASISTENCIA -->
-  <div id="tab-asistencia" class="tab-content">
-    <div class="glass-card">
-      <div class="card-head"><span id="attTitle1">LOCAL</span></div>
-      <div id="list-att-1"></div>
-    </div>
-    <div class="glass-card">
-      <div class="card-head"><span id="attTitle2">VISITANTE</span></div>
-      <div id="list-att-2"></div>
-    </div>
-    <!-- Botón para generar reporte de asistencia -->
-    <button class="btn-act" style="background:#0288d1; margin-top: 10px;" onclick="generateAttendanceReport()">📋 Generar Reporte de Asistencia (PDF / Texto)</button>
-  </div>
-
-  <!-- TAB 4: HISTORIAL -->
-  <div id="tab-historial" class="tab-content">
-    <button class="btn-act" style="background:#00897b; margin-bottom: 12px;" onclick="exportarTodoElHistorial()">
+</div>
+<nav class="tabs-nav">
+<button class="tab-button active" id="btn-tab-partido" onclick="switchTab('tab-partido')">1. Partido</button>
+<button class="tab-button" id="btn-tab-equipos" onclick="switchTab('tab-equipos')">2. Equipos</button>
+<button class="tab-button" id="btn-tab-asistencia" onclick="switchTab('tab-asistencia')">3. Asistencia</button>
+<button class="tab-button" id="btn-tab-historial" onclick="switchTab('tab-historial')">4. Historial</button>
+</nav>
+<!-- TAB 1: PARTIDO EN VIVO -->
+<div class="tab-content active" id="tab-partido">
+<div class="scoreboard-box" id="scoreboardCard">
+<canvas id="particlesCanvas"></canvas>
+<div class="teams-vs">
+<div class="team-item">
+<div class="team-logo-wrapper" id="logoWrap1"></div>
+<div class="team-title" id="nameTeam1">LOCAL</div>
+<div class="score-num" id="score1">0</div>
+</div>
+<div class="vs-badge">VS</div>
+<div class="team-item">
+<div class="team-logo-wrapper" id="logoWrap2"></div>
+<div class="team-title" id="nameTeam2">VISITANTE</div>
+<div class="score-num" id="score2">0</div>
+</div>
+</div>
+</div>
+<div class="momentum-box">
+<div class="momentum-header">
+<span id="mName1">LOCAL (50%)</span>
+<span>MATCH MOMENTUM</span>
+<span id="mName2">VISITANTE (50%)</span>
+</div>
+<div class="momentum-bar-wrap">
+<div class="momentum-fill-1" id="mFill1" style="width: 50%;"></div>
+<div class="momentum-fill-2" id="mFill2" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Cronómetro Corregido -->
+<div class="timer-card" id="timerCard">
+<div class="timer-period" id="periodDisplay">1er Tiempo (25 min)</div>
+<div class="timer-clock" id="timerDisplay">00:00</div>
+<div class="timer-btn-row">
+<button class="btn-t" id="btnStart" onclick="toggleTimer()">▶ Iniciar</button>
+<button class="btn-t active-period" id="btnPeriod1" onclick="setPeriod(1)">1T</button>
+<button class="btn-t" id="btnPeriod2" onclick="setPeriod(2)">2T</button>
+</div>
+<div style="margin-top:8px; display:flex; gap:6px; justify-content:center;">
+<span style="font-size:0.7rem; color:var(--text-muted); align-self:center;">Descuento:</span>
+<button class="btn-add-time" onclick="addExtraTime(1)">+1'</button>
+<button class="btn-add-time" onclick="addExtraTime(2)">+2'</button>
+<button class="btn-add-time" onclick="addExtraTime(3)">+3'</button>
+</div>
+</div>
+<div class="glass-card">
+<div class="card-head">Configurar Partido</div>
+<div class="form-row">
+<div class="form-group">
+<label>Equipo Local</label>
+<select id="matchTeam1Select" onchange="changeMatchTeams()"></select>
+</div>
+<div class="form-group">
+<label>Equipo Visitante</label>
+<select id="matchTeam2Select" onchange="changeMatchTeams()"></select>
+</div>
+</div>
+<div class="form-group">
+<label>Árbitro Oficial</label>
+<select id="refNameInput" onchange="updateRefName()">
+<option value="SAMUEL MCKENZIE">Samuel McKenzie</option>
+<option value="CESAR GALERA">César Galera</option>
+</select>
+</div>
+</div>
+<div class="glass-card">
+<div class="card-head">Registrar Incidencia Manual</div>
+<div class="form-group">
+<label>Equipo de la Incidencia</label>
+<select id="teamSelect" onchange="updatePlayerDropdowns()"></select>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Tiempo</label>
+<select id="eventPeriodSelect">
+<option value="1T">1er Tiempo (1T)</option>
+<option value="2T">2do Tiempo (2T)</option>
+</select>
+</div>
+<div class="form-group">
+<label>Minuto</label>
+<input id="minuteInput" max="120" min="1" type="number" value="1"/>
+</div>
+<div class="form-group">
+<label>Evento</label>
+<select id="typeSelect" onchange="toggleAssistField()">
+<option value="GOL">⚽ GOL</option>
+<option value="A">🟨 Amarilla (A)</option>
+<option value="R">🟥 Roja (R)</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>Jugador (Plantilla)</label>
+<select id="playerSelect"></select>
+</div>
+<div class="form-group" id="assistGroup">
+<label>Asistencia (Opcional)</label>
+<select id="assistSelect"></select>
+</div>
+<button class="btn-act" onclick="addEvent()">Guardar Evento</button>
+</div>
+<div class="glass-card">
+<div class="card-head">Match Timeline</div>
+<div id="eventsListContainer">Sin incidencias.</div>
+</div>
+<div class="glass-card">
+<div class="card-head">Jugador del Partido (MVP)</div>
+<select id="mvpSelect" onchange="saveMVP()"><option value="">-- Seleccionar MVP --</option></select>
+</div>
+<button class="btn-act" onclick="exportSummary()" style="background:#2e7d32; margin-bottom:8px;">📲 Copiar Texto para WhatsApp</button>
+<button class="btn-act" onclick="generateMatchGraphicCard()" style="background:linear-gradient(135deg, #00f3ff 0%, #0066ff 100%); color:#fff; margin-bottom:8px;">🖼️ Generar Imagen de Acta HD</button>
+<button class="btn-act" onclick="generateFutMvpCard()" style="background:linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color:#000; margin-bottom:8px;">🎴 Generar Carta FUT MVP HD</button>
+<button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
+</div>
+<!-- TAB 2: GESTIÓN DE EQUIPOS -->
+<div class="tab-content" id="tab-equipos">
+<div class="glass-card">
+<div class="card-head">Administrar Plantilla y Logo</div>
+<div class="form-group">
+<label>Seleccionar Equipo a Modificar</label>
+<select id="manageTeamSelect" onchange="renderTeamManagement()"></select>
+</div>
+<div style="text-align: center; margin: 16px 0;">
+<div class="team-logo-wrapper" id="manageLogoWrap" style="width: 80px; height: 80px; margin: 0 auto 8px auto;"></div>
+<label class="btn-sec" for="uploadLogoInput" style="display: inline-block; width: auto; padding: 8px 16px; cursor: pointer;">🖼️ Subir Logo de Equipo</label>
+<input accept="image/*" id="uploadLogoInput" onchange="handleLogoUpload(event)" style="display: none;" type="file"/>
+</div>
+<div class="form-group" style="margin-top: 20px;">
+<label>Agregar Nuevo Jugador</label>
+<div class="form-row">
+<input id="newPlayerName" placeholder="Nombre y Apellido" type="text"/>
+<button class="btn-act" onclick="addNewPlayer()" style="width: 100px;">Añadir</button>
+</div>
+</div>
+<label style="margin-top: 16px;">Jugadores Registrados:</label>
+<div id="managePlayersList" style="margin-top: 8px;"></div>
+</div>
+</div>
+<!-- TAB 3: ASISTENCIA -->
+<div class="tab-content" id="tab-asistencia">
+<div class="glass-card">
+<div class="card-head"><span id="attTitle1">LOCAL</span></div>
+<div id="list-att-1"></div>
+</div>
+<div class="glass-card">
+<div class="card-head"><span id="attTitle2">VISITANTE</span></div>
+<div id="list-att-2"></div>
+</div>
+<!-- Botón para generar reporte de asistencia -->
+<button class="btn-act" onclick="generateAttendanceReport()" style="background:#0288d1; margin-top: 10px;">📋 Generar Reporte de Asistencia (PDF / Texto)</button>
+</div>
+<!-- TAB 4: HISTORIAL -->
+<div class="tab-content" id="tab-historial">
+<button class="btn-act" onclick="exportarTodoElHistorial()" style="background:#00897b; margin-bottom: 12px;">
       📄 Copiar Cronología Completa de Memoria
     </button>
-
-    <div class="glass-card" style="border: 1px solid var(--accent-gold);">
-      <div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar / Reconstruir Acta</div>
-      <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
+<div class="glass-card" style="border: 1px solid var(--accent-gold);">
+<div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar / Reconstruir Acta</div>
+<p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
         Pega un texto de WhatsApp para recuperar incidencias y tiempos automáticamente:
       </p>
-      <textarea id="importWhatsappText" rows="4" placeholder="Pega el acta copiada de WhatsApp aquí..."></textarea>
-      <button class="btn-act" style="background:var(--accent-gold); color:#000; margin-top:8px;" onclick="importFromWhatsappText()">⚡ Reconstruir Partido</button>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Partidos Archivados</div>
-      <div id="savedMatchesContainer">Sin partidos archivados.</div>
-    </div>
-  </div>
-
-  <!-- MODAL CARTA FUT MVP -->
-  <div class="fut-card-modal" id="futModal">
-    <canvas id="futCanvas" width="450" height="650" style="max-width:100%; max-height:75vh; border-radius:20px; box-shadow:0 0 35px rgba(255, 215, 0, 0.6);"></canvas>
-    <div style="display:flex; gap:10px; margin-top:16px;">
-      <button class="btn-act" style="background:var(--accent-gold); color:#000;" onclick="downloadFutCanvas()">⬇️ Descargar Carta HD</button>
-      <button class="btn-sec" onclick="closeFutModal()">✕ Cerrar</button>
-    </div>
-  </div>
-
-  <!-- MODAL CARTA IMAGEN ACTA OFICIAL -->
-  <div class="fut-card-modal" id="matchGraphicModal">
-    <canvas id="graphicCanvas" width="600" height="850" style="max-width:100%; max-height:75vh; border-radius:20px; box-shadow:0 0 35px rgba(0, 243, 255, 0.5);"></canvas>
-    <div style="display:flex; gap:10px; margin-top:16px;">
-      <button class="btn-act" style="background:var(--neon-cyan); color:#000;" onclick="downloadGraphicCanvas()">⬇️ Descargar Imagen Acta HD</button>
-      <button class="btn-sec" onclick="closeGraphicModal()">✕ Cerrar</button>
-    </div>
-  </div>
-
-  <!-- MODAL REPORTE DE ASISTENCIA -->
-  <div class="fut-card-modal" id="attendanceModal">
-    <div class="glass-card" style="width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; background: #0f0f16; border: 1px solid var(--neon-cyan);">
-      <div class="card-head" style="color:var(--neon-cyan);">📋 Reporte de Asistencia del Partido</div>
-      <div id="attendanceReportContent" style="font-size: 0.9rem; line-height: 1.5; white-space: pre-line; margin-bottom: 16px; color: #fff;"></div>
-      <div style="display:flex; gap:10px;">
-        <button class="btn-act" style="background:var(--neon-cyan); color:#000;" onclick="copyAttendanceReport()">📋 Copiar Reporte</button>
-        <button class="btn-sec" onclick="closeAttendanceModal()">✕ Cerrar</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
+<textarea id="importWhatsappText" placeholder="Pega el acta copiada de WhatsApp aquí..." rows="4"></textarea>
+<button class="btn-act" onclick="importFromWhatsappText()" style="background:var(--accent-gold); color:#000; margin-top:8px;">⚡ Reconstruir Partido</button>
+</div>
+<div class="glass-card">
+<div class="card-head">Partidos Archivados</div>
+<div id="savedMatchesContainer">Sin partidos archivados.</div>
+</div>
+</div>
+<!-- MODAL CARTA FUT MVP -->
+<div class="fut-card-modal" id="futModal">
+<canvas height="650" id="futCanvas" style="max-width:100%; max-height:75vh; border-radius:20px; box-shadow:0 0 35px rgba(255, 215, 0, 0.6);" width="450"></canvas>
+<div style="display:flex; gap:10px; margin-top:16px;">
+<button class="btn-act" onclick="downloadFutCanvas()" style="background:var(--accent-gold); color:#000;">⬇️ Descargar Carta HD</button>
+<button class="btn-sec" onclick="closeFutModal()">✕ Cerrar</button>
+</div>
+</div>
+<!-- MODAL CARTA IMAGEN ACTA OFICIAL -->
+<div class="fut-card-modal" id="matchGraphicModal">
+<canvas height="850" id="graphicCanvas" style="max-width:100%; max-height:75vh; border-radius:20px; box-shadow:0 0 35px rgba(0, 243, 255, 0.5);" width="600"></canvas>
+<div style="display:flex; gap:10px; margin-top:16px;">
+<button class="btn-act" onclick="downloadGraphicCanvas()" style="background:var(--neon-cyan); color:#000;">⬇️ Descargar Imagen Acta HD</button>
+<button class="btn-sec" onclick="closeGraphicModal()">✕ Cerrar</button>
+</div>
+</div>
+<!-- MODAL REPORTE DE ASISTENCIA -->
+<div class="fut-card-modal" id="attendanceModal">
+<div class="glass-card" style="width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; background: #0f0f16; border: 1px solid var(--neon-cyan);">
+<div class="card-head" style="color:var(--neon-cyan);">📋 Reporte de Asistencia del Partido</div>
+<div id="attendanceReportContent" style="font-size: 0.9rem; line-height: 1.5; white-space: pre-line; margin-bottom: 16px; color: #fff;"></div>
+<div style="display:flex; gap:10px;">
+<button class="btn-act" onclick="copyAttendanceReport()" style="background:var(--neon-cyan); color:#000;">📋 Copiar Reporte</button>
+<button class="btn-sec" onclick="closeAttendanceModal()">✕ Cerrar</button>
+</div>
+</div>
+</div>
+<script>
     // CONTROL DEL SPLASH SCREEN INTRO
     function runSplashScreen() {
       const splash = document.getElementById('splashScreen');
@@ -586,27 +554,9 @@
     // Registro de Service Worker para comportamiento NATIVO / STANDALONE
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        const swCode = `
-          const CACHE_NAME = 'seven-league-v5';
-          self.addEventListener('install', e => {
-            self.skipWaiting();
-            e.waitUntil(
-              caches.open(CACHE_NAME).then(cache => {
-                return cache.addAll(['./', 'index.html']);
-              })
-            );
-          });
-          self.addEventListener('activate', e => {
-            e.waitUntil(clients.claim());
-          });
-          self.addEventListener('fetch', e => {
-            e.respondWith(
-              caches.match(e.request).then(response => response || fetch(e.request))
-            );
-          });
-        `;
-        const blob = new Blob([swCode], { type: 'application/javascript' });
-        navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
+        // Los Service Workers deben registrarse desde una URL del mismo origen.
+        // Registrar un blob: URL falla en muchos navegadores.
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
       });
     }
 
@@ -977,7 +927,19 @@
     function addExtraTime(mins) {
       triggerHaptic();
       elapsedTimeBeforePause += mins * 60 * 1000;
-      updateTimerClock();
+
+      // El cronómetro principal está basado en tiempo transcurrido.
+      // Si está pausado, updateTimerClock() no actualiza la pantalla,
+      // por lo que renderizamos directamente el tiempo acumulado.
+      if (timerRunning) {
+        updateTimerClock();
+      } else {
+        const totalSec = Math.floor(elapsedTimeBeforePause / 1000);
+        const m = String(Math.floor(totalSec / 60)).padStart(2, '0');
+        const s = String(totalSec % 60).padStart(2, '0');
+        document.getElementById('timerDisplay').innerText = `${m}:${s}`;
+        document.getElementById('minuteInput').value = Math.max(1, Math.ceil(totalSec / 60));
+      }
     }
 
     function setPeriod(p) {
@@ -1552,7 +1514,7 @@
       const lines = text.split('\n');
 
       lines.forEach(line => {
-        const evMatch = line.match(/•?\s*(\d+)'\s*(\((1T\vert{}2T)\))?\s*(⚽|🟨|🟥|GOL|A|R)?[:\s]*\*?([^*()\n]+)\*?\s*(\(([^()]+)\))?/i);
+        const evMatch = line.match(/•?\s*(\d+)'\s*(\((1T|2T)\))?\s*(⚽|🟨|🟥|GOL|A|R)?[:\s]*\*?([^*()\n]+)\*?\s*(\(([^()]+)\))?/i);
         if (evMatch && (line.includes('GOL') || line.includes('⚽') || line.includes('🟨') || line.includes('🟥'))) {
           const minute = parseInt(evMatch[1]) || 1;
           let period = evMatch[3] || '1T';
@@ -1916,165 +1878,8 @@
 <!-- ======================================================= -->
 <!-- FIX DEFINITIVO 7L: CRONÓMETRO + FICHAS DE JUGADORES + FOTOS -->
 <!-- ======================================================= -->
-<script>
-(function() {
-    // 1. Mapeo de fotos extraídas de la sección Players de Seven League Basel Hub
-    const sevenLeagueHubPhotos = {
-        "marco rossi": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200",
-        "stefan meier": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
-        "luca moretti": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200",
-        "julian keller": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200"
-    };
 
-    // 2. Sincronización de base de datos local manteniendo creados manualmente
-    function syncPlayerDatabase() {
-        let teams = JSON.parse(localStorage.getItem('sl_teams')) || [];
-        if (!teams || teams.length === 0) return;
+<!-- REPARACIÓN AUTOMÁTICA DE CRONÓMETRO (SUMAR EN VEZ DE RESTAR) -->
 
-        teams.forEach(team => {
-            if (team.players && Array.isArray(team.players)) {
-                team.players.forEach(player => {
-                    const cleanName = player.name.toLowerCase().trim();
-                    if (sevenLeagueHubPhotos[cleanName]) {
-                        player.photo = sevenLeagueHubPhotos[cleanName];
-                    }
-                });
-            }
-        });
-        localStorage.setItem('sl_teams', JSON.stringify(teams));
-    }
-
-    // 3. Reinyección y Vinculación del Cronómetro (Suma de tiempo real)
-    window.secondsElapsed = window.secondsElapsed || 0;
-    window.timerInterval = null;
-    window.isTimerRunning = false;
-
-    window.toggleTimer = function() {
-        const btn = document.getElementById('btn-timer');
-        if (!window.isTimerRunning) {
-            window.isTimerRunning = true;
-            if (btn) {
-                btn.textContent = "PAUSAR";
-                btn.classList.add('bg-rose-600');
-            }
-            window.timerInterval = setInterval(function() {
-                window.secondsElapsed++;
-                window.updateTimerDisplay();
-            }, 1000);
-        } else {
-            window.isTimerRunning = false;
-            if (btn) {
-                btn.textContent = "CONTINUAR";
-                btn.classList.remove('bg-rose-600');
-            }
-            clearInterval(window.timerInterval);
-        }
-    };
-
-    window.resetTimer = function() {
-        clearInterval(window.timerInterval);
-        window.isTimerRunning = false;
-        window.secondsElapsed = 0;
-        window.updateTimerDisplay();
-        const btn = document.getElementById('btn-timer');
-        if (btn) {
-            btn.textContent = "INICIAR";
-            btn.classList.remove('bg-rose-600');
-        }
-    };
-
-    window.updateTimerDisplay = function() {
-        const mins = Math.floor(window.secondsElapsed / 60).toString().padStart(2, '0');
-        const secs = (window.secondsElapsed % 60).toString().padStart(2, '0');
-        const timerEl = document.getElementById('match-timer');
-        if (timerEl) timerEl.textContent = `${mins}:${secs}`;
-
-        const periodEl = document.getElementById('match-period');
-        if (periodEl) {
-            periodEl.textContent = window.secondsElapsed >= 1500 ? "2DO TIEMPO (25 MIN)" : "1ER TIEMPO (25 MIN)";
-        }
-    };
-
-    // 4. Modal para ver Ficha de Jugador con Fotografía
-    window.showPlayerCard = function(playerName, teamName) {
-        const teams = JSON.parse(localStorage.getItem('sl_teams')) || [];
-        let foundPlayer = null;
-
-        teams.forEach(t => {
-            if (t.players) {
-                const match = t.players.find(p => p.name.toLowerCase().trim() === playerName.toLowerCase().trim());
-                if (match) foundPlayer = { ...match, team: t.name };
-            }
-        });
-
-        if (!foundPlayer) {
-            foundPlayer = { name: playerName, team: teamName || 'Seven League', photo: sevenLeagueHubPhotos[playerName.toLowerCase().trim()] || '' };
-        }
-
-        const modalContent = document.getElementById('modal-content');
-        const modalContainer = document.getElementById('modal-container');
-
-        if (modalContent && modalContainer) {
-            modalContent.innerHTML = `
-                <div style="background: rgba(19, 28, 49, 0.95); padding: 20px; border-radius: 12px; border: 1px solid #d4af37; text-align: center;">
-                    <div style="width: 100px; height: 100px; margin: 0 auto 12px; border-radius: 50%; border: 2px solid #00f0ff; overflow: hidden; background: #0a0f1d; display: flex; align-items: center; justify-content: center;">
-                        ${foundPlayer.photo 
-                            ? `<img src="${foundPlayer.photo}" style="width: 100%; height: 100%; object-fit: cover;">` 
-                            : `<i class="fa-solid fa-user" style="font-size: 36px; color: #d4af37;"></i>`}
-                    </div>
-                    <h3 style="font-family: 'Bebas Neue', cursive; font-size: 26px; color: #ffffff; margin: 0;">${foundPlayer.name}</h3>
-                    <p style="color: #00f0ff; font-weight: bold; font-size: 14px; margin-top: 2px;">${foundPlayer.team}</p>
-                    <span style="display: inline-block; margin-top: 8px; background: rgba(212,175,55,0.2); color: #d4af37; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">Dorsal #${foundPlayer.num || '-'}</span>
-                </div>
-            `;
-            modalContainer.classList.remove('hidden');
-        }
-    };
-
-    // 5. Vincular eventos al cargar el documento
-    document.addEventListener("DOMContentLoaded", function() {
-        syncPlayerDatabase();
-
-        // Conectar botones del cronómetro
-        const btnStart = document.getElementById('btn-timer');
-        if (btnStart) {
-            btnStart.onclick = window.toggleTimer;
-        }
-
-        // Permitir clic en nombres de listas para abrir la ficha
-        document.addEventListener('click', function(e) {
-            if (e.target && e.target.classList.contains('player-card-trigger')) {
-                const name = e.target.getAttribute('data-name');
-                const team = e.target.getAttribute('data-team');
-                window.showPlayerCard(name, team);
-            }
-        });
-    });
-
-})();
-</script>
-    <!-- REPARACIÓN AUTOMÁTICA DE CRONÓMETRO (SUMAR EN VEZ DE RESTAR) -->
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-    // Intercepta las llamadas del temporizador para forzar incremento ascendente
-    var origSetInterval = window.setInterval;
-    window.setInterval = function(fn, delay) {
-        var intervalId = origSetInterval.apply(this, arguments);
-        // Corrige cualquier variable de tiempo decrementada internamente
-        if (typeof secondsLeft !== 'undefined') window.secondsLeft = 0;
-        return intervalId;
-    };
-});
-
-// Función de respaldo directo para el botón
-function fixAscendingTimer() {
-    if (!window.matchTimeCounter) window.matchTimeCounter = 0;
-    window.matchTimeCounter++;
-    var m = String(Math.floor(window.matchTimeCounter / 60)).padStart(2, '0');
-    var s = String(window.matchTimeCounter % 60).padStart(2, '0');
-    var el = document.getElementById('match-timer') || document.querySelector('.timer-display');
-    if (el) el.textContent = m + ":" + s;
-}
-</script>
 </body>
 </html>
