@@ -1920,82 +1920,117 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, 500);
 });
-    // --- SEVEN LEAGUE MATCH CENTER - ACTUALIZACIÓN INTEGRAL (2026) ---
+    // --- SEVEN LEAGUE MATCH CENTER - PARCHE DEFINITIVO (2026) ---
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     try {
-      // 1. FUSIÓN INTELIGENTE DE JUGADORES (Web + Manuales)
-      const equiposOficialesWeb = {
-        "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", short: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
-        "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo", "Pajtim Kerimi", "Daniel Wieland", "Nenad Ilic"] },
-        "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", short: "SPO", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
-        "eq_4": { id: "eq_4", name: "FC Max Basel", logo: "logo_max_basel.png", short: "MAX", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
-        "eq_5": { id: "eq_5", name: "FC Baselona", logo: "logo_baselona.png", short: "BAS", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
-        "eq_6": { id: "eq_6", name: "Joga Bonito FC", logo: "logo_joga_bonito.png", short: "JOG", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques"] },
-        "eq_7": { id: "eq_7", name: "Rhine Madrid", logo: "logo_rhine_madrid.png", short: "RHM", players: [] },
-        "eq_8": { id: "eq_8", name: "DPS Basel FC", logo: "logo_dps_basel.png", short: "DPS", players: [] },
-        "eq_9": { id: "eq_9", name: "BG FC", logo: "logo_bg_fc.png", short: "BGF", players: [] },
-        "eq_10": { id: "eq_10", name: "Inter Basel", logo: "logo_inter_basel.png", short: "INT", players: [] }
-      };
-
-      let datosLocales = localStorage.getItem('seven_league_teams_data');
-      if (!datosLocales) {
-        localStorage.setItem('seven_league_teams_data', JSON.stringify(equiposOficialesWeb));
-      } else {
-        let parsedLocales = JSON.parse(datosLocales);
-        Object.keys(equiposOficialesWeb).forEach(eqId => {
-          if (parsedLocales[eqId]) {
-            let jugadoresWeb = equiposOficialesWeb[eqId].players;
-            let jugadoresActuales = parsedLocales[eqId].players || [];
-            jugadoresWeb.forEach(jWeb => {
-              if (!jugadoresActuales.includes(jWeb)) {
-                jugadoresActuales.push(jWeb); // Conserva los manuales y añade los nuevos web
-              }
-            });
-            parsedLocales[eqId].players = jugadoresActuales;
-          } else {
-            parsedLocales[eqId] = equiposOficialesWeb[eqId];
-          }
-        });
-        localStorage.setItem('seven_league_teams_data', JSON.stringify(parsedLocales));
-      }
-
-      // 2. ACTUALIZACIÓN AUTOMÁTICA DEL LOGO DE LA APP
-      // Reemplaza las imágenes de cabecera o logos principales si detecta elementos genéricos
-      const nuevoLogoUrl = "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=200"; // (Puedes cambiar este enlace por la URL definitiva de tu logo de Seven League)
-      document.querySelectorAll('header img, .app-logo, .navbar-brand img').forEach(img => {
-        if (!img.src.includes('logo')) {
-          img.src = nuevoLogoUrl;
+      // 1. ACTUALIZACIÓN DEL LOGO DE LA APLICACIÓN
+      // Buscamos de forma más agresiva cualquier imagen en cabeceras o marcas
+      const logoUrlOficial = "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=250"; // (Puedes cambiar este enlace por el logo real de Seven League)
+      
+      document.querySelectorAll('img').forEach(img => {
+        let altText = (img.alt || "").toLowerCase();
+        let className = (img.className || "").toLowerCase();
+        let parentClass = (img.parentElement?.className || "").toLowerCase();
+        
+        if (altText.includes('logo') || className.includes('logo') || parentClass.includes('brand') || parentClass.includes('header')) {
+          img.src = logoUrlOficial;
+          img.style.maxHeight = '50px';
+          img.style.objectFit = 'contain';
         }
       });
 
-      // 3. MÓDULO DE DESCARGA DE PDF / ASISTENCIA DE JUGADORES
-      // Añade dinámicamente un botón flotante o en la sección de alineaciones para exportar
-      const crearBotonPDF = () => {
-        if (document.getElementById('btnDescargarAsistenciaPDF')) return;
-        
-        const contenedorAcciones = document.querySelector('.match-actions, .lineup-container, header, body');
-        if (!contenedorAcciones) return;
+      // 2. SISTEMA DE DESCARGA DE ACTA / ASISTENCIA SIMPLIFICADA (1 sola página limpia)
+      window.generarActaAsistenciaSimplificada = function() {
+        // Recopilamos nombres de jugadores visibles en la pantalla actual de la app
+        let jugadoresEnPantalla = [];
+        document.querySelectorAll('.player-name, .jugador-nombre, td, .card-title, li').forEach(el => {
+          let texto = el.innerText.trim();
+          // Filtramos para evitar textos basura de la interfaz
+          if (texto.length > 2 && texto.length < 35 && !texto.includes('Seven') && !jugadoresEnPantalla.includes(texto)) {
+            jugadoresEnPantalla.push(texto);
+          }
+        });
 
-        const btnPDF = document.createElement('button');
-        btnPDF.id = 'btnDescargarAsistenciaPDF';
-        btnPDF.innerHTML = '📄 Descargar Acta / Asistencia (PDF)';
-        btnPDF.style.cssText = 'background: #e11d48; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; margin: 10px; z-index: 9999; box-shadow: 0 4px 6px rgba(0,0,0,0.1);';
-        
-        btnPDF.onclick = () => {
-          window.print(); // Utiliza el motor nativo del navegador optimizado para exportar a PDF limpio ocultando elementos innecesarios
-        };
+        // Si no detecta elementos específicos, usamos una lista base de respaldo
+        if (jugadoresEnPantalla.length === 0) {
+          jugadoresEnPantalla = ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Alejandro Signoret", "Cesar Galera", "Luca Kropf"];
+        }
 
-        // Insertamos el botón de forma visible
-        document.body.prepend(btnPDF);
+        // Creamos una ventana emergente limpia exclusivamente para imprimir el acta
+        let ventanaPDF = window.open('', '_blank', 'width=800,height=600');
+        ventanaPDF.document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Acta de Asistencia - Seven League</title>
+            <style>
+              body { font-family: Arial, sans-serif; margin: 30px; color: #111; }
+              .header { text-align: center; border-bottom: 2px solid #e11d48; padding-bottom: 10px; margin-bottom: 20px; }
+              .header h1 { margin: 0; color: #e11d48; font-size: 22px; }
+              .header p { margin: 5px 0; color: #555; font-size: 14px; }
+              table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+              th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; font-size: 13px; }
+              th { background-color: #f1f5f9; color: #334155; }
+              .firma-box { height: 30px; }
+              .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #64748b; }
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h1>SEVEN LEAGUE MATCH CENTER</h1>
+              <p>Acta Oficial de Asistencia y Control de Partido</p>
+              <p><strong>Fecha:</strong> ${new Date().toLocaleDateString()} | <strong>Hora:</strong> ${new Date().toLocaleTimeString()}</p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 50px;">#</th>
+                  <th>Nombre del Jugador</th>
+                  <th style="width: 100px; text-align: center;">Asistencia</th>
+                  <th style="width: 150px;">Firma / Control</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${jugadoresEnPantalla.slice(0, 20).map((jugador, index) => `
+                  <tr>
+                    <td style="text-align: center;">${index + 1}</td>
+                    <td><strong>${jugador}</strong></td>
+                    <td style="text-align: center;">[  ] Presente</td>
+                    <td class="firma-box"></td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+            <div class="footer">
+              <p>Documento generado electrónicamente por Seven League Match Center - Uso exclusivo arbitral.</p>
+            </div>
+            <script>
+              window.onload = function() { window.print(); };
+            </script>
+          </body>
+          </html>
+        `);
+        ventanaPDF.document.close();
       };
 
-      crearBotonPDF();
-      console.log("Actualización Seven League aplicada correctamente.");
+      // 3. CREAR EL BOTÓN VISIBLE PARA DESCARGAR EL ACTA LIMPIA
+      if (!document.getElementById('btnActaLimpiaPDF')) {
+        const botonFlotante = document.createElement('button');
+        botonFlotante.id = 'btnActaLimpiaPDF';
+        botonFlotante.innerHTML = '📥 Descargar Acta de Asistencia (PDF)';
+        botonFlotante.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: #e11d48; color: white; border: none; padding: 12px 20px; border-radius: 30px; font-weight: bold; cursor: pointer; z-index: 10000; box-shadow: 0 4px 12px rgba(0,0,0,0.3); font-size: 14px;';
+        
+        botonFlotante.onclick = window.generarActaAsistenciaSimplificada;
+        document.body.appendChild(botonFlotante);
+      }
+
+      console.log("Parche definitivo aplicado con éxito.");
     } catch (e) {
-      console.error("Error aplicando mejoras:", e);
+      console.error("Error en el parche:", e);
     }
-  }, 1000);
+  }, 1200);
 });
   </script>
 </body>
