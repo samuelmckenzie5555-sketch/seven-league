@@ -1913,5 +1913,170 @@
 
     init();
   </script>
+<!-- ========================================== -->
+<!-- PARCHE UNIFICADO DE ACTUALIZACIÓN 7L      -->
+<!-- ========================================== -->
+<script>
+(function() {
+    console.log("Iniciando Parche Unificado Seven League...");
+
+    // 1. BASE DE DATOS DE JUGADORES Y FOTOS (Hub Seven League Basel)
+    const officialHubPlayers = [
+        { name: "Marco Rossi", team: "FC Max Basel", num: 10, photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200" },
+        { name: "Stefan Meier", team: "Rhine Lions FC", num: 1, photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200" },
+        { name: "Luca Moretti", team: "FC Max Basel", num: 7, photo: "" },
+        { name: "Julian Keller", team: "Rhine Lions FC", num: 9, photo: "" }
+    ];
+
+    // 2. SINCRONIZAR FOTOS RESPETANDO CREACIONES MANUALES
+    function syncPhotosAndKeepManual() {
+        let currentTeams = JSON.parse(localStorage.getItem('sl_teams')) || [];
+        if (!currentTeams || currentTeams.length === 0) return;
+
+        currentTeams.forEach(team => {
+            team.players.forEach(player => {
+                const matchHub = officialHubPlayers.find(
+                    hp => hp.name.toLowerCase().trim() === player.name.toLowerCase().trim()
+                );
+                if (matchHub && matchHub.photo) {
+                    player.photo = matchHub.photo;
+                }
+            });
+        });
+
+        localStorage.setItem('sl_teams', JSON.stringify(currentTeams));
+    }
+
+    // 3. CORRECCIÓN DEL CRONÓMETRO (SUMAR MINUTOS)
+    if (typeof window.toggleTimer !== 'undefined' || true) {
+        window.secondsElapsed = window.secondsElapsed || 0;
+        window.timerInterval = null;
+        window.isTimerRunning = false;
+
+        window.toggleTimer = function() {
+            const btn = document.getElementById('btn-timer');
+            if (!window.isTimerRunning) {
+                window.isTimerRunning = true;
+                if (btn) btn.textContent = "PAUSAR";
+                window.timerInterval = setInterval(() => {
+                    window.secondsElapsed++;
+                    window.updateTimerDisplay();
+                }, 1000);
+            } else {
+                window.isTimerRunning = false;
+                if (btn) btn.textContent = "CONTINUAR";
+                clearInterval(window.timerInterval);
+            }
+        };
+
+        window.resetTimer = function() {
+            clearInterval(window.timerInterval);
+            window.isTimerRunning = false;
+            window.secondsElapsed = 0;
+            window.updateTimerDisplay();
+            const btn = document.getElementById('btn-timer');
+            if (btn) btn.textContent = "INICIAR";
+        };
+
+        window.updateTimerDisplay = function() {
+            const mins = Math.floor(window.secondsElapsed / 60).toString().padStart(2, '0');
+            const secs = (window.secondsElapsed % 60).toString().padStart(2, '0');
+            const timerEl = document.getElementById('match-timer');
+            if (timerEl) timerEl.textContent = `${mins}:${secs}`;
+            
+            const periodEl = document.getElementById('match-period');
+            if (periodEl) {
+                periodEl.textContent = window.secondsElapsed >= 1500 ? "2DO TIEMPO (25 MIN)" : "1ER TIEMPO (25 MIN)";
+            }
+        };
+    }
+
+    // 4. CORRECCIÓN Y ALINEACIÓN DE ACTA DE ASISTENCIA (1 PÁGINA)
+    window.renderSinglePageAttendance = function(homeTeamId, awayTeamId) {
+        const teams = JSON.parse(localStorage.getItem('sl_teams')) || [];
+        const home = teams.find(t => t.id === homeTeamId) || teams[0] || { name: 'Local', players: [] };
+        const away = teams.find(t => t.id === awayTeamId) || teams[1] || { name: 'Visitante', players: [] };
+
+        const buildRows = (players) => {
+            return players.map(p => {
+                const isAttending = p.attended !== false;
+                return `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 12px; margin-bottom: 4px; background: rgba(255,255,255,0.04); border-radius: 6px; text-align: left;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 11px; color: #00f0ff; font-weight: bold; width: 24px;">#${p.num || '-'}</span>
+                            <span style="font-size: 13px; font-weight: 600; color: #ffffff; text-align: left;">${p.name}</span>
+                        </div>
+                        <span style="font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase; ${isAttending ? 'background: rgba(16,185,129,0.2); color: #34d399; border: 1px solid #059669;' : 'background: rgba(244,63,94,0.2); color: #f87171; border: 1px solid #e11d48;'}">
+                            ${isAttending ? 'Asistente' : 'No Asistente'}
+                        </span>
+                    </div>
+                `;
+            }).join('');
+        };
+
+        const target = document.getElementById('tab-attendance') || document.getElementById('attendance-container');
+        if (target) {
+            target.innerHTML = `
+                <div style="max-width: 800px; margin: 0 auto; background: #0a0f1d; padding: 20px; border-radius: 12px; font-family: 'Rajdhani', sans-serif;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 12px; margin-bottom: 16px;">
+                        <div>
+                            <h2 style="font-family: 'Bebas Neue', cursive; font-size: 28px; color: #d4af37; margin: 0; text-align: left;">ACTA OFICIAL DE ASISTENCIA</h2>
+                            <p style="font-size: 11px; color: #00f0ff; margin: 0; text-align: left;">SEVEN LEAGUE BASEL - MATCH CENTER (1 PÁGINA)</p>
+                        </div>
+                        <button onclick="window.print()" class="no-print" style="background: #d4af37; color: #0a0f1d; font-weight: bold; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">
+                            Imprimir PDF
+                        </button>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div>
+                            <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; color: #00f0ff; margin-bottom: 8px; border-bottom: 1px solid #1e293b; padding-bottom: 4px; text-align: left;">${home.name}</h3>
+                            ${buildRows(home.players)}
+                        </div>
+                        <div>
+                            <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; color: #00f0ff; margin-bottom: 8px; border-bottom: 1px solid #1e293b; padding-bottom: 4px; text-align: left;">${away.name}</h3>
+                            ${buildRows(away.players)}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    };
+
+    // 5. GENERADOR MVP CON FOTO
+    window.generateMVPWithPhoto = function(playerData) {
+        const modalContent = document.getElementById('modal-content');
+        if (!modalContent) return;
+
+        modalContent.innerHTML = `
+            <div style="background: linear-gradient(135deg, #b45309, #0a0f1d, #131c31); padding: 24px; border-radius: 16px; border: 2px solid #d4af37; text-align: center; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+                <span style="background: #d4af37; color: #0a0f1d; padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: 900; font-family: 'Orbitron', sans-serif; letter-spacing: 1px;">
+                    MVP OFICIAL SEVEN LEAGUE
+                </span>
+                <div style="width: 110px; height: 110px; margin: 16px auto; border-radius: 50%; border: 3px solid #d4af37; overflow: hidden; background: #1e293b; display: flex; align-items: center; justify-content: center;">
+                    ${playerData.photo 
+                        ? `<img src="${playerData.photo}" style="width: 100%; height: 100%; object-fit: cover;">` 
+                        : `<i class="fa-solid fa-user" style="font-size: 40px; color: #d4af37;"></i>`
+                    }
+                </div>
+                <h3 style="font-family: 'Bebas Neue', cursive; font-size: 32px; color: #ffffff; margin: 4px 0 0 0;">${playerData.name}</h3>
+                <p style="font-family: 'Orbitron', sans-serif; font-size: 13px; color: #00f0ff; margin: 2px 0 0 0;">${playerData.team}</p>
+            </div>
+            <button onclick="window.print()" class="no-print" style="width: 100%; margin-top: 12px; background: #d4af37; color: #0a0f1d; font-weight: bold; padding: 10px; border: none; border-radius: 8px; cursor: pointer;">
+                Descargar Tarjeta MVP
+            </button>
+        `;
+        const container = document.getElementById('modal-container');
+        if (container) container.classList.remove('hidden');
+    };
+
+    // EJECUCIÓN AUTOMÁTICA
+    document.addEventListener("DOMContentLoaded", function() {
+        syncPhotosAndKeepManual();
+    });
+
+    console.log("Parche Unificado Aplicado Correctamente.");
+})();
+</script>
+<!-- ========================================== -->
 </body>
 </html>
