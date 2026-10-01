@@ -1920,6 +1920,83 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, 500);
 });
+    // --- SEVEN LEAGUE MATCH CENTER - ACTUALIZACIÓN INTEGRAL (2026) ---
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    try {
+      // 1. FUSIÓN INTELIGENTE DE JUGADORES (Web + Manuales)
+      const equiposOficialesWeb = {
+        "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", short: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
+        "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo", "Pajtim Kerimi", "Daniel Wieland", "Nenad Ilic"] },
+        "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", short: "SPO", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
+        "eq_4": { id: "eq_4", name: "FC Max Basel", logo: "logo_max_basel.png", short: "MAX", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
+        "eq_5": { id: "eq_5", name: "FC Baselona", logo: "logo_baselona.png", short: "BAS", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
+        "eq_6": { id: "eq_6", name: "Joga Bonito FC", logo: "logo_joga_bonito.png", short: "JOG", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques"] },
+        "eq_7": { id: "eq_7", name: "Rhine Madrid", logo: "logo_rhine_madrid.png", short: "RHM", players: [] },
+        "eq_8": { id: "eq_8", name: "DPS Basel FC", logo: "logo_dps_basel.png", short: "DPS", players: [] },
+        "eq_9": { id: "eq_9", name: "BG FC", logo: "logo_bg_fc.png", short: "BGF", players: [] },
+        "eq_10": { id: "eq_10", name: "Inter Basel", logo: "logo_inter_basel.png", short: "INT", players: [] }
+      };
+
+      let datosLocales = localStorage.getItem('seven_league_teams_data');
+      if (!datosLocales) {
+        localStorage.setItem('seven_league_teams_data', JSON.stringify(equiposOficialesWeb));
+      } else {
+        let parsedLocales = JSON.parse(datosLocales);
+        Object.keys(equiposOficialesWeb).forEach(eqId => {
+          if (parsedLocales[eqId]) {
+            let jugadoresWeb = equiposOficialesWeb[eqId].players;
+            let jugadoresActuales = parsedLocales[eqId].players || [];
+            jugadoresWeb.forEach(jWeb => {
+              if (!jugadoresActuales.includes(jWeb)) {
+                jugadoresActuales.push(jWeb); // Conserva los manuales y añade los nuevos web
+              }
+            });
+            parsedLocales[eqId].players = jugadoresActuales;
+          } else {
+            parsedLocales[eqId] = equiposOficialesWeb[eqId];
+          }
+        });
+        localStorage.setItem('seven_league_teams_data', JSON.stringify(parsedLocales));
+      }
+
+      // 2. ACTUALIZACIÓN AUTOMÁTICA DEL LOGO DE LA APP
+      // Reemplaza las imágenes de cabecera o logos principales si detecta elementos genéricos
+      const nuevoLogoUrl = "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=200"; // (Puedes cambiar este enlace por la URL definitiva de tu logo de Seven League)
+      document.querySelectorAll('header img, .app-logo, .navbar-brand img').forEach(img => {
+        if (!img.src.includes('logo')) {
+          img.src = nuevoLogoUrl;
+        }
+      });
+
+      // 3. MÓDULO DE DESCARGA DE PDF / ASISTENCIA DE JUGADORES
+      // Añade dinámicamente un botón flotante o en la sección de alineaciones para exportar
+      const crearBotonPDF = () => {
+        if (document.getElementById('btnDescargarAsistenciaPDF')) return;
+        
+        const contenedorAcciones = document.querySelector('.match-actions, .lineup-container, header, body');
+        if (!contenedorAcciones) return;
+
+        const btnPDF = document.createElement('button');
+        btnPDF.id = 'btnDescargarAsistenciaPDF';
+        btnPDF.innerHTML = '📄 Descargar Acta / Asistencia (PDF)';
+        btnPDF.style.cssText = 'background: #e11d48; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; margin: 10px; z-index: 9999; box-shadow: 0 4px 6px rgba(0,0,0,0.1);';
+        
+        btnPDF.onclick = () => {
+          window.print(); // Utiliza el motor nativo del navegador optimizado para exportar a PDF limpio ocultando elementos innecesarios
+        };
+
+        // Insertamos el botón de forma visible
+        document.body.prepend(btnPDF);
+      };
+
+      crearBotonPDF();
+      console.log("Actualización Seven League aplicada correctamente.");
+    } catch (e) {
+      console.error("Error aplicando mejoras:", e);
+    }
+  }, 1000);
+});
   </script>
 </body>
 </html>
