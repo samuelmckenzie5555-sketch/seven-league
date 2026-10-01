@@ -1863,6 +1863,63 @@
     }
 
     init();
+ // --- SINCRONIZACIÓN INTELIGENTE SEVEN LEAGUE (2026/27) ---
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    try {
+      // 1. Plantilla oficial con los 10 equipos y sus jugadores base de la web
+      const equiposOficialesWeb = {
+        "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", short: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
+        "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo", "Pajtim Kerimi", "Daniel Wieland", "Nenad Ilic"] },
+        "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", short: "SPO", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
+        "eq_4": { id: "eq_4", name: "FC Max Basel", logo: "logo_max_basel.png", short: "MAX", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
+        "eq_5": { id: "eq_5", name: "FC Baselona", logo: "logo_baselona.png", short: "BAS", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
+        "eq_6": { id: "eq_6", name: "Joga Bonito FC", logo: "logo_joga_bonito.png", short: "JOG", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques"] },
+        "eq_7": { id: "eq_7", name: "Rhine Madrid", logo: "logo_rhine_madrid.png", short: "RHM", players: [] },
+        "eq_8": { id: "eq_8", name: "DPS Basel FC", logo: "logo_dps_basel.png", short: "DPS", players: [] },
+        "eq_9": { id: "eq_9", name: "BG FC", logo: "logo_bg_fc.png", short: "BGF", players: [] },
+        "eq_10": { id: "eq_10", name: "Inter Basel", logo: "logo_inter_basel.png", short: "INT", players: [] }
+      };
+
+      // 2. Revisamos si ya hay datos guardados en el dispositivo del árbitro
+      let datosLocales = localStorage.getItem('seven_league_teams_data');
+      
+      if (!datosLocales) {
+        // Si no hay nada, guardamos los oficiales de golpe
+        localStorage.setItem('seven_league_teams_data', JSON.stringify(equiposOficialesWeb));
+        console.log("Equipos oficiales cargados por primera vez.");
+      } else {
+        // FUSIÓN INTELIGENTE: Si ya hay datos, respetamos los manuales y unimos las plantillas
+        let parsedLocales = JSON.parse(datosLocales);
+        
+        Object.keys(equiposOficialesWeb).forEach(eqId => {
+          if (parsedLocales[eqId]) {
+            // Si el equipo ya existe, unimos los jugadores web con los manuales evitando duplicados
+            let jugadoresWeb = equiposOficialesWeb[eqId].players;
+            let jugadoresActuales = parsedLocales[eqId].players || [];
+            
+            // Añadimos los de la web que no estén escritos a mano
+            jugadoresWeb.forEach(jWeb => {
+              if (!jugadoresActuales.includes(jWeb)) {
+                jugadoresActuales.push(jWeb); // Aquí entran los oficiales nuevos
+              }
+            });
+            
+            parsedLocales[eqId].players = jugadoresActuales; // Tus manuales se quedan intactos
+          } else {
+            // Si el equipo no existía localmente, lo agregamos completo
+            parsedLocales[eqId] = equiposOficialesWeb[eqId];
+          }
+        });
+
+        localStorage.setItem('seven_league_teams_data', JSON.stringify(parsedLocales));
+        console.log("Fusión inteligente aplicada: Datos manuales preservados con éxito.");
+      }
+    } catch (e) {
+      console.error("Error en la sincronización inteligente:", e);
+    }
+  }, 500);
+});
   </script>
 </body>
 </html>
