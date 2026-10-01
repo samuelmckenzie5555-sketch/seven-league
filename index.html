@@ -34,12 +34,17 @@
         .glass-panel { background: rgba(19, 28, 49, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(212, 175, 55, 0.2); }
         .glow-gold { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
         .glow-cyan { box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
+        @media print {
+            body { background: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            .glass-panel { background: white !important; border: 1px solid #ccc !important; box-shadow: none !important; color: black !important; }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
     <!-- HEADER OFICIAL SEVEN LEAGUE -->
-    <header class="glass-panel border-b border-slGold/30 sticky top-0 z-50 px-4 py-3 flex justify-between items-center">
+    <header class="glass-panel border-b border-slGold/30 sticky top-0 z-50 px-4 py-3 flex justify-between items-center no-print">
         <div class="flex items-center space-x-3">
             <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-slGold to-yellow-600 flex items-center justify-center glow-gold text-slDark font-orbitron font-900 text-xl">
                 7L
@@ -50,9 +55,9 @@
             </div>
         </div>
         <nav class="flex space-x-2">
-            <button onclick="switchTab('match')" class="px-3 py-1.5 rounded-lg bg-slGold/20 text-slGold font-bold text-sm border border-slGold/40 transition hover:bg-slGold/30"><i class="fa-solid fa-futbol mr-1"></i> Partido</button>
-            <button onclick="switchTab('teams')" class="px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold"><i class="fa-solid fa-shield-halved mr-1"></i> Equipos</button>
-            <button onclick="switchTab('attendance')" class="px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold"><i class="fa-solid fa-clipboard-user mr-1"></i> Acta</button>
+            <button onclick="switchTab('match')" id="btn-tab-match" class="px-3 py-1.5 rounded-lg bg-slGold/20 text-slGold font-bold text-sm border border-slGold/40 transition hover:bg-slGold/30"><i class="fa-solid fa-futbol mr-1"></i> Partido</button>
+            <button onclick="switchTab('teams')" id="btn-tab-teams" class="px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold"><i class="fa-solid fa-shield-halved mr-1"></i> Equipos</button>
+            <button onclick="switchTab('attendance')" id="btn-tab-attendance" class="px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold"><i class="fa-solid fa-clipboard-user mr-1"></i> Acta</button>
         </nav>
     </header>
 
@@ -64,7 +69,7 @@
             <!-- Marcador y Control Interactivo -->
             <div class="glass-panel rounded-2xl p-6 glow-cyan relative overflow-hidden">
                 <div class="absolute top-0 right-0 bg-slAccent/10 text-slAccent px-4 py-1 text-xs font-orbitron tracking-widest rounded-bl-xl border-l border-b border-slAccent/30">
-                    LIVE MATCH CENTER
+                    LIVE MATCH CENTER[cite: 1]
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center my-4">
@@ -73,7 +78,7 @@
                         <h2 id="match-home-name" class="font-bebas text-3xl text-white">FC Max Basel</h2>
                         <div class="text-5xl font-orbitron font-900 text-slGold my-2" id="score-home">0</div>
                         <div class="flex justify-center space-x-2 mt-2">
-                            <button onclick="updateScore('home', 1)" class="bg-emerald-600 hover:bg-emerald-500 px-3 py-1 rounded font-bold text-sm">+ Gol</button>
+                            <button onclick="updateScore('home', 1)" class="bg-emerald-600 hover:bg-emerald-500 px-3 py-1 rounded font-bold text-sm text-white">+ Gol</button>
                             <button onclick="updateScore('home', -1)" class="bg-rose-900/60 hover:bg-rose-800 px-2 py-1 rounded text-xs text-rose-300">-</button>
                         </div>
                     </div>
@@ -93,7 +98,7 @@
                         <h2 id="match-away-name" class="font-bebas text-3xl text-white">Rhine Lions FC</h2>
                         <div class="text-5xl font-orbitron font-900 text-slGold my-2" id="score-away">0</div>
                         <div class="flex justify-center space-x-2 mt-2">
-                            <button onclick="updateScore('away', 1)" class="bg-emerald-600 hover:bg-emerald-500 px-3 py-1 rounded font-bold text-sm">+ Gol</button>
+                            <button onclick="updateScore('away', 1)" class="bg-emerald-600 hover:bg-emerald-500 px-3 py-1 rounded font-bold text-sm text-white">+ Gol</button>
                             <button onclick="updateScore('away', -1)" class="bg-rose-900/60 hover:bg-rose-800 px-2 py-1 rounded text-xs text-rose-300">-</button>
                         </div>
                     </div>
@@ -133,13 +138,13 @@
             </div>
         </section>
 
-        <!-- SECCION ACTA DE ASISTENCIA (1 SOLA PAGINA) -->
+        <!-- SECCION ACTA DE ASISTENCIA (1 SOLA PAGINA OPTIMIZADA) -->
         <section id="tab-attendance" class="space-y-6 hidden">
             <div class="glass-panel rounded-xl p-6 space-y-6">
-                <div class="flex justify-between items-center border-b border-slate-700 pb-4">
+                <div class="flex justify-between items-center border-b border-slate-700 pb-4 no-print">
                     <div>
                         <h2 class="font-bebas text-2xl text-slGold">Acta de Asistencia Oficial</h2>
-                        <p class="text-xs text-slate-400">Reporte resumido en una sola página (Asistentes / No Asistentes)</p>
+                        <p class="text-xs text-slate-400">Reporte resumido en una sola página (Asistentes y No Asistentes)</p>
                     </div>
                     <button onclick="window.print()" class="bg-slGold text-slDark font-bold px-4 py-2 rounded-lg text-sm hover:bg-yellow-400 transition"><i class="fa-solid fa-print mr-1"></i> Imprimir / PDF</button>
                 </div>
@@ -147,14 +152,22 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Equipo Local Acta -->
                     <div class="border border-slate-700 rounded-lg p-4 bg-slDark/50">
-                        <h3 id="attendance-home-title" class="font-bebas text-xl text-slAccent mb-3">Equipo Local</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 id="attendance-home-title" class="font-bebas text-xl text-slAccent">Equipo Local</h3>
+                            <select id="select-team-home" onchange="changeAttendanceTeam('home', this.value)" class="bg-slDark border border-slate-700 text-xs text-white rounded p-1 no-print">
+                            </select>
+                        </div>
                         <div id="attendance-home-list" class="space-y-2 text-sm">
                             <!-- Lista inyectada -->
                         </div>
                     </div>
                     <!-- Equipo Visitante Acta -->
                     <div class="border border-slate-700 rounded-lg p-4 bg-slDark/50">
-                        <h3 id="attendance-away-title" class="font-bebas text-xl text-slAccent mb-3">Equipo Visitante</h3>
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 id="attendance-away-title" class="font-bebas text-xl text-slAccent">Equipo Visitante</h3>
+                            <select id="select-team-away" onchange="changeAttendanceTeam('away', this.value)" class="bg-slDark border border-slate-700 text-xs text-white rounded p-1 no-print">
+                            </select>
+                        </div>
                         <div id="attendance-away-list" class="space-y-2 text-sm">
                             <!-- Lista inyectada -->
                         </div>
@@ -177,7 +190,7 @@
 
     <!-- LOGICA DE LA APLICACION -->
     <script>
-        // Base de datos oficial de los 10 equipos de Seven League Basel respetando jugadores manuales
+        // Base de datos oficial de los 10 equipos de Seven League Basel con plantillas y fotos
         const defaultTeams = [
             { id: 1, name: "FC Max Basel", players: [ {name: "Marco Rossi", num: 10, photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150"}, {name: "Luca Moretti", num: 7, photo: ""} ] },
             { id: 2, name: "Rhine Lions FC", players: [ {name: "Stefan Meier", num: 1, photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150"}, {name: "Julian Keller", num: 9, photo: ""} ] },
@@ -191,9 +204,27 @@
             { id: 10, name: "Inter Basel", players: [ {name: "Fabian Frei", num: 20, photo: ""}, {name: "Taulant Xhaka", num: 34, photo: ""} ] }
         ];
 
-        let teams = JSON.parse(localStorage.getItem('sl_teams')) || defaultTeams;
-        
-        // Cronómetro interactivo corregido
+        // Sistema inteligente que respeta jugadores manuales previos de localStorage
+        let storedTeams = JSON.parse(localStorage.getItem('sl_teams'));
+        let teams = defaultTeams;
+
+        if (storedTeams) {
+            teams = defaultTeams.map(defTeam => {
+                const found = storedTeams.find(st => st.id === defTeam.id);
+                if (!found) return defTeam;
+                // Fusionar jugadores manuales sin borrarlos
+                const manualPlayers = found.st_manual_players || found.players.filter(p => !defTeam.players.some(dp => dp.name === p.name));
+                return {
+                    ...defTeam,
+                    players: [...defTeam.players, ...manualPlayers]
+                };
+            });
+        }
+
+        let selectedHomeId = 1;
+        let selectedAwayId = 2;
+
+        // Cronómetro interactivo corregido (Suma ascendente)
         let timerInterval = null;
         let secondsElapsed = 0;
         let isRunning = false;
@@ -231,20 +262,24 @@
             const secs = (secondsElapsed % 60).toString().padStart(2, '0');
             document.getElementById('match-timer').textContent = `${mins}:${secs}`;
             
-            // Periodos automáticos
-            if (secondsElapsed >= 1500) { // 25 min
+            if (secondsElapsed >= 1500) {
                 document.getElementById('match-period').textContent = "2DO TIEMPO (25 MIN)";
+            } else {
+                document.getElementById('match-period').textContent = "1ER TIEMPO (25 MIN)";
             }
         }
 
         function switchTab(tab) {
-            document.getElementById('tab-match').classList.add('hidden');
-            document.getElementById('tab-teams').classList.add('hidden');
-            document.getElementById('tab-attendance').classList.add('hidden');
+            ['match', 'teams', 'attendance'].forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                document.getElementById(`btn-tab-${t}`).className = "px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold";
+            });
 
             document.getElementById(`tab-${tab}`).classList.remove('hidden');
+            document.getElementById(`btn-tab-${tab}`).className = "px-3 py-1.5 rounded-lg bg-slGold/20 text-slGold font-bold text-sm border border-slGold/40 transition hover:bg-slGold/30";
+
             if(tab === 'teams') renderTeams();
-            if(tab === 'attendance') renderAttendance();
+            if(tab === 'attendance') initAttendanceSelectors();
         }
 
         function updateScore(team, val) {
@@ -255,7 +290,7 @@
         }
 
         function triggerCard(type) {
-            alert(`Árbitro: Tarjeta ${type === 'yellow' ? 'Amarilla' : 'Roja'} registrada correctamente.`);
+            alert(`Árbitro: Tarjeta ${type === 'yellow' ? 'Amarilla' : 'Roja'} registrada con éxito.`);
         }
 
         function renderTeams() {
@@ -280,14 +315,14 @@
             const modalContent = document.getElementById('modal-content');
             
             let playersHtml = team.players.map(p => `
-                <div class="flex items-center justify-between bg-slDark/60 p-2 rounded border border-slate-800 text-left">
+                <div class="flex items-center justify-between bg-slDark/60 p-2.5 rounded border border-slate-800 text-left">
                     <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 rounded-full bg-slate-700 overflow-hidden flex items-center justify-center">
-                            ${p.photo ? `<img src="${p.photo}" class="w-full h-full object-cover">` : `<i class="fa-solid fa-user text-xs text-slate-400"></i>`}
+                        <div class="w-10 h-10 rounded-full bg-slate-700 overflow-hidden flex items-center justify-center border border-slGold/30">
+                            ${p.photo ? `<img src="${p.photo}" class="w-full h-full object-cover">` : `<i class="fa-solid fa-user text-sm text-slate-400"></i>`}
                         </div>
                         <div>
                             <p class="font-bold text-sm text-white">${p.name}</p>
-                            <span class="text-xs text-slAccent">Dorsal #${p.num || '0'}</span>
+                            <span class="text-xs text-slAccent font-orbitron">Dorsal #${p.num || '0'}</span>
                         </div>
                     </div>
                 </div>
@@ -295,8 +330,8 @@
 
             modalContent.innerHTML = `
                 <h3 class="font-bebas text-2xl text-slGold">${team.name}</h3>
-                <p class="text-xs text-slate-300">Plantilla Oficial</p>
-                <div class="max-h-60 overflow-y-auto space-y-2 pr-1">${playersHtml}</div>
+                <p class="text-xs text-slate-300">Plantilla Oficial - Ficha de Jugadores</p>
+                <div class="max-h-64 overflow-y-auto space-y-2 pr-1">${playersHtml}</div>
             `;
             document.getElementById('modal-container').classList.remove('hidden');
         }
@@ -327,40 +362,60 @@
             modalContent.innerHTML = `
                 <div class="bg-gradient-to-br from-amber-600 via-slDark to-slCard p-6 rounded-xl border-2 border-slGold text-center space-y-3 glow-gold">
                     <span class="bg-slGold text-slDark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest font-orbitron">MVP OFICIAL SEVEN LEAGUE</span>
-                    <div class="w-24 h-24 rounded-full mx-auto border-2 border-slGold overflow-hidden bg-slate-800">
-                        ${player.photo ? `<img src="${player.photo}" class="w-full h-full object-cover">` : `<div class="flex items-center justify-center h-full text-3xl text-slGold"><i class="fa-solid fa-user"></i></div>`}
+                    <div class="w-28 h-28 rounded-full mx-auto border-2 border-slGold overflow-hidden bg-slate-800 shadow-xl">
+                        ${player.photo ? `<img src="${player.photo}" class="w-full h-full object-cover">` : `<div class="flex items-center justify-center h-full text-4xl text-slGold"><i class="fa-solid fa-user"></i></div>`}
                     </div>
                     <h3 class="font-bebas text-3xl text-white">${player.name}</h3>
                     <p class="text-slAccent font-orbitron text-sm">${player.team}</p>
                 </div>
-                <button onclick="window.print()" class="w-full bg-slGold text-slDark font-bold py-2 rounded-lg text-sm">Descargar Tarjeta MVP</button>
+                <button onclick="window.print()" class="w-full bg-slGold text-slDark font-bold py-2 rounded-lg text-sm no-print">Imprimir Tarjeta MVP</button>
             `;
             document.getElementById('modal-container').classList.remove('hidden');
         }
 
-        function renderAttendance() {
-            const homeList = document.getElementById('attendance-home-list');
-            const awayList = document.getElementById('attendance-away-list');
+        function initAttendanceSelectors() {
+            const homeSelect = document.getElementById('select-team-home');
+            const awaySelect = document.getElementById('select-team-away');
             
-            document.getElementById('attendance-home-title').textContent = teams[0].name;
-            document.getElementById('attendance-away-title').textContent = teams[1].name;
+            homeSelect.innerHTML = teams.map(t => `<option value="${t.id}" ${t.id === selectedHomeId ? 'selected' : ''}>${t.name}</option>`).join('');
+            awaySelect.innerHTML = teams.map(t => `<option value="${t.id}" ${t.id === selectedAwayId ? 'selected' : ''}>${t.name}</option>`).join('');
 
-            homeList.innerHTML = teams[0].players.map(p => `
-                <div class="flex justify-between items-center bg-slDark/80 p-2 rounded border border-slate-800 text-left">
-                    <span class="text-white font-medium">${p.name}</span>
-                    <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30 font-bold">Asistente</span>
+            renderAttendance();
+        }
+
+        function changeAttendanceTeam(type, id) {
+            if(type === 'home') selectedHomeId = parseInt(id);
+            if(type === 'away') selectedAwayId = parseInt(id);
+            renderAttendance();
+        }
+
+        function renderAttendance() {
+            const homeTeam = teams.find(t => t.id === selectedHomeId) || teams[0];
+            const awayTeam = teams.find(t => t.id === selectedAwayId) || teams[1];
+
+            document.getElementById('attendance-home-title').textContent = homeTeam.name;
+            document.getElementById('attendance-away-title').textContent = awayTeam.name;
+
+            // Renderizado limpio de asistencia por equipo en formato compacto (1 sola página PDF)
+            document.getElementById('attendance-home-list').innerHTML = homeTeam.players.map(p => `
+                <div class="flex justify-between items-center bg-slDark/80 p-2.5 rounded border border-slate-800 text-left">
+                    <span class="text-white font-medium text-sm">${p.name}</span>
+                    <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded border border-emerald-500/30 font-bold uppercase tracking-wider">Asistente</span>
                 </div>
             `).join('');
 
-            awayList.innerHTML = teams[1].players.map(p => `
-                <div class="flex justify-between items-center bg-slDark/80 p-2 rounded border border-slate-800 text-left">
-                    <span class="text-white font-medium">${p.name}</span>
-                    <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30 font-bold">Asistente</span>
+            document.getElementById('attendance-away-list').innerHTML = awayTeam.players.map(p => `
+                <div class="flex justify-between items-center bg-slDark/80 p-2.5 rounded border border-slate-800 text-left">
+                    <span class="text-white font-medium text-sm">${p.name}</span>
+                    <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded border border-emerald-500/30 font-bold uppercase tracking-wider">Asistente</span>
                 </div>
             `).join('');
         }
 
-        // Inicializar
+        // Guardado persistente seguro
+        localStorage.setItem('sl_teams', JSON.stringify(teams));
+
+        // Inicializar vista de equipos por defecto
         renderTeams();
     </script>
 </body>
