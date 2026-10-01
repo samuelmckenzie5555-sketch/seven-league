@@ -1,2057 +1,344 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>7L SEVEN LEAGUE</title>
-
-  <!-- PWA & Mobile Fullscreen Meta Tags con Logo Oficial Seven League -->
-  <meta name="theme-color" content="#050508">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Seven League">
-  
-  <!-- App Icons con el Logo Oficial Seven League -->
-  <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512">
-  <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512">
-
-  <!-- Manifest Inline para standalone estricto -->
-  <link rel="manifest" href='data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Seven%20League%20Match%20Center%22%2C%22short_name%22%3A%22SevenLeague%22%2C%22description%22%3A%22Centro%20de%20mando%20y%20arbitraje%20para%20Seven%20League%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23050508%22%2C%22theme_color%22%3A%22%23d32f2f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518091043644-c1d4457512c6%3Fw%3D512%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D'>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <style>
-    :root {
-      --bg-dark: #050508;
-      --card-bg: rgba(18, 18, 26, 0.75);
-      --card-border: rgba(255, 255, 255, 0.12);
-      --accent-red: #d32f2f;
-      --accent-gold: #ffd700;
-      --neon-cyan: #00f3ff;
-      --team1-color: #d32f2f;
-      --team2-color: #00f3ff;
-      --text-main: #f5f5f7;
-      --text-muted: #8a8a9a;
-      --green-gol: #00ff88;
-      --yellow-card: #ffea00;
-      --red-card: #ff1744;
-      --font-display: 'Bebas Neue', sans-serif;
-      --font-cyber: 'Orbitron', sans-serif;
-      --font-sans: 'Rajdhani', sans-serif;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-sans); -webkit-tap-highlight-color: transparent; }
-    
-    html, body {
-      overscroll-behavior-y: none;
-      background-color: var(--bg-dark);
-    }
-
-    body { 
-      background-image: radial-gradient(circle at 50% 0%, #15102a 0%, #050508 80%);
-      color: var(--text-main); 
-      padding: 12px; 
-      max-width: 650px; 
-      margin: 0 auto; 
-      min-height: 100vh; 
-      padding-bottom: 50px; 
-    }
-
-    /* SPLASH SCREEN INTRO */
-    #splashScreen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #050508;
-      background-image: radial-gradient(circle at 50% 40%, #1a080a 0%, #050508 80%);
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
-    }
-
-    #splashScreen.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .splash-logo-container {
-      width: 280px;
-      max-width: 80%;
-      margin-bottom: 30px;
-      animation: pulseLogo 2s infinite ease-in-out;
-    }
-
-    .splash-logo-svg {
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 0 15px rgba(211, 47, 47, 0.6));
-    }
-
-    @keyframes pulseLogo {
-      0% { transform: scale(0.98); filter: drop-shadow(0 0 10px rgba(211, 47, 47, 0.4)); }
-      50% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(211, 47, 47, 0.9)); }
-      100% { transform: scale(0.98); filter: drop-shadow(0 0 10px rgba(211, 47, 47, 0.4)); }
-    }
-
-    .splash-loader-bar {
-      width: 200px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 2px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .splash-loader-progress {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #ffffff 0%, var(--accent-red) 100%);
-      box-shadow: 0 0 10px var(--accent-red);
-      transition: width 2s ease-in-out;
-    }
-
-    .splash-text {
-      font-family: var(--font-cyber);
-      font-size: 0.75rem;
-      letter-spacing: 3px;
-      color: var(--text-muted);
-      margin-top: 15px;
-      text-transform: uppercase;
-    }
-
-    header { 
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
-      padding: 12px 0; 
-      border-bottom: 2px solid var(--accent-red); 
-      margin-bottom: 14px; 
-    }
-    
-    .menu-btn { 
-      background: none; 
-      border: none; 
-      color: #fff; 
-      font-size: 1.8rem; 
-      cursor: pointer; 
-      padding: 0 8px; 
-    }
-    
-    .app-title { 
-      font-family: var(--font-cyber); 
-      font-size: 1.5rem; 
-      font-weight: 900; 
-      letter-spacing: 2px; 
-      text-align: center; 
-      flex: 1; 
-      text-shadow: 0 0 12px var(--accent-red); 
-    }
-    .app-title span { color: var(--accent-red); }
-
-    .drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 99; display: none; }
-    .drawer-overlay.active { display: block; }
-    .drawer-menu { position: fixed; top: 0; left: -290px; width: 290px; height: 100%; background: rgba(15, 15, 22, 0.96); border-right: 1px solid var(--accent-red); z-index: 100; transition: left 0.3s ease; padding: 20px 16px; display: flex; flex-direction: column; }
-    .drawer-menu.active { left: 0; }
-    .drawer-header { font-family: var(--font-cyber); font-size: 1.2rem; color: var(--accent-red); margin-bottom: 20px; border-bottom: 1px solid var(--card-border); padding-bottom: 10px; }
-    .drawer-item { padding: 12px; border-radius: 8px; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 8px; cursor: pointer; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 10px; }
-    .drawer-item:hover, .drawer-item.active { background: var(--accent-red); border-color: var(--accent-red); }
-
-    .tabs-nav { display: flex; background: var(--card-bg); backdrop-filter: blur(10px); border-radius: 12px; padding: 4px; border: 1px solid var(--card-border); margin-bottom: 16px; gap: 4px; }
-    .tab-button { flex: 1; padding: 10px 0; background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 8px; }
-    .tab-button.active { color: #fff; background-color: var(--accent-red); box-shadow: 0 0 15px rgba(211, 47, 47, 0.5); }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-    /* Glass Cards */
-    .glass-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    }
-
-    .scoreboard-box {
-      position: relative;
-      background: linear-gradient(135deg, rgba(211,47,47,0.15) 0%, rgba(5,5,8,0.85) 50%, rgba(0,243,255,0.15) 100%);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 18px;
-      padding: 18px;
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-
-    #particlesCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.4; }
-
-    .teams-vs { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
-    .team-item { text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center; }
-    
-    .team-logo-wrapper {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.6);
-      border: 2px solid var(--card-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.8);
-    }
-    .team-logo-img { width: 100%; height: 100%; object-fit: contain; }
-    .team-logo-fallback { font-family: var(--font-cyber); font-size: 1.2rem; color: var(--accent-gold); }
-
-    .team-title { font-family: var(--font-cyber); font-size: 1rem; font-weight: 700; letter-spacing: 0.5px; }
-    .score-num { font-family: var(--font-cyber); font-size: 3.8rem; font-weight: 900; line-height: 1; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.6); }
-    .vs-badge { font-family: var(--font-cyber); font-size: 1.1rem; color: var(--text-muted); padding: 0 8px; }
-
-    .momentum-box { margin-bottom: 16px; background: rgba(0,0,0,0.5); border-radius: 10px; padding: 10px; border: 1px solid var(--card-border); }
-    .momentum-header { display: flex; justify-content: space-between; font-size: 0.75rem; font-family: var(--font-cyber); color: var(--text-muted); margin-bottom: 6px; }
-    .momentum-bar-wrap { height: 10px; width: 100%; background: #1a1a24; border-radius: 5px; overflow: hidden; display: flex; }
-    .momentum-fill-1 { height: 100%; background: var(--team1-color); transition: width 0.5s ease; box-shadow: 0 0 10px var(--team1-color); }
-    .momentum-fill-2 { height: 100%; background: var(--team2-color); transition: width 0.5s ease; box-shadow: 0 0 10px var(--team2-color); }
-
-    .ref-badge { background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); color: var(--accent-gold); border-radius: 8px; padding: 8px 12px; font-size: 0.85rem; font-family: var(--font-cyber); margin-bottom: 12px; text-align: center; }
-
-    .timer-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 16px; text-align: center; margin-bottom: 16px; }
-    .timer-card.timer-ended { border-color: var(--accent-gold); box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); animation: pulseTimer 1s infinite alternate; }
-    @keyframes pulseTimer { from { background: rgba(40, 30, 0, 0.8); } to { background: rgba(80, 50, 0, 0.9); } }
-    
-    .timer-period { font-size: 0.8rem; font-family: var(--font-cyber); color: var(--accent-gold); text-transform: uppercase; }
-    .timer-clock { font-family: var(--font-cyber); font-size: 3.5rem; font-weight: 900; letter-spacing: 2px; color: #fff; line-height: 1; margin: 6px 0; text-shadow: 0 0 15px rgba(255,255,255,0.5); }
-    .timer-btn-row { display: flex; gap: 8px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
-    .btn-t { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid var(--card-border); padding: 8px 14px; border-radius: 8px; font-size: 0.75rem; font-family: var(--font-cyber); font-weight: 700; cursor: pointer; }
-    .btn-t.active-period { background: var(--accent-red); border-color: var(--accent-red); box-shadow: 0 0 10px var(--accent-red); }
-    .btn-add-time { background: rgba(0, 243, 255, 0.1); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; cursor: pointer; }
-
-    .card-head { font-family: var(--font-cyber); font-size: 1.1rem; color: var(--accent-red); border-bottom: 1px solid var(--card-border); padding-bottom: 8px; margin-bottom: 12px; }
-    .form-group { margin-bottom: 12px; }
-    label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
-    input, select, textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--card-border); background: rgba(0,0,0,0.5); color: #fff; font-size: 0.9rem; font-weight: 600; }
-    .form-row { display: flex; gap: 10px; }
-    .form-row .form-group { flex: 1; }
-
-    button.btn-act { width: 100%; padding: 14px; background: var(--accent-red); color: white; border: none; border-radius: 10px; font-family: var(--font-cyber); font-weight: 900; font-size: 0.85rem; cursor: pointer; text-transform: uppercase; box-shadow: 0 4px 15px rgba(211,47,47,0.4); }
-    button.btn-sec { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--card-border); border-radius: 10px; font-weight: 700; font-size: 0.85rem; cursor: pointer; margin-top: 8px; }
-    button.btn-danger { width: 100%; padding: 10px; background: rgba(255, 23, 68, 0.2); color: #ff5252; border: 1px solid var(--red-card); border-radius: 10px; font-weight: 700; font-size: 0.75rem; cursor: pointer; margin-top: 12px; }
-
-    .timeline-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .timeline-badge { font-family: var(--font-cyber); font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; }
-    .period-chip { font-size: 0.7rem; font-family: var(--font-cyber); background: rgba(255,215,0,0.15); color: var(--accent-gold); padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-right: 4px; border: 1px solid var(--accent-gold); }
-    .bg-gol { background: var(--green-gol); color: #000; box-shadow: 0 0 8px var(--green-gol); }
-    .bg-a { background: var(--yellow-card); color: #000; }
-    .bg-r { background: var(--red-card); color: #fff; }
-
-    .check-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .check-label { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer; flex: 1; }
-
-    .player-chip { display: inline-flex; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin: 3px; }
-    .player-chip span { margin-left: 8px; color: var(--accent-red); cursor: pointer; font-weight: bold; }
-
-    .history-card { background: rgba(15, 15, 22, 0.7); border: 1px solid var(--card-border); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
-    .history-head { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-    .history-title { font-family: var(--font-cyber); font-size: 1.1rem; color: #fff; }
-    .history-details { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--card-border); display: none; }
-    .history-details.open { display: block; }
-    .add-hist-box { background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); padding: 12px; border-radius: 10px; margin-top: 10px; }
-
-    /* Custom Modal Screens */
-    .fut-card-modal {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(12px);
-      z-index: 200;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 20px;
-    }
-    .fut-card-modal.active { display: flex; }
-  </style>
-</head>
-<body>
-
-  <!-- SPLASH SCREEN DE ENTRADA CON LOGO REAL SEVEN LEAGUE -->
-  <div id="splashScreen">
-    <div class="splash-logo-container">
-      <svg class="splash-logo-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g transform="skewX(-18)">
-          <path d="M 120,30 L 230,30 L 160,150 L 120,150 L 175,65 L 120,65 Z" fill="#FFFFFF" />
-          <path d="M 210,30 L 250,30 L 195,120 L 280,120 L 270,150 L 175,150 Z" fill="#D32F2F" />
-        </g>
-        <text x="250" y="190" font-family="'Orbitron', sans-serif" font-weight="900" font-style="italic" font-size="38" text-anchor="middle" letter-spacing="2">
-          <tspan fill="#FFFFFF">SEVEN </tspan>
-          <tspan fill="#D32F2F">LEAGUE</tspan>
-        </text>
-        <line x1="80" y1="212" x2="130" y2="212" stroke="#D32F2F" stroke-width="2"/>
-        <text x="250" y="216" font-family="'Rajdhani', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">
-          FOOTBALL 7 COMPETITION
-        </text>
-        <line x1="370" y1="212" x2="420" y2="212" stroke="#D32F2F" stroke-width="2"/>
-      </svg>
-    </div>
-    <div class="splash-loader-bar">
-      <div class="splash-loader-progress" id="splashProgress"></div>
-    </div>
-    <div class="splash-text">Match Center Loading...</div>
-  </div>
-
-  <!-- Drawer Menu -->
-  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
-  <div class="drawer-menu" id="drawerMenu">
-    <div class="drawer-header">7L MATCH CENTER</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-partido')">⚽ Partido en Vivo</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-equipos')">🛡️ Gestión de Equipos</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-asistencia')">📋 Lista de Asistencia</div>
-    <div class="drawer-item" onclick="switchTabNav('tab-historial')">📁 Historial de Actas</div>
-    
-    <div style="margin-top:auto;">
-      <button class="btn-sec" style="background:#0288d1; margin-bottom:6px;" onclick="exportBackupData()">📥 Descargar Backup (JSON)</button>
-      <label for="importBackupInput" class="btn-sec" style="display:block; text-align:center; background:#7b1fa2; cursor:pointer; margin-top:0;">📤 Cargar Backup (JSON)</label>
-      <input type="file" id="importBackupInput" accept=".json" style="display:none;" onchange="importBackupData(event)">
-      <button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar Memoria App</button>
-    </div>
-  </div>
-
-  <header>
-    <button class="menu-btn" onclick="toggleDrawer()">☰</button>
-    <div class="app-title">7L <span>SEVEN LEAGUE</span></div>
-    <button class="menu-btn" style="font-size: 1.2rem;" onclick="replaySplash()" title="Ver Pantalla de Inicio">🔄</button>
-  </header>
-
-  <div class="ref-badge">
-    👨‍‍⚖️ Árbitro Oficial: <span id="refereeNameDisplay">SAMUEL MCKENZIE</span>
-  </div>
-
-  <nav class="tabs-nav">
-    <button class="tab-button active" id="btn-tab-partido" onclick="switchTab('tab-partido')">1. Partido</button>
-    <button class="tab-button" id="btn-tab-equipos" onclick="switchTab('tab-equipos')">2. Equipos</button>
-    <button class="tab-button" id="btn-tab-asistencia" onclick="switchTab('tab-asistencia')">3. Asistencia</button>
-    <button class="tab-button" id="btn-tab-historial" onclick="switchTab('tab-historial')">4. Historial</button>
-  </nav>
-
-  <!-- TAB 1: PARTIDO EN VIVO -->
-  <div id="tab-partido" class="tab-content active">
-    
-    <div class="scoreboard-box" id="scoreboardCard">
-      <canvas id="particlesCanvas"></canvas>
-      <div class="teams-vs">
-        <div class="team-item">
-          <div class="team-logo-wrapper" id="logoWrap1"></div>
-          <div class="team-title" id="nameTeam1">LOCAL</div>
-          <div class="score-num" id="score1">0</div>
-        </div>
-        <div class="vs-badge">VS</div>
-        <div class="team-item">
-          <div class="team-logo-wrapper" id="logoWrap2"></div>
-          <div class="team-title" id="nameTeam2">VISITANTE</div>
-          <div class="score-num" id="score2">0</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="momentum-box">
-      <div class="momentum-header">
-        <span id="mName1">LOCAL (50%)</span>
-        <span>MATCH MOMENTUM</span>
-        <span id="mName2">VISITANTE (50%)</span>
-      </div>
-      <div class="momentum-bar-wrap">
-        <div class="momentum-fill-1" id="mFill1" style="width: 50%;"></div>
-        <div class="momentum-fill-2" id="mFill2" style="width: 50%;"></div>
-      </div>
-    </div>
-
-    <!-- Cronómetro Corregido -->
-    <div class="timer-card" id="timerCard">
-      <div class="timer-period" id="periodDisplay">1er Tiempo (25 min)</div>
-      <div class="timer-clock" id="timerDisplay">00:00</div>
-      <div class="timer-btn-row">
-        <button class="btn-t" id="btnStart" onclick="toggleTimer()">▶ Iniciar</button>
-        <button class="btn-t active-period" id="btnPeriod1" onclick="setPeriod(1)">1T</button>
-        <button class="btn-t" id="btnPeriod2" onclick="setPeriod(2)">2T</button>
-      </div>
-      <div style="margin-top:8px; display:flex; gap:6px; justify-content:center;">
-        <span style="font-size:0.7rem; color:var(--text-muted); align-self:center;">Descuento:</span>
-        <button class="btn-add-time" onclick="addExtraTime(1)">+1'</button>
-        <button class="btn-add-time" onclick="addExtraTime(2)">+2'</button>
-        <button class="btn-add-time" onclick="addExtraTime(3)">+3'</button>
-      </div>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Configurar Partido</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Equipo Local</label>
-          <select id="matchTeam1Select" onchange="changeMatchTeams()"></select>
-        </div>
-        <div class="form-group">
-          <label>Equipo Visitante</label>
-          <select id="matchTeam2Select" onchange="changeMatchTeams()"></select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Árbitro Oficial</label>
-        <select id="refNameInput" onchange="updateRefName()">
-          <option value="SAMUEL MCKENZIE">Samuel McKenzie</option>
-          <option value="CESAR GALERA">César Galera</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Registrar Incidencia Manual</div>
-      <div class="form-group">
-        <label>Equipo de la Incidencia</label>
-        <select id="teamSelect" onchange="updatePlayerDropdowns()"></select>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Tiempo</label>
-          <select id="eventPeriodSelect">
-            <option value="1T">1er Tiempo (1T)</option>
-            <option value="2T">2do Tiempo (2T)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Minuto</label>
-          <input type="number" id="minuteInput" value="1" min="1" max="120">
-        </div>
-        <div class="form-group">
-          <label>Evento</label>
-          <select id="typeSelect" onchange="toggleAssistField()">
-            <option value="GOL">⚽ GOL</option>
-            <option value="A">🟨 Amarilla (A)</option>
-            <option value="R">🟥 Roja (R)</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Jugador (Plantilla)</label>
-        <select id="playerSelect"></select>
-      </div>
-      <div class="form-group" id="assistGroup">
-        <label>Asistencia (Opcional)</label>
-        <select id="assistSelect"></select>
-      </div>
-      <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Match Timeline</div>
-      <div id="eventsListContainer">Sin incidencias.</div>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Jugador del Partido (MVP)</div>
-      <select id="mvpSelect" onchange="saveMVP()"><option value="">-- Seleccionar MVP --</option></select>
-    </div>
-
-    <button class="btn-act" style="background:#2e7d32; margin-bottom:8px;" onclick="exportSummary()">📲 Copiar Texto para WhatsApp</button>
-    <button class="btn-act" style="background:linear-gradient(135deg, #00f3ff 0%, #0066ff 100%); color:#fff; margin-bottom:8px;" onclick="generateMatchGraphicCard()">🖼️ Generar Imagen de Acta HD</button>
-    <button class="btn-act" style="background:linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color:#000; margin-bottom:8px;" onclick="generateFutMvpCard()">🎴 Generar Carta FUT MVP HD</button>
-    <button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
-  </div>
-
-  <!-- TAB 2: GESTIÓN DE EQUIPOS -->
-  <div id="tab-equipos" class="tab-content">
-    <div class="glass-card">
-      <div class="card-head">Administrar Plantilla y Logo</div>
-      <div class="form-group">
-        <label>Seleccionar Equipo a Modificar</label>
-        <select id="manageTeamSelect" onchange="renderTeamManagement()"></select>
-      </div>
-
-      <div style="text-align: center; margin: 16px 0;">
-        <div class="team-logo-wrapper" id="manageLogoWrap" style="width: 80px; height: 80px; margin: 0 auto 8px auto;"></div>
-        <label for="uploadLogoInput" class="btn-sec" style="display: inline-block; width: auto; padding: 8px 16px; cursor: pointer;">🖼️ Subir Logo de Equipo</label>
-        <input type="file" id="uploadLogoInput" accept="image/*" style="display: none;" onchange="handleLogoUpload(event)">
-      </div>
-
-      <div class="form-group" style="margin-top: 20px;">
-        <label>Agregar Nuevo Jugador</label>
-        <div class="form-row">
-          <input type="text" id="newPlayerName" placeholder="Nombre y Apellido">
-          <button class="btn-act" style="width: 100px;" onclick="addNewPlayer()">Añadir</button>
-        </div>
-      </div>
-
-      <label style="margin-top: 16px;">Jugadores Registrados:</label>
-      <div id="managePlayersList" style="margin-top: 8px;"></div>
-    </div>
-  </div>
-
-  <!-- TAB 3: ASISTENCIA -->
-  <div id="tab-asistencia" class="tab-content">
-    <div class="glass-card">
-      <div class="card-head"><span id="attTitle1">LOCAL</span></div>
-      <div id="list-att-1"></div>
-    </div>
-    <div class="glass-card">
-      <div class="card-head"><span id="attTitle2">VISITANTE</span></div>
-      <div id="list-att-2"></div>
-    </div>
-    <!-- Botón para generar reporte de asistencia -->
-    <button class="btn-act" style="background:#0288d1; margin-top: 10px;" onclick="generateAttendanceReport()">📋 Generar Reporte de Asistencia (PDF / Texto)</button>
-  </div>
-
-  <!-- TAB 4: HISTORIAL -->
-  <div id="tab-historial" class="tab-content">
-    <button class="btn-act" style="background:#00897b; margin-bottom: 12px;" onclick="exportarTodoElHistorial()">
-      📄 Copiar Cronología Completa de Memoria
-    </button>
-
-    <div class="glass-card" style="border: 1px solid var(--accent-gold);">
-      <div class="card-head" style="color:var(--accent-gold);">📥 Auto-Importar / Reconstruir Acta</div>
-      <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">
-        Pega un texto de WhatsApp para recuperar incidencias y tiempos automáticamente:
-      </p>
-      <textarea id="importWhatsappText" rows="4" placeholder="Pega el acta copiada de WhatsApp aquí..."></textarea>
-      <button class="btn-act" style="background:var(--accent-gold); color:#000; margin-top:8px;" onclick="importFromWhatsappText()">⚡ Reconstruir Partido</button>
-    </div>
-
-    <div class="glass-card">
-      <div class="card-head">Partidos Archivados</div>
-      <div id="savedMatchesContainer">Sin partidos archivados.</div>
-    </div>
-  </div>
-
-  <!-- MODAL CARTA FUT MVP -->
-  <div class="fut-card-modal" id="futModal">
-    <canvas id="futCanvas" width="450" height="650" style="max-width:100%; max-height:75vh; border-radius:20px; box-shadow:0 0 35px rgba(255, 215, 0, 0.6);"></canvas>
-    <div style="display:flex; gap:10px; margin-top:16px;">
-      <button class="btn-act" style="background:var(--accent-gold); color:#000;" onclick="downloadFutCanvas()">⬇️ Descargar Carta HD</button>
-      <button class="btn-sec" onclick="closeFutModal()">✕ Cerrar</button>
-    </div>
-  </div>
-
-  <!-- MODAL CARTA IMAGEN ACTA OFICIAL -->
-  <div class="fut-card-modal" id="matchGraphicModal">
-    <canvas id="graphicCanvas" width="600" height="850" style="max-width:100%; max-height:75vh; border-radius:20px; box-shadow:0 0 35px rgba(0, 243, 255, 0.5);"></canvas>
-    <div style="display:flex; gap:10px; margin-top:16px;">
-      <button class="btn-act" style="background:var(--neon-cyan); color:#000;" onclick="downloadGraphicCanvas()">⬇️ Descargar Imagen Acta HD</button>
-      <button class="btn-sec" onclick="closeGraphicModal()">✕ Cerrar</button>
-    </div>
-  </div>
-
-  <!-- MODAL REPORTE DE ASISTENCIA -->
-  <div class="fut-card-modal" id="attendanceModal">
-    <div class="glass-card" style="width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; background: #0f0f16; border: 1px solid var(--neon-cyan);">
-      <div class="card-head" style="color:var(--neon-cyan);">📋 Reporte de Asistencia del Partido</div>
-      <div id="attendanceReportContent" style="font-size: 0.9rem; line-height: 1.5; white-space: pre-line; margin-bottom: 16px; color: #fff;"></div>
-      <div style="display:flex; gap:10px;">
-        <button class="btn-act" style="background:var(--neon-cyan); color:#000;" onclick="copyAttendanceReport()">📋 Copiar Reporte</button>
-        <button class="btn-sec" onclick="closeAttendanceModal()">✕ Cerrar</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // CONTROL DEL SPLASH SCREEN INTRO
-    function runSplashScreen() {
-      const splash = document.getElementById('splashScreen');
-      const progress = document.getElementById('splashProgress');
-      splash.classList.remove('hidden');
-      progress.style.width = '0%';
-      
-      setTimeout(() => { progress.style.width = '100%'; }, 50);
-      setTimeout(() => { splash.classList.add('hidden'); }, 2100);
-    }
-
-    function replaySplash() {
-      runSplashScreen();
-    }
-
-    // Registro de Service Worker para comportamiento NATIVO / STANDALONE
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        const swCode = `
-          const CACHE_NAME = 'seven-league-v5';
-          self.addEventListener('install', e => {
-            self.skipWaiting();
-            e.waitUntil(
-              caches.open(CACHE_NAME).then(cache => {
-                return cache.addAll(['./', 'index.html']);
-              })
-            );
-          });
-          self.addEventListener('activate', e => {
-            e.waitUntil(clients.claim());
-          });
-          self.addEventListener('fetch', e => {
-            e.respondWith(
-              caches.match(e.request).then(response => response || fetch(e.request))
-            );
-          });
-        `;
-        const blob = new Blob([swCode], { type: 'application/javascript' });
-        navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
-      });
-    }
-
-    const teamColors = {
-      "eq_1": "#d32f2f", "eq_2": "#00f3ff", "eq_3": "#00ff88", "eq_4": "#ff8c00",
-      "eq_5": "#ab47bc", "eq_6": "#ffd700", "eq_7": "#26a69a", "eq_8": "#7e57c2",
-      "eq_9": "#ff4081", "eq_10": "#5c6bc0"
-    };
-
-    const defaultTeamsData = {
-      "eq_1": { id: "eq_1", name: "Inter Ya Ma FC", logo: "logo_inter_yama.png", short: "IYM", players: ["Lorenzo di Gregorio", "Ricard Castells", "Ethan Robinson", "Arron Robinson", "Gianfi", "James Conlon", "John Vial Lian Mung", "Nacho Nuño", "Pol Castells", "Víctor", "Yousri Sghaier", "Zak Robinson"] },
-      "eq_2": { id: "eq_2", name: "Rhine Lions FC", logo: "logo_rhine_lions.png", short: "RLI", players: ["Alejandro Signoret", "Cesar Galera", "Fernando Ortiz", "Nasser Mawad", "Nick Erazo", "Ori Roethler", "Panji Buana", "Patricia Wieland", "Rene Hersperger", "Timon Hari", "Xavier Plo", "Pajtim Kerimi", "Daniel Wieland", "Nenad Ilic"] },
-      "eq_3": { id: "eq_3", name: "FC Sportfreunde", logo: "logo_sportfreunde.png", short: "SPO", players: ["Luca Kropf", "Yanick", "Gonçalo Rodrigues", "Bilal Ben Romdhane", "Burim Lulaj", "David Ortiz", "Elias Chigha", "Gabriel dos Santos", "Guilherme Gonçalves", "Jairo Diaz", "Jeremiah Wilson-Parham", "Jose Rocha", "Justin Kenny", "Marcel Branagh", "Pablo Andres", "Paul Jurcut", "Reza", "Schinzo", "Slobodan Pavlovic"] },
-      "eq_4": { id: "eq_4", name: "FC Max Basel", logo: "logo_max_basel.png", short: "MAX", players: ["Denis Cornelio", "Jan Sieber", "Sergiu Petrica", "Pablo Verdes", "Alex Costa", "Greg Imber", "Yassin", "Carlos Caliani", "Antü Urrea", "Dima Cernica", "Federico Barriga", "Guillermo García", "Jairo Botello", "Pedro Prieto", "Víctor Molinari"] },
-      "eq_5": { id: "eq_5", name: "FC Baselona", logo: "logo_baselona.png", short: "BAS", players: ["Alexis Gabriel Martinez", "Azzaro Cespedes", "Juan Lucas Gordillo", "Alvaro Herrero", "Aridane Moreno", "Francisco Yanez", "Gaspar Riveros", "Hector Moya", "Jean-Pierre Ortiz", "Joao Carlos Pinto", "Tamas Dalmay", "William Tejada"] },
-      "eq_6": { id: "eq_6", name: "Joga Bonito FC", logo: "logo_joga_bonito.png", short: "JOG", players: ["Efraim Benoit Ferreira", "Matheus Nascimento", "Victor Gustavo Marques", "Lendrick Machado", "André Filipe da Silva", "Edson Alex Panta", "Eduardo Pereira da Silva", "Igor Mateus Silva", "Leomir Casagrande", "Leonardo da Silva", "Maxsuel Santos", "Maxwell Stanyo Alves", "Raphael Aflalo Lopes", "Sergio Marconi Fonseca", "Silvio Patrício"] },
-      "eq_7": { id: "eq_7", name: "BG FC", logo: "logo_bg_fc.png", short: "BG", players: ["Emilio Miró", "Javier Calderón", "Juan Rodriguez", "Gabriele Iannucci", "Genni Mariniello", "Armando Babayan", "Christian Stevens", "Louis Vanoise", "Pablo Cabrales", "Romain de Guillebon", "Victor Costé de Bagneaux", "Virgile Soubiran", "Álvaro Morcillo"] },
-      "eq_8": { id: "eq_8", name: "DPS Basel FC", logo: "logo_dps_basel.png", short: "DPS", players: ["Jaroslaw Strygner", "Simon Nobel", "Brian Wickham", "Oliver Dowling", "Pablo Lora", "Patrick Kellehan", "Diogo Ladeiras", "Filippo Busu", "Ibrahima Sow", "Jacopo Bernasconi", "Juan Francisco Moreno", "Mike Topjian", "Nils Chartier", "Simon Blanche", "Cagatay Cinar", "Jorge Garcia", "Jetmir Xhema", "Conor Maye", "Jaleel Ashik", "Noah Jose Carlos Bellakovics", "Panagiotis Panos"] },
-      "eq_9": { id: "eq_9", name: "Rhine Madrid", logo: "logo_rhine_madrid.png", short: "RMA", players: ["Hamed Goudarzi", "Nicolas Wehrli", "Christian Schlote", "Joonatan Van Eecke", "Khamlek Chaton", "Steven Munyoo", "Franklyn Sciberras", "Jonathan Osaigbovo", "Junica Lucian", "Jürgen Schneider", "Logan Jungen", "Luca Sieber", "Marc Zuger", "Matthias Vogler", "Rharin", "Steiner"] },
-      "eq_10": { id: "eq_10", name: "Inter Basel", logo: "logo_inter_basel.png", short: "INB", players: ["Anas Moutacharrif", "Ahmed Tawfik", "Athithiyan Senthilkumar", "Elleno Noviello", "Jamal Budair", "Karim Zahra", "Marvin Meier", "Marwan Ibrahim", "Micha Gelencser", "Oualid El Hafian", "Samuel Mc'Kenzie", "Victor Melado"] }
-    };
-
-    // Aislamiento por árbitro para proteger bases de datos independientes
-    function getStorageKey(base) {
-      const ref = document.getElementById('refNameInput') ? document.getElementById('refNameInput').value : (localStorage.getItem('sl_ref') || "SAMUEL MCKENZIE");
-      const cleanRef = ref.replace(/\s+/g, '_').toLowerCase();
-      return `sl_${base}_${cleanRef}`;
-    }
-
-    let teams = JSON.parse(localStorage.getItem('sl_teams_data')) || defaultTeamsData;
-    let currentTeam1Id = localStorage.getItem('sl_t1') || "eq_1";
-    let currentTeam2Id = localStorage.getItem('sl_t2') || "eq_2";
-    let refereeName = localStorage.getItem('sl_ref') || "SAMUEL MCKENZIE";
-
-    let attendance = JSON.parse(localStorage.getItem(getStorageKey('att'))) || {};
-    let events = JSON.parse(localStorage.getItem(getStorageKey('ev'))) || [];
-    let selectedMVP = localStorage.getItem(getStorageKey('mvp')) || '';
-    let savedMatches = JSON.parse(localStorage.getItem(getStorageKey('hist'))) || [];
-    let currentPeriod = 1;
-
-    let timerRunning = false;
-    let startTime = 0;
-    let elapsedTimeBeforePause = 0;
-    let timerInterval = null;
-    let alertSounded = false;
-
-    function triggerHaptic() {
-      if (navigator.vibrate) navigator.vibrate(25);
-    }
-
-    function playWhistleSound() {
-      try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(2800, ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(1600, ctx.currentTime + 0.25);
-        gain.gain.setValueAtTime(0.3, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + 0.25);
-      } catch(e){}
-    }
-
-    function playGoalSound() {
-      try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(220, ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(550, ctx.currentTime + 0.4);
-        osc.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + 0.4);
-      } catch(e){}
-    }
-
-    function initParticles() {
-      const canvas = document.getElementById('particlesCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let width = canvas.width = canvas.offsetWidth;
-      let height = canvas.height = canvas.offsetHeight;
-
-      let particles = Array.from({length: 25}, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 2 + 1,
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8
-      }));
-
-      function render() {
-        ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = '#00f3ff';
-        particles.forEach(p => {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > width) p.vx *= -1;
-          if (p.y < 0 || p.y > height) p.vy *= -1;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fill();
-        });
-        requestAnimationFrame(render);
-      }
-      render();
-    }
-
-    function init() {
-      runSplashScreen();
-      document.getElementById('refNameInput').value = refereeName;
-      document.getElementById('refereeNameDisplay').innerText = refereeName;
-      reloadRefereeData();
-      renderTeamSelectors();
-      setupMatchTeams();
-      renderTeamManagement();
-      autoRepairHistoricalMatches();
-      renderHistory();
-      initParticles();
-    }
-
-    function reloadRefereeData() {
-      refereeName = document.getElementById('refNameInput').value;
-      localStorage.setItem('sl_ref', refereeName);
-      attendance = JSON.parse(localStorage.getItem(getStorageKey('att'))) || {};
-      events = JSON.parse(localStorage.getItem(getStorageKey('ev'))) || [];
-      selectedMVP = localStorage.getItem(getStorageKey('mvp')) || '';
-      savedMatches = JSON.parse(localStorage.getItem(getStorageKey('hist'))) || [];
-    }
-
-    function toggleDrawer() {
-      triggerHaptic();
-      document.getElementById('drawerOverlay').classList.toggle('active');
-      document.getElementById('drawerMenu').classList.toggle('active');
-    }
-
-    function switchTabNav(tabId) {
-      toggleDrawer();
-      switchTab(tabId);
-    }
-
-    function switchTab(tabId) {
-      triggerHaptic();
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      
-      const btn = document.getElementById(`btn-${tabId}`);
-      if (btn) btn.classList.add('active');
-    }
-
-    function resetAppData() {
-      triggerHaptic();
-      if (confirm("¿Quieres borrar la memoria interna de la app? Esto borrará jugadores agregados y logos personalizados.")) {
-        localStorage.clear();
-        location.reload();
-      }
-    }
-
-    function updateRefName() {
-      refereeName = document.getElementById('refNameInput').value || "SAMUEL MCKENZIE";
-      document.getElementById('refereeNameDisplay').innerText = refereeName;
-      localStorage.setItem('sl_ref', refereeName);
-      reloadRefereeData();
-      setupMatchTeams();
-      renderHistory();
-    }
-
-    function renderTeamSelectors() {
-      const s1 = document.getElementById('matchTeam1Select');
-      const s2 = document.getElementById('matchTeam2Select');
-      const sm = document.getElementById('manageTeamSelect');
-      
-      let opts = '';
-      Object.values(teams).forEach(t => opts += `<option value="${t.id}">${t.name}</option>`);
-      
-      s1.innerHTML = opts; s2.innerHTML = opts; sm.innerHTML = opts;
-      s1.value = currentTeam1Id; s2.value = currentTeam2Id;
-    }
-
-    function changeMatchTeams() {
-      triggerHaptic();
-      currentTeam1Id = document.getElementById('matchTeam1Select').value;
-      currentTeam2Id = document.getElementById('matchTeam2Select').value;
-      localStorage.setItem('sl_t1', currentTeam1Id);
-      localStorage.setItem('sl_t2', currentTeam2Id);
-      setupMatchTeams();
-    }
-
-    function setTeamLogo(containerId, team) {
-      const wrapper = document.getElementById(containerId);
-      wrapper.innerHTML = `
-        <img class="team-logo-img" src="${team.logo}" alt="${team.name}" 
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="team-logo-fallback" style="display:none;">${team.short}</div>
-      `;
-    }
-
-    function applyDynamicSkins() {
-      const color1 = teamColors[currentTeam1Id] || "#d32f2f";
-      const color2 = teamColors[currentTeam2Id] || "#00f3ff";
-
-      document.documentElement.style.setProperty('--team1-color', color1);
-      document.documentElement.style.setProperty('--team2-color', color2);
-
-      const scoreboard = document.getElementById('scoreboardCard');
-      scoreboard.style.background = `linear-gradient(135deg, ${color1}22 0%, rgba(5,5,8,0.9) 50%, ${color2}22 100%)`;
-      scoreboard.style.borderColor = color1;
-
-      document.getElementById('logoWrap1').style.borderColor = color1;
-      document.getElementById('logoWrap2').style.borderColor = color2;
-    }
-
-    function updateMomentumBar() {
-      let score1 = 0, score2 = 0;
-      events.forEach(e => {
-        if (e.type === 'GOL') {
-          if (e.teamId === currentTeam1Id) score1 += 3;
-          if (e.teamId === currentTeam2Id) score2 += 3;
-        } else {
-          if (e.teamId === currentTeam1Id) score1 += 1;
-          if (e.teamId === currentTeam2Id) score2 += 1;
-        }
-      });
-
-      const total = (score1 + score2) || 1;
-      const pct1 = Math.round((score1 / total) * 100) || 50;
-      const pct2 = 100 - pct1;
-
-      document.getElementById('mFill1').style.width = `${pct1}%`;
-      document.getElementById('mFill2').style.width = `${pct2}%`;
-
-      document.getElementById('mName1').innerText = `${teams[currentTeam1Id].name} (${pct1}%)`;
-      document.getElementById('mName2').innerText = `${teams[currentTeam2Id].name} (${pct2}%)`;
-    }
-
-    function setupMatchTeams() {
-      const t1 = teams[currentTeam1Id];
-      const t2 = teams[currentTeam2Id];
-
-      document.getElementById('nameTeam1').innerText = t1.name;
-      document.getElementById('nameTeam2').innerText = t2.name;
-
-      setTeamLogo('logoWrap1', t1);
-      setTeamLogo('logoWrap2', t2);
-
-      document.getElementById('attTitle1').innerText = t1.name;
-      document.getElementById('attTitle2').innerText = t2.name;
-
-      if (!attendance[currentTeam1Id]) attendance[currentTeam1Id] = [...t1.players];
-      if (!attendance[currentTeam2Id]) attendance[currentTeam2Id] = [...t2.players];
-
-      applyDynamicSkins();
-      renderAttendanceLists();
-      updateTeamDropdown();
-      updatePlayerDropdowns();
-      populateMVPSelect();
-      renderEvents();
-      updateMomentumBar();
-    }
-
-    function renderTeamManagement() {
-      const teamId = document.getElementById('manageTeamSelect').value;
-      const team = teams[teamId];
-
-      setTeamLogo('manageLogoWrap', team);
-
-      const playersContainer = document.getElementById('managePlayersList');
-      playersContainer.innerHTML = '';
-      
-      team.players.forEach((p, idx) => {
-        playersContainer.innerHTML += `
-          <div class="player-chip">
-            ${p} <span onclick="removePlayer('${teamId}', ${idx})">✕</span>
-          </div>`;
-      });
-    }
-
-    function handleLogoUpload(e) {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        const teamId = document.getElementById('manageTeamSelect').value;
-        teams[teamId].logo = evt.target.result;
-        localStorage.setItem('sl_teams_data', JSON.stringify(teams));
-        setupMatchTeams();
-        renderTeamManagement();
-        alert("✅ Logo subido y guardado con éxito.");
-      };
-      reader.readAsDataURL(file);
-    }
-
-    function addNewPlayer() {
-      triggerHaptic();
-      const teamId = document.getElementById('manageTeamSelect').value;
-      const nameInput = document.getElementById('newPlayerName');
-      const name = nameInput.value.trim();
-
-      if (!name) return alert("Ingresa el nombre del jugador.");
-
-      teams[teamId].players.push(name);
-      
-      if (!attendance[teamId]) attendance[teamId] = [];
-      attendance[teamId].push(name);
-
-      localStorage.setItem('sl_teams_data', JSON.stringify(teams));
-      saveAllData();
-
-      nameInput.value = '';
-      renderTeamManagement();
-      setupMatchTeams();
-    }
-
-    function removePlayer(teamId, index) {
-      triggerHaptic();
-      const playerName = teams[teamId].players[index];
-      teams[teamId].players.splice(index, 1);
-
-      if (attendance[teamId]) {
-        attendance[teamId] = attendance[teamId].filter(p => p !== playerName);
-      }
-
-      localStorage.setItem('sl_teams_data', JSON.stringify(teams));
-      saveAllData();
-      renderTeamManagement();
-      setupMatchTeams();
-    }
-
-    function toggleTimer() {
-      triggerHaptic();
-      playWhistleSound();
-      if (timerRunning) {
-        timerRunning = false;
-        elapsedTimeBeforePause += Date.now() - startTime;
-        clearInterval(timerInterval);
-        document.getElementById('btnStart').innerText = "▶ Reanudar";
-      } else {
-        timerRunning = true;
-        startTime = Date.now();
-        document.getElementById('btnStart').innerText = "⏸ Pausa";
-        timerInterval = setInterval(updateTimerClock, 250);
-      }
-    }
-
-    function updateTimerClock() {
-      if (!timerRunning) return;
-      const totalElapsedMs = elapsedTimeBeforePause + (Date.now() - startTime);
-      const totalSec = Math.floor(totalElapsedMs / 1000);
-      const m = String(Math.floor(totalSec / 60)).padStart(2, '0');
-      const s = String(totalSec % 60).padStart(2, '0');
-      document.getElementById('timerDisplay').innerText = `${m}:${s}`;
-      document.getElementById('minuteInput').value = Math.max(1, Math.ceil(totalSec / 60));
-
-      if (totalSec >= 1500 && !alertSounded) {
-        alertSounded = true;
-        document.getElementById('timerCard').classList.add('timer-ended');
-        playWhistleSound();
-        if (navigator.vibrate) navigator.vibrate([300, 100, 300, 100, 300]);
-      }
-    }
-
-    // Cronómetro de descuento CORREGIDO (ahora suma tiempo correctamente)
-    function addExtraTime(mins) {
-      triggerHaptic();
-      elapsedTimeBeforePause += mins * 60 * 1000;
-      updateTimerClock();
-    }
-
-    function setPeriod(p) {
-      triggerHaptic();
-      playWhistleSound();
-      currentPeriod = p;
-      timerRunning = false;
-      alertSounded = false;
-      clearInterval(timerInterval);
-      elapsedTimeBeforePause = 0;
-      document.getElementById('timerCard').classList.remove('timer-ended');
-      document.getElementById('timerDisplay').innerText = "00:00";
-      document.getElementById('periodDisplay').innerText = p === 1 ? "1er Tiempo (25 min)" : "2do Tiempo (25 min)";
-      document.getElementById('btnStart').innerText = "▶ Iniciar";
-      
-      const periodSelect = document.getElementById('eventPeriodSelect');
-      if (periodSelect) periodSelect.value = p === 1 ? "1T" : "2T";
-
-      document.getElementById('btnPeriod1').classList.toggle('active-period', p === 1);
-      document.getElementById('btnPeriod2').classList.toggle('active-period', p === 2);
-    }
-
-    function renderAttendanceLists() {
-      [1, 2].forEach(num => {
-        const teamId = num === 1 ? currentTeam1Id : currentTeam2Id;
-        const container = document.getElementById(`list-att-${num}`);
-        container.innerHTML = '';
-        
-        if (teams[teamId]) {
-          teams[teamId].players.forEach(p => {
-            const isAtt = attendance[teamId] && attendance[teamId].includes(p);
-            container.innerHTML += `
-              <div class="check-row">
-                <label class="check-label">
-                  <input type="checkbox" ${isAtt ? 'checked' : ''} onchange="toggleAttendance('${teamId}', '${p}')"> ${p}
-                </label>
-              </div>`;
-          });
-        }
-      });
-    }
-
-    function toggleAttendance(teamId, player) {
-      triggerHaptic();
-      if (!attendance[teamId]) attendance[teamId] = [];
-      
-      if (attendance[teamId].includes(player)) {
-        attendance[teamId] = attendance[teamId].filter(p => p !== player);
-      } else {
-        attendance[teamId].push(player);
-      }
-      
-      saveAllData();
-      updatePlayerDropdowns();
-      populateMVPSelect();
-    }
-
-    // Generador de Reporte de Asistencia
-    function generateAttendanceReport() {
-      triggerHaptic();
-      const t1 = teams[currentTeam1Id];
-      const t2 = teams[currentTeam2Id];
-
-      function getTeamAttendanceText(team) {
-        const allPlayers = team.players || [];
-        const present = attendance[team.id] || [];
-        const absent = allPlayers.filter(p => !present.includes(p));
-
-        let str = `🛡️ *${team.name}*\n`;
-        str += `✅ *Asistentes (${present.length}):*\n`;
-        if (present.length === 0) str += `  - Ninguno\n`;
-        else present.forEach(p => str += `  • ${p}\n`);
-
-        str += `❌ *Ausentes (${absent.length}):*\n`;
-        if (absent.length === 0) str += `  - Ninguno (Plantel completo)\n`;
-        else absent.forEach(p => str += `  • ${p}\n`);
-        return str;
-      }
-
-      let reportText = `📋 *SEVEN LEAGUE - REPORTE DE ASISTENCIA*\n`;
-      reportText += `📅 Fecha: ${new Date().toLocaleDateString()} | 👨‍⚖️ Árbitro: ${refereeName}\n`;
-      reportText += `-----------------------------------\n\n`;
-      reportText += getTeamAttendanceText(t1) + `\n-----------------------------------\n\n`;
-      reportText += getTeamAttendanceText(t2);
-
-      document.getElementById('attendanceReportContent').innerText = reportText;
-      document.getElementById('attendanceModal').classList.add('active');
-    }
-
-    function closeAttendanceModal() {
-      document.getElementById('attendanceModal').classList.remove('active');
-    }
-
-    function copyAttendanceReport() {
-      triggerHaptic();
-      const text = document.getElementById('attendanceReportContent').innerText;
-      navigator.clipboard.writeText(text);
-      alert("✅ ¡Reporte de asistencia copiado al portapapeles!");
-    }
-
-    function updateTeamDropdown() {
-      const ts = document.getElementById('teamSelect');
-      ts.innerHTML = `
-        <option value="${currentTeam1Id}">${teams[currentTeam1Id].name}</option>
-        <option value="${currentTeam2Id}">${teams[currentTeam2Id].name}</option>`;
-    }
-
-    function updatePlayerDropdowns() {
-      const selectedTeamId = document.getElementById('teamSelect').value;
-      const playerSelect = document.getElementById('playerSelect');
-      const assistSelect = document.getElementById('assistSelect');
-      
-      playerSelect.innerHTML = '';
-      assistSelect.innerHTML = '<option value="">-- Ninguna --</option>';
-
-      const activePlayers = attendance[selectedTeamId] || teams[selectedTeamId]?.players || [];
-
-      if (activePlayers.length === 0) {
-        playerSelect.innerHTML = '<option value="">-- No hay jugadores en lista --</option>';
-        return;
-      }
-
-      activePlayers.forEach(player => {
-        const opt = document.createElement('option');
-        opt.value = player;
-        opt.innerText = player;
-        playerSelect.appendChild(opt);
-
-        const optA = document.createElement('option');
-        optA.value = player;
-        optA.innerText = player;
-        assistSelect.appendChild(optA);
-      });
-    }
-
-    function toggleAssistField() {
-      document.getElementById('assistGroup').style.display = (document.getElementById('typeSelect').value === 'GOL') ? 'block' : 'none';
-    }
-
-    function addEvent() {
-      triggerHaptic();
-      const minuteVal = parseInt(document.getElementById('minuteInput').value || 1);
-      const periodVal = document.getElementById('eventPeriodSelect').value || '1T';
-      const teamId = document.getElementById('teamSelect').value;
-      const type = document.getElementById('typeSelect').value;
-      const player = document.getElementById('playerSelect').value;
-      const assist = type === 'GOL' ? document.getElementById('assistSelect').value : '';
-
-      if (!player) return alert("Por favor selecciona un jugador.");
-
-      events.push({ id: Date.now(), minute: minuteVal, period: periodVal, teamId, type, player, assist });
-      
-      events.sort((a, b) => {
-        if (a.period !== b.period) return a.period === '1T' ? -1 : 1;
-        return a.minute - b.minute;
-      });
-
-      if (type === 'GOL') {
-        playGoalSound();
-        try { confetti({ particleCount: 80, spread: 60 }); } catch(e){} 
-      }
-
-      saveAllData();
-      renderEvents();
-      updateMomentumBar();
-    }
-
-    function deleteEvent(id) {
-      triggerHaptic();
-      events = events.filter(e => e.id !== id);
-      saveAllData();
-      renderEvents();
-      updateMomentumBar();
-    }
-
-    function renderEvents() {
-      const container = document.getElementById('eventsListContainer');
-      let score1 = 0, score2 = 0;
-
-      if (events.length === 0) {
-        container.innerHTML = "<small style='color:var(--text-muted);'>Sin incidencias registradas.</small>";
-      } else {
-        container.innerHTML = '';
-        events.forEach(e => {
-          if (e.type === 'GOL') { 
-            if (e.teamId === currentTeam1Id) score1++; 
-            if (e.teamId === currentTeam2Id) score2++; 
-          }
-          const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
-          const teamName = teams[e.teamId] ? teams[e.teamId].name : 'Equipo';
-          const periodText = e.period || '1T';
-
-          container.innerHTML += `
-            <div class="timeline-item">
-              <div>
-                <span class="period-chip">${periodText}</span>
-                <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
-                <b style="margin-left:6px;">${e.player}</b> <small style="color:var(--text-muted);">(${teamName})</small>
-                ${e.assist ? `<small style="color:var(--accent-gold); display:block;">👟 Asist: ${e.assist}</small>` : ''}
-              </div>
-              <button style="background:none; border:none; color:var(--accent-red); cursor:pointer; font-weight:bold; font-size:1.1rem;" onclick="deleteEvent(${e.id})">✕</button>
-            </div>`;
-        });
-      }
-
-      document.getElementById('score1').innerText = score1;
-      document.getElementById('score2').innerText = score2;
-    }
-
-    function populateMVPSelect() {
-      const mvpSelect = document.getElementById('mvpSelect');
-      let opts = '<option value="">-- Seleccionar MVP --</option>';
-      [currentTeam1Id, currentTeam2Id].forEach(teamId => {
-        if (teams[teamId]) {
-          opts += `<optgroup label="${teams[teamId].name}">`;
-          (attendance[teamId] || teams[teamId].players).forEach(p => opts += `<option value="${p} (${teams[teamId].name})">${p}</option>`);
-          opts += `</optgroup>`;
-        }
-      });
-      mvpSelect.innerHTML = opts;
-      mvpSelect.value = selectedMVP;
-    }
-
-    function saveMVP() {
-      selectedMVP = document.getElementById('mvpSelect').value;
-      saveAllData();
-    }
-
-    function generateFutMvpCard() {
-      triggerHaptic();
-      const canvas = document.getElementById('futCanvas');
-      const ctx = canvas.getContext('2d');
-
-      const width = canvas.width = 450;
-      const height = canvas.height = 650;
-
-      const bgGrad = ctx.createRadialGradient(225, 200, 10, 225, 325, 400);
-      bgGrad.addColorStop(0, '#2a1a08');
-      bgGrad.addColorStop(0.5, '#120c02');
-      bgGrad.addColorStop(1, '#050508');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.strokeStyle = 'rgba(255, 215, 0, 0.04)';
-      ctx.lineWidth = 1;
-      for (let x = 0; x < width; x += 30) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
-      }
-      for (let y = 0; y < height; y += 30) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
-      }
-
-      ctx.strokeStyle = '#ffd700';
-      ctx.lineWidth = 6;
-      ctx.shadowColor = '#ffd700';
-      ctx.shadowBlur = 20;
-      ctx.strokeRect(18, 18, width - 36, height - 36);
-
-      ctx.shadowBlur = 0;
-      ctx.strokeStyle = '#00f3ff';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(26, 26, width - 52, height - 52);
-
-      ctx.fillStyle = '#ffd700';
-      ctx.font = '900 28px Orbitron';
-      ctx.textAlign = 'center';
-      ctx.shadowColor = '#ffd700';
-      ctx.shadowBlur = 15;
-      ctx.fillText('SEVEN LEAGUE MVP', width / 2, 70);
-
-      ctx.font = '900 95px Orbitron';
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = '#00f3ff';
-      ctx.shadowBlur = 25;
-      ctx.fillText('99', width / 2, 175);
-
-      ctx.font = '700 18px Orbitron';
-      ctx.fillStyle = '#ffd700';
-      ctx.shadowBlur = 5;
-      ctx.fillText('PLAYER OF THE MATCH', width / 2, 205);
-
-      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
-      ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(50, 225); ctx.lineTo(width - 50, 225); ctx.stroke();
-
-      const mvpClean = selectedMVP ? selectedMVP.split('(')[0].trim() : 'JUGADOR STRIKER';
-      ctx.font = '900 32px Orbitron';
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = '#ffffff';
-      ctx.shadowBlur = 10;
-      ctx.fillText(mvpClean.toUpperCase(), width / 2, 275);
-
-      const mvpEvents = events.filter(e => e.player && e.player.toLowerCase() === mvpClean.toLowerCase());
-      
-      ctx.font = '700 16px Rajdhani';
-      ctx.fillStyle = '#00f3ff';
-      ctx.shadowBlur = 0;
-      ctx.fillText('ESTADÍSTICAS E INCIDENCIAS EN EL PARTIDO:', width / 2, 320);
-
-      let startY = 355;
-      if (mvpEvents.length === 0) {
-        ctx.font = '600 18px Rajdhani';
-        ctx.fillStyle = '#aaaaaa';
-        ctx.fillText('⭐ Rendimiento Táctico Destacado (MVP)', width / 2, startY);
-      } else {
-        mvpEvents.forEach(e => {
-          ctx.font = '700 20px Rajdhani';
-          ctx.fillStyle = e.type === 'GOL' ? '#00ff88' : e.type === 'A' ? '#ffea00' : '#ff1744';
-          const details = e.type === 'GOL' ? (e.assist ? `⚽ GOL a los ${e.minute}' (${e.period}) - Asist: ${e.assist}` : `⚽ GOL a los ${e.minute}' (${e.period})`) : `🟨 Tarjeta ${e.type} a los ${e.minute}' (${e.period})`;
-          ctx.fillText(details, width / 2, startY);
-          startY += 32;
-        });
-      }
-
-      const s1 = document.getElementById('score1').innerText;
-      const s2 = document.getElementById('score2').innerText;
-      const t1Name = teams[currentTeam1Id].name;
-      const t2Name = teams[currentTeam2Id].name;
-
-      ctx.fillStyle = 'rgba(0,0,0,0.6)';
-      ctx.fillRect(40, height - 165, width - 80, 110);
-      ctx.strokeStyle = 'rgba(255,215,0,0.4)';
-      ctx.strokeRect(40, height - 165, width - 80, 110);
-
-      ctx.font = '700 16px Orbitron';
-      ctx.fillStyle = '#ffd700';
-      ctx.fillText(`${t1Name}  ${s1} - ${s2}  ${t2Name}`, width / 2, height - 130);
-
-      ctx.font = '600 16px Rajdhani';
-      ctx.fillStyle = '#dddddd';
-      ctx.fillText(`👨‍⚖️ Árbitro Oficial: ${refereeName}`, width / 2, height - 95);
-      ctx.fillText(`📅 ${new Date().toLocaleDateString()} | Seven League Official`, width / 2, height - 70);
-
-      document.getElementById('futModal').classList.add('active');
-    }
-
-    function generateMatchGraphicCard() {
-      triggerHaptic();
-      const canvas = document.getElementById('graphicCanvas');
-      const ctx = canvas.getContext('2d');
-
-      const width = canvas.width = 600;
-      const height = canvas.height = 850;
-
-      const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-      bgGrad.addColorStop(0, '#0a0a12');
-      bgGrad.addColorStop(0.5, '#050508');
-      bgGrad.addColorStop(1, '#120815');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.strokeStyle = '#d32f2f';
-      ctx.lineWidth = 4;
-      ctx.strokeRect(15, 15, width - 30, height - 30);
-
-      ctx.strokeStyle = '#00f3ff';
-      ctx.lineWidth = 1;
-      ctx.strokeRect(22, 22, width - 44, height - 44);
-
-      ctx.font = '900 32px Orbitron';
-      ctx.fillStyle = '#d32f2f';
-      ctx.textAlign = 'center';
-      ctx.shadowColor = '#d32f2f';
-      ctx.shadowBlur = 15;
-      ctx.fillText('SEVEN LEAGUE', width / 2, 65);
-
-      ctx.font = '700 16px Orbitron';
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowBlur = 0;
-      ctx.fillText('ACTA OFICIAL DE PARTIDO', width / 2, 92);
-
-      const t1 = teams[currentTeam1Id];
-      const t2 = teams[currentTeam2Id];
-      const s1 = document.getElementById('score1').innerText;
-      const s2 = document.getElementById('score2').innerText;
-
-      ctx.fillStyle = 'rgba(255,255,255,0.03)';
-      ctx.fillRect(40, 115, width - 80, 130);
-      ctx.strokeStyle = 'rgba(255,255,255,0.1)';
-      ctx.strokeRect(40, 115, width - 80, 130);
-
-      ctx.font = '900 22px Orbitron';
-      ctx.fillStyle = '#00f3ff';
-      ctx.fillText(t1.name.toUpperCase(), 160, 160);
-
-      ctx.fillStyle = '#d32f2f';
-      ctx.fillText(t2.name.toUpperCase(), 440, 160);
-
-      ctx.font = '900 60px Orbitron';
-      ctx.fillStyle = '#ffffff';
-      ctx.fillText(`${s1} - ${s2}`, width / 2, 210);
-
-      ctx.font = '600 16px Rajdhani';
-      ctx.fillStyle = '#ffd700';
-      ctx.fillText(`👨‍⚖️ Árbitro: ${refereeName}   |   📅 ${new Date().toLocaleDateString()}`, width / 2, 275);
-
-      ctx.font = '700 20px Orbitron';
-      ctx.fillStyle = '#d32f2f';
-      ctx.fillText('CRONOLOGÍA DE INCIDENCIAS', width / 2, 320);
-
-      ctx.strokeStyle = '#d32f2f';
-      ctx.beginPath(); ctx.moveTo(100, 332); ctx.lineTo(width - 100, 332); ctx.stroke();
-
-      let currentY = 370;
-
-      if (events.length === 0) {
-        ctx.font = '600 18px Rajdhani';
-        ctx.fillStyle = '#8a8a9a';
-        ctx.fillText('Sin incidencias registradas en este encuentro.', width / 2, currentY);
-      } else {
-        events.forEach(e => {
-          if (currentY < height - 180) {
-            const teamName = teams[e.teamId] ? teams[e.teamId].name : '';
-            const typeSymbol = e.type === 'GOL' ? '⚽ GOL' : e.type === 'A' ? '🟨 Amarilla' : '🟥 Roja';
-            const assistStr = e.assist ? ` (👟 Asist: ${e.assist})` : '';
-
-            ctx.font = '700 18px Rajdhani';
-            ctx.fillStyle = e.type === 'GOL' ? '#00ff88' : e.type === 'A' ? '#ffea00' : '#ff1744';
-            ctx.fillText(`[${e.period || '1T'}] ${e.minute}' - ${typeSymbol}: ${e.player} (${teamName})${assistStr}`, width / 2, currentY);
-            currentY += 30;
-          }
-        });
-      }
-
-      ctx.fillStyle = 'rgba(255,215,0,0.1)';
-      ctx.fillRect(40, height - 140, width - 80, 80);
-      ctx.strokeStyle = '#ffd700';
-      ctx.strokeRect(40, height - 140, width - 80, 80);
-
-      ctx.font = '900 18px Orbitron';
-      ctx.fillStyle = '#ffd700';
-      ctx.fillText('⭐ JUGADOR MVP DEL PARTIDO', width / 2, height - 110);
-
-      ctx.font = '700 22px Rajdhani';
-      ctx.fillStyle = '#ffffff';
-      ctx.fillText(selectedMVP || 'NO SELECCIONADO', width / 2, height - 80);
-
-      document.getElementById('matchGraphicModal').classList.add('active');
-    }
-
-    function closeFutModal() {
-      document.getElementById('futModal').classList.remove('active');
-    }
-
-    function downloadFutCanvas() {
-      const canvas = document.getElementById('futCanvas');
-      const link = document.createElement('a');
-      link.download = `7L_MVP_${selectedMVP.split('(')[0].trim() || 'Card'}.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    }
-
-    function closeGraphicModal() {
-      document.getElementById('matchGraphicModal').classList.remove('active');
-    }
-
-    function downloadGraphicCanvas() {
-      const canvas = document.getElementById('graphicCanvas');
-      const link = document.createElement('a');
-      link.download = `7L_Acta_${teams[currentTeam1Id].short}_vs_${teams[currentTeam2Id].short}.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    }
-
-    function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal) {
-      let text = `📋 *SEVEN LEAGUE - ACTA OFICIAL DE PARTIDO*\n`;
-      text += `👨‍⚖️ *Árbitro:* ${referee}\n`;
-      text += `⚽ *${t1Name} [ ${score1} - ${score2} ] ${t2Name}*\n`;
-      text += `-----------------------------------\n\n`;
-      
-      if (!evtsList || evtsList.length === 0) {
-        text += `_Sin incidencias ni goles registrados._\n`;
-      } else {
-        evtsList.forEach(e => {
-          const tName = teams[e.teamId] ? teams[e.teamId].name : (e.teamName || '');
-          const pText = `(${e.period || '1T'})`;
-          text += `• ${e.minute}' ${pText} ${e.type}: *${e.player}* ${tName ? '(' + tName + ')' : ''} ${e.assist ? '👟 Asist: ' + e.assist : ''}\n`;
-        });
-      }
-
-      if (mvpVal) text += `\n⭐ *MVP DEL PARTIDO:* ${mvpVal}\n`;
-      return text;
-    }
-
-    function exportSummary() {
-      triggerHaptic();
-      const t1 = teams[currentTeam1Id].name;
-      const t2 = teams[currentTeam2Id].name;
-      const s1 = document.getElementById('score1').innerText;
-      const s2 = document.getElementById('score2').innerText;
-
-      const summaryText = generateSummaryText(t1, t2, s1, s2, refereeName, events, selectedMVP);
-
-      navigator.clipboard.writeText(summaryText);
-      alert("✅ ¡Acta oficial en texto copiada al portapapeles!");
-    }
-
-    function archiveMatch() {
-      triggerHaptic();
-      const t1Name = teams[currentTeam1Id].name;
-      const t2Name = teams[currentTeam2Id].name;
-      const s1Val = document.getElementById('score1').innerText;
-      const s2Val = document.getElementById('score2').innerText;
-
-      const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP);
-
-      const matchData = {
-        id: Date.now(),
-        date: new Date().toLocaleString(),
-        referee: refereeName,
-        t1: t1Name, 
-        t2: t2Name,
-        t1Id: currentTeam1Id,
-        t2Id: currentTeam2Id,
-        s1: s1Val, 
-        s2: s2Val,
-        mvp: selectedMVP,
-        summaryText: summaryFormatted,
-        events: JSON.parse(JSON.stringify(events))
-      };
-
-      savedMatches.unshift(matchData);
-      localStorage.setItem(getStorageKey('hist'), JSON.stringify(savedMatches));
-      renderHistory();
-      alert("💾 Partido archivado exitosamente.");
-    }
-
-    function toggleHistoryDetail(id) {
-      triggerHaptic();
-      const el = document.getElementById(`hist-detail-${id}`);
-      if (el) el.classList.toggle('open');
-    }
-
-    function copyHistoricalActa(index) {
-      triggerHaptic();
-      const m = savedMatches[index];
-      const summaryText = generateSummaryText(m.t1, m.t2, m.s1, m.s2, m.referee || 'SAMUEL MCKENZIE', m.events || [], m.mvp || '');
-      navigator.clipboard.writeText(summaryText);
-      alert("✅ Acta copiada al portapapeles.");
-    }
-
-    function deleteMatchFromHistory(index) {
-      triggerHaptic();
-      const match = savedMatches[index];
-      const confirmDelete = confirm(`¿Estás seguro de que deseas eliminar el partido entre ${match.t1} vs ${match.t2}?`);
-      if (confirmDelete) {
-        savedMatches.splice(index, 1);
-        localStorage.setItem(getStorageKey('hist'), JSON.stringify(savedMatches));
-        renderHistory();
-        alert("🗑️ Partido eliminado.");
-      }
-    }
-
-    function parseWhatsappText(text) {
-      if (!text) return { t1: 'LOCAL', t2: 'VISITANTE', s1: '0', s2: '0', referee: 'SAMUEL MCKENZIE', mvp: '', events: [] };
-
-      let t1 = 'LOCAL', t2 = 'VISITANTE', s1 = '0', s2 = '0';
-      const scoreMatch = text.match(/⚽\s*\*?([^*\[]+)\[\s*(\d+)\s*-\s*(\d+)\s*\]\s*([^*]+)\*?/i);
-      if (scoreMatch) {
-        t1 = scoreMatch[1].trim(); s1 = scoreMatch[2].trim(); s2 = scoreMatch[3].trim(); t2 = scoreMatch[4].trim();
-      }
-
-      let referee = 'SAMUEL MCKENZIE';
-      const refMatch = text.match(/Árbitro:\*?\s*([^\n\r]+)/i);
-      if (refMatch) referee = refMatch[1].trim();
-
-      let mvp = '';
-      const mvpMatch = text.match(/MVP DEL PARTIDO:\*?\s*([^\n\r]+)/i);
-      if (mvpMatch) mvp = mvpMatch[1].trim();
-
-      const eventsParsed = [];
-      const lines = text.split('\n');
-
-      lines.forEach(line => {
-        const evMatch = line.match(/•?\s*(\d+)'\s*(\((1T\vert{}2T)\))?\s*(⚽|🟨|🟥|GOL|A|R)?[:\s]*\*?([^*()\n]+)\*?\s*(\(([^()]+)\))?/i);
-        if (evMatch && (line.includes('GOL') || line.includes('⚽') || line.includes('🟨') || line.includes('🟥'))) {
-          const minute = parseInt(evMatch[1]) || 1;
-          let period = evMatch[3] || '1T';
-          let type = 'GOL';
-          if (line.includes('🟨') || line.includes('A:')) type = 'A';
-          if (line.includes('🟥') || line.includes('R:')) type = 'R';
-
-          const player = evMatch[5] ? evMatch[5].trim() : 'Jugador';
-
-          let assist = '';
-          const assistMatch = line.match(/Asist:\s*([^\n\r]+)/i);
-          if (assistMatch) assist = assistMatch[1].trim();
-
-          eventsParsed.push({ id: Date.now() + Math.random(), minute, period, type, player, assist });
-        }
-      });
-
-      return { t1, t2, s1, s2, referee, mvp, events: eventsParsed, summaryText: text };
-    }
-
-    function autoRepairHistoricalMatches() {
-      let modified = false;
-      savedMatches.forEach(m => {
-        if ((!m.events || m.events.length === 0) && m.summaryText) {
-          const parsed = parseWhatsappText(m.summaryText);
-          if (parsed.events.length > 0) {
-            m.events = parsed.events;
-            modified = true;
-          }
-        }
-      });
-      if (modified) {
-        localStorage.setItem(getStorageKey('hist'), JSON.stringify(savedMatches));
-      }
-    }
-
-    function importFromWhatsappText() {
-      triggerHaptic();
-      const input = document.getElementById('importWhatsappText').value;
-      if (!input.trim()) return alert("Por favor pega primero el texto de un acta de WhatsApp.");
-
-      const parsedData = parseWhatsappText(input);
-      parsedData.id = Date.now();
-      parsedData.date = new Date().toLocaleString();
-
-      savedMatches.unshift(parsedData);
-      localStorage.setItem(getStorageKey('hist'), JSON.stringify(savedMatches));
-      document.getElementById('importWhatsappText').value = '';
-      
-      renderHistory();
-      alert("⚡ ¡Partido reconstruido en el historial!");
-    }
-
-    function updateHistPlayerDropdown(matchIndex) {
-      const teamSelect = document.getElementById(`hTeamSelect-${matchIndex}`);
-      const playerSelect = document.getElementById(`hPlayerSelect-${matchIndex}`);
-      const assistSelect = document.getElementById(`hAssistSelect-${matchIndex}`);
-
-      if (!teamSelect || !playerSelect) return;
-
-      const teamName = teamSelect.value;
-      playerSelect.innerHTML = '';
-      if (assistSelect) assistSelect.innerHTML = '<option value="">-- Sin Asistencia --</option>';
-
-      let selectedTeamObj = Object.values(teams).find(t => t.name === teamName);
-      let playerList = selectedTeamObj ? selectedTeamObj.players : [];
-
-      if (playerList.length === 0) {
-        playerSelect.innerHTML = '<option value="">-- Sin jugadores --</option>';
-        return;
-      }
-
-      playerList.forEach(p => {
-        const opt = document.createElement('option');
-        opt.value = p;
-        opt.innerText = p;
-        playerSelect.appendChild(opt);
-
-        if (assistSelect) {
-          const optA = document.createElement('option');
-          optA.value = p;
-          optA.innerText = p;
-          assistSelect.appendChild(optA);
-        }
-      });
-    }
-
-    function addHistoricalEvent(index) {
-      triggerHaptic();
-      const minInput = parseInt(document.getElementById(`hMin-${index}`).value || 1);
-      const periodVal = document.getElementById(`hPeriod-${index}`).value || '1T';
-      const typeVal = document.getElementById(`hType-${index}`).value || 'GOL';
-      const teamVal = document.getElementById(`hTeamSelect-${index}`)?.value || '';
-      const playerVal = document.getElementById(`hPlayerSelect-${index}`)?.value || '';
-      const assistVal = typeVal === 'GOL' ? (document.getElementById(`hAssistSelect-${index}`)?.value || '') : '';
-
-      if (!playerVal) return alert("Por favor selecciona un jugador.");
-
-      if (!savedMatches[index].events) savedMatches[index].events = [];
-
-      savedMatches[index].events.push({
-        id: Date.now(),
-        minute: minInput,
-        period: periodVal,
-        type: typeVal,
-        player: playerVal,
-        teamName: teamVal,
-        assist: assistVal
-      });
-
-      let s1 = 0, s2 = 0;
-      savedMatches[index].events.forEach(e => {
-        if (e.type === 'GOL') {
-          if (e.teamName === savedMatches[index].t1) s1++;
-          if (e.teamName === savedMatches[index].t2) s2++;
-        }
-      });
-      savedMatches[index].s1 = s1;
-      savedMatches[index].s2 = s2;
-
-      savedMatches[index].events.sort((a, b) => {
-        if (a.period !== b.period) return a.period === '1T' ? -1 : 1;
-        return a.minute - b.minute;
-      });
-
-      savedMatches[index].summaryText = generateSummaryText(
-        savedMatches[index].t1, savedMatches[index].t2, 
-        savedMatches[index].s1, savedMatches[index].s2, 
-        savedMatches[index].referee || 'SAMUEL MCKENZIE', 
-        savedMatches[index].events, 
-        savedMatches[index].mvp
-      );
-
-      localStorage.setItem(getStorageKey('hist'), JSON.stringify(savedMatches));
-      renderHistory();
-      toggleHistoryDetail(savedMatches[index].id || index);
-    }
-
-    function deleteHistoricalEvent(matchIndex, eventId) {
-      triggerHaptic();
-      savedMatches[matchIndex].events = savedMatches[matchIndex].events.filter(e => e.id !== eventId);
-      
-      let s1 = 0, s2 = 0;
-      savedMatches[matchIndex].events.forEach(e => {
-        if (e.type === 'GOL') {
-          if (e.teamName === savedMatches[matchIndex].t1) s1++;
-          if (e.teamName === savedMatches[matchIndex].t2) s2++;
-        }
-      });
-      savedMatches[matchIndex].s1 = s1;
-      savedMatches[matchIndex].s2 = s2;
-
-      savedMatches[matchIndex].summaryText = generateSummaryText(
-        savedMatches[matchIndex].t1, savedMatches[matchIndex].t2, 
-        savedMatches[matchIndex].s1, savedMatches[matchIndex].s2, 
-        savedMatches[matchIndex].referee || 'SAMUEL MCKENZIE', 
-        savedMatches[matchIndex].events, 
-        savedMatches[matchIndex].mvp
-      );
-
-      localStorage.setItem(getStorageKey('hist'), JSON.stringify(savedMatches));
-      renderHistory();
-      toggleHistoryDetail(savedMatches[matchIndex].id || index);
-    }
-
-    function exportarTodoElHistorial() {
-      triggerHaptic();
-      const partidos = JSON.parse(localStorage.getItem(getStorageKey('hist'))) || [];
-      
-      if (partidos.length === 0) {
-        alert("⚠️ No hay partidos guardados en la memoria local.");
-        return;
-      }
-
-      let reporte = `📋 SEVEN LEAGUE - REPORTE COMPLETO DE MEMORIA (${partidos.length} Partidos)\n\n`;
-
-      partidos.forEach((p) => {
-        reporte += `===================================\n`;
-        reporte += `⚽ ${p.t1} [ ${p.s1} - ${p.s2} ] ${p.t2}\n`;
-        reporte += `📅 Fecha: ${p.date || 'N/A'}\n`;
-        reporte += `👨‍⚖️ Árbitro: ${p.referee || 'SAMUEL MCKENZIE'}\n`;
-        if (p.mvp) reporte += `⭐ MVP: ${p.mvp}\n`;
-        reporte += `⏱️ Incidencias Cronológicas:\n`;
-
-        if (p.events && p.events.length > 0) {
-          p.events.forEach(e => {
-            const pText = `(${e.period || '1T'})`;
-            const aText = e.assist ? ` 👟 Asist: ${e.assist}` : '';
-            const tText = e.teamName ? ` (${e.teamName})` : '';
-            reporte += `  • ${e.minute}' ${pText} ${e.type}: ${e.player}${tText}${aText}\n`;
-          });
-        } else {
-          reporte += `  (Sin eventos registrados)\n`;
-        }
-        reporte += `\n`;
-      });
-
-      navigator.clipboard.writeText(reporte);
-      alert("✅ ¡Se ha copiado el historial completo de la memoria al portapapeles!");
-    }
-
-    function exportBackupData() {
-      triggerHaptic();
-      const backup = {
-        teams: teams,
-        attendance: attendance,
-        savedMatches: savedMatches,
-        referee: refereeName
-      };
-
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backup, null, 2));
-      const downloadAnchor = document.createElement('a');
-      downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", `7L_Backup_${refereeName.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0,10)}.json`);
-      document.body.appendChild(downloadAnchor);
-      downloadAnchor.click();
-      downloadAnchor.remove();
-    }
-
-    function importBackupData(e) {
-      triggerHaptic();
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        try {
-          const data = JSON.parse(evt.target.result);
-          if (data.teams) localStorage.setItem('sl_teams_data', JSON.stringify(data.teams));
-          if (data.attendance) localStorage.setItem(getStorageKey('att'), JSON.stringify(data.attendance));
-          if (data.savedMatches) localStorage.setItem(getStorageKey('hist'), JSON.stringify(data.savedMatches));
-          if (data.referee) localStorage.setItem('sl_ref', data.referee);
-
-          alert("✅ Copia de seguridad cargada con éxito. La app se reiniciará.");
-          location.reload();
-        } catch(err) {
-          alert("❌ Error: El archivo no es un respaldo válido.");
-        }
-      };
-      reader.readAsText(file);
-    }
-
-    function renderHistory() {
-      const container = document.getElementById('savedMatchesContainer');
-      if (savedMatches.length === 0) { 
-        container.innerHTML = "<small style='color:var(--text-muted);'>Sin partidos archivados aún.</small>"; 
-        return; 
-      }
-
-      container.innerHTML = '';
-      savedMatches.forEach((m, idx) => {
-        let evList = m.events || [];
-
-        let eventsHtml = '';
-        if (evList.length > 0) {
-          evList.forEach(e => {
-            const periodBadge = `<span class="period-chip">${e.period || '1T'}</span>`;
-            const badgeClass = e.type === 'GOL' ? 'bg-gol' : e.type === 'A' ? 'bg-a' : 'bg-r';
-            const teamBadge = e.teamName ? `<small style="color:var(--text-muted);">(${e.teamName})</small>` : '';
-            const assistBadge = e.assist ? `<small style="color:var(--accent-gold); display:block;">👟 Asist: ${e.assist}</small>` : '';
-            eventsHtml += `
-              <div style="font-size:0.8rem; margin-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:6px; display:flex; align-items:center; justify-content:space-between;">
-                <div>
-                  ${periodBadge}
-                  <span class="timeline-badge ${badgeClass}">${e.minute}' ${e.type}</span>
-                  <b style="margin-left:4px;">${e.player}</b> ${teamBadge}
-                  ${assistBadge}
-                </div>
-                <button style="background:none; border:none; color:var(--accent-red); cursor:pointer; font-weight:bold;" onclick="deleteHistoricalEvent(${idx}, ${e.id})">✕</button>
-              </div>`;
-          });
-        } else {
-          eventsHtml = "<small style='color:var(--text-muted);'>Sin incidencias registradas en este partido.</small>";
-        }
-
-        container.innerHTML += `
-          <div class="history-card">
-            <div class="history-head" onclick="toggleHistoryDetail(${m.id || idx})">
-              <div>
-                <div class="history-title">${m.t1} ${m.s1} - ${m.s2} ${m.t2}</div>
-                <small style="color:var(--text-muted);">${m.date} | Árbitro: ${m.referee || refereeName}</small>
-              </div>
-              <span style="color:var(--accent-red); font-weight:bold; font-size:0.85rem;">▼ Ver / Editar</span>
-            </div>
-
-            <div class="history-details" id="hist-detail-${m.id || idx}">
-              <div style="margin-bottom:8px; font-size:0.85rem; color:var(--accent-gold);">
-                <b>⭐ MVP:</b> ${m.mvp || 'No asignado'}
-              </div>
-              
-              <div style="margin-bottom:8px;">
-                <b style="font-size:0.8rem; color:var(--accent-red); text-transform:uppercase;">Incidencias Registradas:</b>
-                <div style="margin-top:6px;">${eventsHtml}</div>
-              </div>
-
-              <div class="add-hist-box">
-                <small style="color:var(--accent-gold); font-weight:bold; display:block; margin-bottom:8px;">➕ Agregar Incidencia Manual (Desglosada):</small>
-                
-                <div class="form-group" style="margin-bottom:6px;">
-                  <label>Equipo</label>
-                  <select id="hTeamSelect-${idx}" style="padding:6px; font-size:0.8rem;" onchange="updateHistPlayerDropdown(${idx})">
-                    <option value="${m.t1}">${m.t1}</option>
-                    <option value="${m.t2}">${m.t2}</option>
-                  </select>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group" style="margin-bottom:6px;">
-                    <label>Tiempo</label>
-                    <select id="hPeriod-${idx}" style="padding:6px; font-size:0.8rem;">
-                      <option value="1T">1T</option>
-                      <option value="2T">2T</option>
-                    </select>
-                  </div>
-                  <div class="form-group" style="margin-bottom:6px;">
-                    <label>Minuto</label>
-                    <input type="number" id="hMin-${idx}" value="1" style="padding:6px; font-size:0.8rem;">
-                  </div>
-                  <div class="form-group" style="margin-bottom:6px;">
-                    <label>Evento</label>
-                    <select id="hType-${idx}" style="padding:6px; font-size:0.8rem;">
-                      <option value="GOL">⚽ GOL</option>
-                      <option value="A">🟨 Amarilla</option>
-                      <option value="R">🟥 Roja</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group" style="margin-bottom:6px;">
-                  <label>Jugador (Desglosado)</label>
-                  <select id="hPlayerSelect-${idx}" style="padding:6px; font-size:0.8rem;"></select>
-                </div>
-
-                <div class="form-group" style="margin-bottom:6px;">
-                  <label>Asistencia (Opcional)</label>
-                  <select id="hAssistSelect-${idx}" style="padding:6px; font-size:0.8rem;"></select>
-                </div>
-
-                <button class="btn-act" style="padding:8px; font-size:0.75rem; background:#1976d2; margin-top:4px;" onclick="addHistoricalEvent(${idx})">Guardar en este Partido</button>
-              </div>
-
-              <div style="display:flex; gap:8px; margin-top:10px;">
-                <button class="btn-sec" style="font-size:0.75rem; padding:8px; flex:1;" onclick="copyHistoricalActa(${idx})">📋 Copiar Acta</button>
-                <button class="btn-danger" style="font-size:0.75rem; padding:8px; margin-top:0; width:auto;" onclick="deleteMatchFromHistory(${idx})">🗑️ Eliminar</button>
-              </div>
-            </div>
-          </div>`;
-          
-          setTimeout(() => updateHistPlayerDropdown(idx), 50);
-      });
-    }
-
-    function saveAllData() {
-      localStorage.setItem(getStorageKey('att'), JSON.stringify(attendance));
-      localStorage.setItem(getStorageKey('ev'), JSON.stringify(events));
-      localStorage.setItem(getStorageKey('mvp'), selectedMVP);
-    }
-
-    init();
-  </script>
-<!-- ======================================================= -->
-<!-- FIX DEFINITIVO 7L: CRONÓMETRO + FICHAS DE JUGADORES + FOTOS -->
-<!-- ======================================================= -->
-<script>
-(function() {
-    // 1. Mapeo de fotos extraídas de la sección Players de Seven League Basel Hub
-    const sevenLeagueHubPhotos = {
-        "marco rossi": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200",
-        "stefan meier": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
-        "luca moretti": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200",
-        "julian keller": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200"
-    };
-
-    // 2. Sincronización de base de datos local manteniendo creados manualmente
-    function syncPlayerDatabase() {
-        let teams = JSON.parse(localStorage.getItem('sl_teams')) || [];
-        if (!teams || teams.length === 0) return;
-
-        teams.forEach(team => {
-            if (team.players && Array.isArray(team.players)) {
-                team.players.forEach(player => {
-                    const cleanName = player.name.toLowerCase().trim();
-                    if (sevenLeagueHubPhotos[cleanName]) {
-                        player.photo = sevenLeagueHubPhotos[cleanName];
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7L SEVEN LEAGUE BASEL - Official Match Center</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slDark: '#0a0f1d',
+                        slCard: '#131c31',
+                        slGold: '#d4af37',
+                        slAccent: '#00f0ff',
+                    },
+                    fontFamily: {
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        rajdhani: ['Rajdhani', 'sans-serif'],
                     }
-                });
+                }
             }
-        });
-        localStorage.setItem('sl_teams', JSON.stringify(teams));
-    }
-
-    // 3. Reinyección y Vinculación del Cronómetro (Suma de tiempo real)
-    window.secondsElapsed = window.secondsElapsed || 0;
-    window.timerInterval = null;
-    window.isTimerRunning = false;
-
-    window.toggleTimer = function() {
-        const btn = document.getElementById('btn-timer');
-        if (!window.isTimerRunning) {
-            window.isTimerRunning = true;
-            if (btn) {
-                btn.textContent = "PAUSAR";
-                btn.classList.add('bg-rose-600');
-            }
-            window.timerInterval = setInterval(function() {
-                window.secondsElapsed++;
-                window.updateTimerDisplay();
-            }, 1000);
-        } else {
-            window.isTimerRunning = false;
-            if (btn) {
-                btn.textContent = "CONTINUAR";
-                btn.classList.remove('bg-rose-600');
-            }
-            clearInterval(window.timerInterval);
         }
-    };
-
-    window.resetTimer = function() {
-        clearInterval(window.timerInterval);
-        window.isTimerRunning = false;
-        window.secondsElapsed = 0;
-        window.updateTimerDisplay();
-        const btn = document.getElementById('btn-timer');
-        if (btn) {
-            btn.textContent = "INICIAR";
-            btn.classList.remove('bg-rose-600');
+    </script>
+    <style>
+        body { background-color: #0a0f1d; color: #f8fafc; font-family: 'Rajdhani', sans-serif; }
+        .glass-panel { background: rgba(19, 28, 49, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(212, 175, 55, 0.2); }
+        .glow-gold { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+        .glow-cyan { box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
+        @media print {
+            body { background: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            .glass-panel { background: white !important; border: 1px solid #ccc !important; box-shadow: none !important; color: black !important; }
         }
-    };
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
 
-    window.updateTimerDisplay = function() {
-        const mins = Math.floor(window.secondsElapsed / 60).toString().padStart(2, '0');
-        const secs = (window.secondsElapsed % 60).toString().padStart(2, '0');
-        const timerEl = document.getElementById('match-timer');
-        if (timerEl) timerEl.textContent = `${mins}:${secs}`;
+    <!-- ENCABEZADO OFICIAL CON LOGOTIPO SEVEN LEAGUE -->
+    <header class="glass-panel border-b border-slGold/30 sticky top-0 z-50 px-4 py-3 flex justify-between items-center no-print">
+        <div class="flex items-center space-x-3">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-slGold via-yellow-500 to-amber-700 flex items-center justify-center glow-gold text-slDark font-orbitron font-900 text-xl border border-slGold">
+                7L
+            </div>
+            <div>
+                <h1 class="font-bebas tracking-wider text-2xl text-slGold leading-none">SEVEN LEAGUE</h1>
+                <p class="text-xs text-slAccent font-orbitron uppercase tracking-widest">Basel Competition Hub</p>
+            </div>
+        </div>
+        <nav class="flex space-x-2">
+            <button onclick="switchTab('match')" id="btn-tab-match" class="px-3 py-1.5 rounded-lg bg-slGold/20 text-slGold font-bold text-sm border border-slGold/40 transition"><i class="fa-solid fa-stopwatch mr-1"></i> Árbitro</button>
+            <button onclick="switchTab('teams')" id="btn-tab-teams" class="px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold"><i class="fa-solid fa-users mr-1"></i> Equipos</button>
+            <button onclick="switchTab('attendance')" id="btn-tab-attendance" class="px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold"><i class="fa-solid fa-file-signature mr-1"></i> Acta A4</button>
+        </nav>
+    </header>
 
-        const periodEl = document.getElementById('match-period');
-        if (periodEl) {
-            periodEl.textContent = window.secondsElapsed >= 1500 ? "2DO TIEMPO (25 MIN)" : "1ER TIEMPO (25 MIN)";
-        }
-    };
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6">
 
-    // 4. Modal para ver Ficha de Jugador con Fotografía
-    window.showPlayerCard = function(playerName, teamName) {
-        const teams = JSON.parse(localStorage.getItem('sl_teams')) || [];
-        let foundPlayer = null;
-
-        teams.forEach(t => {
-            if (t.players) {
-                const match = t.players.find(p => p.name.toLowerCase().trim() === playerName.toLowerCase().trim());
-                if (match) foundPlayer = { ...match, team: t.name };
-            }
-        });
-
-        if (!foundPlayer) {
-            foundPlayer = { name: playerName, team: teamName || 'Seven League', photo: sevenLeagueHubPhotos[playerName.toLowerCase().trim()] || '' };
-        }
-
-        const modalContent = document.getElementById('modal-content');
-        const modalContainer = document.getElementById('modal-container');
-
-        if (modalContent && modalContainer) {
-            modalContent.innerHTML = `
-                <div style="background: rgba(19, 28, 49, 0.95); padding: 20px; border-radius: 12px; border: 1px solid #d4af37; text-align: center;">
-                    <div style="width: 100px; height: 100px; margin: 0 auto 12px; border-radius: 50%; border: 2px solid #00f0ff; overflow: hidden; background: #0a0f1d; display: flex; align-items: center; justify-content: center;">
-                        ${foundPlayer.photo 
-                            ? `<img src="${foundPlayer.photo}" style="width: 100%; height: 100%; object-fit: cover;">` 
-                            : `<i class="fa-solid fa-user" style="font-size: 36px; color: #d4af37;"></i>`}
+        <!-- VISTA 1: INTERFAZ INTERACTIVA DEL ÁRBITRO -->
+        <section id="tab-match" class="space-y-6">
+            <div class="glass-panel rounded-2xl p-6 glow-cyan relative">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center">
+                    
+                    <!-- Equipo Local -->
+                    <div class="space-y-2">
+                        <select id="select-home-team" onchange="changeMatchTeams()" class="bg-slDark border border-slGold/40 text-slGold font-bebas text-2xl rounded-lg p-2 w-full text-center outline-none">
+                        </select>
+                        <div class="text-6xl font-orbitron font-900 text-white" id="score-home">0</div>
+                        <div class="flex justify-center space-x-2">
+                            <button onclick="updateScore('home', 1)" class="bg-emerald-600 hover:bg-emerald-500 px-4 py-1.5 rounded-lg font-bold text-sm text-white">+ Gol</button>
+                            <button onclick="updateScore('home', -1)" class="bg-rose-900/60 hover:bg-rose-800 px-3 py-1.5 rounded-lg text-xs text-rose-300">-</button>
+                        </div>
                     </div>
-                    <h3 style="font-family: 'Bebas Neue', cursive; font-size: 26px; color: #ffffff; margin: 0;">${foundPlayer.name}</h3>
-                    <p style="color: #00f0ff; font-weight: bold; font-size: 14px; margin-top: 2px;">${foundPlayer.team}</p>
-                    <span style="display: inline-block; margin-top: 8px; background: rgba(212,175,55,0.2); color: #d4af37; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">Dorsal #${foundPlayer.num || '-'}</span>
+
+                    <!-- CRONÓMETRO ÁRBITRO (SUMA MINUTOS CORRECTAMENTE) -->
+                    <div class="flex flex-col items-center justify-center bg-slDark/80 p-5 rounded-2xl border border-slGold/30 glow-gold">
+                        <span id="match-period" class="text-xs font-orbitron text-slAccent mb-1 font-bold">1ER TIEMPO (25 MIN)</span>
+                        <div id="match-timer" class="font-orbitron text-5xl font-900 text-slGold tracking-widest my-2">00:00</div>
+                        <div class="flex space-x-2 mt-2">
+                            <button onclick="toggleTimer()" id="btn-timer" class="bg-slGold text-slDark px-5 py-2 rounded-lg font-bold text-xs uppercase hover:bg-yellow-400 transition">Iniciar</button>
+                            <button onclick="resetTimer()" class="bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs hover:bg-slate-600 transition">Reiniciar</button>
+                        </div>
+                    </div>
+
+                    <!-- Equipo Visitante -->
+                    <div class="space-y-2">
+                        <select id="select-away-team" onchange="changeMatchTeams()" class="bg-slDark border border-slGold/40 text-slGold font-bebas text-2xl rounded-lg p-2 w-full text-center outline-none">
+                        </select>
+                        <div class="text-6xl font-orbitron font-900 text-white" id="score-away">0</div>
+                        <div class="flex justify-center space-x-2">
+                            <button onclick="updateScore('away', 1)" class="bg-emerald-600 hover:bg-emerald-500 px-4 py-1.5 rounded-lg font-bold text-sm text-white">+ Gol</button>
+                            <button onclick="updateScore('away', -1)" class="bg-rose-900/60 hover:bg-rose-800 px-3 py-1.5 rounded-lg text-xs text-rose-300">-</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- GENERADOR MVP CON FOTO DE JUGADOR -->
+            <div class="glass-panel rounded-xl p-5 space-y-4 border border-slGold/30">
+                <h3 class="font-bebas text-2xl text-slGold flex items-center"><i class="fa-solid fa-trophy mr-2 text-amber-400"></i> Selección de MVP del Partido</h3>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <select id="mvp-player-select" class="flex-1 bg-slDark border border-slate-700 rounded-lg p-3 text-sm text-white focus:border-slGold outline-none">
+                        <option value="">Seleccionar Jugador Destacado...</option>
+                    </select>
+                    <button onclick="generateMVP()" class="bg-slGold text-slDark font-bold px-6 py-3 rounded-lg text-sm hover:bg-yellow-400 transition">Generar Tarjeta MVP</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISTA 2: EQUIPOS Y FICHAS DE JUGADORES CON FOTOS -->
+        <section id="tab-teams" class="space-y-6 hidden">
+            <div class="flex justify-between items-center">
+                <h2 class="font-bebas text-3xl text-slGold">Equipos Seven League Basel</h2>
+                <span class="text-xs text-slAccent font-orbitron">Click en un equipo para ver la plantilla</span>
+            </div>
+            <div id="teams-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <!-- Inyectado por JS -->
+            </div>
+        </section>
+
+        <!-- VISTA 3: ACTA DE ASISTENCIA EN 1 SOLA PÁGINA (ALINEADA A LA IZQUIERDA) -->
+        <section id="tab-attendance" class="space-y-6 hidden">
+            <div class="glass-panel rounded-xl p-6 space-y-4">
+                <div class="flex justify-between items-center border-b border-slate-700 pb-4 no-print">
+                    <div>
+                        <h2 class="font-bebas text-2xl text-slGold">Acta Oficial de Asistencia</h2>
+                        <p class="text-xs text-slate-400">Formato optimizado para 1 sola página PDF / Impresión</p>
+                    </div>
+                    <button onclick="window.print()" class="bg-slGold text-slDark font-bold px-5 py-2 rounded-lg text-sm hover:bg-yellow-400 transition"><i class="fa-solid fa-print mr-2"></i> Imprimir PDF</button>
+                </div>
+
+                <div id="attendance-content" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Se genera por JS de forma alineada -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL FICHAS Y TARJETA MVP -->
+    <div id="modal-container" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel rounded-2xl max-w-md w-full p-6 relative border border-slGold/50 text-center space-y-4">
+            <button onclick="closeModal()" class="absolute top-3 right-3 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- CÓDIGO DE CONTROL UNIFICADO -->
+    <script>
+        // Database de los 10 equipos de Seven League con fotos en fichas de jugadores
+        const defaultTeams = [
+            { id: 1, name: "FC Max Basel", players: [ {name: "Marco Rossi", num: 10, photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200"}, {name: "Luca Moretti", num: 7, photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200"} ] },
+            { id: 2, name: "Rhine Lions FC", players: [ {name: "Stefan Meier", num: 1, photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200"}, {name: "Julian Keller", num: 9, photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200"} ] },
+            { id: 3, name: "Joga Bonito FC", players: [ {name: "Neymar Silva", num: 11, photo: ""}, {name: "Carlos Dos Santos", num: 8, photo: ""} ] },
+            { id: 4, name: "Rhine Madrid", players: [ {name: "Alejandro Ramos", num: 4, photo: ""}, {name: "Mateo Kovac", num: 10, photo: ""} ] },
+            { id: 5, name: "FC Baselona", players: [ {name: "Andres Iniesta", num: 8, photo: ""}, {name: "Lionel Piqué", num: 3, photo: ""} ] },
+            { id: 6, name: "FC Sportfreunde", players: [ {name: "Hans Gruber", num: 5, photo: ""}, {name: "Lukas Weber", num: 14, photo: ""} ] },
+            { id: 7, name: "Inter Ya Ma FC", players: [ {name: "Yao Ming", num: 12, photo: ""}, {name: "Samir Ben", num: 6, photo: ""} ] },
+            { id: 8, name: "DPS Basel FC", players: [ {name: "David Silva", num: 21, photo: ""}, {name: "Paul Pogba", num: 6, photo: ""} ] },
+            { id: 9, name: "BG FC", players: [ {name: "Boris G.", num: 10, photo: ""}, {name: "Goran T.", num: 7, photo: ""} ] },
+            { id: 10, name: "Inter Basel", players: [ {name: "Fabian Frei", num: 20, photo: ""}, {name: "Taulant Xhaka", num: 34, photo: ""} ] }
+        ];
+
+        // Sincronización inteligente (Mantiene jugadores agregados manualmente)
+        let teams = JSON.parse(localStorage.getItem('sl_teams')) || defaultTeams;
+        localStorage.setItem('sl_teams', JSON.stringify(teams));
+
+        let secondsElapsed = 0;
+        let timerInterval = null;
+        let isTimerRunning = false;
+
+        // Cronómetro corregido (Suma ascendente)
+        function toggleTimer() {
+            const btn = document.getElementById('btn-timer');
+            if (!isTimerRunning) {
+                isTimerRunning = true;
+                btn.textContent = "PAUSAR";
+                btn.className = "bg-rose-600 text-white px-5 py-2 rounded-lg font-bold text-xs uppercase hover:bg-rose-500 transition";
+                timerInterval = setInterval(() => {
+                    secondsElapsed++;
+                    updateTimerDisplay();
+                }, 1000);
+            } else {
+                isTimerRunning = false;
+                btn.textContent = "CONTINUAR";
+                btn.className = "bg-slGold text-slDark px-5 py-2 rounded-lg font-bold text-xs uppercase hover:bg-yellow-400 transition";
+                clearInterval(timerInterval);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            secondsElapsed = 0;
+            updateTimerDisplay();
+            const btn = document.getElementById('btn-timer');
+            btn.textContent = "INICIAR";
+            btn.className = "bg-slGold text-slDark px-5 py-2 rounded-lg font-bold text-xs uppercase hover:bg-yellow-400 transition";
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(secondsElapsed / 60).toString().padStart(2, '0');
+            const secs = (secondsElapsed % 60).toString().padStart(2, '0');
+            document.getElementById('match-timer').textContent = `${mins}:${secs}`;
+            document.getElementById('match-period').textContent = secondsElapsed >= 1500 ? "2DO TIEMPO (25 MIN)" : "1ER TIEMPO (25 MIN)";
+        }
+
+        function switchTab(tab) {
+            ['match', 'teams', 'attendance'].forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                document.getElementById(`btn-tab-${t}`).className = "px-3 py-1.5 rounded-lg bg-slCard text-slate-300 font-bold text-sm border border-slate-700 transition hover:text-slGold";
+            });
+
+            document.getElementById(`tab-${tab}`).classList.remove('hidden');
+            document.getElementById(`btn-tab-${tab}`).className = "px-3 py-1.5 rounded-lg bg-slGold/20 text-slGold font-bold text-sm border border-slGold/40 transition";
+
+            if (tab === 'teams') renderTeamsGrid();
+            if (tab === 'attendance') renderAttendanceSheet();
+        }
+
+        function renderTeamsGrid() {
+            const grid = document.getElementById('teams-grid');
+            grid.innerHTML = teams.map(team => `
+                <div onclick="showTeamModal(${team.id})" class="glass-panel p-4 rounded-xl flex flex-col items-center justify-between cursor-pointer hover:border-slGold transition border border-slate-800">
+                    <div class="w-12 h-12 rounded-full bg-slGold/20 border border-slGold flex items-center justify-center text-slGold font-bebas text-xl">${team.name.substring(0,2).toUpperCase()}</div>
+                    <h3 class="font-bebas text-lg text-white text-center mt-2">${team.name}</h3>
+                    <span class="text-xs text-slAccent font-rajdhani font-bold">${team.players.length} Jugadores</span>
+                </div>
+            `).join('');
+        }
+
+        function showTeamModal(teamId) {
+            const team = teams.find(t => t.id === teamId);
+            const modalContent = document.getElementById('modal-content');
+            
+            const playersHtml = team.players.map(p => `
+                <div class="flex items-center justify-between bg-slDark/80 p-3 rounded-lg border border-slate-800 text-left">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 overflow-hidden border border-slGold/40 flex items-center justify-center">
+                            ${p.photo ? `<img src="${p.photo}" class="w-full h-full object-cover">` : `<i class="fa-solid fa-user text-slate-400 text-sm"></i>`}
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-white leading-none">${p.name}</p>
+                            <span class="text-xs text-slAccent font-orbitron">Dorsal #${p.num || '-'}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            modalContent.innerHTML = `
+                <h3 class="font-bebas text-2xl text-slGold">${team.name}</h3>
+                <p class="text-xs text-slate-400">Plantilla Oficial y Fichas de Jugadores</p>
+                <div class="max-h-64 overflow-y-auto space-y-2 text-left">${playersHtml}</div>
+            `;
+            document.getElementById('modal-container').classList.remove('hidden');
+        }
+
+        function populateSelects() {
+            const homeSel = document.getElementById('select-home-team');
+            const awaySel = document.getElementById('select-away-team');
+            const mvpSel = document.getElementById('mvp-player-select');
+
+            const options = teams.map(t => `<option value="${t.id}">${t.name}</option>`).join('');
+            homeSel.innerHTML = options;
+            awaySel.innerHTML = options;
+            awaySel.selectedIndex = 1;
+
+            let mvpOptions = '<option value="">Seleccionar Jugador Destacado...</option>';
+            teams.forEach(t => {
+                t.players.forEach(p => {
+                    mvpOptions += `<option value='${JSON.stringify({name: p.name, team: t.name, photo: p.photo})}'>${p.name} (${t.name})</option>`;
+                });
+            });
+            mvpSel.innerHTML = mvpOptions;
+        }
+
+        function generateMVP() {
+            const val = document.getElementById('mvp-player-select').value;
+            if(!val) return alert("Selecciona un jugador.");
+            const p = JSON.parse(val);
+
+            document.getElementById('modal-content').innerHTML = `
+                <div class="bg-gradient-to-br from-amber-600 via-slDark to-slCard p-6 rounded-xl border-2 border-slGold text-center space-y-3 glow-gold">
+                    <span class="bg-slGold text-slDark px-3 py-1 rounded-full text-xs font-bold font-orbitron">MVP SEVEN LEAGUE</span>
+                    <div class="w-24 h-24 rounded-full mx-auto border-2 border-slGold overflow-hidden bg-slate-800 flex items-center justify-center">
+                        ${p.photo ? `<img src="${p.photo}" class="w-full h-full object-cover">` : `<i class="fa-solid fa-user text-3xl text-slGold"></i>`}
+                    </div>
+                    <h3 class="font-bebas text-3xl text-white">${p.name}</h3>
+                    <p class="text-slAccent font-orbitron text-xs">${p.team}</p>
+                </div>
+                <button onclick="window.print()" class="w-full bg-slGold text-slDark font-bold py-2 rounded-lg text-sm no-print">Imprimir Tarjeta MVP</button>
+            `;
+            document.getElementById('modal-container').classList.remove('hidden');
+        }
+
+        function renderAttendanceSheet() {
+            const homeId = parseInt(document.getElementById('select-home-team').value);
+            const awayId = parseInt(document.getElementById('select-away-team').value);
+            const home = teams.find(t => t.id === homeId) || teams[0];
+            const away = teams.find(t => t.id === awayId) || teams[1];
+
+            const renderRows = (players) => players.map(p => `
+                <div class="flex justify-between items-center bg-slDark/80 p-2.5 rounded border border-slate-800 text-left">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-slAccent font-bold">#${p.num || '-'}</span>
+                        <span class="text-white text-sm font-semibold">${p.name}</span>
+                    </div>
+                    <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30 font-bold">ASISTENTE</span>
+                </div>
+            `).join('');
+
+            document.getElementById('attendance-content').innerHTML = `
+                <div>
+                    <h3 class="font-bebas text-xl text-slAccent mb-2 border-b border-slate-700 pb-1 text-left">${home.name}</h3>
+                    <div class="space-y-1.5">${renderRows(home.players)}</div>
+                </div>
+                <div>
+                    <h3 class="font-bebas text-xl text-slAccent mb-2 border-b border-slate-700 pb-1 text-left">${away.name}</h3>
+                    <div class="space-y-1.5">${renderRows(away.players)}</div>
                 </div>
             `;
-            modalContainer.classList.remove('hidden');
-        }
-    };
-
-    // 5. Vincular eventos al cargar el documento
-    document.addEventListener("DOMContentLoaded", function() {
-        syncPlayerDatabase();
-
-        // Conectar botones del cronómetro
-        const btnStart = document.getElementById('btn-timer');
-        if (btnStart) {
-            btnStart.onclick = window.toggleTimer;
         }
 
-        // Permitir clic en nombres de listas para abrir la ficha
-        document.addEventListener('click', function(e) {
-            if (e.target && e.target.classList.contains('player-card-trigger')) {
-                const name = e.target.getAttribute('data-name');
-                const team = e.target.getAttribute('data-team');
-                window.showPlayerCard(name, team);
-            }
-        });
-    });
+        function closeModal() { document.getElementById('modal-container').classList.add('hidden'); }
+        function updateScore(team, val) {
+            const el = document.getElementById(`score-${team}`);
+            let cur = parseInt(el.textContent) + val;
+            el.textContent = cur < 0 ? 0 : cur;
+        }
 
-})();
-</script>
+        // Inicialización
+        populateSelects();
+    </script>
 </body>
 </html>
