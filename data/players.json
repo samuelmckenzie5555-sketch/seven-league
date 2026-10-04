@@ -4,30 +4,34 @@
   "season": "2026-27",
   "count": 187,
   "photos": 107,
-  "updatedAt": "2026-10-04T19:46:28.879208+00:00",
+  "statful": 166,
+  "updatedAt": "2026-10-04T20:08:30.446432+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
       "name": "Efraim Benoit Ferreira",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/efraim-benoit-ferreira/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 14,
+        "assists": 6,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 200,
+        "mvp": 3,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 20
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 57,
+      "achievements": {
+        "unlocked": 18,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -76,25 +80,28 @@
     {
       "id": "hamed-goudarzi",
       "name": "Hamed Goudarzi",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/hamed-goudarzi/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Hamed-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 8,
+        "assists": 4,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 200,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 12
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 45,
+      "achievements": {
+        "unlocked": 12,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -143,25 +150,28 @@
     {
       "id": "jurgen-schneider",
       "name": "Jürgen Schneider",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jurgen-schneider/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 1,
+        "goals": 5,
+        "assists": 5,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 100,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 10
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 41,
+      "achievements": {
+        "unlocked": 12,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -190,25 +200,28 @@
     {
       "id": "timon-hari",
       "name": "Timon Hari",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/timon-hari/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_47_38-2.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 5,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 150,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 7
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 34,
+      "achievements": {
+        "unlocked": 8,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -247,25 +260,28 @@
     {
       "id": "matheus-nascimento",
       "name": "Matheus Nascimento",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/matheus-nascimento/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/0858b9af-edc8-419d-aa8b-6141e1d499db.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 1,
+        "goals": 5,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 6
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 26,
+      "achievements": {
+        "unlocked": 6,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -294,25 +310,28 @@
     {
       "id": "lendrick-machado",
       "name": "Iendrick Machado",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/lendrick-machado/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/6e402ade-87e4-4b77-b7e0-e69860b7d122.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 4,
+        "assists": 3,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 200,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 7
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 37,
+      "achievements": {
+        "unlocked": 9,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -362,24 +381,27 @@
       "id": "denis-garcia",
       "name": "13 Denis Cornelio",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/denis-garcia/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Denis-Cornelio-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 4,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 100,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 5
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 29,
+      "achievements": {
+        "unlocked": 7,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -409,24 +431,27 @@
       "id": "greg-imber",
       "name": "Greg Imber",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/greg-imber/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 4,
+        "assists": 1,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 200,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 5
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 30,
+      "achievements": {
+        "unlocked": 6,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -475,25 +500,28 @@
     {
       "id": "junica-lucian",
       "name": "Junica Lucian",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/junica-lucian/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lucian-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 3,
+        "starts": 2,
+        "goals": 4,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 5
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 24,
+      "achievements": {
+        "unlocked": 5,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -533,24 +561,27 @@
       "id": "alex-costa",
       "name": "Alex Costa",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/alex-costa/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Alex-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "goals": 3,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 50,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 5
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 26,
+      "achievements": {
+        "unlocked": 6,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -570,24 +601,27 @@
       "id": "juan-rodriguez",
       "name": "Juan Rodriguez",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/juan-rodriguez/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 3,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 200,
+        "mvp": 2,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 5
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 29,
+      "achievements": {
+        "unlocked": 5,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -636,25 +670,28 @@
     {
       "id": "nicolas-wehrli",
       "name": "Nicolas Wehrli",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nicolas-wehrli/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Nicolas-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 4,
+        "starts": 3,
+        "goals": 3,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 5
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 25,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -703,25 +740,28 @@
     {
       "id": "alexis-gabriel-martinez",
       "name": "20 Alexis Gabriel Martinez",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/alexis-gabriel-martinez/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/a04f2e41-67d9-4df4-afe0-a538927e267a.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 3,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 4
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 19,
+      "achievements": {
+        "unlocked": 5,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -740,25 +780,28 @@
     {
       "id": "yassin",
       "name": "Yassin",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/yassin/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yassin-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 3,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 4
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 23,
+      "achievements": {
+        "unlocked": 5,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -787,25 +830,28 @@
     {
       "id": "alejandro-signoret",
       "name": "Alejandro Signoret",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/alejandro-signoret/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Alejandro-Rhine-Lions-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 3,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 200,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 21,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -854,25 +900,28 @@
     {
       "id": "daniel-wieland",
       "name": "Daniel Wieland",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/daniel-wieland/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 3,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 13,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -891,25 +940,28 @@
     {
       "id": "ricard-castells",
       "name": "Ricard Castells",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/ricard-castells/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ricard-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 3,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 17,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -948,25 +1000,28 @@
     {
       "id": "alvaro-morcillo",
       "name": "Álvaro Morcillo",
-      "teamName": "",
-      "position": "",
+      "teamName": "BG FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/alvaro-morcillo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 4,
+        "starts": 2,
+        "goals": 3,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 19,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1015,25 +1070,28 @@
     {
       "id": "abdel",
       "name": "Abdel Akhrif",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/abdel/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Abdel-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 2,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 100,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 4
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 23,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1062,25 +1120,28 @@
     {
       "id": "azzaro-cespedes",
       "name": "Azzaro Cespedes",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/azzaro-cespedes/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/e6c1508b-6efa-4b91-b4a6-1663cfa95628.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 2,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 4
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 23,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -1119,25 +1180,28 @@
     {
       "id": "goncalo-rodrigues",
       "name": "Gonçalo Rodrigues",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/goncalo-rodrigues/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Goncalo-FC-Sportfreunde.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 2,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 100,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 4
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 23,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -1166,25 +1230,28 @@
     {
       "id": "juan-lucas-gordillo",
       "name": "Juan Lucas Gordillo",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/juan-lucas-gordillo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/669136f3-71f8-4bf6-99cc-ad6e755f3841.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 2,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 150,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 4
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 26,
+      "achievements": {
+        "unlocked": 5,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -1224,24 +1291,27 @@
       "id": "cagatay-cinar",
       "name": "Cagatay Cinar",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/cagatay-cinar/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-5.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 2,
+        "assists": 1,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 18,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1280,25 +1350,28 @@
     {
       "id": "cesar",
       "name": "Cesar Galera",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/cesar/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_58_33.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 2,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 50,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 20,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "17 Sep 2026",
@@ -1317,25 +1390,28 @@
     {
       "id": "christian-schlote",
       "name": "Christian Schlote",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/christian-schlote/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Christian-Rhine-Madrid.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 4,
+        "starts": 3,
+        "goals": 2,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 16,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -1385,24 +1461,27 @@
       "id": "pablo-verdes",
       "name": "8 Pablo Verdes",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/pablo-verdes/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Pablo-Verdes-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 2,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 19,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1431,25 +1510,28 @@
     {
       "id": "nasser-mawad",
       "name": "Nasser Mawad",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nasser-mawad/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 3,
+        "starts": 2,
+        "goals": 2,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 14,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -1489,24 +1571,27 @@
       "id": "pablo-cabrales",
       "name": "11 Pablo Cabrales",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/pablo-cabrales/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Pablo-Cabrales-BG-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 4,
+        "starts": 2,
+        "goals": 2,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 15,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1555,25 +1640,28 @@
     {
       "id": "samy-balak",
       "name": "Samy Balak",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/samy-balak/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 2,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 12,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1592,25 +1680,28 @@
     {
       "id": "victor-gustavo-marques",
       "name": "Victor Gustavo Marques",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/victor-gustavo-marques/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/111b9b90-008e-4035-a2c9-466a6c71148f.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 1,
+        "goals": 2,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 14,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -1639,25 +1730,28 @@
     {
       "id": "yanick",
       "name": "Yannick Nascimiento",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/yanick/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-23_39_19-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 1,
+        "goals": 2,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 13,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -1686,25 +1780,28 @@
     {
       "id": "andre-filipe-da-silva",
       "name": "André Filipe da Silva",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/andre-filipe-da-silva/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/4dc4d421-8c84-4c64-a2ac-1215367a3186-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 1,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 16,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -1754,24 +1851,27 @@
       "id": "javier-calderon",
       "name": "Javier Calderón",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/javier-calderon/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_59_17-2.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 4,
+        "starts": 3,
+        "goals": 1,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 200,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 19,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1820,25 +1920,28 @@
     {
       "id": "brian-mawad",
       "name": "Brian Mawad",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/brian-mawad/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "goals": 1,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 12,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -1857,25 +1960,28 @@
     {
       "id": "carlos-caliani",
       "name": "7 Carlos Caliani",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/carlos-caliani/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Carlos-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 3,
+        "starts": 2,
+        "goals": 1,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 12,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -1914,25 +2020,28 @@
     {
       "id": "joonatan-van-eecke",
       "name": "Joonatan Van Eecke",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/joonatan-van-eecke/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Joonatan-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 10,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -1961,25 +2070,28 @@
     {
       "id": "neto",
       "name": "64 Neto",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/neto/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 11,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -2008,25 +2120,28 @@
     {
       "id": "ahmed-tawfik",
       "name": "Ahmed Tawfik",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/ahmed-tawfik/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ahmed-Tawfik-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 9,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -2075,25 +2190,28 @@
     {
       "id": "alvaro-herrero",
       "name": "6 Alvaro Herrero",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/alvaro-herrero/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/2865ba39-e0cc-4edb-a660-6b38c06d8157.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -2112,25 +2230,28 @@
     {
       "id": "anas-moutacharrif",
       "name": "Anas Moutacharrif",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/anas-moutacharrif/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Anas-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
-        "goals": 0,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -2149,25 +2270,28 @@
     {
       "id": "athithiyan-senthilkumar",
       "name": "Athithiyan Senthilkumar",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/athithiyan-senthilkumar/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Athithiyan-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 7,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -2196,25 +2320,28 @@
     {
       "id": "brian-a",
       "name": "Brian A.",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/brian-a/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
         "assists": 0,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -2233,25 +2360,28 @@
     {
       "id": "conor-maye",
       "name": "Conor Maye",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/conor-maye/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 7,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -2290,25 +2420,28 @@
     {
       "id": "dima-cernica",
       "name": "5 Dima Cernica",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/dima-cernica/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -2327,25 +2460,28 @@
     {
       "id": "francisco-yanez",
       "name": "13 Francisco Yanez",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/francisco-yanez/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -2374,25 +2510,28 @@
     {
       "id": "gabriele-iannucci",
       "name": "Gabriele Iannucci",
-      "teamName": "",
-      "position": "",
+      "teamName": "BG FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/gabriele-iannucci/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Gabriele-BG-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -2422,24 +2561,27 @@
       "id": "genni-marinello",
       "name": "4 Genni Mariniello",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/genni-marinello/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Genni-Marinello-BG-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 4,
+        "starts": 4,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 9,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -2488,25 +2630,28 @@
     {
       "id": "hocine-meziane",
       "name": "Hocine Meziane",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/hocine-meziane/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -2525,25 +2670,28 @@
     {
       "id": "jairo-botello",
       "name": "14 Jairo Botello",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jairo-botello/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 8,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -2572,25 +2720,28 @@
     {
       "id": "jaromir-hruby",
       "name": "Jaromir Hruby",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jaromir-hruby/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -2619,25 +2770,28 @@
     {
       "id": "khamlek-chaton",
       "name": "Khamlek Chaton",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/khamlek-chaton/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Khamlek-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 1,
         "assists": 0,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 8,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -2677,24 +2831,27 @@
       "id": "luca-kropf",
       "name": "Luca Kropf",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/luca-kropf/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_57_24-2.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
-        "goals": 0,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -2714,24 +2871,27 @@
       "id": "oliver-dowling",
       "name": "Oliver Dowling",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/oliver-dowling/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Oliver-DPS-Basel-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 4,
+        "starts": 3,
+        "goals": 1,
         "assists": 0,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 8,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -2780,25 +2940,28 @@
     {
       "id": "pajtim-kerimi",
       "name": "Pajtim Kerimi",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/pajtim-kerimi/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -2817,25 +2980,28 @@
     {
       "id": "panji-butra",
       "name": "Panji Buana",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/panji-butra/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 8,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -2874,25 +3040,28 @@
     {
       "id": "rene-hersperger",
       "name": "Rene Hersperger",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/rene-hersperger/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Rene-Rhine-Lions-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 2,
+        "starts": 2,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -2921,25 +3090,28 @@
     {
       "id": "samuel-mckenzie",
       "name": "Samuel Mc’Kenzie",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/samuel-mckenzie/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Samuel-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -2959,24 +3131,27 @@
       "id": "simon-nobel",
       "name": "Simon Nobel",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/simon-nobel/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-4.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "15 Sep 2026",
@@ -2995,25 +3170,28 @@
     {
       "id": "yousri-sghaier",
       "name": "Yousri Sghaier",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/yousri-sghaier/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
+        "appearances": 3,
+        "starts": 3,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
+        "minutes": 150,
+        "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 10,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -3052,25 +3230,28 @@
     {
       "id": "steven-munyoo",
       "name": "Steven Munyoo",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/steven-munyoo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Steven-Rhine-Madrid.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 3,
         "starts": 0,
         "goals": 0,
-        "assists": 0,
+        "assists": 3,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 3
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 12,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -3109,25 +3290,28 @@
     {
       "id": "edson-alex-panta",
       "name": "8 Edson Alex Panta",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/edson-alex-panta/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/17ba8629-846f-48d9-a223-ec565bc7b5ca.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
-        "assists": 0,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 10,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -3156,25 +3340,28 @@
     {
       "id": "guilherme",
       "name": "3 Guilherme Lucas",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/guilherme/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Guilherme-Lucas-Joga-Bonito-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 2,
         "goals": 0,
-        "assists": 0,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 11,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -3213,25 +3400,28 @@
     {
       "id": "xavier-plo",
       "name": "Xavier Plo",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/xavier-plo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 2
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 9,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -3270,25 +3460,28 @@
     {
       "id": "armando-babayan",
       "name": "Armando Babayan",
-      "teamName": "",
-      "position": "",
+      "teamName": "BG FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/armando-babayan/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Armando-Babayan.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 3,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 8,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -3337,25 +3530,28 @@
     {
       "id": "conail-osullivan",
       "name": "Conail O’Sullivan",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/conail-osullivan/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -3374,25 +3570,28 @@
     {
       "id": "ethan-robinson",
       "name": "Ethan Robinson",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/ethan-robinson/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ethan-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 3,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -3431,25 +3630,28 @@
     {
       "id": "fernando-ortiz",
       "name": "Fernando Ortiz",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/fernando-ortiz/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Fernando-Rhine-Lions-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 3,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 8,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -3498,25 +3700,28 @@
     {
       "id": "james-conlon",
       "name": "James Conlon",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/james-conlon/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-10_27_03.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 2,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -3555,25 +3760,28 @@
     {
       "id": "joel-steiner",
       "name": "Joel Steiner",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/joel-steiner/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -3593,24 +3801,27 @@
       "id": "jorge-garcia",
       "name": "Jorge Garcia",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jorge-garcia/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jorge-Garcia-DPS-Basel-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "15 Sep 2026",
@@ -3629,25 +3840,28 @@
     {
       "id": "justin-nascimiento",
       "name": "Justin Nascimiento",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/justin-nascimiento/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_57_24-3.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -3676,25 +3890,28 @@
     {
       "id": "lorran",
       "name": "98 Lorran Kristian Moraes",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/lorran/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Llohan-Joga-Bonito-FC.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 3,
         "starts": 0,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 8,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -3733,25 +3950,28 @@
     {
       "id": "nenad-ilic",
       "name": "Nenad Ilic",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nenad-ilic/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -3770,25 +3990,28 @@
     {
       "id": "ori-roethler",
       "name": "Ori Roethler",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/ori-roethler/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_47_39-5.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 2,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 7,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -3827,25 +4050,28 @@
     {
       "id": "patricia-wieland",
       "name": "Patricia Wieland",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/patricia-wieland/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Patricia-Rhine-Lions-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 3,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 7,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -3884,25 +4110,28 @@
     {
       "id": "sameh",
       "name": "Sameh Abdrabo",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/sameh/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -3931,25 +4160,28 @@
     {
       "id": "victor-melado",
       "name": "Victor Melado",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/victor-melado/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-16-sept-2026-23_07_23.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 4,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 7,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -3998,25 +4230,28 @@
     {
       "id": "willian-callenes",
       "name": "Willian Callenes",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/willian-callenes/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -4035,25 +4270,28 @@
     {
       "id": "alexandre-nascimento",
       "name": "Alexandre Nascimento",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/alexandre-nascimento/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -4082,8 +4320,8 @@
     {
       "id": "antu-urrea",
       "name": "Antü Urrea",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/antu-urrea/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -4099,8 +4337,11 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -4108,25 +4349,28 @@
     {
       "id": "aridane-moreno",
       "name": "Aridane Moreno",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/aridane-moreno/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -4145,25 +4389,28 @@
     {
       "id": "armar",
       "name": "Armar",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/armar/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -4192,25 +4439,28 @@
     {
       "id": "arron-robinson",
       "name": "Arron Robinson",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/arron-robinson/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -4229,25 +4479,28 @@
     {
       "id": "bilal-ben-romdhane",
       "name": "Bilal Ben Romdhane",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/bilal-ben-romdhane/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_57_24-6.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -4267,24 +4520,27 @@
       "id": "brian-wickham",
       "name": "Brian Wickham",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/brian-wickham/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-3.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 3,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -4333,25 +4589,28 @@
     {
       "id": "burim-lulaj",
       "name": "Burim Lulaj",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/burim-lulaj/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -4380,25 +4639,28 @@
     {
       "id": "chris-xhaferri",
       "name": "Chris Xhaferri",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/chris-xhaferri/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Chris-Rhine-Madrid.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -4428,24 +4690,27 @@
       "id": "christian-stevens",
       "name": "1 Christian Stevens",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/christian-stevens/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Christian-Stevens-BG-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 4,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
-        "cleanSheets": 0,
+        "cleanSheets": 1,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 7,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -4494,8 +4759,8 @@
     {
       "id": "cristian-ernesto-castro",
       "name": "Cristian Ernesto Castro",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/cristian-ernesto-castro/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -4512,7 +4777,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -4520,8 +4788,8 @@
     {
       "id": "daniel-lyra",
       "name": "Daniel Lyra",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/daniel-lyra/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -4537,8 +4805,11 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -4546,25 +4817,28 @@
     {
       "id": "david-ortiz",
       "name": "David Ortiz",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/david-ortiz/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/David-Ortiz-FC-Sportfreunde.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "17 Sep 2026",
@@ -4584,24 +4858,27 @@
       "id": "diogo-ladeiras",
       "name": "Diogo Ladeiras",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/diogo-ladeiras/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Diogo-Ladeiras-DPS-Basel-FC.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -4620,25 +4897,28 @@
     {
       "id": "eduardo-pereira-da-silva",
       "name": "64 Eduardo Pereira da Silva",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/eduardo-pereira-da-silva/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Eduardo-Joga-Bonito-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -4677,8 +4957,8 @@
     {
       "id": "elias-chigha",
       "name": "Elias Chigha",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/elias-chigha/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/08/ChatGPT-Image-31-ago-2026-15_14_10.png",
       "webStats": {
@@ -4695,7 +4975,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -4703,25 +4986,28 @@
     {
       "id": "elleno-noviello",
       "name": "Elleno Noviello",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/elleno-noviello/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Elleno-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 4,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -4770,25 +5056,28 @@
     {
       "id": "emanuele-ingenuo",
       "name": "Emanuele Ingenuo",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/emanuele-ingenuo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -4818,24 +5107,27 @@
       "id": "emilio-miro",
       "name": "8 Emilio Miró",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/emilio-miro/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -4864,25 +5156,28 @@
     {
       "id": "federico-barriga",
       "name": "10 Federico Barriga",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/federico-barriga/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -4902,7 +5197,7 @@
       "id": "filippo",
       "name": "Filippo Busu",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/filippo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Filippo-Busu-DPS-Basel-FC.png",
       "webStats": {
@@ -4919,7 +5214,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -4927,25 +5225,28 @@
     {
       "id": "francesco",
       "name": "Francesco",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/francesco/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -4964,25 +5265,28 @@
     {
       "id": "franklyn-sciberras",
       "name": "Franklyn Sciberras",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/franklyn-sciberras/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Frank-Rhine-Madrid.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -5001,25 +5305,28 @@
     {
       "id": "fraser",
       "name": "Fraser",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/fraser/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -5048,25 +5355,28 @@
     {
       "id": "frederick",
       "name": "Frederick",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/frederick/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -5085,25 +5395,28 @@
     {
       "id": "gabriel",
       "name": "17 Gabriel",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/gabriel/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -5122,25 +5435,28 @@
     {
       "id": "gabriel-dos-santos",
       "name": "Gabriel dos Santos",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/gabriel-dos-santos/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "17 Sep 2026",
@@ -5159,25 +5475,28 @@
     {
       "id": "gaspar-riveros",
       "name": "Gaspar Riveros",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/gaspar-riveros/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -5196,25 +5515,28 @@
     {
       "id": "reza",
       "name": "Gholamreza Bahonar",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/reza/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-23_39_19-9.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -5263,25 +5585,28 @@
     {
       "id": "gianfi",
       "name": "Gianfi",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/gianfi/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -5300,25 +5625,28 @@
     {
       "id": "gorka-tevar",
       "name": "Gorka Tevar",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/gorka-tevar/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -5347,8 +5675,8 @@
     {
       "id": "guilherme-goncalves",
       "name": "Guilherme Gonçalves",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/guilherme-goncalves/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -5365,7 +5693,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -5373,25 +5704,28 @@
     {
       "id": "guillermo-garcia",
       "name": "Guillermo García",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/guillermo-garcia/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -5420,25 +5754,28 @@
     {
       "id": "hamza-aboumendil",
       "name": "Hamza Aboumendil",
-      "teamName": "",
-      "position": "",
+      "teamName": "BG FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/hamza-aboumendil/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 2,
         "starts": 0,
         "goals": 0,
         "assists": 0,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -5467,8 +5804,8 @@
     {
       "id": "hector-moya",
       "name": "12 Hector Moya",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/hector-moya/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/08/ChatGPT-Image-31-ago-2026-15_14_08.png",
       "webStats": {
@@ -5485,7 +5822,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -5494,24 +5834,27 @@
       "id": "ibrahima-sow",
       "name": "Ibrahima Sow",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/ibrahima-sow/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -5530,25 +5873,28 @@
     {
       "id": "igor-mateus-silva",
       "name": "Igor Mateus Silva",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/igor-mateus-silva/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/cd3ee54b-2d85-4b59-a465-294adc1cd7bd.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -5578,24 +5924,27 @@
       "id": "jacopo-bernasconi",
       "name": "Jacopo Bernasconi",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jacopo-bernasconi/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_21-7.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "15 Sep 2026",
@@ -5614,8 +5963,8 @@
     {
       "id": "jaleel-ashik",
       "name": "Jaleel Ashik",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jaleel-ashik/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -5632,7 +5981,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -5640,25 +5992,28 @@
     {
       "id": "jamal-budair",
       "name": "Jamal Budair",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jamal-budair/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jamal-Budair.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -5688,24 +6043,27 @@
       "id": "jan-sieber",
       "name": "0 Jan Sieber",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jan-sieber/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jan-Sieber-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -5725,24 +6083,27 @@
       "id": "jaroslaw-strygner",
       "name": "Jaroslaw Strygner",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jaroslaw-strygner/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-6.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 3,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -5781,25 +6142,28 @@
     {
       "id": "jean-pierre-ortiz",
       "name": "Jean-Pierre Ortiz",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jean-pierre-ortiz/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -5818,25 +6182,28 @@
     {
       "id": "jeremiah-wilson-parham",
       "name": "Jeremiah Wilson-Parham",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jeremiah-wilson-parham/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-23_39_19-5.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 3,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -5886,7 +6253,7 @@
       "id": "jetmir-xhema",
       "name": "Jetmir Xhema",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jetmir-xhema/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jermir-Xhema-DPS-Basel-FC.png",
       "webStats": {
@@ -5903,7 +6270,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -5911,25 +6281,28 @@
     {
       "id": "joao",
       "name": "Joao",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/joao/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -5958,25 +6331,28 @@
     {
       "id": "joao-carlos-pinto",
       "name": "5 Joao Carlos Pinto",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/joao-carlos-pinto/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/0b5d1431-9f47-4b33-8dbf-229e8c14e13b.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -5995,8 +6371,8 @@
     {
       "id": "john-vial-lian-mung",
       "name": "John Vial Lian Mung",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/john-vial-lian-mung/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/John-Inter-Ya-Ma-FC.png",
       "webStats": {
@@ -6013,7 +6389,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -6021,25 +6400,28 @@
     {
       "id": "jonathan-osaigbovo",
       "name": "Jonathan Osaigbovo",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jonathan-osaigbovo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jonathan-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -6068,25 +6450,28 @@
     {
       "id": "jose-rocha",
       "name": "Jose Rocha",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jose-rocha/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jose-FC-Sportfreunde.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -6126,7 +6511,7 @@
       "id": "juan-francisco-moreno",
       "name": "Juan Francisco Moreno",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/juan-francisco-moreno/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_19-1.png",
       "webStats": {
@@ -6143,7 +6528,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -6151,25 +6539,28 @@
     {
       "id": "justin-kenny",
       "name": "Justin Kenny",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/justin-kenny/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_57_24-3.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -6188,25 +6579,28 @@
     {
       "id": "karim-zahra",
       "name": "Karim Zahra",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/karim-zahra/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -6225,25 +6619,28 @@
     {
       "id": "lazar-vulic",
       "name": "Lazar Vulic",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/lazar-vulic/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -6262,25 +6659,28 @@
     {
       "id": "leomir-casagrande",
       "name": "Leomir Casagrande",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/leomir-casagrande/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -6299,25 +6699,28 @@
     {
       "id": "leon-kolodzinski",
       "name": "Leon Kolodzinski",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/leon-kolodzinski/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "17 Sep 2026",
@@ -6336,25 +6739,28 @@
     {
       "id": "leonardo-da-silva",
       "name": "Leonardo da Silva",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/leonardo-da-silva/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Luna-Joga-Bonito-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 7,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -6403,25 +6809,28 @@
     {
       "id": "logan-jungen",
       "name": "Logan Jungen",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/logan-jungen/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Logan-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -6441,24 +6850,27 @@
       "id": "lorenzo-di-gregorio",
       "name": "Lorenzo di Gregorio",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/lorenzo-di-gregorio/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lorenzo-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
-        "yellow": 0,
-        "red": 0,
+        "yellow": 2,
+        "red": 1,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "17 Sep 2026",
@@ -6487,8 +6899,8 @@
     {
       "id": "louis-vanoise",
       "name": "Louis Vanoise",
-      "teamName": "",
-      "position": "",
+      "teamName": "BG FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/louis-vanoise/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Louis-Vanoise-BG-FC.png",
       "webStats": {
@@ -6504,8 +6916,11 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -6513,25 +6928,28 @@
     {
       "id": "luca-sieber",
       "name": "Luca Sieber",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/luca-sieber/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Luca-Sieber-Rhine-Madrid-1.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -6550,25 +6968,28 @@
     {
       "id": "luis",
       "name": "Luis",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/luis/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -6587,25 +7008,28 @@
     {
       "id": "marc-zuger",
       "name": "Marc Zuger",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/marc-zuger/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -6625,7 +7049,7 @@
       "id": "marcel-branagh",
       "name": "Marcel Branagh",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/marcel-branagh/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_57_24-4.png",
       "webStats": {
@@ -6641,8 +7065,11 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -6650,25 +7077,28 @@
     {
       "id": "martin-lesko",
       "name": "Martin Lesko",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/martin-lesko/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-19-sept-2026-07_26_16-2.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -6697,25 +7127,28 @@
     {
       "id": "marvin-meier",
       "name": "Marvin Meier",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/marvin-meier/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Marvin-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -6754,25 +7187,28 @@
     {
       "id": "marwan-ibrahim",
       "name": "Marwan Ibrahim",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/marwan-ibrahim/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -6801,25 +7237,28 @@
     {
       "id": "matheus-rodrigues",
       "name": "20 Matheus Rodrigues",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/matheus-rodrigues/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -6838,25 +7277,28 @@
     {
       "id": "matthias-vogler",
       "name": "Matthias Vogler",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/matthias-vogler/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Matthias-Rhine-Madrid.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "17 Sep 2026",
@@ -6875,25 +7317,28 @@
     {
       "id": "maxsuel-santos",
       "name": "Maxsuel Santos",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/maxsuel-santos/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b1916128-a044-4be9-8fca-f8e5153203e1.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -6932,25 +7377,28 @@
     {
       "id": "maxwell-stanyo-alves",
       "name": "Maxwell Stanyo Alves",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/maxwell-stanyo-alves/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/79077712-c988-47e9-bde1-fde99b97a3e2.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -6969,25 +7417,28 @@
     {
       "id": "micha-gelencser",
       "name": "Micha Gelencser",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/micha-gelencser/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Micha-Inter-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -7017,24 +7468,27 @@
       "id": "mike-topjian",
       "name": "Mike Topjian",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/mike-topjian/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -7054,24 +7508,27 @@
       "id": "nacho-nuno",
       "name": "Nacho Nuño",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nacho-nuno/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-10_26_57.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -7090,8 +7547,8 @@
     {
       "id": "nick-erazo",
       "name": "Nick Erazo",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nick-erazo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -7108,7 +7565,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -7117,24 +7577,27 @@
       "id": "nils-chartier",
       "name": "Nils Chartier",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nils-chartier/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_19-2.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 4,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -7183,25 +7646,28 @@
     {
       "id": "noah-jose-carlos-bellakovics",
       "name": "Noah Jose Carlos Bellakovics",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/noah-jose-carlos-bellakovics/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -7220,25 +7686,28 @@
     {
       "id": "oscar",
       "name": "Oscar Knight",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/oscar/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -7277,25 +7746,28 @@
     {
       "id": "oualid-el-hafian",
       "name": "Oualid El Hafian",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/oualid-el-hafian/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Oualid-Inter-Basel-2.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -7324,25 +7796,28 @@
     {
       "id": "pablo-andres",
       "name": "Pablo Andres",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/pablo-andres/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_57_13.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -7362,7 +7837,7 @@
       "id": "pablo-lora",
       "name": "Pablo Lora",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/pablo-lora/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -7379,7 +7854,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -7387,8 +7865,8 @@
     {
       "id": "panagiotis-panos",
       "name": "Panagiotis Panos",
-      "teamName": "",
-      "position": "",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/panagiotis-panos/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -7405,7 +7883,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -7414,24 +7895,27 @@
       "id": "patrick-kellehan",
       "name": "Patrick Kellehan",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/patrick-kellehan/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 2,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -7460,25 +7944,28 @@
     {
       "id": "paul-jurcut",
       "name": "Paul Jurcut",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/paul-jurcut/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-22_57_24-7.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -7497,25 +7984,28 @@
     {
       "id": "pedro-prieto",
       "name": "6 Pedro Prieto",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/pedro-prieto/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Pedro-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -7554,25 +8044,28 @@
     {
       "id": "pol-castells",
       "name": "Pol Castells",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/pol-castells/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "22 Sep 2026",
@@ -7591,8 +8084,8 @@
     {
       "id": "rafael-silva",
       "name": "Rafael Silva",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/rafael-silva/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -7608,8 +8101,11 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -7617,25 +8113,28 @@
     {
       "id": "raphael-aflalo-lopes",
       "name": "Raphael Aflalo Lopes",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/raphael-aflalo-lopes/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -7654,8 +8153,8 @@
     {
       "id": "raul-gama",
       "name": "Raul Gama",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/raul-gama/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -7671,8 +8170,11 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -7680,25 +8182,28 @@
     {
       "id": "rharin",
       "name": "Rharin",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/rharin/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "17 Sep 2026",
@@ -7718,24 +8223,27 @@
       "id": "romain-de-guillebon",
       "name": "2 Romain de Guillebon",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/romain-de-guillebon/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Romain-de-Guillebon-BG-FC.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -7784,25 +8292,28 @@
     {
       "id": "schinzo",
       "name": "Schinzo",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/schinzo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 2,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -7831,25 +8342,28 @@
     {
       "id": "sergio-marconi-fonseca",
       "name": "Sergio Marconi Fonseca",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/sergio-marconi-fonseca/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -7869,24 +8383,27 @@
       "id": "sergiu-petrica",
       "name": "17 Sergiu Petrica",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/sergiu-petrica/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Petrica-FC-Max-Basel.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 4,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -7935,8 +8452,8 @@
     {
       "id": "severin-hauser",
       "name": "Severin Hauser",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/severin-hauser/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -7953,7 +8470,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -7961,25 +8481,28 @@
     {
       "id": "silvio-patricio",
       "name": "Silvio Patrício",
-      "teamName": "",
-      "position": "",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/silvio-patricio/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -7999,7 +8522,7 @@
       "id": "simon-blanche",
       "name": "Simon Blanche",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/simon-blanche/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
@@ -8016,7 +8539,10 @@
         "goalContributions": 0
       },
       "overall": 0,
-      "achievements": {},
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -8024,25 +8550,28 @@
     {
       "id": "slobodan-pavlovic",
       "name": "Slobodan Pavlovic",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/slobodan-pavlovic/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -8061,25 +8590,28 @@
     {
       "id": "steiner",
       "name": "Steiner",
-      "teamName": "",
-      "position": "",
+      "teamName": "Rhine Madrid",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/steiner/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 2,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 3,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "28 Sep 2026",
@@ -8108,25 +8640,28 @@
     {
       "id": "talib-arifi",
       "name": "Talib Arifi",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/talib-arifi/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -8145,25 +8680,28 @@
     {
       "id": "tamas-dalmay",
       "name": "8 Tamas Dalmay",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Baselona",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/tamas-dalmay/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/62c783b3-94b2-4cd1-9d73-b5710ebf5e09.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -8182,25 +8720,28 @@
     {
       "id": "tenzin-lingfa",
       "name": "Tenzin Lingfa",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/tenzin-lingfa/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -8219,25 +8760,28 @@
     {
       "id": "jairo-diaz",
       "name": "Vernon Jairo Quishpe Diaz",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Sportfreunde",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/jairo-diaz/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-17-sept-2026-23_39_19-8.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -8276,25 +8820,28 @@
     {
       "id": "victor-coste-de-bagneaux",
       "name": "Victor Costé de Bagneaux",
-      "teamName": "",
-      "position": "",
+      "teamName": "BG FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/victor-coste-de-bagneaux/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "21 Sep 2026",
@@ -8313,8 +8860,8 @@
     {
       "id": "virgile-soubiran",
       "name": "Virgile Soubiran",
-      "teamName": "",
-      "position": "",
+      "teamName": "BG FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/virgile-soubiran/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Virgile-Soubiran-BG-FC.png",
       "webStats": {
@@ -8330,8 +8877,11 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
@@ -8339,25 +8889,28 @@
     {
       "id": "victor-inter-ya-ma",
       "name": "Víctor",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/victor-inter-ya-ma/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
@@ -8376,25 +8929,28 @@
     {
       "id": "victor-molinari",
       "name": "Víctor Molinari",
-      "teamName": "",
-      "position": "",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/victor-molinari/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 3,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 5,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "1 Oct 2026",
@@ -8434,24 +8990,27 @@
       "id": "william-tejada",
       "name": "William Tejada",
       "teamName": "",
-      "position": "",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/william-tejada/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/035e6720-285b-412b-9677-eb206655466c.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 3,
         "goals": 0,
         "assists": 0,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 4,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "24 Sep 2026",
@@ -8490,25 +9049,28 @@
     {
       "id": "zak-robinson",
       "name": "Zak Robinson",
-      "teamName": "",
-      "position": "",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/zak-robinson/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-10_50_03.png",
       "webStats": {
-        "appearances": 0,
-        "starts": 0,
+        "appearances": 1,
+        "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
-      "achievements": {},
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
       "matchLog": [
         {
           "date": "14 Sep 2026",
