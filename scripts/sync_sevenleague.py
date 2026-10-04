@@ -9,7 +9,7 @@ OUT="data/players.json"
 S=requests.Session()
 S.headers.update({"User-Agent":"SevenLeagueSync/1.0","Accept-Language":"en-US,en;q=0.9"})
 
-def clean(x): return re.sub(r"\\s+"," ",x or "").strip()
+def clean(x): return re.sub(r"\s+"," ",x or "").strip()
 def num(t,*patterns):
     for p in patterns:
         m=re.search(p,t,re.I)
@@ -40,22 +40,22 @@ def parse(u,card):
     h=soup.find("h1"); name=clean(h.get_text(" ",strip=True) if h else "")
     m=re.search(r"Player\\s*[·•]\\s*(.*?)\\s*[·•]\\s*Season\\s*2026/27",text,re.I)
     team=clean(m.group(1)) if m else ""
-    pos=re.search(r"\\b(Goalkeeper|Defender|Midfielder|Forward)\\b",card,re.I)
+    pos=re.search(r"\b(Goalkeeper|Defender|Midfielder|Forward)\\b",card,re.I)
     ws={
-      "appearances":num(text,r"(\\d+)\\s+Appearances\\b"),
-      "starts":num(text,r"(\\d+)\\s+Starts\\b"),
-      "goals":num(text,r"(\\d+)\\s+Goals\\b"),
-      "assists":num(text,r"(\\d+)\\s+Assists\\b"),
-      "yellow":num(text,r"(\\d+)\\s+Yellow cards\\b"),
-      "red":num(text,r"(\\d+)\\s+Red cards\\b"),
-      "ownGoals":num(text,r"(\\d+)\\s+Own goals\\b"),
-      "minutes":num(text,r"(\\d+)\\s+Match minutes\\b"),
-      "mvp":num(text,r"(\\d+)\\s+MVP awards\\b"),
-      "cleanSheets":num(text,r"(\\d+)\\s+Clean sheets\\b")}
+      "appearances":num(text,r"(\d+)\\s+Appearances\\b"),
+      "starts":num(text,r"(\d+)\\s+Starts\\b"),
+      "goals":num(text,r"(\d+)\\s+Goals\\b"),
+      "assists":num(text,r"(\d+)\\s+Assists\\b"),
+      "yellow":num(text,r"(\d+)\\s+Yellow cards\\b"),
+      "red":num(text,r"(\d+)\\s+Red cards\\b"),
+      "ownGoals":num(text,r"(\d+)\\s+Own goals\\b"),
+      "minutes":num(text,r"(\d+)\\s+Match minutes\\b"),
+      "mvp":num(text,r"(\d+)\\s+MVP awards\\b"),
+      "cleanSheets":num(text,r"(\d+)\\s+Clean sheets\\b")}
     ws["goalContributions"]=ws["goals"]+ws["assists"]
-    overall=num(text,r"(\\d+)%overall")
+    overall=num(text,r"(\d+)%overall")
     ach={}
-    am=re.search(r"(\\d+)\\s+of\\s+(\\d+)\\s+sporting achievements unlocked",text,re.I)
+    am=re.search(r"(\d+)\\s+of\\s+(\\d+)\\s+sporting achievements unlocked",text,re.I)
     if am:ach={"unlocked":int(am.group(1)),"total":int(am.group(2))}
     log=[]
     for table in soup.find_all("table"):
@@ -71,7 +71,7 @@ def parse(u,card):
             def cell(k):
                 i=idx.get(k);return c[i] if i is not None and i<len(c) else ""
             def integer(x):
-                q=re.search(r"\\d+",x);return int(q.group()) if q else 0
+                q=re.search(r"\d+",x);return int(q.group()) if q else 0
             log.append({"date":cell("date"),"opponent":cell("opponent"),"result":cell("result"),"started":cell("started"),"goals":integer(cell("goals")),"assists":integer(cell("assists")),"yellow":integer(cell("yc") or cell("yellow cards")),"red":integer(cell("rc") or cell("red cards"))})
         break
     return {"id":urlparse(u).path.rstrip("/").split("/")[-1],"name":name,"teamName":team,"position":pos.group(1).title() if pos else "","webUrl":u,"photo":image(soup,u),"webStats":ws,"overall":overall,"achievements":ach,"matchLog":log,"season":"2026-27","competition":"Seven League Basel"}
