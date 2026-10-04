@@ -2389,7 +2389,7 @@
 
     function closePlayerModal(e){if(e&&e.target!==document.getElementById('playerModalBackdrop'))return;document.getElementById('playerModalBackdrop').classList.remove('open');}
 
-    async async function updatePWAAssets(){
+    async function updatePWAAssets(){
       try{
         if('serviceWorker' in navigator){const reg=await navigator.serviceWorker.getRegistration();if(reg)await reg.update();}
         const status=document.getElementById('playerSyncStatus');if(status)status.textContent='📱 App actualizada. Si ya tenías una instalación anterior con otro icono, el sistema puede conservar ese icono hasta reinstalar la nueva versión.';
