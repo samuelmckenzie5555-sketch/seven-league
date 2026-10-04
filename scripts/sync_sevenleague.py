@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 HUB="https://sevenleague.ch/seven-league-basel-competition-hub/"
 OUT="data/players.json"
+OVERVIEW_OUT="data/overview.json"
 S=requests.Session()
 S.headers.update({"User-Agent":"SevenLeagueSync/1.0","Accept-Language":"en-US,en;q=0.9"})
 
@@ -58,6 +59,139 @@ def extract_stats(text):
       "mvp":num(text,"MVP awards","MVP award","MVP"),
       "cleanSheets":num(text,"Clean sheets","Clean sheet")
     }
+
+
+def parse_standings(soup):
+    rows=[]
+    for table in soup.find_all("table"):
+        trs=table.find_all("tr")
+        if not trs: continue
+        heads=[clean(x.get_text(" ",strip=True)).lower() for x in trs[0].find_all(["th","td"])]
+        if "club" not in heads or "pts" not in heads: continue
+        idx={h:i for i,h in enumerate(heads)}
+        for tr in trs[1:]:
+            cells=[clean(x.get_text(" ",strip=True)) for x in tr.find_all(["td","th"])]
+            if len(cells)<len(heads): continue
+            def cell(k):
+                i=idx.get(k); return cells[i] if i is not None and i<len(cells) else ""
+            def integer(v):
+                m=re.search(r"-?\d+",v or "")
+                return int(m.group()) if m else 0
+            rows.append({
+                "position":integer(cell("pos")),"team":cell("club"),"played":integer(cell("p")),
+                "wins":integer(cell("w")),"draws":integer(cell("d")),"losses":integer(cell("l")),
+                "gf":integer(cell("gf")),"ga":integer(cell("ga")),"gd":integer(cell("gd")),
+                "form":cell("form"),"points":integer(cell("pts"))
+            })
+        if len(rows)>=4: return rows
+    return rows
+
+def match_links(soup):
+    urls=[]
+    for a in soup.select('a[href*="sl_match="], a[href*="/match/"]'):
+        href=a.get("href","")
+        u=urljoin(HUB,href).split("#")[0]
+        if "sl_match=" not in u and "/match/" not in u: continue
+        if u not in urls: urls.append(u)
+    return urls
+
+def parse_match(url,teams):
+    html=get(url)
+    soup=BeautifulSoup(html,"html.parser")
+    text=clean(soup.get_text(" ",strip=True))
+    ordered=sorted([(text.find(t),t) for t in teams if text.find(t)>=0])
+    pair=[]
+    for _,t in ordered:
+        if t not in pair: pair.append(t)
+        if len(pair)==2: break
+    if len(pair)<2:
+        raise ValueError("could not identify teams")
+    home,away=pair[0],pair[1]
+    result=re.search(re.escape(home)+r"\s+(\d+)\s*[–-]\s*(\d+)\s+"+re.escape(away),text)
+    scheduled=bool(re.search(re.escape(home)+r"\s+VS\s+"+re.escape(away),text,re.I))
+    status="scheduled" if scheduled and not result else "full_time"
+    score={"home":int(result.group(1)),"away":int(result.group(2))} if result else None
+    dm=re.search(r"(\d{1,2}\s+[A-Za-z]+\s+2026)\s*·\s*(\d{1,2}:\d{2}\s*[ap]m)",text)
+    if not dm:
+        dm=re.search(r"Kick-off\s+(\d{1,2}\s+[A-Za-z]+\s+2026)\s+(\d{1,2}:\d{2}\s*[ap]m)",text,re.I)
+    date=dm.group(1) if dm else ""
+    clock=dm.group(2) if dm else ""
+    md=re.search(r"Matchday\s+(Matchday\s+\d+)",text,re.I)
+    matchday=md.group(1) if md else ""
+    rm=re.search(r"Referee\s+(.+?)\s+Format\s+7-a-side",text,re.I)
+    referee=clean(rm.group(1)) if rm else ""
+    if referee=="—": referee=""
+    return {"url":url,"home":home,"away":away,"date":date,"time":clock,"matchday":matchday,
+            "status":status,"score":score,"referee":referee,"venue":"Sportplatz Landauer"}
+
+def parse_venue(text):
+    def grab(pattern):
+        m=re.search(pattern,text,re.I)
+        return clean(m.group(1)) if m else ""
+    return {
+      "name":"Sportplatz Landauer",
+      "days":grab(r"Playing days\s+(.*?)\s+Monday"),
+      "hours":"Monday 18:00–21:00 · Tuesday/Thursday 17:00–19:00",
+      "matchTimes":grab(r"Match times\s+(.*?)(?:\s+Game format)"),
+      "format":grab(r"Game format\s+(.*?)(?:\s+Match duration)"),
+      "duration":grab(r"Match duration\s+(.*?)(?:\s+Competition format)"),
+      "competitionFormat":grab(r"Competition format\s+(.*?)(?:\s+Teams)")
+    }
+
+def build_overview(hub_html, players):
+    soup=BeautifulSoup(hub_html,"html.parser")
+    standings=parse_standings(soup)
+    teams=[x["team"] for x in standings if x["team"]]
+    urls=match_links(soup)
+    matches=[]; errors=[]
+    for i,u in enumerate(urls,1):
+        try:
+            matches.append(parse_match(u,teams))
+            print(f"[match {i}/{len(urls)}] {matches[-1]['home']} - {matches[-1]['away']}")
+        except Exception as e:
+            errors.append({"url":u,"error":str(e)})
+            print("MATCH ERROR",u,e)
+        time.sleep(.05)
+    def key(m):
+        try:
+            d=datetime.strptime(m["date"],"%d %B %Y")
+            hm=datetime.strptime(m["time"].lower().replace(" ",""),"%I:%M%p").time()
+            return datetime.combine(d.date(),hm)
+        except:
+            return datetime.max
+    matches.sort(key=key)
+    upcoming=[m for m in matches if m["status"]=="scheduled"]
+    results=list(reversed([m for m in matches if m["status"]=="full_time"]))
+    def rank(metric):
+        return sorted([{
+            "name":p.get("name",""),"team":p.get("teamName",""),"photo":p.get("photo",""),
+            "value":p.get("webStats",{}).get(metric,0),"apps":p.get("webStats",{}).get("appearances",0),
+            "id":p.get("id","")
+        } for p in players], key=lambda x:(x["value"],x["apps"]), reverse=True)[:5]
+    fulltext=clean(soup.get_text(" ",strip=True))
+    refs={}
+    for m in matches:
+        if m["referee"]: refs[m["referee"]]=refs.get(m["referee"],0)+1
+    referee_cards=[]
+    for name,count in sorted(refs.items(),key=lambda x:x[0]):
+        nxt=next((m for m in upcoming if m["referee"]==name),None)
+        referee_cards.append({"name":name,"assignedMatches":count,"nextAssignment":nxt["date"] if nxt else ""})
+    leader=standings[0] if standings else {}
+    best_attack=max(standings,key=lambda x:x.get("gf",0),default={})
+    best_defence=min(standings,key=lambda x:x.get("ga",999),default={})
+    return {
+      "source":HUB,"competition":"Seven League Basel","season":"2026-27",
+      "updatedAt":datetime.now(timezone.utc).isoformat(),"standings":standings,
+      "fixtures":upcoming,"results":results[:12],"allMatches":matches,
+      "highlights":{"leader":leader,
+        "bestAttack":{"team":best_attack.get("team",""),"goals":best_attack.get("gf",0)},
+        "bestDefence":{"team":best_defence.get("team",""),"goalsConceded":best_defence.get("ga",0)}},
+      "rankings":{"goals":rank("goals"),"assists":rank("assists"),"goalContributions":rank("goalContributions"),
+        "mvp":rank("mvp"),"yellow":rank("yellow"),"red":rank("red")},
+      "venue":parse_venue(fulltext),"referees":referee_cards,
+      "matchCount":len(matches),"matchErrors":errors
+    }
+
 
 def parse(u,card):
     html=get(u)
@@ -144,3 +278,12 @@ payload={"source":HUB,"competition":"Seven League Basel","season":"2026-27",
 with open(OUT,"w",encoding="utf-8") as f:
     json.dump(payload,f,ensure_ascii=False,indent=2)
 print("Wrote",len(players),"players,",photos,"photos,",statful,"with official stats")
+
+overview=build_overview(hub,players)
+if len(overview["standings"])<8:
+    raise SystemExit(f"ABORT: standings parsing incomplete; rows={len(overview['standings'])}")
+if overview["matchCount"]<20:
+    raise SystemExit(f"ABORT: match catalog parsing incomplete; matches={overview["matchCount"]}")
+with open(OVERVIEW_OUT,"w",encoding="utf-8") as f:
+    json.dump(overview,f,ensure_ascii=False,indent=2)
+print("Wrote overview:",overview["matchCount"],"matches,",len(overview["standings"]),"table rows")
