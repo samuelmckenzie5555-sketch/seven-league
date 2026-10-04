@@ -13,9 +13,9 @@
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="Seven League" name="apple-mobile-web-app-title"/>
 <!-- App Icons con el Logo Oficial Seven League -->
-<link href="./seven-league-icon.svg?v=1" rel="apple-touch-icon" sizes="180x180"/>
+<link href="./seven-league-icon.svg?v=3" rel="apple-touch-icon" sizes="180x180"/>
 <link href="./seven-league-icon.svg?v=1" rel="icon" type="image/svg+xml"/>
-<link href="./manifest.webmanifest?v=1" rel="manifest"/>
+<link href="./manifest.webmanifest?v=3" rel="manifest"/>
 <meta name="theme-color" content="#050508"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -625,6 +625,44 @@
 </div>
 
 <script>
+(function(){
+  window.__sevenLeagueBooted = false;
+  window.__sevenLeagueBootError = null;
+  function showBootError(message){
+    try{
+      const splash=document.getElementById('splashScreen');
+      if(!splash) return;
+      const text=splash.querySelector('.splash-text');
+      if(text) text.textContent='SEVEN LEAGUE · REINICIANDO…';
+      const bar=document.getElementById('splashProgress');
+      if(bar) bar.style.width='100%';
+      setTimeout(function(){
+        splash.classList.add('hidden');
+        document.body.setAttribute('data-seven-league-boot-error', message || 'unknown');
+      }, 900);
+    }catch(_){}
+  }
+  window.addEventListener('error',function(e){
+    if(window.__sevenLeagueBooted) return;
+    window.__sevenLeagueBootError = e && (e.error?.message || e.message) || 'Error de arranque';
+    console.error('[Seven League] Error de arranque:', e.error || e.message);
+    showBootError(window.__sevenLeagueBootError);
+  });
+  window.addEventListener('unhandledrejection',function(e){
+    if(window.__sevenLeagueBooted) return;
+    const reason=e && e.reason;
+    window.__sevenLeagueBootError = reason?.message || String(reason || 'Promesa rechazada');
+    console.error('[Seven League] Promesa de arranque rechazada:', reason);
+  });
+  setTimeout(function(){
+    if(!window.__sevenLeagueBooted){
+      console.error('[Seven League] Watchdog: el arranque no terminó en 5 segundos.');
+      showBootError(window.__sevenLeagueBootError || 'El arranque no terminó');
+    }
+  },5000);
+})();
+</script>
+<script>
     // CONTROL DEL SPLASH SCREEN INTRO
     function runSplashScreen() {
       const splash = document.getElementById('splashScreen');
@@ -645,7 +683,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', async () => {
         try {
-          const reg = await navigator.serviceWorker.register('./sw.js?v=1', { scope: './' });
+          const reg = await navigator.serviceWorker.register('./sw.js?v=3', { scope: './' });
           reg.update();
         } catch (e) {
           const st=document.getElementById('pwaInstallStatus');
@@ -707,15 +745,28 @@
       return `sl_${base}_${cleanRef}`;
     }
 
-    let teams = JSON.parse(localStorage.getItem('sl_teams_data')) || defaultTeamsData;
+    function safeStorageJson(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (raw === null || raw === '') return fallback;
+        const parsed = JSON.parse(raw);
+        return parsed ?? fallback;
+      } catch (e) {
+        console.warn('[Seven League] Datos locales inválidos en', key, e);
+        try { localStorage.removeItem(key); } catch (_) {}
+        return fallback;
+      }
+    }
+
+    let teams = safeStorageJson('sl_teams_data', defaultTeamsData);
     let currentTeam1Id = localStorage.getItem('sl_t1') || "eq_1";
     let currentTeam2Id = localStorage.getItem('sl_t2') || "eq_2";
     let refereeName = localStorage.getItem('sl_ref') || "SAMUEL MCKENZIE";
 
-    let attendance = JSON.parse(localStorage.getItem(getStorageKey('att'))) || {};
-    let events = JSON.parse(localStorage.getItem(getStorageKey('ev'))) || [];
+    let attendance = safeStorageJson(getStorageKey('att'), {});
+    let events = safeStorageJson(getStorageKey('ev'), []);
     let selectedMVP = localStorage.getItem(getStorageKey('mvp')) || '';
-    let savedMatches = JSON.parse(localStorage.getItem(getStorageKey('hist'))) || [];
+    let savedMatches = safeStorageJson(getStorageKey('hist'), []);
     let currentPeriod = 1;
 
     let timerRunning = false;
@@ -808,30 +859,41 @@
 
     function init() {
       runSplashScreen();
-      document.getElementById('refNameInput').value = refereeName;
-      document.getElementById('refereeNameDisplay').innerText = refereeName;
-      reloadRefereeData();
-      renderTeamSelectors();
-      setupMatchTeams();
-      renderTeamManagement();
-      autoRepairHistoricalMatches();
-      renderHistory();
-      initParticles();
-      ensureLocalPlayerProfiles();
-      renderPlayerHub();
-      updateMatchStateUI();
-      restoreTimerState();
-      updateRecoveryUI();
-      updateDashboard();
+      const steps = [
+        ['referee', () => {
+          const refInput=document.getElementById('refNameInput');
+          const refDisplay=document.getElementById('refereeNameDisplay');
+          if(refInput) refInput.value=refereeName;
+          if(refDisplay) refDisplay.innerText=refereeName;
+          reloadRefereeData();
+        }],
+        ['teams', () => renderTeamSelectors()],
+        ['match', () => setupMatchTeams()],
+        ['team management', () => renderTeamManagement()],
+        ['history repair', () => autoRepairHistoricalMatches()],
+        ['history', () => renderHistory()],
+        ['particles', () => initParticles()],
+        ['players', () => { ensureLocalPlayerProfiles(); renderPlayerHub(); }],
+        ['match state', () => updateMatchStateUI()],
+        ['timer', () => restoreTimerState()],
+        ['recovery', () => updateRecoveryUI()],
+        ['dashboard', () => updateDashboard()]
+      ];
+      for(const [name,fn] of steps){
+        try{ fn(); }
+        catch(e){ console.error('[Seven League] Falló el paso de arranque:',name,e); }
+      }
+      window.__sevenLeagueBooted = true;
+      window.__sevenLeagueBootError = null;
     }
 
     function reloadRefereeData() {
       refereeName = document.getElementById('refNameInput').value;
       localStorage.setItem('sl_ref', refereeName);
-      attendance = JSON.parse(localStorage.getItem(getStorageKey('att'))) || {};
-      events = JSON.parse(localStorage.getItem(getStorageKey('ev'))) || [];
+      attendance = safeStorageJson(getStorageKey('att'), {});
+      events = safeStorageJson(getStorageKey('ev'), []);
       selectedMVP = localStorage.getItem(getStorageKey('mvp')) || '';
-      savedMatches = JSON.parse(localStorage.getItem(getStorageKey('hist'))) || [];
+      savedMatches = safeStorageJson(getStorageKey('hist'), []);
       matchStatus = localStorage.getItem(getStorageKey('status')) || 'draft';
       currentMatchArchived = localStorage.getItem(getStorageKey('archived')) === '1';
       setTimeout(() => { restoreTimerState(); updateRecoveryUI(); updateDashboard(); }, 0);
@@ -1055,7 +1117,7 @@
 
     function restoreTimerState() {
       try {
-        const saved = JSON.parse(localStorage.getItem(getStorageKey('timer')) || 'null');
+        const saved = safeStorageJson(getStorageKey('timer'), null);
         if (!saved) return;
         startTime = Number(saved.startTime || 0);
         elapsedTimeBeforePause = Number(saved.elapsedTimeBeforePause || 0);
@@ -2180,7 +2242,7 @@
     const PLAYER_PROFILE_KEY = 'sl_player_profiles_v2';
     const PLAYER_PROFILE_LEGACY_KEY = 'sl_player_profiles_v1';
     const PLAYER_SYNC_VERSION = 3;
-    let playerProfiles = JSON.parse(localStorage.getItem(PLAYER_PROFILE_KEY) || localStorage.getItem(PLAYER_PROFILE_LEGACY_KEY) || '{}');
+    let playerProfiles = safeStorageJson(PLAYER_PROFILE_KEY, null) || safeStorageJson(PLAYER_PROFILE_LEGACY_KEY, {});
 
     function normalizePlayerName(name) {
       return String(name || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/['’`]/g,'').replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
@@ -2364,7 +2426,7 @@
     }
 
     function importPlayersFromWebHtml(e){
-      const file=e.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=async()=>{const players=parseWebPlayerHtml(reader.result);if(!players.length){alert('❌ No encontré fichas de jugadores. Guarda la sección Players completa.');return;}players.forEach(upsertWebPlayer);savePlayerProfiles();renderPlayerHub();document.getElementById('playerSyncStatus').textContent=`✅ ${players.length} jugadores importados. Completando estadísticas y fotos…`;await syncWebPlayerDetails();e.target.value='';};reader.readAsText(file);
+      const file=e.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=async()=>{const players=parseWebPlayerProfileHtml(reader.result, PLAYER_WEB_HUB_URL, {});if(!players.length){alert('❌ No encontré fichas de jugadores. Guarda la sección Players completa.');return;}players.forEach(upsertWebPlayer);savePlayerProfiles();renderPlayerHub();document.getElementById('playerSyncStatus').textContent=`✅ ${players.length} jugadores importados. Completando estadísticas y fotos…`;await syncWebPlayerDetails();e.target.value='';};reader.readAsText(file);
     }
 
     function renderPlayerHub(){
