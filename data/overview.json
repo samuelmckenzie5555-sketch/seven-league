@@ -1,0 +1,344 @@
+{
+  "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
+  "competition": "Seven League Basel",
+  "season": "2026-27",
+  "updatedAt": "2026-10-04T20:08:30Z",
+  "standings": [
+    {
+      "position": 1,
+      "team": "Joga Bonito FC",
+      "played": 4,
+      "wins": 4,
+      "draws": 0,
+      "losses": 0,
+      "gf": 27,
+      "ga": 8,
+      "gd": 19,
+      "form": "WWWW",
+      "points": 12
+    },
+    {
+      "position": 2,
+      "team": "FC Max Basel",
+      "played": 4,
+      "wins": 3,
+      "draws": 1,
+      "losses": 0,
+      "gf": 19,
+      "ga": 5,
+      "gd": 14,
+      "form": "WWWD",
+      "points": 10
+    },
+    {
+      "position": 3,
+      "team": "Rhine Lions FC",
+      "played": 4,
+      "wins": 2,
+      "draws": 1,
+      "losses": 1,
+      "gf": 19,
+      "ga": 12,
+      "gd": 7,
+      "form": "DWWL",
+      "points": 7
+    },
+    {
+      "position": 4,
+      "team": "Rhine Madrid",
+      "played": 4,
+      "wins": 2,
+      "draws": 0,
+      "losses": 2,
+      "gf": 24,
+      "ga": 17,
+      "gd": 7,
+      "form": "LLWW",
+      "points": 6
+    },
+    {
+      "position": 5,
+      "team": "BG FC",
+      "played": 4,
+      "wins": 1,
+      "draws": 2,
+      "losses": 1,
+      "gf": 11,
+      "ga": 11,
+      "gd": 0,
+      "form": "DLWD",
+      "points": 5
+    },
+    {
+      "position": 6,
+      "team": "Inter Basel",
+      "played": 4,
+      "wins": 1,
+      "draws": 1,
+      "losses": 2,
+      "gf": 8,
+      "ga": 15,
+      "gd": -7,
+      "form": "LDLW",
+      "points": 4
+    },
+    {
+      "position": 7,
+      "team": "FC Baselona",
+      "played": 3,
+      "wins": 1,
+      "draws": 0,
+      "losses": 2,
+      "gf": 9,
+      "ga": 16,
+      "gd": -7,
+      "form": "WLL",
+      "points": 3
+    },
+    {
+      "position": 8,
+      "team": "FC Sportfreunde",
+      "played": 4,
+      "wins": 1,
+      "draws": 0,
+      "losses": 3,
+      "gf": 6,
+      "ga": 18,
+      "gd": -12,
+      "form": "WLLL",
+      "points": 3
+    },
+    {
+      "position": 9,
+      "team": "Inter Ya Ma FC",
+      "played": 3,
+      "wins": 0,
+      "draws": 2,
+      "losses": 1,
+      "gf": 5,
+      "ga": 12,
+      "gd": -7,
+      "form": "LDD",
+      "points": 2
+    },
+    {
+      "position": 10,
+      "team": "DPS Basel FC",
+      "played": 4,
+      "wins": 0,
+      "draws": 1,
+      "losses": 3,
+      "gf": 6,
+      "ga": 20,
+      "gd": -14,
+      "form": "DLLL",
+      "points": 1
+    }
+  ],
+  "fixtures": [
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_league=seven-league-basel&sl_match=2564&sl_season=2026-27",
+      "home": "Inter Ya Ma FC",
+      "away": "Rhine Madrid",
+      "date": "5 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 4",
+      "status": "scheduled",
+      "score": null,
+      "referee": "Samuel Mc'Kenzie",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_league=seven-league-basel&sl_match=2565&sl_season=2026-27",
+      "home": "Joga Bonito FC",
+      "away": "DPS Basel FC",
+      "date": "5 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 4",
+      "status": "scheduled",
+      "score": null,
+      "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_league=seven-league-basel&sl_match=2566&sl_season=2026-27",
+      "home": "Rhine Lions FC",
+      "away": "FC Max Basel",
+      "date": "5 October 2026",
+      "time": "7:00 pm",
+      "matchday": "Matchday 4",
+      "status": "scheduled",
+      "score": null,
+      "referee": "",
+      "venue": "Sportplatz Landauer"
+    }
+  ],
+  "results": [
+    {
+      "url": "",
+      "home": "Inter Basel",
+      "away": "DPS Basel FC",
+      "date": "1 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 4,
+        "away": 2
+      },
+      "referee": "Fabio Paonessa",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "",
+      "home": "FC Max Basel",
+      "away": "BG FC",
+      "date": "1 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "",
+      "home": "Inter Basel",
+      "away": "Joga Bonito FC",
+      "date": "28 September 2026",
+      "time": "7:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 2,
+        "away": 4
+      },
+      "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "",
+      "home": "Rhine Madrid",
+      "away": "Rhine Lions FC",
+      "date": "28 September 2026",
+      "time": "7:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 8,
+        "away": 4
+      },
+      "referee": "",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "",
+      "home": "DPS Basel FC",
+      "away": "FC Max Basel",
+      "date": "28 September 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 0,
+        "away": 5
+      },
+      "referee": "Samuel Mc'Kenzie",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "",
+      "home": "FC Sportfreunde",
+      "away": "BG FC",
+      "date": "28 September 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 0,
+        "away": 7
+      },
+      "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    }
+  ],
+  "allMatches": [],
+  "matchCount": 34,
+  "matchErrors": [],
+  "highlights": {
+    "leader": {
+      "team": "Joga Bonito FC",
+      "points": 12
+    },
+    "bestAttack": {
+      "team": "Joga Bonito FC",
+      "goals": 27
+    },
+    "bestDefence": {
+      "team": "FC Max Basel",
+      "goalsConceded": 5
+    }
+  },
+  "rankings": {
+    "goals": [
+      {
+        "id": "efraim-benoit-ferreira",
+        "name": "Efraim Benoit Ferreira",
+        "team": "Joga Bonito FC",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
+        "value": 14,
+        "apps": 4
+      },
+      {
+        "id": "hamed-goudarzi",
+        "name": "Hamed Goudarzi",
+        "team": "Rhine Madrid",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Hamed-Rhine-Madrid-1.png",
+        "value": 8,
+        "apps": 4
+      },
+      {
+        "id": "jurgen-schneider",
+        "name": "Jürgen Schneider",
+        "team": "Rhine Madrid",
+        "photo": "",
+        "value": 5,
+        "apps": 2
+      }
+    ],
+    "assists": [],
+    "goalContributions": [],
+    "mvp": [],
+    "yellow": [],
+    "red": []
+  },
+  "venue": {
+    "name": "Sportplatz Landauer",
+    "days": "Monday, Tuesday & Thursday",
+    "hours": "Monday 18:00–21:00 · Tuesday/Thursday 17:00–19:00",
+    "matchTimes": "17:00, 17:30, 18:00, 18:30, 19:00, 19:30 or 20:00",
+    "format": "7-a-side",
+    "duration": "50 minutes · 2 × 25 · no half-time",
+    "competitionFormat": "League format"
+  },
+  "referees": [
+    {
+      "name": "Cesar Galera",
+      "assignedMatches": 14,
+      "nextAssignment": "5 October 2026"
+    },
+    {
+      "name": "Fabio Paonessa",
+      "assignedMatches": 13,
+      "nextAssignment": "5 October 2026"
+    },
+    {
+      "name": "Samuel Mc'Kenzie",
+      "assignedMatches": 7,
+      "nextAssignment": "5 October 2026"
+    }
+  ]
+}
