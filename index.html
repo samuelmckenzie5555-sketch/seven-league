@@ -13,10 +13,9 @@
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="Seven League" name="apple-mobile-web-app-title"/>
 <!-- App Icons con el Logo Oficial Seven League -->
-<link href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512" rel="apple-touch-icon"/>
-<link href="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=512" rel="icon" type="image/png"/>
-<!-- Manifest Inline para standalone estricto -->
-<link href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Seven%20League%20Match%20Center%22%2C%22short_name%22%3A%22SevenLeague%22%2C%22description%22%3A%22Centro%20de%20mando%20y%20arbitraje%20para%20Seven%20League%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23050508%22%2C%22theme_color%22%3A%22%23d32f2f%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518091043644-c1d4457512c6%3Fw%3D512%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D" rel="manifest"/>
+<link href="./seven-league-icon.png" rel="apple-touch-icon"/>
+<link href="./seven-league-icon.png" rel="icon" type="image/png"/>
+<link href="./manifest.webmanifest" rel="manifest"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Orbitron:wght@500;700;900&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -287,6 +286,30 @@
 /* ===== SEVEN LEAGUE PLAYER HUB ===== */
 .player-hub-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}.player-hub-search{width:100%;box-sizing:border-box}.player-sync-note{font-size:.75rem;color:var(--text-muted);line-height:1.45;margin:8px 0}.player-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}.sl-player-card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(5,5,8,.9));padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.25)}.sl-player-card.web-linked{border-color:rgba(0,243,255,.35)}.sl-player-top{display:flex;gap:12px;align-items:center}.sl-player-avatar{width:70px;height:82px;border-radius:12px;object-fit:cover;background:#111;border:1px solid rgba(255,255,255,.12)}.sl-player-meta{min-width:0;flex:1}.sl-player-name{font-family:var(--font-cyber);font-size:.92rem;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sl-player-team{font-size:.74rem;color:var(--text-muted);margin-top:3px}.sl-player-badge{display:inline-block;font-size:.62rem;padding:3px 6px;border-radius:999px;background:rgba(0,243,255,.12);color:var(--neon-cyan);margin-top:5px}.sl-player-rating{font-family:var(--font-cyber);font-size:2.1rem;font-weight:900;color:var(--accent-gold);line-height:1}.sl-player-rating small{display:block;font-family:inherit;font-size:.55rem;color:var(--text-muted);text-align:center;letter-spacing:1px}.sl-player-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:12px}.sl-stat{background:rgba(255,255,255,.04);border-radius:8px;padding:7px 3px;text-align:center}.sl-stat b{display:block;font-family:var(--font-cyber);font-size:.9rem}.sl-stat span{font-size:.55rem;color:var(--text-muted);text-transform:uppercase}.sl-player-actions{display:flex;gap:6px;margin-top:10px}.sl-player-actions button,.sl-player-actions a{flex:1;text-align:center;text-decoration:none}.sl-mini{font-size:.7rem;color:var(--text-muted)}.sl-empty{padding:22px;text-align:center;color:var(--text-muted);border:1px dashed rgba(255,255,255,.12);border-radius:12px}.sl-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}.sl-modal-backdrop.open{display:flex}.sl-player-modal{width:min(520px,100%);max-height:90vh;overflow:auto;background:#0c0c12;border:1px solid rgba(0,243,255,.35);border-radius:20px;padding:18px;box-shadow:0 20px 70px rgba(0,0,0,.55)}.sl-fifa-preview{position:relative;min-height:430px;border-radius:22px;overflow:hidden;background:radial-gradient(circle at 50% 25%,#60491b 0,#191206 38%,#050508 75%);border:3px solid var(--accent-gold);padding:18px;box-sizing:border-box}.sl-fifa-photo{position:absolute;right:0;bottom:55px;width:68%;height:72%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5));opacity:.94}.sl-fifa-rating{position:relative;z-index:2;font-family:var(--font-cyber);font-size:3.6rem;font-weight:900}.sl-fifa-pos{position:relative;z-index:2;font-family:var(--font-cyber);color:var(--accent-gold);font-weight:900}.sl-fifa-name{position:absolute;z-index:3;left:18px;right:18px;bottom:70px;font-family:var(--font-cyber);font-size:1.35rem;font-weight:900;text-transform:uppercase;text-shadow:0 2px 10px #000}.sl-fifa-team{position:absolute;z-index:3;left:18px;right:18px;bottom:48px;color:#ddd;font-size:.75rem}.sl-fifa-stats{position:absolute;z-index:3;left:18px;right:18px;bottom:10px;display:flex;justify-content:space-between;font-family:var(--font-cyber);font-size:.68rem}.sl-fifa-stats span{color:#fff}.sl-fifa-stats b{color:var(--accent-gold)}
 @media(max-width:600px){.player-hub-toolbar{grid-template-columns:1fr}.player-grid{grid-template-columns:1fr}.sl-player-card{padding:10px}}
+    /* V4 ELITE MATCH ENGINE */
+    .v4-dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.v4-stat{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(0,0,0,.35));border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:10px;text-align:center;box-shadow:inset 0 1px rgba(255,255,255,.05)}.v4-stat b{display:block;font-family:var(--font-display);font-size:1.55rem;color:#fff;line-height:1}.v4-stat span{display:block;margin-top:4px;font-size:.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px}.v4-save{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0 0;padding:7px 10px;border-radius:9px;background:rgba(0,243,255,.045);border:1px solid rgba(0,243,255,.12);font-size:.68rem;color:var(--text-muted)}.v4-save strong{color:var(--neon-cyan);font-family:var(--font-sans)}.v4-undo{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.v4-undo button{font-size:.72rem!important;padding:10px!important}.v4-recovery{display:none;margin-top:8px;padding:10px;border-radius:10px;border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.06)}.v4-recovery.active{display:block}.v4-recovery button{margin-top:6px}.v4-event-warning{display:none;padding:8px 10px;margin:8px 0;border-radius:9px;background:rgba(255,23,68,.08);border:1px solid rgba(255,23,68,.25);color:#ff8a9a;font-size:.7rem}.v4-event-warning.active{display:block}.v4-top-player{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06)}.v4-top-player:last-child{border-bottom:0}.v4-rank{font-family:var(--font-display);color:var(--accent-gold);font-size:1.1rem;width:25px}.v4-top-name{flex:1;font-weight:700}.v4-top-value{font-family:var(--font-display);font-size:1.15rem}.v4-photo-status{font-size:.65rem;margin-top:5px;color:var(--text-muted)}.sl-player-avatar.photo-ready{box-shadow:0 0 0 1px rgba(0,243,255,.3),0 8px 22px rgba(0,0,0,.35)}
+@media(max-width:520px){.v4-dashboard{grid-template-columns:repeat(2,1fr)}}
+    /* V3 PREMIUM UI */
+    .card-head { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: 1.4px; text-transform: uppercase; }
+    label, .form-group label { font-family: var(--font-sans); font-weight: 700; letter-spacing: .35px; }
+    input, select, textarea { font-family: var(--font-sans); font-weight: 600; letter-spacing: .25px; }
+    button { letter-spacing: .35px; }
+    .match-final-state { display:none; margin:0 0 10px; padding:9px 12px; border-radius:10px; border:1px solid rgba(255,215,0,.45); background:linear-gradient(90deg,rgba(255,215,0,.13),rgba(211,47,47,.08)); color:var(--accent-gold); font-family:var(--font-display); letter-spacing:1px; text-align:center; }
+    .match-final-state.active { display:block; }
+    .match-actions-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
+    .match-actions-grid .danger { background:linear-gradient(135deg,#8f1515,#d32f2f); }
+    .match-actions-grid .gold { background:linear-gradient(135deg,#b8860b,#ffd700); color:#090909; }
+    .match-actions-grid .green { background:linear-gradient(135deg,#087f5b,#00b37a); }
+    .match-actions-grid .ghost { background:rgba(255,255,255,.06); border:1px solid var(--card-border); }
+    .attendance-list { display:flex; flex-direction:column; gap:6px; }
+    .attendance-row { display:grid; grid-template-columns:34px 1fr; align-items:center; min-height:42px; padding:7px 10px; border:1px solid rgba(255,255,255,.07); border-radius:10px; background:rgba(255,255,255,.025); }
+    .attendance-row .check-label { display:flex; flex-direction:row-reverse; justify-content:space-between; align-items:center; width:100%; text-align:right; font-family:var(--font-display); font-size:1rem; letter-spacing:.7px; }
+    .attendance-row input { width:20px; height:20px; accent-color:var(--neon-cyan); }
+    .sl-player-name, .sl-player-rating, .sl-stat b, .sl-fifa-rating, .sl-fifa-pos { font-family:var(--font-display) !important; letter-spacing:.8px; }
+    .sl-player-card { border-radius:16px; background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(7,7,12,.96)); box-shadow:0 12px 32px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.08); }
+    .sl-fifa-preview { box-shadow: inset 0 0 50px rgba(255,215,0,.08), 0 18px 45px rgba(0,0,0,.45); }
+    @media(max-width:600px){.match-actions-grid{grid-template-columns:1fr}.attendance-row .check-label{font-size:.98rem}}
+
 
 </style>
 </head>
@@ -410,6 +433,16 @@
 </div>
 </div>
 <div class="glass-card">
+  <div class="card-head">Match Intelligence</div>
+  <div class="v4-dashboard">
+    <div class="v4-stat"><b id="dashEvents">0</b><span>Incidencias</span></div>
+    <div class="v4-stat"><b id="dashGoals">0</b><span>Goles</span></div>
+    <div class="v4-stat"><b id="dashAttendance">0</b><span>Presentes</span></div>
+    <div class="v4-stat"><b id="dashDuration">00:00</b><span>Tiempo</span></div>
+  </div>
+  <div id="matchSaveState" class="v4-save"><span>Estado del partido</span><strong>Guardado</strong></div>
+</div>
+<div class="glass-card">
 <div class="card-head">Registrar Incidencia Manual</div>
 <div class="form-group">
 <label>Equipo de la Incidencia</label>
@@ -445,6 +478,11 @@
 <select id="assistSelect"></select>
 </div>
 <button class="btn-act" onclick="addEvent()">Guardar Evento</button>
+<div id="eventLockWarning" class="v4-event-warning">🏁 El partido está finalizado. Para registrar una corrección, restablece el partido o modifica el acta desde Historial.</div>
+<div class="v4-undo">
+  <button class="btn-sec" onclick="undoLastEvent()">↩️ Deshacer último</button>
+  <button class="btn-sec" onclick="createRecoverySnapshot(true)">💾 Guardar recuperación</button>
+</div>
 </div>
 <div class="glass-card">
 <div class="card-head">Match Timeline</div>
@@ -454,13 +492,24 @@
 <div class="card-head">Jugador del Partido (MVP)</div>
 <select id="mvpSelect" onchange="saveMVP()"><option value="">-- Seleccionar MVP --</option></select>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
-<button class="btn-act" onclick="exportSummary()" style="background:#2e7d32;">📲 Copiar Acta</button>
-<button class="btn-sec" onclick="shareMatchText()">📤 Compartir Acta</button>
+<div id="matchFinalState" class="match-final-state">✓ PARTIDO FINALIZADO · ACTA LISTA PARA PUBLICAR</div>
+<div class="match-actions-grid">
+<button class="btn-act gold" onclick="finishMatch()">🏁 Fin de partido</button>
+<button class="btn-act green" onclick="sendOfficialActa()">📤 Enviar acta</button>
+<button class="btn-act" onclick="archiveMatch()">🗄️ Archivar acta</button>
+<button class="btn-act danger" onclick="resetCurrentMatch()">↺ Restablecer partido</button>
 </div>
-<button class="btn-act" onclick="generateMatchGraphicCard()" style="background:linear-gradient(135deg, #00f3ff 0%, #0066ff 100%); color:#fff; margin-bottom:8px;">🖼️ Generar Imagen de Acta HD</button>
-<button class="btn-act" onclick="generateFutMvpCard()" style="background:linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color:#000; margin-bottom:8px;">🎴 Generar Carta FUT MVP HD</button>
-<button class="btn-sec" onclick="archiveMatch()">💾 Archivar Partido en Historial</button>
+<div id="recoveryPanel" class="v4-recovery">
+  <b style="font-family:var(--font-display);letter-spacing:1px;color:var(--accent-gold);">RECUPERACIÓN DISPONIBLE</b>
+  <div id="recoveryInfo" style="font-size:.68rem;color:var(--text-muted);margin-top:3px;"></div>
+  <button class="btn-sec" onclick="restoreRecoverySnapshot()">↩️ Recuperar último estado</button>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+<button class="btn-sec" onclick="exportSummary()">📋 Copiar acta</button>
+<button class="btn-sec" onclick="shareMatchText()">📤 Compartir texto</button>
+</div>
+<button class="btn-act" onclick="generateMatchGraphicCard()" style="background:linear-gradient(135deg, #00f3ff 0%, #0066ff 100%); color:#fff; margin-top:8px;">🖼️ Generar imagen de acta HD</button>
+<button class="btn-act" onclick="generateFutMvpCard()" style="background:linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color:#000; margin-top:8px;">🎴 Generar carta MVP HD</button>
 </div>
 <!-- TAB 2: GESTIÓN DE EQUIPOS -->
 <div class="tab-content" id="tab-equipos">
@@ -556,6 +605,7 @@
     </div>
     <div class="player-hub-toolbar">
       <button class="btn-act" onclick="syncPlayersFromWeb()">🌐 Sincronizar web</button>
+      <button class="btn-sec" onclick="recoverMissingPlayerPhotos()">📸 Recuperar fotos</button>
       <label class="btn-sec" style="text-align:center;cursor:pointer"><input type="file" id="playerWebHtmlInput" accept=".html,.htm,text/html" style="display:none" onchange="importPlayersFromWebHtml(event)">📄 Importar página web</label>
     </div>
     <div id="playerSyncStatus" class="sl-mini"></div>
@@ -634,6 +684,8 @@
     let elapsedTimeBeforePause = 0;
     let timerInterval = null;
     let alertSounded = false;
+    let matchStatus = localStorage.getItem(getStorageKey('status')) || 'draft';
+    let currentMatchArchived = localStorage.getItem(getStorageKey('archived')) === '1';
 
     function triggerHaptic() {
       if (navigator.vibrate) navigator.vibrate(25);
@@ -666,6 +718,21 @@
         osc.connect(ctx.destination);
         osc.start();
         osc.stop(ctx.currentTime + 0.4);
+      } catch(e){}
+    }
+
+    // Voz inglesa generada por el propio dispositivo/navegador: no se descarga audio con copyright.
+    function speakMatchCall(type) {
+      try {
+        if (!('speechSynthesis' in window)) return;
+        const text = type === 'GOL' ? 'GOAL!' : type === 'A' ? 'Yellow card!' : 'Red card!';
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US'; u.rate = 0.88; u.pitch = 0.82; u.volume = 1;
+        const voices = window.speechSynthesis.getVoices();
+        const voice = voices.find(v => /^en(-|_)/i.test(v.lang) && /US|GB|AU|IE/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang));
+        if (voice) u.voice = voice;
+        window.speechSynthesis.speak(u);
       } catch(e){}
     }
 
@@ -713,6 +780,10 @@
       initParticles();
       ensureLocalPlayerProfiles();
       renderPlayerHub();
+      updateMatchStateUI();
+      restoreTimerState();
+      updateRecoveryUI();
+      updateDashboard();
     }
 
     function reloadRefereeData() {
@@ -722,6 +793,9 @@
       events = JSON.parse(localStorage.getItem(getStorageKey('ev'))) || [];
       selectedMVP = localStorage.getItem(getStorageKey('mvp')) || '';
       savedMatches = JSON.parse(localStorage.getItem(getStorageKey('hist'))) || [];
+      matchStatus = localStorage.getItem(getStorageKey('status')) || 'draft';
+      currentMatchArchived = localStorage.getItem(getStorageKey('archived')) === '1';
+      setTimeout(() => { restoreTimerState(); updateRecoveryUI(); updateDashboard(); }, 0);
     }
 
     function toggleDrawer() {
@@ -830,6 +904,15 @@
       document.getElementById('mName2').innerText = `${teams[currentTeam2Id].name} (${pct2}%)`;
     }
 
+    function updateDashboard() {
+      const goals = events.filter(e=>e.type==='GOL').length;
+      const present = (attendance[currentTeam1Id] || []).length + (attendance[currentTeam2Id] || []).length;
+      const set=(id,val)=>{const el=document.getElementById(id);if(el)el.innerText=val;};
+      set('dashEvents',events.length); set('dashGoals',goals); set('dashAttendance',present); updateTimerClockDisplay(true);
+      const state=document.querySelector('#matchSaveState strong');
+      if(state) state.innerText=matchStatus==='archived'?'Archivado':matchStatus==='finished'?'Finalizado':'Guardado';
+    }
+
     function setupMatchTeams() {
       const t1 = teams[currentTeam1Id];
       const t2 = teams[currentTeam2Id];
@@ -853,6 +936,7 @@
       populateMVPSelect();
       renderEvents();
       updateMomentumBar();
+      updateMatchStateUI();
     }
 
     function renderTeamManagement() {
@@ -924,37 +1008,74 @@
       setupMatchTeams();
     }
 
+    function persistTimerState() {
+      localStorage.setItem(getStorageKey('timer'), JSON.stringify({
+        timerRunning, startTime, elapsedTimeBeforePause, currentPeriod, alertSounded
+      }));
+    }
+
+    function restoreTimerState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(getStorageKey('timer')) || 'null');
+        if (!saved) return;
+        startTime = Number(saved.startTime || 0);
+        elapsedTimeBeforePause = Number(saved.elapsedTimeBeforePause || 0);
+        currentPeriod = Number(saved.currentPeriod || 1);
+        alertSounded = !!saved.alertSounded;
+        timerRunning = !!saved.timerRunning && matchStatus !== 'finished' && matchStatus !== 'archived';
+        if (timerRunning) {
+          clearInterval(timerInterval);
+          timerInterval = setInterval(updateTimerClock, 250);
+          document.getElementById('btnStart').innerText = '⏸ Pausa';
+        } else {
+          document.getElementById('btnStart').innerText = elapsedTimeBeforePause > 0 ? '▶ Reanudar' : '▶ Iniciar';
+        }
+        updateTimerClockDisplay(true);
+      } catch(e) {}
+    }
+
+    function updateTimerClockDisplay(force=false) {
+      const totalElapsedMs = elapsedTimeBeforePause + (timerRunning ? (Date.now() - startTime) : 0);
+      const totalSec = Math.floor(Math.max(0,totalElapsedMs) / 1000);
+      const m = String(Math.floor(totalSec / 60)).padStart(2, '0');
+      const sec = String(totalSec % 60).padStart(2, '0');
+      const timerEl=document.getElementById('timerDisplay'); if(timerEl) timerEl.innerText = `${m}:${sec}`;
+      const minuteEl=document.getElementById('minuteInput'); if(minuteEl && (force || timerRunning)) minuteEl.value = Math.max(1, Math.ceil(totalSec / 60));
+      const dash=document.getElementById('dashDuration'); if(dash) dash.innerText=`${m}:${sec}`;
+    }
+
     function toggleTimer() {
       triggerHaptic();
       playWhistleSound();
+      if (matchStatus === 'finished' || matchStatus === 'archived') return alert('🏁 El partido está finalizado. Restablécelo para iniciar un nuevo encuentro.');
       if (timerRunning) {
         timerRunning = false;
         elapsedTimeBeforePause += Date.now() - startTime;
         clearInterval(timerInterval);
-        document.getElementById('btnStart').innerText = "▶ Reanudar";
+        document.getElementById('btnStart').innerText = '▶ Reanudar';
       } else {
         timerRunning = true;
         startTime = Date.now();
-        document.getElementById('btnStart').innerText = "⏸ Pausa";
+        document.getElementById('btnStart').innerText = '⏸ Pausa';
+        clearInterval(timerInterval);
         timerInterval = setInterval(updateTimerClock, 250);
       }
+      persistTimerState();
+      updateTimerClockDisplay(true);
+      updateDashboard();
     }
 
     function updateTimerClock() {
       if (!timerRunning) return;
-      const totalElapsedMs = elapsedTimeBeforePause + (Date.now() - startTime);
-      const totalSec = Math.floor(totalElapsedMs / 1000);
-      const m = String(Math.floor(totalSec / 60)).padStart(2, '0');
-      const s = String(totalSec % 60).padStart(2, '0');
-      document.getElementById('timerDisplay').innerText = `${m}:${s}`;
-      document.getElementById('minuteInput').value = Math.max(1, Math.ceil(totalSec / 60));
-
+      updateTimerClockDisplay();
+      const totalSec = Math.floor((elapsedTimeBeforePause + (Date.now() - startTime)) / 1000);
       if (totalSec >= 1500 && !alertSounded) {
         alertSounded = true;
         document.getElementById('timerCard').classList.add('timer-ended');
         playWhistleSound();
         if (navigator.vibrate) navigator.vibrate([300, 100, 300, 100, 300]);
       }
+      if (totalSec % 2 === 0) persistTimerState();
     }
 
     // Cronómetro de descuento CORREGIDO (ahora suma tiempo correctamente)
@@ -974,6 +1095,8 @@
         document.getElementById('timerDisplay').innerText = `${m}:${s}`;
         document.getElementById('minuteInput').value = Math.max(1, Math.ceil(totalSec / 60));
       }
+      persistTimerState();
+      updateDashboard();
     }
 
     function setPeriod(p) {
@@ -994,6 +1117,8 @@
 
       document.getElementById('btnPeriod1').classList.toggle('active-period', p === 1);
       document.getElementById('btnPeriod2').classList.toggle('active-period', p === 2);
+      persistTimerState();
+      updateDashboard();
     }
 
     function renderAttendanceLists() {
@@ -1003,12 +1128,13 @@
         container.innerHTML = '';
         
         if (teams[teamId]) {
-          teams[teamId].players.forEach(p => {
+          [...(teams[teamId].players || [])].sort((a,b) => a.localeCompare(b, 'es', {sensitivity:'base'})).forEach(p => {
             const isAtt = attendance[teamId] && attendance[teamId].includes(p);
             container.innerHTML += `
-              <div class="check-row">
+              <div class="attendance-row">
+                <span style="font-family:var(--font-display);color:${isAtt ? 'var(--green-gol)' : 'var(--text-muted)'}">${isAtt ? '✓' : '·'}</span>
                 <label class="check-label">
-                  <input type="checkbox" ${isAtt ? 'checked' : ''} onchange="toggleAttendance('${teamId}', '${p}')"> ${p}
+                  <input type="checkbox" ${isAtt ? 'checked' : ''} onchange="toggleAttendance('${teamId}', '${p.replace("'", "\'")}')"> ${p}
                 </label>
               </div>`;
           });
@@ -1018,6 +1144,8 @@
 
     function toggleAttendance(teamId, player) {
       triggerHaptic();
+      if (matchStatus === 'finished' || matchStatus === 'archived') return alert('🏁 El partido ya está finalizado. La asistencia se conserva en el acta.');
+      createRecoverySnapshot(false);
       if (!attendance[teamId]) attendance[teamId] = [];
       
       if (attendance[teamId].includes(player)) {
@@ -1115,6 +1243,10 @@
 
     function addEvent() {
       triggerHaptic();
+      if (matchStatus === 'finished' || matchStatus === 'archived') {
+        document.getElementById('eventLockWarning')?.classList.add('active');
+        return;
+      }
       const minuteVal = parseInt(document.getElementById('minuteInput').value || 1);
       const periodVal = document.getElementById('eventPeriodSelect').value || '1T';
       const teamId = document.getElementById('teamSelect').value;
@@ -1124,32 +1256,38 @@
       const teamName = teams[teamId]?.name || '';
       const playerKey = normalizePlayerName(player);
       const assistKey = normalizePlayerName(assist);
-
-      if (!player) return alert("Por favor selecciona un jugador.");
-
-      events.push({ id: Date.now(), minute: minuteVal, period: periodVal, teamId, teamName, type, player, playerKey, assist, assistKey });
-      
-      events.sort((a, b) => {
-        if (a.period !== b.period) return a.period === '1T' ? -1 : 1;
-        return a.minute - b.minute;
-      });
-
-      if (type === 'GOL') {
-        playGoalSound();
-        try { confetti({ particleCount: 80, spread: 60 }); } catch(e){} 
+      if (!player) return alert('Por favor selecciona un jugador.');
+      if (!attendance[teamId]?.some(p => normalizePlayerName(p) === playerKey)) {
+        if (!confirm(`${player} no figura como presente. ¿Registrar el evento de todos modos?`)) return;
       }
-
-      saveAllData();
-      renderEvents();
-      updateMomentumBar();
+      createRecoverySnapshot(false);
+      events.push({ id: Date.now(), minute: minuteVal, period: periodVal, teamId, teamName, type, player, playerKey, assist, assistKey });
+      events.sort((a,b) => a.period !== b.period ? (a.period === '1T' ? -1 : 1) : a.minute - b.minute);
+      if (type === 'GOL') {
+        playGoalSound(); speakMatchCall('GOL');
+        try { confetti({particleCount:80,spread:60});} catch(e){}
+      } else speakMatchCall(type);
+      saveAllData(); renderEvents(); updateMomentumBar(); updateDashboard();
+      document.getElementById('eventLockWarning')?.classList.remove('active');
     }
 
     function deleteEvent(id) {
       triggerHaptic();
+      if (matchStatus === 'archived') return alert('El partido archivado se edita desde Historial.');
+      createRecoverySnapshot(false);
       events = events.filter(e => e.id !== id);
-      saveAllData();
-      renderEvents();
-      updateMomentumBar();
+      saveAllData(); renderEvents(); updateMomentumBar(); updateDashboard();
+    }
+
+    function undoLastEvent() {
+      triggerHaptic();
+      if (!events.length) return alert('No hay incidencias para deshacer.');
+      if (matchStatus === 'archived') return alert('El partido archivado se edita desde Historial.');
+      const last = [...events].sort((a,b)=>a.id-b.id).pop();
+      if (!confirm(`¿Deshacer ${last.type === 'GOL' ? '⚽ gol' : last.type === 'A' ? '🟨 amarilla' : '🟥 roja'} de ${last.player}?`)) return;
+      createRecoverySnapshot(false);
+      events = events.filter(e=>e.id!==last.id);
+      saveAllData(); renderEvents(); updateMomentumBar(); updateDashboard();
     }
 
     function renderEvents() {
@@ -1474,8 +1612,84 @@
       alert("✅ ¡Acta oficial en texto copiada al portapapeles!");
     }
 
+    function updateMatchStateUI() {
+      const el = document.getElementById('matchFinalState');
+      if (el) el.classList.toggle('active', matchStatus === 'finished' || matchStatus === 'archived');
+    }
+
+    function persistMatchState() {
+      localStorage.setItem(getStorageKey('status'), matchStatus);
+      localStorage.setItem(getStorageKey('archived'), currentMatchArchived ? '1' : '0');
+    }
+
+    function createRecoverySnapshot(manual=false) {
+      try {
+        const snapshot={version:1,createdAt:new Date().toISOString(),teams:teams,currentTeam1Id,currentTeam2Id,attendance,events,selectedMVP,currentPeriod,timerRunning,startTime,elapsedTimeBeforePause,alertSounded,matchStatus};
+        localStorage.setItem(getStorageKey('recovery'),JSON.stringify(snapshot));
+        updateRecoveryUI();
+        if(manual) alert('💾 Estado de recuperación guardado.');
+      } catch(e) {}
+    }
+
+    function updateRecoveryUI() {
+      const raw=localStorage.getItem(getStorageKey('recovery'));
+      const panel=document.getElementById('recoveryPanel'), info=document.getElementById('recoveryInfo');
+      if(!panel) return;
+      if(!raw){panel.classList.remove('active');return;}
+      try { const x=JSON.parse(raw); panel.classList.add('active'); if(info) info.innerText=`Guardado ${new Date(x.createdAt).toLocaleString()} · ${x.events?.length||0} incidencias`; } catch(e){panel.classList.remove('active');}
+    }
+
+    function restoreRecoverySnapshot() {
+      triggerHaptic();
+      const raw=localStorage.getItem(getStorageKey('recovery')); if(!raw) return;
+      if(!confirm('¿Restaurar el último estado guardado? Se reemplazarán los datos actuales del partido.')) return;
+      try {
+        const x=JSON.parse(raw);
+        teams=x.teams||teams; currentTeam1Id=x.currentTeam1Id||currentTeam1Id; currentTeam2Id=x.currentTeam2Id||currentTeam2Id; attendance=x.attendance||{}; events=x.events||[]; selectedMVP=x.selectedMVP||''; currentPeriod=x.currentPeriod||1; timerRunning=false; startTime=x.startTime||0; elapsedTimeBeforePause=x.elapsedTimeBeforePause||0; alertSounded=!!x.alertSounded; matchStatus=x.matchStatus==='archived'?'finished':(x.matchStatus||'draft'); currentMatchArchived=false;
+        clearInterval(timerInterval); localStorage.setItem('sl_teams_data',JSON.stringify(teams)); saveAllData(); persistMatchState(); persistTimerState(); setupMatchTeams(); updateRecoveryUI(); alert('↩️ Último estado recuperado.');
+      } catch(e){ alert('No fue posible recuperar el estado.'); }
+    }
+
+    function finishMatch() {
+      triggerHaptic();
+      if (matchStatus === 'archived') return alert('Este partido ya está archivado. Restablece el partido para iniciar uno nuevo.');
+      if (events.length===0 && !confirm('No hay incidencias registradas. ¿Quieres finalizar igualmente este partido?')) return;
+      createRecoverySnapshot(false);
+      timerRunning=false; clearInterval(timerInterval);
+      if (timerRunning && startTime) elapsedTimeBeforePause += Date.now()-startTime;
+      startTime=0;
+      document.getElementById('btnStart').innerText='⏹ Finalizado';
+      matchStatus='finished'; currentMatchArchived=false; persistMatchState(); persistTimerState(); updateMatchStateUI(); updateDashboard();
+      document.getElementById('eventLockWarning')?.classList.remove('active');
+      playWhistleSound();
+      alert('🏁 Fin de partido. El acta está lista para enviar o archivar.');
+    }
+
+    async function sendOfficialActa() {
+      triggerHaptic();
+      if (matchStatus !== 'finished' && matchStatus !== 'archived') {
+        if (!confirm('El partido todavía no está marcado como finalizado. ¿Quieres enviarlo de todos modos?')) return;
+      }
+      await shareMatchText();
+    }
+
+    function resetCurrentMatch() {
+      triggerHaptic();
+      const t1=teams[currentTeam1Id]?.name||'LOCAL', t2=teams[currentTeam2Id]?.name||'VISITANTE';
+      if (!confirm(`Restablecer ${t1} vs ${t2}? Se borrarán únicamente los datos del partido actual. Antes se guardará una recuperación.`)) return;
+      createRecoverySnapshot(false);
+      events=[]; selectedMVP=''; attendance={}; attendance[currentTeam1Id]=[...(teams[currentTeam1Id]?.players||[])]; attendance[currentTeam2Id]=[...(teams[currentTeam2Id]?.players||[])]; currentPeriod=1;
+      timerRunning=false; startTime=0; elapsedTimeBeforePause=0; alertSounded=false; clearInterval(timerInterval);
+      matchStatus='draft'; currentMatchArchived=false;
+      document.getElementById('timerDisplay').innerText='00:00'; document.getElementById('minuteInput').value=1; document.getElementById('periodDisplay').innerText='1er Tiempo (25 min)'; document.getElementById('btnStart').innerText='▶ Iniciar'; document.getElementById('timerCard').classList.remove('timer-ended');
+      saveAllData(); persistMatchState(); persistTimerState(); setupMatchTeams(); updateRecoveryUI(); updateDashboard();
+      alert('↺ Partido restablecido. La plantilla, jugadores y fichas permanecen intactos.');
+    }
+
     function archiveMatch() {
       triggerHaptic();
+      if (matchStatus !== 'finished') return alert('🏁 Primero pulsa “Fin de partido” para cerrar el acta.');
+      if (currentMatchArchived) return alert('Este partido ya está archivado.');
       const t1Name = teams[currentTeam1Id].name;
       const t2Name = teams[currentTeam2Id].name;
       const s1Val = document.getElementById('score1').innerText;
@@ -1483,6 +1697,7 @@
 
       const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP);
 
+      createRecoverySnapshot(false);
       const matchData = {
         id: Date.now(),
         date: new Date().toLocaleString(),
@@ -1499,13 +1714,16 @@
         attendance: JSON.parse(JSON.stringify(attendance || {})),
         duration: getCurrentMatchDurationSeconds(),
         season: '2026/27',
-        schemaVersion: 2
+        schemaVersion: 4,
+        playerKeys: [...new Set([...(events||[]).map(e=>e.playerKey||normalizePlayerName(e.player)), ...(events||[]).map(e=>e.assistKey||normalizePlayerName(e.assist)).filter(Boolean), ...(Object.values(attendance||{}).flat()).map(normalizePlayerName)])],
+        status: 'archived'
       };
 
       savedMatches.unshift(matchData);
       localStorage.setItem(getStorageKey('hist'), JSON.stringify(savedMatches));
-      renderHistory();
-      alert("💾 Partido archivado exitosamente.");
+      currentMatchArchived = true; matchStatus = 'archived'; persistMatchState();
+      renderHistory(); updateMatchStateUI();
+      alert('🗄️ Acta archivada exitosamente.');
     }
 
     function toggleHistoryDetail(id) {
@@ -2038,13 +2256,60 @@
         const m = block.match(/(\d+)\s*Apps?/i), g = block.match(/(\d+)\s*Goals?/i), as = block.match(/(\d+)\s*Assists?/i);
         const posMatch = block.match(/\b(Goalkeeper|Defender|Midfielder|Forward)\b/i);
         const teamMatch = block.match(/Club\s*([^\n]+?)(?:\s+\d+\s*Apps?|$)/i);
-        const img = a.querySelector('img');
-        const imgAttr = img?.getAttribute('src') || img?.getAttribute('data-src') || '';
-        const photo = imgAttr ? new URL(imgAttr, PLAYER_WEB_HUB_URL).href : '';
+        const cardRoot = a.closest('article,li,.player-card,.player-item,.card,.wp-block-group,div') || a.parentElement;
+        const img = a.querySelector('img') || cardRoot?.querySelector('img');
+        const imgAttr = img?.getAttribute('src') || img?.getAttribute('data-src') || img?.getAttribute('data-lazy-src') || img?.getAttribute('data-original') || '';
+        const srcset = img?.getAttribute('srcset') || img?.getAttribute('data-srcset') || '';
+        const bestSrc = imgAttr || (srcset ? srcset.split(',').pop().trim().split(' ')[0] : '');
+        const photo = bestSrc ? new URL(bestSrc, PLAYER_WEB_HUB_URL).href : '';
         seen.add(key);
         out.push({name, webUrl:href, photo, teamName:teamMatch?teamMatch[1].trim():'', position:posMatch?posMatch[1]:'', webStats:{appearances:m?+m[1]:0,goals:g?+g[1]:0,assists:as?+as[1]:0}});
       });
       return out;
+    }
+
+    const PHOTO_PROXIES = [
+      url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
+      url => 'https://r.jina.ai/http://' + url.replace(/^https?:\/\//,'')
+    ];
+    async function fetchHtmlResilient(url) {
+      try { const r=await fetch(url,{cache:'no-store'}); if(r.ok){const t=await r.text(); if(t.length>500)return t;} } catch(e){}
+      for(const make of PHOTO_PROXIES){ try { const r=await fetch(make(url),{cache:'no-store'}); if(r.ok){const t=await r.text(); if(t.length>200)return t;} } catch(e){} }
+      return '';
+    }
+    async function fetchProfilePhotoFromPage(url) {
+      const html=await fetchHtmlResilient(url); if(!html) return '';
+      try {
+        const doc=new DOMParser().parseFromString(html,'text/html');
+        const meta=doc.querySelector('meta[property="og:image"],meta[name="twitter:image"]');
+        const imgs=[...doc.querySelectorAll('img')];
+        let raw=meta?.getAttribute('content')||'';
+        if(!raw){ const img=imgs.find(i=>/player|portrait|profile|head|avatar/i.test((i.getAttribute('alt')||'')+' '+(i.getAttribute('class')||'')))||imgs[0]; raw=img?.getAttribute('src')||img?.getAttribute('data-src')||img?.getAttribute('data-lazy-src')||img?.getAttribute('data-original')||''; }
+        if(raw) return new URL(raw,url).href;
+      } catch(e){}
+      const matches=html.match(/https?:\/\/[^\s"'<>]+\.(?:jpe?g|png|webp)(?:\?[^\s"'<>]*)?/ig)||[];
+      return matches.find(x=>/uploads|player|profile|portrait|avatar/i.test(x)) || matches[0] || '';
+    }
+
+    async function recoverMissingPlayerPhotos() {
+      triggerHaptic();
+      const status = document.getElementById('playerSyncStatus');
+      const list = Object.values(playerProfiles).filter(p => p.linked && p.webUrl && (!p.photo || p.photo.startsWith('data:')));
+      if (!list.length) { status.textContent = '✅ Todas las fichas vinculadas ya tienen foto o no hay fotos pendientes.'; return; }
+      status.textContent = `📸 Recuperando fotos: 0/${list.length}…`;
+      let done=0, found=0;
+      const queue=[...list];
+      async function worker(){
+        while(queue.length){
+          const p=queue.shift();
+          const photo=await fetchProfilePhotoFromPage(p.webUrl);
+          if(photo){ p.photo=photo; found++; }
+          done++; status.textContent=`📸 Recuperando fotos: ${done}/${list.length} · ${found} encontradas`;
+        }
+      }
+      await Promise.all(Array.from({length:Math.min(5,list.length)},worker));
+      savePlayerProfiles(); renderPlayerHub();
+      status.textContent=`✅ Recuperación terminada: ${found} fotos nuevas de ${list.length} fichas pendientes.`;
     }
 
     async function syncPlayersFromWeb() {
@@ -2052,9 +2317,15 @@
       const status = document.getElementById('playerSyncStatus');
       status.textContent = '🌐 Conectando con Seven League…';
       try {
-        const response = await fetch(PLAYER_WEB_HUB_URL, {cache:'no-store'});
-        if (!response.ok) throw new Error('HTTP '+response.status);
-        const html = await response.text();
+        let response = await fetch(PLAYER_WEB_HUB_URL, {cache:'no-store'});
+        let html = '';
+        if (response.ok) html = await response.text();
+        if (!html || html.length < 1000) {
+          const proxied = PHOTO_PROXY + encodeURIComponent(PLAYER_WEB_HUB_URL);
+          response = await fetch(proxied, {cache:'no-store'});
+          if (!response.ok) throw new Error('HTTP '+response.status);
+          html = await response.text();
+        }
         const players = parseWebPlayerHtml(html);
         if (!players.length) throw new Error('No se encontraron jugadores');
         let linked=0, added=0;
@@ -2073,7 +2344,7 @@
         const players=parseWebPlayerHtml(reader.result);
         if(!players.length){ alert('❌ No encontré fichas de jugadores en ese HTML. Guarda la página Players completa de Seven League.'); return; }
         players.forEach(upsertWebPlayer); savePlayerProfiles(); renderPlayerHub();
-        document.getElementById('playerSyncStatus').textContent=`✅ ${players.length} jugadores importados desde la página web. Los jugadores locales fueron conservados.`;
+        document.getElementById('playerSyncStatus').textContent=`✅ ${players.length} jugadores importados desde la página web. Ahora puedes pulsar 📸 Recuperar fotos para completar las fichas.`;
         e.target.value='';
       };
       reader.readAsText(file);
@@ -2094,7 +2365,7 @@
 
     function renderPlayerCard(p) {
       const s=getPlayerStats(p), c=getPlayerCardStats(p), photo=p.photo || '';
-      const avatar=photo?`<img class="sl-player-avatar" src="${escPlayer(photo)}" alt="${escPlayer(p.name)}" onerror="this.style.display='none'">`:`<div class="sl-player-avatar" style="display:flex;align-items:center;justify-content:center;font-family:var(--font-cyber);font-size:1.4rem;color:var(--accent-gold)">${escPlayer((p.name||'?').split(' ').map(x=>x[0]).slice(0,2).join(''))}</div>`;
+      const avatar=photo?`<img class="sl-player-avatar photo-ready" src="${escPlayer(photo)}" alt="${escPlayer(p.name)}" onerror="this.classList.remove('photo-ready');this.onerror=null;this.src='';this.style.display='none'">`:`<div class="sl-player-avatar" style="display:flex;align-items:center;justify-content:center;font-family:var(--font-cyber);font-size:1.4rem;color:var(--accent-gold)">${escPlayer((p.name||'?').split(' ').map(x=>x[0]).slice(0,2).join(''))}</div>`;
       return `<div class="sl-player-card ${p.linked?'web-linked':''}"><div class="sl-player-top">${avatar}<div class="sl-player-meta"><div class="sl-player-name">${escPlayer(p.name)}</div><div class="sl-player-team">${escPlayer(p.teamName||'Jugador local')}</div>${p.linked?'<span class="sl-player-badge">WEB VINCULADA</span>':'<span class="sl-player-badge" style="color:#aaa;background:rgba(255,255,255,.06)">SOLO APP</span>'}</div><div class="sl-player-rating">${c.ovr}<small>OVR</small></div></div><div class="sl-player-stats"><div class="sl-stat"><b>${s.appearances}</b><span>Part.</span></div><div class="sl-stat"><b>${s.goals}</b><span>Goles</span></div><div class="sl-stat"><b>${s.assists}</b><span>Asist.</span></div><div class="sl-stat"><b>${s.mvp}</b><span>MVP</span></div></div><div class="sl-player-actions"><button class="btn-act" style="padding:8px" onclick="openPlayerCard('${escPlayer(p.id)}')">🎴 Ver ficha</button>${p.webUrl?`<a class="btn-sec" style="padding:8px" href="${escPlayer(p.webUrl)}" target="_blank" rel="noopener">🌐 Web</a>`:''}</div></div>`;
     }
 
@@ -2153,10 +2424,17 @@
       }, 'image/png');
     }
 
+    window.addEventListener('beforeunload', () => { try { saveAllData(); persistMatchState(); persistTimerState(); } catch(e) {} });
+    document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'hidden'){ try { saveAllData(); } catch(e) {} } });
+
     function saveAllData() {
       localStorage.setItem(getStorageKey('att'), JSON.stringify(attendance));
       localStorage.setItem(getStorageKey('ev'), JSON.stringify(events));
       localStorage.setItem(getStorageKey('mvp'), selectedMVP);
+      persistTimerState();
+      const state=document.querySelector('#matchSaveState strong'); if(state) state.innerText=matchStatus==='archived'?'Archivado':matchStatus==='finished'?'Finalizado':'Guardado';
+      const stamp=document.querySelector('#matchSaveState span'); if(stamp) stamp.innerText=`Guardado · ${new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'})}`;
+      updateDashboard();
     }
 
     init();
