@@ -444,6 +444,18 @@ body::before{
   .ov-title{font-size:1.8rem!important}
 }
 
+
+/* ===== 7L CINEMATIC ENTRY / AUDIO GATE ===== */
+.sl-entry-gate{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px;width:min(340px,82vw)}
+.sl-entry-btn{width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:linear-gradient(135deg,#e13a3a,#9f1e1e);color:#fff;font:900 .72rem var(--font-cyber);letter-spacing:1.2px;cursor:pointer;box-shadow:0 10px 30px rgba(211,47,47,.28);transition:transform .18s ease,box-shadow .18s ease}
+.sl-entry-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(211,47,47,.4)}
+.sl-entry-btn:active{transform:scale(.98)}
+.sl-entry-note{font-size:.58rem;letter-spacing:.7px;color:#777;text-align:center;line-height:1.45}
+.sl-entry-sound{display:inline-flex;align-items:center;gap:6px;color:#bcbcca}
+.sl-entry-sound i{width:6px;height:6px;border-radius:50%;background:#00ff88;box-shadow:0 0 8px #00ff88}
+.sl-entry-status{min-height:14px;font-size:.56rem;color:#888;text-align:center}
+@media(max-width:520px){.sl-entry-gate{margin-top:20px}.sl-entry-btn{padding:13px 16px}}
+
 </style>
 </head>
 <body>
@@ -470,6 +482,15 @@ body::before{
 <div class="splash-loader-progress" id="splashProgress"></div>
 </div>
 <div class="splash-text">Match Center Loading...</div>
+<div class="sl-entry-gate">
+  <button class="sl-entry-btn" id="slEnterAppBtn" type="button">ENTRAR AL MATCH CENTER</button>
+  <div class="sl-entry-sound"><i></i> SONIDO DE ENTRADA</div>
+  <div class="sl-entry-note">El navegador requiere una interacción para iniciar audio automáticamente. La entrada manual permite activar el sonido de forma fiable en móvil y PWA.</div>
+  <div class="sl-entry-status" id="slEntryStatus"></div>
+</div>
+<audio id="slEntranceAudio" preload="auto" playsinline>
+  <source src="./audio/champions-anthem.mp3" type="audio/mpeg">
+</audio>
 </div>
 <!-- Drawer Menu -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
@@ -2709,5 +2730,47 @@ body::before{
 
 <!-- REPARACIÓN AUTOMÁTICA DE CRONÓMETRO (SUMAR EN VEZ DE RESTAR) -->
 
+
+<script>
+/* ===== 7L ENTRY AUDIO: browser-safe autoplay gate ===== */
+(function(){
+  const splash=document.getElementById('splashScreen');
+  const btn=document.getElementById('slEnterAppBtn');
+  const audio=document.getElementById('slEntranceAudio');
+  const status=document.getElementById('slEntryStatus');
+  if(!splash||!btn)return;
+
+  function finishEntry(){
+    splash.classList.add('hidden');
+    setTimeout(()=>splash.remove(),700);
+  }
+
+  btn.addEventListener('click', async ()=>{
+    btn.disabled=true;
+    btn.textContent='ENTRANDO…';
+    let played=false;
+    try{
+      if(audio){
+        audio.volume=0.72;
+        await audio.play();
+        played=true;
+        status.textContent='♪ SONIDO ACTIVADO';
+        audio.addEventListener('ended',()=>{try{audio.currentTime=0;}catch(e){}},{once:true});
+      }
+    }catch(e){
+      status.textContent='Entrada sin audio · el navegador bloqueó la reproducción';
+    }
+    finishEntry();
+    if(!played){
+      // Keep the app usable even when no licensed audio asset is installed.
+      try{ localStorage.setItem('sl_audio_gate_seen','1'); }catch(e){}
+    }
+  });
+
+  // Never force autoplay before a user gesture. If the splash is left open,
+  // the user gets a clear, intentional entry action instead of a blocked promise.
+  setTimeout(()=>{ if(!btn.disabled) btn.focus?.(); },900);
+})();
+</script>
 </body>
 </html>
