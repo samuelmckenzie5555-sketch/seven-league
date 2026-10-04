@@ -13,9 +13,9 @@
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="Seven League" name="apple-mobile-web-app-title"/>
 <!-- App Icons con el Logo Oficial Seven League -->
-<link href="./apple-touch-icon-180.png?v=final" rel="apple-touch-icon" sizes="180x180"/>
-<link href="./seven-league-icon.png?v=final" rel="icon" type="image/png"/>
-<link href="./manifest.webmanifest?v=final" rel="manifest"/>
+<link href="./seven-league-icon.svg?v=1" rel="apple-touch-icon" sizes="180x180"/>
+<link href="./seven-league-icon.svg?v=1" rel="icon" type="image/svg+xml"/>
+<link href="./manifest.webmanifest?v=1" rel="manifest"/>
 <meta name="theme-color" content="#050508"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -645,7 +645,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', async () => {
         try {
-          const reg = await navigator.serviceWorker.register('./sw.js?final=1', { scope: './' });
+          const reg = await navigator.serviceWorker.register('./sw.js?v=1', { scope: './' });
           reg.update();
         } catch (e) {
           const st=document.getElementById('pwaInstallStatus');
@@ -2389,7 +2389,7 @@
 
     function closePlayerModal(e){if(e&&e.target!==document.getElementById('playerModalBackdrop'))return;document.getElementById('playerModalBackdrop').classList.remove('open');}
 
-    async function updatePWAAssets(){
+    async async function updatePWAAssets(){
       try{
         if('serviceWorker' in navigator){const reg=await navigator.serviceWorker.getRegistration();if(reg)await reg.update();}
         const status=document.getElementById('playerSyncStatus');if(status)status.textContent='📱 App actualizada. Si ya tenías una instalación anterior con otro icono, el sistema puede conservar ese icono hasta reinstalar la nueva versión.';
