@@ -2,7 +2,7 @@ name: Sync Seven League players
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "*/15 * * * *"
   push:
     paths:
       - ".github/workflows/sync-sevenleague.yml"
@@ -23,7 +23,9 @@ jobs:
         run: |
           git config user.name "Seven League Sync"
           git config user.email "actions@users.noreply.github.com"
-          git add data/players.json
+          git add data/players.json data/overview.json
           git diff --cached --quiet || git commit -m "Sync official Seven League player data"
           git push
-# production sync enabled\n# stats parser v2
+
+# production sync enabled
+# official overview + player catalog sync
