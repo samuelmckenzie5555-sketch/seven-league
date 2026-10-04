@@ -26,4 +26,4 @@ jobs:
           git add data/players.json
           git diff --cached --quiet || git commit -m "Sync official Seven League player data"
           git push
-# production sync enabled
+# production sync enabled\n# stats parser v2
