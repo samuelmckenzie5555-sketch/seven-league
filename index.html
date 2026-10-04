@@ -13,9 +13,12 @@
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="Seven League" name="apple-mobile-web-app-title"/>
 <!-- App Icons con el Logo Oficial Seven League -->
-<link href="./seven-league-icon.png" rel="apple-touch-icon"/>
-<link href="./seven-league-icon.png" rel="icon" type="image/png"/>
-<link href="./manifest.webmanifest" rel="manifest"/>
+<link href="./apple-touch-icon-180.png?v=5" rel="apple-touch-icon" sizes="180x180"/>
+<link href="./seven-league-icon.png?v=5" rel="icon" type="image/png"/>
+<link href="./manifest-v5.webmanifest?v=5" rel="manifest"/>
+<meta name="theme-color" content="#050508"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Orbitron:wght@500;700;900&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -604,11 +607,13 @@
       <select class="player-hub-search" id="playerHubFilter" onchange="renderPlayerHub()"><option value="">Todos los jugadores</option><option value="web">Vinculados a web</option><option value="local">Solo app</option></select>
     </div>
     <div class="player-hub-toolbar">
-      <button class="btn-act" onclick="syncPlayersFromWeb()">🌐 Sincronizar web</button>
+      <button class="btn-act" onclick="syncPlayersFromWeb()">🌐 Sincronizar Web + estadísticas</button>
+      <button class="btn-sec" onclick="syncWebPlayerDetails()">📊 Completar fichas</button>
       <button class="btn-sec" onclick="recoverMissingPlayerPhotos()">📸 Recuperar fotos</button>
       <label class="btn-sec" style="text-align:center;cursor:pointer"><input type="file" id="playerWebHtmlInput" accept=".html,.htm,text/html" style="display:none" onchange="importPlayersFromWebHtml(event)">📄 Importar página web</label>
     </div>
     <div id="playerSyncStatus" class="sl-mini"></div>
+    <button class="btn-sec" onclick="updatePWAAssets()" style="margin-top:8px;width:100%">📱 Actualizar icono y versión de la app</button>
     <div class="sl-mini" style="margin-top:6px">📊 Las estadísticas se recalculan con las actas archivadas y la asistencia registrada. La sincronización web nunca elimina jugadores locales.</div>
   </div>
   <div id="playerHubContainer" class="player-grid"></div>
@@ -2138,245 +2143,216 @@
        This layer is intentionally independent from the match timer.
        ========================================================= */
     const PLAYER_WEB_HUB_URL = 'https://sevenleague.ch/seven-league-basel-competition-hub/';
-    const PLAYER_PROFILE_KEY = 'sl_player_profiles_v1';
-    let playerProfiles = JSON.parse(localStorage.getItem(PLAYER_PROFILE_KEY) || '{}');
+    const PLAYER_PROFILE_KEY = 'sl_player_profiles_v2';
+    const PLAYER_PROFILE_LEGACY_KEY = 'sl_player_profiles_v1';
+    const PLAYER_SYNC_VERSION = 2;
+    let playerProfiles = JSON.parse(localStorage.getItem(PLAYER_PROFILE_KEY) || localStorage.getItem(PLAYER_PROFILE_LEGACY_KEY) || '{}');
 
     function normalizePlayerName(name) {
       return String(name || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/['’`]/g,'').replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
     }
-    function slugifyPlayer(name) { return normalizePlayerName(name).replace(/ /g,'-'); }
     function escPlayer(v) { return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-    function savePlayerProfiles() { localStorage.setItem(PLAYER_PROFILE_KEY, JSON.stringify(playerProfiles)); }
+    function savePlayerProfiles() {
+      try { localStorage.setItem(PLAYER_PROFILE_KEY, JSON.stringify(playerProfiles)); } catch(e) { console.warn('Player profile save failed',e); }
+    }
+
+    function teamSimilarity(a,b){
+      const x=normalizePlayerName(a), y=normalizePlayerName(b); if(!x||!y)return 0;
+      if(x===y)return 1; if(x.includes(y)||y.includes(x))return .92;
+      return 0;
+    }
+    function levenshtein(a,b){
+      a=normalizePlayerName(a); b=normalizePlayerName(b); if(a===b)return 0;
+      const prev=Array.from({length:b.length+1},(_,i)=>i);
+      for(let i=1;i<=a.length;i++){ let cur=[i]; for(let j=1;j<=b.length;j++) cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1)); for(let j=0;j<cur.length;j++) prev[j]=cur[j]; }
+      return prev[b.length];
+    }
+    function nameSimilarity(a,b){
+      const x=normalizePlayerName(a), y=normalizePlayerName(b); if(!x||!y)return 0;
+      if(x===y)return 1; const d=levenshtein(x,y); return 1-d/Math.max(x.length,y.length);
+    }
+    function findProfileKeyForWebPlayer(data){
+      const key=normalizePlayerName(data.name); if(playerProfiles[key]) return key;
+      let best=null, score=0;
+      for(const [k,p] of Object.entries(playerProfiles)){
+        if(!p)continue;
+        const ns=nameSimilarity(p.name,data.name);
+        const ts=teamSimilarity(p.teamName,data.teamName);
+        const scoreNow=ns + (ts>.8?.12:0);
+        // Conservative fuzzy link: same team and very close name, or exceptionally close name.
+        if((ts>.8 && ns>=.82) || ns>=.94){ if(scoreNow>score){score=scoreNow;best=k;} }
+      }
+      return best;
+    }
 
     function ensureLocalPlayerProfiles() {
       Object.values(teams || {}).forEach(team => {
         (team.players || []).forEach(name => {
-          const key = normalizePlayerName(name);
-          if (!key) return;
-          if (!playerProfiles[key]) playerProfiles[key] = { id:'local_'+key.replace(/ /g,'_'), name:name, source:'local', teamId:team.id, teamName:team.name, photo:'', position:'', number:'', webUrl:'', webStats:null, manual:{} };
-          else if (playerProfiles[key].source !== 'web') { playerProfiles[key].teamId=team.id; playerProfiles[key].teamName=team.name; playerProfiles[key].name=name; }
+          const key = normalizePlayerName(name); if (!key) return;
+          if (!playerProfiles[key]) playerProfiles[key] = { id:'local_'+key.replace(/ /g,'_'), name, source:'local', teamId:team.id, teamName:team.name, photo:'', position:'', number:'', webUrl:'', webName:'', webStats:null, manual:{}, syncVersion:0 };
+          else if (!playerProfiles[key].linked) { playerProfiles[key].teamId=team.id; playerProfiles[key].teamName=team.name; playerProfiles[key].name=name; }
         });
       });
       savePlayerProfiles();
     }
 
-    function playerNameOnly(value) {
-      const raw = String(value || '').trim();
-      return raw.replace(/	/g,' ').replace(/	/g,' ').replace(/	/g,' ').replace(/	/g,' ');
-    }
-    function cleanMvpName(value) {
-      return String(value || '').split('(')[0].trim();
-    }
+    function cleanMvpName(value) { return String(value || '').split('(')[0].trim(); }
 
     function calculateLocalPlayerStats(name) {
-      const key = normalizePlayerName(name);
-      const allMatches = Array.isArray(savedMatches) ? savedMatches : [];
-      let goals=0, assists=0, yellow=0, red=0, mvp=0, appearances=0;
-      const played = new Set();
-      allMatches.forEach(m => {
-        const eventsInMatch = Array.isArray(m.events) ? m.events : [];
-        const present = Object.values(m.attendance || {}).flat().some(p => normalizePlayerName(p) === key);
-        if (present) played.add(m.id || ('match_'+allMatches.indexOf(m)));
-        eventsInMatch.forEach(e => {
-          const pKey = e.playerKey || normalizePlayerName(e.player);
-          const aKey = e.assistKey || normalizePlayerName(e.assist);
-          if (pKey === key) {
-            played.add(m.id || ('match_'+allMatches.indexOf(m)));
-            if (e.type === 'GOL') goals++;
-            else if (e.type === 'A') yellow++;
-            else if (e.type === 'R') red++;
-          }
-          if (aKey === key) assists++;
+      const key = normalizePlayerName(name), allMatches = Array.isArray(savedMatches) ? savedMatches : [];
+      let goals=0, assists=0, yellow=0, red=0, mvp=0; const played=new Set();
+      allMatches.forEach((m,i)=>{
+        const matchId=m.id||('match_'+i), present=Object.values(m.attendance||{}).flat().some(p=>normalizePlayerName(p)===key);
+        if(present) played.add(matchId);
+        (m.events||[]).forEach(e=>{
+          const pKey=e.playerKey||normalizePlayerName(e.player), aKey=e.assistKey||normalizePlayerName(e.assist);
+          if(pKey===key){ played.add(matchId); if(e.type==='GOL')goals++; else if(e.type==='A')yellow++; else if(e.type==='R')red++; }
+          if(aKey===key)assists++;
         });
-        if (normalizePlayerName(cleanMvpName(m.mvp)) === key) mvp++;
+        if(normalizePlayerName(cleanMvpName(m.mvp))===key)mvp++;
       });
-      if (normalizePlayerName(cleanMvpName(selectedMVP)) === key && selectedMVP) mvp++;
-      appearances = played.size;
-      return { appearances, goals, assists, yellow, red, mvp };
+      return {appearances:played.size,goals,assists,yellow,red,mvp};
     }
 
     function getPlayerStats(profile) {
-      const local = calculateLocalPlayerStats(profile.name);
-      const w = profile.webStats || {};
-      // Use the larger recorded value so a web sync never erases newer app data,
-      // while also avoiding double-counting the same season statistics.
+      const local=calculateLocalPlayerStats(profile.name), w=profile.webStats||{};
       return {
-        appearances: Math.max(Number(w.appearances || 0), local.appearances),
-        starts: Math.max(Number(w.starts || 0), 0),
-        goals: Math.max(Number(w.goals || 0), local.goals),
-        assists: Math.max(Number(w.assists || 0), local.assists),
-        yellow: Math.max(Number(w.yellow || 0), local.yellow),
-        red: Math.max(Number(w.red || 0), local.red),
-        mvp: Math.max(Number(w.mvp || 0), local.mvp),
-        minutes: Math.max(Number(w.minutes || 0), 0)
+        appearances:Math.max(+w.appearances||0,local.appearances), starts:Math.max(+w.starts||0,0), goals:Math.max(+w.goals||0,local.goals), assists:Math.max(+w.assists||0,local.assists),
+        yellow:Math.max(+w.yellow||0,local.yellow), red:Math.max(+w.red||0,local.red), mvp:Math.max(+w.mvp||0,local.mvp), minutes:Math.max(+w.minutes||0,0), ownGoals:Math.max(+w.ownGoals||0,0), cleanSheets:Math.max(+w.cleanSheets||0,0)
       };
     }
-
-    function calculatePlayerOVR(profile) {
-      const s = getPlayerStats(profile);
-      const apps = Math.max(1, s.appearances);
-      const production = ((s.goals + s.assists) / apps) * 28;
-      const impact = Math.min(12, s.mvp * 2.5);
-      const experience = Math.min(8, s.appearances * 0.65);
-      const discipline = Math.min(6, s.yellow * 0.45 + s.red * 2);
-      const positionBonus = normalizePlayerName(profile.position).includes('goal') ? Math.min(3, s.appearances * .3) : 0;
-      const ovr = Math.round(65 + experience + Math.min(16, production) + impact + positionBonus - discipline);
-      return Math.max(60, Math.min(99, ovr));
+    function calculatePlayerOVR(profile){
+      const s=getPlayerStats(profile), apps=Math.max(1,s.appearances);
+      const production=Math.min(18,((s.goals+s.assists)/apps)*4.2), impact=Math.min(10,s.mvp*2), experience=Math.min(8,s.appearances*.7), discipline=Math.min(5,s.yellow*.35+s.red*1.8);
+      return Math.max(60,Math.min(99,Math.round(66+experience+production+impact-discipline)));
+    }
+    function getPlayerCardStats(profile){
+      const s=getPlayerStats(profile),ovr=calculatePlayerOVR(profile);
+      return {ovr,pace:Math.min(99,65+Math.round(s.appearances*1.1)+Math.round(s.assists*.7)),shooting:Math.min(99,55+Math.round(s.goals*2.2)),passing:Math.min(99,55+Math.round(s.assists*2.8)),dribbling:Math.min(99,60+Math.round((s.goals+s.assists)*1.1)),defending:Math.min(99,55+Math.round(s.appearances*.8)),physical:Math.min(99,60+Math.round(s.minutes/50))};
     }
 
-    function getPlayerCardStats(profile) {
-      const s = getPlayerStats(profile), ovr = calculatePlayerOVR(profile);
-      const pace = Math.min(99, 65 + Math.round(s.appearances*1.1) + Math.round(s.assists*.7));
-      const shooting = Math.min(99, 55 + Math.round(s.goals*2.2));
-      const passing = Math.min(99, 55 + Math.round(s.assists*2.8));
-      const dribbling = Math.min(99, 60 + Math.round((s.goals+s.assists)*1.1));
-      const defending = Math.min(99, 55 + Math.round(s.appearances*.8));
-      const physical = Math.min(99, 60 + Math.round(s.minutes/50));
-      return {ovr, pace, shooting, passing, dribbling, defending, physical};
-    }
-
-    function upsertWebPlayer(data) {
-      const key = normalizePlayerName(data.name); if (!key) return false;
-      const old = playerProfiles[key] || { id:'web_'+key.replace(/ /g,'_'), name:data.name, source:'web', manual:{} };
-      playerProfiles[key] = {...old, ...data, source:'web', linked:true, name:data.name || old.name, manual:old.manual || {}};
+    function upsertWebPlayer(data){
+      const targetKey=findProfileKeyForWebPlayer(data), key=targetKey||normalizePlayerName(data.name); if(!key)return false;
+      const old=playerProfiles[key]||{id:'web_'+key.replace(/ /g,'_'),name:data.name,source:'web',manual:{}};
+      playerProfiles[key]={...old,...data,source:'web',linked:true,webName:data.name||old.webName||old.name, name:old.source==='local'&&old.name?old.name:(data.name||old.name), manual:old.manual||{},syncVersion:PLAYER_SYNC_VERSION};
       return !old.linked;
     }
 
-    function parseWebPlayerHtml(html) {
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const out = [];
-      const seen = new Set();
-      doc.querySelectorAll('a[href*="/player/"]').forEach(a => {
-        const hrefAttr = a.getAttribute('href') || '';
-        const href = hrefAttr ? new URL(hrefAttr, PLAYER_WEB_HUB_URL).href : (a.href || '');
-        const name = (a.querySelector('h2,h3,h4,.player-name')?.textContent || a.textContent || '').replace(/\s+/g,' ').trim();
-        if (!href.includes('/player/') || !name || name.length > 80) return;
-        const key = normalizePlayerName(name); if (!key || seen.has(key)) return;
-        const block = a.parentElement?.parentElement?.innerText || a.innerText || '';
-        const m = block.match(/(\d+)\s*Apps?/i), g = block.match(/(\d+)\s*Goals?/i), as = block.match(/(\d+)\s*Assists?/i);
-        const posMatch = block.match(/\b(Goalkeeper|Defender|Midfielder|Forward)\b/i);
-        const teamMatch = block.match(/Club\s*([^\n]+?)(?:\s+\d+\s*Apps?|$)/i);
-        const cardRoot = a.closest('article,li,.player-card,.player-item,.card,.wp-block-group,div') || a.parentElement;
-        const img = a.querySelector('img') || cardRoot?.querySelector('img');
-        const imgAttr = img?.getAttribute('src') || img?.getAttribute('data-src') || img?.getAttribute('data-lazy-src') || img?.getAttribute('data-original') || '';
-        const srcset = img?.getAttribute('srcset') || img?.getAttribute('data-srcset') || '';
-        const bestSrc = imgAttr || (srcset ? srcset.split(',').pop().trim().split(' ')[0] : '');
-        const photo = bestSrc ? new URL(bestSrc, PLAYER_WEB_HUB_URL).href : '';
-        seen.add(key);
-        out.push({name, webUrl:href, photo, teamName:teamMatch?teamMatch[1].trim():'', position:posMatch?posMatch[1]:'', webStats:{appearances:m?+m[1]:0,goals:g?+g[1]:0,assists:as?+as[1]:0}});
+    function extractImageUrl(doc, baseUrl){
+      const meta=doc.querySelector('meta[property="og:image"],meta[name="twitter:image"]');
+      let raw=meta?.getAttribute('content')||'';
+      if(!raw){
+        const imgs=[...doc.querySelectorAll('img')];
+        const img=imgs.find(i=>/player|portrait|profile|head|avatar/i.test((i.getAttribute('alt')||'')+' '+(i.getAttribute('class')||'')))||imgs.find(i=>i.width>200)||imgs[0];
+        raw=img?.getAttribute('src')||img?.getAttribute('data-src')||img?.getAttribute('data-lazy-src')||img?.getAttribute('data-original')||'';
+      }
+      try{return raw?new URL(raw,baseUrl).href:'';}catch(e){return '';}
+    }
+    function metric(text, patterns){
+      for(const p of patterns){ const m=text.match(p); if(m)return Number(m[1])||0; } return 0;
+    }
+    function parseWebPlayerProfileHtml(html,url,fallback={}){
+      const doc=new DOMParser().parseFromString(html,'text/html');
+      const text=(doc.body?.innerText||doc.body?.textContent||'').replace(/\s+/g,' ').trim();
+      const stats={
+        appearances:metric(text,[/(\d+)\s*(?:Appearances|Einsätze)\b/i]), starts:metric(text,[/(\d+)\s*(?:Starts|Startelf)\b/i]), goals:metric(text,[/(\d+)\s*(?:Goals|Tore)\b/i]), assists:metric(text,[/(\d+)\s*(?:Assists)\b/i]),
+        yellow:metric(text,[/(\d+)\s*(?:Yellow cards|Gelbe Karten|GK)\b/i]), red:metric(text,[/(\d+)\s*(?:Red cards|Rote Karten|RK)\b/i]), ownGoals:metric(text,[/(\d+)\s*(?:Own goals|Eigentore)\b/i]), minutes:metric(text,[/(\d+)\s*(?:Match minutes|Spielminuten)\b/i]),
+        mvp:metric(text,[/(\d+)\s*(?:MVP awards|MVP-Auszeichnungen)\b/i]), cleanSheets:metric(text,[/(\d+)\s*(?:Clean sheets|Zu-null-Spiele)\b/i])
+      };
+      stats.goalContributions=stats.goals+stats.assists;
+      const heading=doc.querySelector('h1')?.textContent?.trim()||fallback.name||'';
+      const body=doc.body?.innerText||'';
+      const pos=(body.match(/(?:Player|Spieler)\s*[·•]\s*[^·•\n]+[·•]\s*(?:Season|Saison)\s*[^\n]+/i)||[])[0]||'';
+      let position=fallback.position||''; const pm=pos.match(/(?:Stürmer|Forward|Midfielder|Mittelfeld|Defender|Verteidiger|Goalkeeper|Torhüter)/i); if(pm)position=pm[0];
+      return {...fallback,name:heading||fallback.name,photo:extractImageUrl(doc,url)||fallback.photo||'',position,webStats:stats,detailsSyncedAt:new Date().toISOString(),syncVersion:PLAYER_SYNC_VERSION};
+    }
+
+    const SYNC_PROXIES=[
+      url=>'https://api.allorigins.win/raw?url='+encodeURIComponent(url),
+      url=>'https://corsproxy.io/?url='+encodeURIComponent(url),
+      url=>'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(url)
+    ];
+    async function fetchHtmlResilient(url){
+      try{const r=await fetch(url,{cache:'no-store'});if(r.ok){const t=await r.text();if(t.length>1000)return t;}}catch(e){}
+      for(const make of SYNC_PROXIES){try{const r=await fetch(make(url),{cache:'no-store'});if(r.ok){const t=await r.text();if(t.length>1000)return t;}}catch(e){}}
+      return '';
+    }
+
+    function parseWebPlayerHtml(html){
+      const doc=new DOMParser().parseFromString(html,'text/html'),out=[],seen=new Set();
+      doc.querySelectorAll('a[href*="/player/"]').forEach(a=>{
+        const hrefAttr=a.getAttribute('href')||'',href=hrefAttr?new URL(hrefAttr,PLAYER_WEB_HUB_URL).href:(a.href||'');
+        const name=(a.querySelector('h2,h3,h4,.player-name')?.textContent||a.textContent||'').replace(/\s+/g,' ').trim();
+        if(!href.includes('/player/')||!name||name.length>80)return;
+        const key=normalizePlayerName(name);if(!key||seen.has(key))return;
+        let card=a; for(let i=0;i<6&&card;i++,card=card.parentElement){ if(card.querySelector?.('img'))break; }
+        const block=(card?.innerText||a.parentElement?.innerText||a.innerText||'').replace(/\s+/g,' ');
+        const m=block.match(/(\d+)\s*Apps?\b/i),g=block.match(/(\d+)\s*Goals?\b/i),as=block.match(/(\d+)\s*Assists?\b/i),posMatch=block.match(/\b(Goalkeeper|Defender|Midfielder|Forward|Torhüter|Verteidiger|Mittelfeldspieler|Stürmer)\b/i);
+        const clubMatch=block.match(/Club\s*(.*?)\s*(?=\d+\s*Apps?\b)/i);
+        const img=card?.querySelector?.('img')||a.querySelector('img');
+        const raw=img?.getAttribute('src')||img?.getAttribute('data-src')||img?.getAttribute('data-lazy-src')||img?.getAttribute('data-original')||'';
+        let photo='';try{photo=raw?new URL(raw,PLAYER_WEB_HUB_URL).href:'';}catch(e){}
+        seen.add(key);out.push({name,webName:name,webUrl:href,photo,teamName:clubMatch?clubMatch[1].trim():'',position:posMatch?posMatch[1]:'',webStats:{appearances:m?+m[1]:0,goals:g?+g[1]:0,assists:as?+as[1]:0}});
       });
       return out;
     }
 
-    const PHOTO_PROXIES = [
-      url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
-      url => 'https://r.jina.ai/http://' + url.replace(/^https?:\/\//,'')
-    ];
-    async function fetchHtmlResilient(url) {
-      try { const r=await fetch(url,{cache:'no-store'}); if(r.ok){const t=await r.text(); if(t.length>500)return t;} } catch(e){}
-      for(const make of PHOTO_PROXIES){ try { const r=await fetch(make(url),{cache:'no-store'}); if(r.ok){const t=await r.text(); if(t.length>200)return t;} } catch(e){} }
-      return '';
-    }
-    async function fetchProfilePhotoFromPage(url) {
-      const html=await fetchHtmlResilient(url); if(!html) return '';
-      try {
-        const doc=new DOMParser().parseFromString(html,'text/html');
-        const meta=doc.querySelector('meta[property="og:image"],meta[name="twitter:image"]');
-        const imgs=[...doc.querySelectorAll('img')];
-        let raw=meta?.getAttribute('content')||'';
-        if(!raw){ const img=imgs.find(i=>/player|portrait|profile|head|avatar/i.test((i.getAttribute('alt')||'')+' '+(i.getAttribute('class')||'')))||imgs[0]; raw=img?.getAttribute('src')||img?.getAttribute('data-src')||img?.getAttribute('data-lazy-src')||img?.getAttribute('data-original')||''; }
-        if(raw) return new URL(raw,url).href;
-      } catch(e){}
-      const matches=html.match(/https?:\/\/[^\s"'<>]+\.(?:jpe?g|png|webp)(?:\?[^\s"'<>]*)?/ig)||[];
-      return matches.find(x=>/uploads|player|profile|portrait|avatar/i.test(x)) || matches[0] || '';
-    }
-
-    async function recoverMissingPlayerPhotos() {
-      triggerHaptic();
-      const status = document.getElementById('playerSyncStatus');
-      const list = Object.values(playerProfiles).filter(p => p.linked && p.webUrl && (!p.photo || p.photo.startsWith('data:')));
-      if (!list.length) { status.textContent = '✅ Todas las fichas vinculadas ya tienen foto o no hay fotos pendientes.'; return; }
-      status.textContent = `📸 Recuperando fotos: 0/${list.length}…`;
-      let done=0, found=0;
-      const queue=[...list];
-      async function worker(){
-        while(queue.length){
-          const p=queue.shift();
-          const photo=await fetchProfilePhotoFromPage(p.webUrl);
-          if(photo){ p.photo=photo; found++; }
-          done++; status.textContent=`📸 Recuperando fotos: ${done}/${list.length} · ${found} encontradas`;
-        }
-      }
-      await Promise.all(Array.from({length:Math.min(5,list.length)},worker));
-      savePlayerProfiles(); renderPlayerHub();
-      status.textContent=`✅ Recuperación terminada: ${found} fotos nuevas de ${list.length} fichas pendientes.`;
-    }
-
-    async function syncPlayersFromWeb() {
-      triggerHaptic();
-      const status = document.getElementById('playerSyncStatus');
-      status.textContent = '🌐 Conectando con Seven League…';
-      try {
-        let response = await fetch(PLAYER_WEB_HUB_URL, {cache:'no-store'});
-        let html = '';
-        if (response.ok) html = await response.text();
-        if (!html || html.length < 1000) {
-          const proxied = PHOTO_PROXY + encodeURIComponent(PLAYER_WEB_HUB_URL);
-          response = await fetch(proxied, {cache:'no-store'});
-          if (!response.ok) throw new Error('HTTP '+response.status);
-          html = await response.text();
-        }
-        const players = parseWebPlayerHtml(html);
-        if (!players.length) throw new Error('No se encontraron jugadores');
-        let linked=0, added=0;
-        players.forEach(p => { const was = !!playerProfiles[normalizePlayerName(p.name)]; upsertWebPlayer(p); was ? linked++ : added++; });
-        savePlayerProfiles(); renderPlayerHub();
-        status.textContent = `✅ Sincronización completada: ${players.length} jugadores web procesados · ${linked} vinculados · ${added} nuevos en el catálogo.`;
-      } catch(err) {
-        status.innerHTML = `⚠️ El navegador no permite leer directamente la web desde esta ubicación (CORS o archivo local). Usa <b>Importar página web</b>: guarda la página Players de Seven League como HTML y selecciónala aquí.`;
-      }
-    }
-
-    function importPlayersFromWebHtml(e) {
-      const file=e.target.files?.[0]; if(!file) return;
-      const reader=new FileReader();
-      reader.onload=()=>{
-        const players=parseWebPlayerHtml(reader.result);
-        if(!players.length){ alert('❌ No encontré fichas de jugadores en ese HTML. Guarda la página Players completa de Seven League.'); return; }
-        players.forEach(upsertWebPlayer); savePlayerProfiles(); renderPlayerHub();
-        document.getElementById('playerSyncStatus').textContent=`✅ ${players.length} jugadores importados desde la página web. Ahora puedes pulsar 📸 Recuperar fotos para completar las fichas.`;
-        e.target.value='';
-      };
-      reader.readAsText(file);
-    }
-
-    function renderPlayerHub() {
+    async function syncWebPlayerDetails(){
       ensureLocalPlayerProfiles();
-      const container=document.getElementById('playerHubContainer'); if(!container) return;
-      const q=normalizePlayerName(document.getElementById('playerHubSearch')?.value||'');
-      const filter=document.getElementById('playerHubFilter')?.value||'';
-      let list=Object.values(playerProfiles).filter(p=>{
-        if(filter==='web'&&!p.linked)return false; if(filter==='local'&&p.linked)return false;
-        return !q || normalizePlayerName(p.name).includes(q) || normalizePlayerName(p.teamName).includes(q);
-      }).sort((a,b)=>calculatePlayerOVR(b)-calculatePlayerOVR(a) || a.name.localeCompare(b.name));
-      if(!list.length){container.innerHTML='<div class="sl-empty">No hay jugadores que coincidan con la búsqueda.</div>';return;}
-      container.innerHTML=list.map(renderPlayerCard).join('');
+      const list=Object.values(playerProfiles).filter(p=>p.linked&&p.webUrl);
+      const status=document.getElementById('playerSyncStatus'); if(!list.length){status.textContent='⚠️ Primero sincroniza los jugadores desde la web.';return;}
+      let done=0,ok=0,photos=0; status.textContent=`📊 Completando fichas: 0/${list.length}…`;
+      const queue=[...list];
+      async function worker(){while(queue.length){const p=queue.shift();const html=await fetchHtmlResilient(p.webUrl);if(html){const d=parseWebPlayerProfileHtml(html,p);const key=Object.keys(playerProfiles).find(k=>playerProfiles[k].id===p.id);if(key){const before=!!playerProfiles[key].photo;playerProfiles[key]={...playerProfiles[key],...d,source:'web',linked:true,webName:d.webName||p.webName||p.name};if(!before&&d.photo)photos++;ok++;}}done++;if(done%2===0||done===list.length)status.textContent=`📊 Fichas: ${done}/${list.length} · ${ok} completas · ${photos} fotos`;}}
+      await Promise.all(Array.from({length:Math.min(4,list.length)},worker)); savePlayerProfiles();renderPlayerHub();status.textContent=`✅ Sincronización completa: ${ok}/${list.length} fichas actualizadas · ${photos} fotos nuevas.`;
     }
 
-    function renderPlayerCard(p) {
-      const s=getPlayerStats(p), c=getPlayerCardStats(p), photo=p.photo || '';
-      const avatar=photo?`<img class="sl-player-avatar photo-ready" src="${escPlayer(photo)}" alt="${escPlayer(p.name)}" onerror="this.classList.remove('photo-ready');this.onerror=null;this.src='';this.style.display='none'">`:`<div class="sl-player-avatar" style="display:flex;align-items:center;justify-content:center;font-family:var(--font-cyber);font-size:1.4rem;color:var(--accent-gold)">${escPlayer((p.name||'?').split(' ').map(x=>x[0]).slice(0,2).join(''))}</div>`;
-      return `<div class="sl-player-card ${p.linked?'web-linked':''}"><div class="sl-player-top">${avatar}<div class="sl-player-meta"><div class="sl-player-name">${escPlayer(p.name)}</div><div class="sl-player-team">${escPlayer(p.teamName||'Jugador local')}</div>${p.linked?'<span class="sl-player-badge">WEB VINCULADA</span>':'<span class="sl-player-badge" style="color:#aaa;background:rgba(255,255,255,.06)">SOLO APP</span>'}</div><div class="sl-player-rating">${c.ovr}<small>OVR</small></div></div><div class="sl-player-stats"><div class="sl-stat"><b>${s.appearances}</b><span>Part.</span></div><div class="sl-stat"><b>${s.goals}</b><span>Goles</span></div><div class="sl-stat"><b>${s.assists}</b><span>Asist.</span></div><div class="sl-stat"><b>${s.mvp}</b><span>MVP</span></div></div><div class="sl-player-actions"><button class="btn-act" style="padding:8px" onclick="openPlayerCard('${escPlayer(p.id)}')">🎴 Ver ficha</button>${p.webUrl?`<a class="btn-sec" style="padding:8px" href="${escPlayer(p.webUrl)}" target="_blank" rel="noopener">🌐 Web</a>`:''}</div></div>`;
+    async function recoverMissingPlayerPhotos(){
+      const list=Object.values(playerProfiles).filter(p=>p.linked&&p.webUrl&&!p.photo),status=document.getElementById('playerSyncStatus');
+      if(!list.length){status.textContent='✅ No hay fotos pendientes.';return;} status.textContent=`📸 Recuperando fotos: 0/${list.length}…`;
+      let done=0,found=0;const q=[...list];
+      async function worker(){while(q.length){const p=q.shift(),html=await fetchHtmlResilient(p.webUrl);if(html){const d=parseWebPlayerProfileHtml(html,p);if(d.photo){p.photo=d.photo;found++;}}done++;status.textContent=`📸 Fotos: ${done}/${list.length} · ${found} encontradas`;}}
+      await Promise.all(Array.from({length:Math.min(4,list.length)},worker));savePlayerProfiles();renderPlayerHub();status.textContent=`✅ Fotos: ${found} nuevas de ${list.length}.`;
     }
 
+    async function syncPlayersFromWeb(){
+      ensureLocalPlayerProfiles();const status=document.getElementById('playerSyncStatus');status.textContent='🌐 Descargando catálogo oficial…';
+      const html=await fetchHtmlResilient(PLAYER_WEB_HUB_URL);
+      if(!html){status.innerHTML='⚠️ No se pudo leer Seven League desde el navegador. Usa <b>Importar página web</b> como alternativa.';return;}
+      const players=parseWebPlayerHtml(html);if(!players.length){status.textContent='⚠️ La web respondió, pero no se encontraron perfiles.';return;}
+      let linked=0,added=0;players.forEach(p=>{const before=findProfileKeyForWebPlayer(p);upsertWebPlayer(p);before?linked++:added++;});
+      savePlayerProfiles();renderPlayerHub();status.textContent=`✅ ${players.length} jugadores encontrados · ${linked} vinculados · ${added} nuevos. Ahora completando estadísticas y fotos…`;
+      await syncWebPlayerDetails();
+    }
+
+    function importPlayersFromWebHtml(e){
+      const file=e.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=async()=>{const players=parseWebPlayerHtml(reader.result);if(!players.length){alert('❌ No encontré fichas de jugadores. Guarda la sección Players completa.');return;}players.forEach(upsertWebPlayer);savePlayerProfiles();renderPlayerHub();document.getElementById('playerSyncStatus').textContent=`✅ ${players.length} jugadores importados. Completando estadísticas y fotos…`;await syncWebPlayerDetails();e.target.value='';};reader.readAsText(file);
+    }
+
+    function renderPlayerHub(){
+      ensureLocalPlayerProfiles();const container=document.getElementById('playerHubContainer');if(!container)return;const q=normalizePlayerName(document.getElementById('playerHubSearch')?.value||''),filter=document.getElementById('playerHubFilter')?.value||'';
+      const list=Object.values(playerProfiles).filter(p=>(filter!=='web'||p.linked)&&(filter!=='local'||!p.linked)&&(!q||normalizePlayerName(p.name).includes(q)||normalizePlayerName(p.teamName).includes(q))).sort((a,b)=>calculatePlayerOVR(b)-calculatePlayerOVR(a)||a.name.localeCompare(b.name));
+      container.innerHTML=list.length?list.map(renderPlayerCard).join(''):'<div class="sl-empty">No hay jugadores que coincidan.</div>';
+    }
+    function renderPlayerCard(p){
+      const s=getPlayerStats(p),c=getPlayerCardStats(p),photo=p.photo||'';
+      const avatar=photo?`<img class="sl-player-avatar photo-ready" src="${escPlayer(photo)}" alt="${escPlayer(p.name)}" loading="lazy" onerror="this.onerror=null;this.style.opacity='.2'">`:`<div class="sl-player-avatar" style="display:flex;align-items:center;justify-content:center;font-family:var(--font-cyber);font-size:1.4rem;color:var(--accent-gold)">${escPlayer((p.name||'?').split(' ').map(x=>x[0]).slice(0,2).join(''))}</div>`;
+      return `<div class="sl-player-card ${p.linked?'web-linked':''}"><div class="sl-player-top">${avatar}<div class="sl-player-meta"><div class="sl-player-name">${escPlayer(p.name)}</div><div class="sl-player-team">${escPlayer(p.teamName||'Jugador local')}</div>${p.linked?'<span class="sl-player-badge">WEB VINCULADA</span>':'<span class="sl-player-badge" style="color:#aaa;background:rgba(255,255,255,.06)">SOLO APP</span>'}</div><div class="sl-player-rating">${c.ovr}<small>OVR</small></div></div><div class="sl-player-stats"><div class="sl-stat"><b>${s.appearances}</b><span>Part.</span></div><div class="sl-stat"><b>${s.starts}</b><span>Tit.</span></div><div class="sl-stat"><b>${s.goals}</b><span>Goles</span></div><div class="sl-stat"><b>${s.assists}</b><span>Asist.</span></div><div class="sl-stat"><b>${s.mvp}</b><span>MVP</span></div><div class="sl-stat"><b>${s.minutes}</b><span>Min.</span></div></div><div class="sl-photo-status">${p.photo?'📸 Foto oficial':'◻ Foto pendiente'}${p.webStats?.yellow!=null?` · 🟨 ${p.webStats.yellow} · 🟥 ${p.webStats.red||0}`:''}</div><div class="sl-player-actions"><button class="btn-act" style="padding:8px" onclick="openPlayerCard('${escPlayer(p.id)}')">🎴 Ver ficha</button>${p.webUrl?`<a class="btn-sec" style="padding:8px" href="${escPlayer(p.webUrl)}" target="_blank" rel="noopener">🌐 Web</a>`:''}</div></div>`;
+    }
     function findPlayerById(id){return Object.values(playerProfiles).find(p=>p.id===id);}
     function openPlayerCard(id){
-      const p=findPlayerById(id); if(!p)return; const c=getPlayerCardStats(p), s=getPlayerStats(p);
-      const photo=p.photo?`<img class="sl-fifa-photo" src="${escPlayer(p.photo)}" alt="">`:'';
-      document.getElementById('playerModal').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><b style="font-family:var(--font-cyber);color:var(--accent-gold)">PLAYER CARD</b><button class="btn-sec" style="padding:7px 12px" onclick="closePlayerModal()">✕</button></div><div class="sl-fifa-preview">${photo}<div class="sl-fifa-rating">${c.ovr}</div><div class="sl-fifa-pos">${escPlayer(p.position||'PLAYER')}</div><div class="sl-fifa-name">${escPlayer(p.name)}</div><div class="sl-fifa-team">${escPlayer(p.teamName||'Seven League')}</div><div class="sl-fifa-stats"><span><b>${c.pace}</b> PAC</span><span><b>${c.shooting}</b> SHO</span><span><b>${c.passing}</b> PAS</span><span><b>${c.dribbling}</b> DRI</span><span><b>${c.defending}</b> DEF</span><span><b>${c.physical}</b> PHY</span></div></div><div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:7px"><div class="sl-stat"><b>${s.appearances}</b><span>Partidos</span></div><div class="sl-stat"><b>${s.minutes || 0}</b><span>Minutos</span></div><div class="sl-stat"><b>${s.goals}</b><span>Goles</span></div><div class="sl-stat"><b>${s.assists}</b><span>Asistencias</span></div><div class="sl-stat"><b>${s.yellow}</b><span>Amarillas</span></div><div class="sl-stat"><b>${s.red}</b><span>Rojas</span></div></div><div class="player-sync-note">${p.linked?'🔗 Esta ficha está vinculada al registro de Seven League Web.':'👤 Jugador creado/gestionado localmente en la app.'}</div>`;
+      const p=findPlayerById(id);if(!p)return;const c=getPlayerCardStats(p),s=getPlayerStats(p),photo=p.photo?`<img class="sl-fifa-photo" src="${escPlayer(p.photo)}" alt="${escPlayer(p.name)}">`:'';
+      document.getElementById('playerModal').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><b style="font-family:var(--font-cyber);color:var(--accent-gold)">PLAYER CARD</b><button class="btn-sec" style="padding:7px 12px" onclick="closePlayerModal()">✕</button></div><div class="sl-fifa-preview">${photo}<div class="sl-fifa-rating">${c.ovr}</div><div class="sl-fifa-pos">${escPlayer(p.position||'PLAYER')}</div><div class="sl-fifa-name">${escPlayer(p.name)}</div><div class="sl-fifa-team">${escPlayer(p.teamName||'Seven League')}</div><div class="sl-fifa-stats"><span><b>${c.pace}</b> PAC</span><span><b>${c.shooting}</b> SHO</span><span><b>${c.passing}</b> PAS</span><span><b>${c.dribbling}</b> DRI</span><span><b>${c.defending}</b> DEF</span><span><b>${c.physical}</b> PHY</span></div></div><div style="margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px"><div class="sl-stat"><b>${s.appearances}</b><span>Partidos</span></div><div class="sl-stat"><b>${s.starts}</b><span>Titular</span></div><div class="sl-stat"><b>${s.minutes}</b><span>Minutos</span></div><div class="sl-stat"><b>${s.goals}</b><span>Goles</span></div><div class="sl-stat"><b>${s.assists}</b><span>Asist.</span></div><div class="sl-stat"><b>${s.mvp}</b><span>MVP</span></div><div class="sl-stat"><b>${s.yellow}</b><span>Amarillas</span></div><div class="sl-stat"><b>${s.red}</b><span>Rojas</span></div><div class="sl-stat"><b>${s.cleanSheets}</b><span>Portería 0</span></div></div><div class="player-sync-note">${p.linked?'🔗 Datos sincronizados con Seven League Web.':'👤 Jugador local de la app.'}</div>`;
       document.getElementById('playerModalBackdrop').classList.add('open');
     }
-    function closePlayerModal(e){ if(e && e.target!==document.getElementById('playerModalBackdrop'))return; document.getElementById('playerModalBackdrop').classList.remove('open'); }
+    function closePlayerModal(e){if(e&&e.target!==document.getElementById('playerModalBackdrop'))return;document.getElementById('playerModalBackdrop').classList.remove('open');}
+
+    async function updatePWAAssets(){
+      try{
+        if('serviceWorker' in navigator){const reg=await navigator.serviceWorker.getRegistration();if(reg)await reg.update();}
+        const status=document.getElementById('playerSyncStatus');if(status)status.textContent='📱 Versión de la app actualizada. Si el icono antiguo sigue en la pantalla de inicio, elimina la instalación anterior y vuelve a instalar Seven League para que el sistema adopte el nuevo icono.';
+      }catch(e){alert('No se pudo actualizar el Service Worker. Recarga la aplicación e inténtalo de nuevo.');}
+    }
 
     function getCurrentMatchDurationSeconds() {
       if (typeof startTime !== 'undefined' && startTime) {
