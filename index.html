@@ -2785,6 +2785,7 @@ body::before{
   if(!splash||!btn)return;
 
   function finishEntry(){
+    document.body.classList.add('sl-entered');
     splash.classList.add('hidden');
     setTimeout(()=>splash.remove(),700);
   }
@@ -2793,6 +2794,8 @@ body::before{
     btn.disabled=true;
     btn.textContent='ENTRANDO…';
     let played=false;
+    splash.classList.add('sl-entry-running');
+    status.textContent='PREPARANDO ENTRADA · 7L';
     try{
       playSevenLeagueFanfare();
       played=true;
@@ -2800,7 +2803,8 @@ body::before{
     }catch(e){
       status.textContent='Entrada sin audio · Web Audio no disponible';
     }
-    finishEntry();
+    // Let the logo and fanfare reach their final hit before revealing the hub.
+    setTimeout(finishEntry, played ? 4450 : 450);
     if(!played){
       // Keep the app usable even when no licensed audio asset is installed.
       try{ localStorage.setItem('sl_audio_gate_seen','1'); }catch(e){}
