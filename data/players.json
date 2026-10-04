@@ -4,7 +4,7 @@
   "season": "2026-27",
   "count": 187,
   "photos": 107,
-  "updatedAt": "2026-10-04T19:03:37.286371+00:00",
+  "updatedAt": "2026-10-04T19:46:28.879208+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -34,7 +34,7 @@
           "opponent": "Inter Basel",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 3,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -44,8 +44,8 @@
           "opponent": "FC Baselona",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 6,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -54,8 +54,8 @@
           "opponent": "BG FC",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -64,8 +64,8 @@
           "opponent": "Rhine Madrid",
           "result": "8–5",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 3,
+          "assists": 3,
           "yellow": 0,
           "red": 0
         }
@@ -101,7 +101,7 @@
           "opponent": "Rhine Lions FC",
           "result": "8–4",
           "started": "Yes",
-          "goals": 0,
+          "goals": 4,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -111,8 +111,8 @@
           "opponent": "DPS Basel FC",
           "result": "9–2",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -121,9 +121,9 @@
           "opponent": "FC Sportfreunde",
           "result": "2–3",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
+          "goals": 1,
+          "assists": 1,
+          "yellow": 1,
           "red": 0
         },
         {
@@ -131,8 +131,8 @@
           "opponent": "Joga Bonito FC",
           "result": "5–8",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -168,8 +168,8 @@
           "opponent": "Rhine Lions FC",
           "result": "8–4",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 3,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -178,8 +178,8 @@
           "opponent": "DPS Basel FC",
           "result": "9–2",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 4,
           "yellow": 0,
           "red": 0
         }
@@ -215,7 +215,7 @@
           "opponent": "Rhine Madrid",
           "result": "4–8",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -225,8 +225,8 @@
           "opponent": "FC Baselona",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 3,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -272,7 +272,7 @@
           "opponent": "BG FC",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 3,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -282,8 +282,8 @@
           "opponent": "Rhine Madrid",
           "result": "8–5",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -320,7 +320,7 @@
           "result": "4–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -329,8 +329,8 @@
           "opponent": "FC Baselona",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -339,7 +339,7 @@
           "opponent": "BG FC",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -349,8 +349,8 @@
           "opponent": "Rhine Madrid",
           "result": "8–5",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -386,8 +386,8 @@
           "opponent": "DPS Basel FC",
           "result": "5–0",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 3,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -396,7 +396,7 @@
           "opponent": "FC Sportfreunde",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -433,7 +433,7 @@
           "opponent": "BG FC",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -453,7 +453,7 @@
           "opponent": "FC Sportfreunde",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -463,9 +463,9 @@
           "opponent": "Inter Ya Ma FC",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
+          "goals": 2,
+          "assists": 1,
+          "yellow": 1,
           "red": 0
         }
       ],
@@ -500,8 +500,8 @@
           "opponent": "Rhine Lions FC",
           "result": "8–4",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -510,7 +510,7 @@
           "opponent": "DPS Basel FC",
           "result": "9–2",
           "started": "No",
-          "goals": 0,
+          "goals": 3,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -557,8 +557,8 @@
           "opponent": "Inter Ya Ma FC",
           "result": "8–1",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
+          "goals": 3,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         }
@@ -594,7 +594,7 @@
           "opponent": "FC Max Basel",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -604,7 +604,7 @@
           "opponent": "FC Sportfreunde",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -625,7 +625,7 @@
           "result": "2–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         }
@@ -671,7 +671,7 @@
           "opponent": "DPS Basel FC",
           "result": "9–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -691,8 +691,8 @@
           "opponent": "Joga Bonito FC",
           "result": "5–8",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         }
@@ -728,8 +728,8 @@
           "opponent": "Inter Basel",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 3,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -765,7 +765,7 @@
           "opponent": "FC Sportfreunde",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -775,8 +775,8 @@
           "opponent": "Inter Ya Ma FC",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -822,7 +822,7 @@
           "opponent": "FC Sportfreunde",
           "result": "5–1",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -842,7 +842,7 @@
           "opponent": "Inter Ya Ma FC",
           "result": "3–3",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -879,7 +879,7 @@
           "opponent": "FC Baselona",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 3,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -926,7 +926,7 @@
           "opponent": "Rhine Lions FC",
           "result": "3–3",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -936,7 +936,7 @@
           "opponent": "FC Max Basel",
           "result": "1–8",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -973,7 +973,7 @@
           "opponent": "FC Max Basel",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -983,7 +983,7 @@
           "opponent": "FC Sportfreunde",
           "result": "7–0",
           "started": "No",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1040,8 +1040,8 @@
           "opponent": "DPS Basel FC",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -1050,7 +1050,7 @@
           "opponent": "Joga Bonito FC",
           "result": "2–4",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1107,8 +1107,8 @@
           "opponent": "Inter Basel",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         }
@@ -1144,7 +1144,7 @@
           "opponent": "FC Max Basel",
           "result": "2–4",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1154,8 +1154,8 @@
           "opponent": "Rhine Madrid",
           "result": "3–2",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         }
@@ -1211,8 +1211,8 @@
           "opponent": "Inter Basel",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         }
@@ -1258,7 +1258,7 @@
           "opponent": "Rhine Madrid",
           "result": "2–9",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1268,9 +1268,9 @@
           "opponent": "BG FC",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
+          "goals": 1,
+          "assists": 1,
+          "yellow": 1,
           "red": 0
         }
       ],
@@ -1305,8 +1305,8 @@
           "opponent": "Inter Ya Ma FC",
           "result": "3–3",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 2,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -1343,7 +1343,7 @@
           "result": "8–4",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -1352,7 +1352,7 @@
           "opponent": "DPS Basel FC",
           "result": "9–2",
           "started": "No",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1362,7 +1362,7 @@
           "opponent": "FC Sportfreunde",
           "result": "2–3",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1409,7 +1409,7 @@
           "opponent": "BG FC",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1419,8 +1419,8 @@
           "opponent": "DPS Basel FC",
           "result": "5–0",
           "started": "Yes",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -1466,7 +1466,7 @@
           "opponent": "FC Sportfreunde",
           "result": "5–1",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1523,7 +1523,7 @@
           "opponent": "FC Sportfreunde",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1580,7 +1580,7 @@
           "opponent": "DPS Basel FC",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1627,7 +1627,7 @@
           "opponent": "Rhine Madrid",
           "result": "8–5",
           "started": "No",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1674,7 +1674,7 @@
           "opponent": "Rhine Madrid",
           "result": "3–2",
           "started": "No",
-          "goals": 0,
+          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1712,7 +1712,7 @@
           "result": "4–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -1722,7 +1722,7 @@
           "result": "8–1",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -1731,7 +1731,7 @@
           "opponent": "BG FC",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1779,7 +1779,7 @@
           "result": "2–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -1788,7 +1788,7 @@
           "opponent": "FC Sportfreunde",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1845,8 +1845,8 @@
           "opponent": "Rhine Madrid",
           "result": "4–8",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
+          "goals": 1,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -1893,7 +1893,7 @@
           "result": "5–0",
           "started": "No",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -1902,7 +1902,7 @@
           "opponent": "Inter Ya Ma FC",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1940,7 +1940,7 @@
           "result": "8–4",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -1949,7 +1949,7 @@
           "opponent": "Joga Bonito FC",
           "result": "5–8",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1986,7 +1986,7 @@
           "opponent": "Inter Basel",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1997,7 +1997,7 @@
           "result": "7–0",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -2043,7 +2043,7 @@
           "opponent": "Joga Bonito FC",
           "result": "2–4",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2100,7 +2100,7 @@
           "opponent": "Inter Basel",
           "result": "8–1",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2137,7 +2137,7 @@
           "opponent": "FC Baselona",
           "result": "1–8",
           "started": "No",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2174,7 +2174,7 @@
           "opponent": "DPS Basel FC",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2221,9 +2221,9 @@
           "opponent": "Rhine Madrid",
           "result": "2–9",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         }
       ],
@@ -2258,7 +2258,7 @@
           "opponent": "Inter Basel",
           "result": "2–4",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2315,7 +2315,7 @@
           "opponent": "FC Sportfreunde",
           "result": "4–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2352,7 +2352,7 @@
           "opponent": "Joga Bonito FC",
           "result": "1–8",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2409,7 +2409,7 @@
           "opponent": "DPS Basel FC",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2476,7 +2476,7 @@
           "opponent": "DPS Basel FC",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2513,7 +2513,7 @@
           "opponent": "FC Max Basel",
           "result": "2–4",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2550,7 +2550,7 @@
           "opponent": "DPS Basel FC",
           "result": "5–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2607,7 +2607,7 @@
           "opponent": "Rhine Lions FC",
           "result": "3–3",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2646,7 +2646,7 @@
           "started": "Yes",
           "goals": 0,
           "assists": 0,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         },
         {
@@ -2664,7 +2664,7 @@
           "opponent": "Joga Bonito FC",
           "result": "5–8",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2701,7 +2701,7 @@
           "opponent": "Rhine Lions FC",
           "result": "1–5",
           "started": "No",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2738,9 +2738,9 @@
           "opponent": "Inter Basel",
           "result": "2–4",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         },
         {
@@ -2805,7 +2805,7 @@
           "opponent": "FC Baselona",
           "result": "7–0",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2852,7 +2852,7 @@
           "opponent": "FC Sportfreunde",
           "result": "5–1",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2899,7 +2899,7 @@
           "opponent": "Rhine Madrid",
           "result": "4–8",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2946,7 +2946,7 @@
           "opponent": "Inter Ya Ma FC",
           "result": "1–1",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2983,7 +2983,7 @@
           "opponent": "BG FC",
           "result": "2–2",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -3020,7 +3020,7 @@
           "opponent": "Inter Basel",
           "result": "1–1",
           "started": "Yes",
-          "goals": 0,
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -3078,7 +3078,7 @@
           "result": "9–2",
           "started": "No",
           "goals": 0,
-          "assists": 0,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -3088,7 +3088,7 @@
           "result": "2–3",
           "started": "No",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3135,7 +3135,7 @@
           "result": "8–1",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -3192,7 +3192,7 @@
           "result": "8–1",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 2,
           "yellow": 0,
           "red": 0
         },
@@ -3239,7 +3239,7 @@
           "result": "4–8",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3249,7 +3249,7 @@
           "result": "5–1",
           "started": "No",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3306,7 +3306,7 @@
           "result": "7–0",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3363,7 +3363,7 @@
           "result": "1–1",
           "started": "No",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -3420,7 +3420,7 @@
           "result": "1–8",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -3467,7 +3467,7 @@
           "result": "5–1",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3534,7 +3534,7 @@
           "result": "3–3",
           "started": "No",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3581,7 +3581,7 @@
           "result": "2–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -3618,7 +3618,7 @@
           "result": "2–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -3665,7 +3665,7 @@
           "result": "3–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -3702,7 +3702,7 @@
           "result": "4–2",
           "started": "No",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3759,7 +3759,7 @@
           "result": "7–0",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -3806,7 +3806,7 @@
           "result": "7–0",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3863,7 +3863,7 @@
           "result": "7–0",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3910,7 +3910,7 @@
           "result": "2–4",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -3957,7 +3957,7 @@
           "result": "4–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -4024,7 +4024,7 @@
           "result": "5–0",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -5457,7 +5457,7 @@
           "started": "No",
           "goals": 0,
           "assists": 0,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         }
       ],
@@ -6467,8 +6467,8 @@
           "started": "Yes",
           "goals": 0,
           "assists": 0,
-          "yellow": 0,
-          "red": 0
+          "yellow": 2,
+          "red": 1
         },
         {
           "date": "14 Sep 2026",
@@ -6912,7 +6912,7 @@
           "started": "Yes",
           "goals": 0,
           "assists": 0,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         },
         {
@@ -8460,7 +8460,7 @@
           "started": "Yes",
           "goals": 0,
           "assists": 0,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         },
         {
