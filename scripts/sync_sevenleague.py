@@ -9,25 +9,31 @@ OUT="data/players.json"
 S=requests.Session()
 S.headers.update({"User-Agent":"SevenLeagueSync/1.0","Accept-Language":"en-US,en;q=0.9"})
 
-def clean(x): return re.sub(r"\s+"," ",x or "").strip()
-def num(t,*patterns):
-    for p in patterns:
-        m=re.search(p,t,re.I)
-        if m:return int(m.group(1))
+def clean(x): return re.sub(r"\\s+"," ",x or "").strip()
+def num(t,*labels):
+    for label in labels:
+        esc=re.escape(label)
+        patterns=(rf"(\\d+)\\s*{esc}",rf"{esc}\\s*(\\d+)")
+        for p in patterns:
+            m=re.search(p,t,re.I)
+            if m:
+                return int(m.group(1))
     return 0
 def get(url):
     r=S.get(url,timeout=30);r.raise_for_status();return r.text
 
-def links(html):
-    soup=BeautifulSoup(html,"html.parser"); out={}
-    for a in soup.select('a[href*="/player/"]'):
-        u=urljoin(HUB,a.get("href","")).split("#")[0]
-        if urlparse(u).netloc!="sevenleague.ch":continue
-        if "/player/" not in urlparse(u).path:continue
-        if u not in out:
-            p=a.parent
-            out[u]=clean(p.get_text(" ",strip=True) if p else "")
-    return out
+def extract_stats(text):
+    return {
+      "appearances":num(text,"Appearances","Appearance"),
+      "starts":num(text,"Starts","Start"),
+      "goals":num(text,"Goals","Goal"),
+      "assists":num(text,"Assists","Assist"),
+      "yellow":num(text,"Yellow cards","Yellow card","Yellow"),
+      "red":num(text,"Red cards","Red card","Red"),
+      "ownGoals":num(text,"Own goals","Own goal"),
+      "minutes":num(text,"Match minutes","Minutes"),
+      "mvp":num(text,"MVP awards","MVP award","MVP"),
+      "cleanSheets":num(text,"Clean sheets","Clean sheet")}
 
 def image(soup,base):
     for sel in ['meta[property="og:image"]','meta[name="twitter:image"]']:
@@ -38,22 +44,12 @@ def image(soup,base):
 def parse(u,card):
     html=get(u); soup=BeautifulSoup(html,"html.parser"); text=clean(soup.get_text(" ",strip=True))
     h=soup.find("h1"); name=clean(h.get_text(" ",strip=True) if h else "")
-    m=re.search(r"Player\\s*[·•]\\s*(.*?)\\s*[·•]\\s*Season\\s*2026/27",text,re.I)
+    m=re.search(r"Player\s*[·•]\s*(.*?)\s*[·•]\s*Season\s*2026/27",text,re.I)
     team=clean(m.group(1)) if m else ""
-    pos=re.search(r"\b(Goalkeeper|Defender|Midfielder|Forward)\\b",card,re.I)
-    ws={
-      "appearances":num(text,r"(\d+)\\s+Appearances\\b"),
-      "starts":num(text,r"(\d+)\\s+Starts\\b"),
-      "goals":num(text,r"(\d+)\\s+Goals\\b"),
-      "assists":num(text,r"(\d+)\\s+Assists\\b"),
-      "yellow":num(text,r"(\d+)\\s+Yellow cards\\b"),
-      "red":num(text,r"(\d+)\\s+Red cards\\b"),
-      "ownGoals":num(text,r"(\d+)\\s+Own goals\\b"),
-      "minutes":num(text,r"(\d+)\\s+Match minutes\\b"),
-      "mvp":num(text,r"(\d+)\\s+MVP awards\\b"),
-      "cleanSheets":num(text,r"(\d+)\\s+Clean sheets\\b")}
+    pos=re.search(r"\b(Goalkeeper|Defender|Midfielder|Forward)\b",card,re.I)
+    ws=extract_stats(text)
     ws["goalContributions"]=ws["goals"]+ws["assists"]
-    overall=num(text,r"(\d+)%overall")
+    overall=num(text,"% overall","%overall","Overall")
     ach={}
     am=re.search(r"(\d+)\\s+of\\s+(\\d+)\\s+sporting achievements unlocked",text,re.I)
     if am:ach={"unlocked":int(am.group(1)),"total":int(am.group(2))}
