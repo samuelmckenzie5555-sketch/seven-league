@@ -283,7 +283,7 @@ overview=build_overview(hub,players)
 if len(overview["standings"])<8:
     raise SystemExit(f"ABORT: standings parsing incomplete; rows={len(overview['standings'])}")
 if overview["matchCount"]<20:
-    raise SystemExit(f"ABORT: match catalog parsing incomplete; matches={overview["matchCount"]}")
+    raise SystemExit(f"ABORT: match catalog parsing incomplete; matches={overview['matchCount']}")
 with open(OVERVIEW_OUT,"w",encoding="utf-8") as f:
     json.dump(overview,f,ensure_ascii=False,indent=2)
 print("Wrote overview:",overview["matchCount"],"matches,",len(overview["standings"]),"table rows")
