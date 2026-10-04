@@ -327,6 +327,123 @@
 .ov-venue{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:12px}.ov-info{border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:11px;background:rgba(255,255,255,.025)}.ov-info b{display:block;font:800 .66rem var(--font-cyber);color:#fff;margin-bottom:4px}.ov-info span{font-size:.7rem;color:#9a9aa9}.ov-ref-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:11px}.ov-ref{padding:11px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}.ov-ref b{display:block;font-size:.7rem}.ov-ref span{display:block;color:#888895;font-size:.58rem;margin-top:4px}.ov-link{color:#fff;text-decoration:none;font:800 .62rem var(--font-cyber);border:1px solid rgba(255,255,255,.1);padding:7px 9px;border-radius:8px}.ov-empty{padding:22px;text-align:center;color:#777;font-size:.75rem}
 @media(max-width:520px){.ov-grid-3{grid-template-columns:1fr 1fr}.ov-grid-3 .ov-stat:last-child{grid-column:1/-1}.ov-topplayers{grid-template-columns:repeat(2,1fr)}.ov-topplayers .ov-player:nth-child(3){display:none}.ov-ref-list{grid-template-columns:1fr}.ov-title{font-size:1.55rem}.ov-match{grid-template-columns:48px 1fr auto}}
 
+
+/* ===== SEVEN LEAGUE 2026 PREMIUM VISUAL SYSTEM ===== */
+body{
+  background:
+    radial-gradient(ellipse 85% 38% at 50% -5%,rgba(211,47,47,.22),transparent 68%),
+    radial-gradient(ellipse 70% 42% at 100% 55%,rgba(0,243,255,.06),transparent 70%),
+    #050508;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 75%);
+}
+.sl-main-header{
+  min-height:68px;padding:9px 2px;margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+  position:relative;
+}
+.sl-main-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent-red),transparent);opacity:.8;
+}
+.sl-brand{display:flex;align-items:center;gap:9px;flex:1;justify-content:center;min-width:0}
+.sl-brand-mark{width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 0 10px rgba(211,47,47,.55))}
+.sl-brand .app-title{font-size:1.12rem;line-height:1.05;white-space:nowrap;text-shadow:none}
+.sl-brand-sub{font-size:.51rem;letter-spacing:2px;color:#72727f;text-align:center;margin-top:3px;font-weight:800}
+.sl-live-pill{
+  position:absolute;right:0;top:15px;display:flex;align-items:center;gap:5px;
+  padding:5px 7px;border-radius:999px;background:rgba(0,255,136,.06);
+  border:1px solid rgba(0,255,136,.2);font:800 .48rem var(--font-cyber);color:#9affcf;
+}
+.sl-live-pill i{width:5px;height:5px;border-radius:50%;background:#00ff88;box-shadow:0 0 8px #00ff88;animation:slLivePulse 1.5s infinite}
+@keyframes slLivePulse{50%{opacity:.35;transform:scale(.65)}}
+.ref-badge{
+  margin-bottom:10px!important;padding:7px 11px!important;border-radius:999px!important;
+  background:linear-gradient(90deg,rgba(255,215,0,.05),rgba(255,255,255,.025))!important;
+  border-color:rgba(255,215,0,.14)!important;color:#aaa!important;font-size:.64rem!important;
+}
+.ref-badge span{color:#fff}
+.tabs-nav{
+  position:sticky;top:6px;z-index:40;
+  overflow-x:auto;scrollbar-width:none;
+  background:rgba(11,11,17,.86)!important;
+  border-color:rgba(255,255,255,.10)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+}
+.tabs-nav::-webkit-scrollbar{display:none}
+.tab-button{
+  min-width:max-content;padding:9px 13px!important;border-radius:9px!important;
+  font-size:.62rem!important;letter-spacing:.5px;white-space:nowrap;
+}
+.tab-button.active{
+  background:linear-gradient(135deg,#e13a3a,#a91f1f)!important;
+  box-shadow:0 4px 18px rgba(211,47,47,.28)!important;
+}
+.overview-shell{gap:12px}
+.ov-hero{
+  min-height:188px;padding:20px!important;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(211,47,47,.34),transparent 35%),
+    radial-gradient(circle at 12% 90%,rgba(0,243,255,.10),transparent 38%),
+    linear-gradient(145deg,rgba(27,27,38,.98),rgba(7,7,11,.98))!important;
+}
+.ov-hero::before{
+  content:"7L";position:absolute;right:-6px;top:-25px;
+  font:900 9rem/1 var(--font-display);color:rgba(255,255,255,.025);
+  pointer-events:none;
+}
+.ov-kicker{color:#d0d0da!important}
+.ov-title{font-size:2.25rem!important;text-shadow:0 6px 30px rgba(0,0,0,.5)}
+.ov-title span{background:linear-gradient(90deg,#ff6b6b,#d32f2f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ov-sync{width:max-content;max-width:100%;font-size:.61rem!important}
+.ov-grid-3{gap:8px}
+.ov-stat{
+  padding:12px!important;border-radius:15px!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018))!important;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.ov-stat:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.22)}
+.ov-stat-value{font-size:1.28rem!important}
+.ov-section{
+  border-color:rgba(255,255,255,.09)!important;
+  box-shadow:0 10px 30px rgba(0,0,0,.16);
+}
+.ov-section-head{background:linear-gradient(90deg,rgba(255,255,255,.025),transparent)}
+.ov-section-title{font-size:.78rem!important}
+.ov-link{transition:.2s ease}.ov-link:hover{border-color:rgba(0,243,255,.35);color:var(--neon-cyan)}
+.ov-table tbody tr{transition:background .18s ease}
+.ov-table tbody tr:hover{background:rgba(255,255,255,.035)}
+.ov-table tbody tr:first-child{background:linear-gradient(90deg,rgba(255,215,0,.065),transparent)}
+.ov-table tbody tr:first-child .ov-rank{color:var(--accent-gold)}
+.ov-table tbody tr:nth-child(2) .ov-rank{color:#c9d0d8}
+.ov-table tbody tr:nth-child(3) .ov-rank{color:#b77a4a}
+.ov-match{transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.ov-match:hover{transform:translateX(2px);border-color:rgba(0,243,255,.22);background:rgba(0,243,255,.035)}
+.ov-player{transition:transform .2s ease,border-color .2s ease}
+.ov-player:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.25)}
+.ov-player::after{
+  content:"";position:absolute;inset:auto -30px -45px auto;width:110px;height:110px;
+  border-radius:50%;background:rgba(255,215,0,.05);filter:blur(5px);
+}
+.ov-info{transition:.18s ease}.ov-info:hover{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.04)}
+.glass-card,.history-card,.timer-card{box-shadow:0 12px 38px rgba(0,0,0,.22)}
+@media(max-width:520px){
+  body{padding:8px;padding-bottom:32px}
+  .sl-brand-mark{width:33px;height:33px}
+  .sl-brand .app-title{font-size:.94rem}
+  .sl-brand-sub{font-size:.43rem}
+  .sl-live-pill{right:2px;top:52px;font-size:.42rem}
+  .sl-main-header{padding-right:42px}
+  .tabs-nav{margin-left:-2px;margin-right:-2px}
+  .ov-hero{min-height:174px}
+  .ov-title{font-size:1.8rem!important}
+}
+
 </style>
 </head>
 <body>
@@ -370,10 +487,13 @@
 <button class="btn-danger" onclick="resetAppData()">⚠️ Limpiar Memoria App</button>
 </div>
 </div>
-<header>
-<button class="menu-btn" onclick="toggleDrawer()">☰</button>
-<div class="app-title">7L <span>SEVEN LEAGUE</span></div>
-<button class="menu-btn" onclick="replaySplash()" style="font-size: 1.2rem;" title="Ver Pantalla de Inicio">🔄</button>
+<header class="sl-main-header">
+<button class="menu-btn" onclick="toggleDrawer()" aria-label="Abrir menú">☰</button>
+<div class="sl-brand">
+  <img src="./seven-league-icon.svg?v=4" alt="" class="sl-brand-mark">
+  <div><div class="app-title">7L <span>SEVEN LEAGUE</span></div><div class="sl-brand-sub">BASEL · 2026/27</div></div>
+</div>
+<div class="sl-live-pill"><i></i> LIVE</div>
 </header>
 <div class="ref-badge">
     👨‍‍⚖️ Árbitro Oficial: <span id="refereeNameDisplay">SAMUEL MCKENZIE</span>
@@ -401,7 +521,7 @@
 </div>
 
 <!-- TAB 1: PARTIDO EN VIVO -->
-<div class="tab-content active" id="tab-partido">
+<div class="tab-content" id="tab-partido">
 <div class="scoreboard-box" id="scoreboardCard">
 <canvas id="particlesCanvas"></canvas>
 <div class="teams-vs">
