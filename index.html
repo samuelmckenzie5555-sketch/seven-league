@@ -488,9 +488,7 @@ body::before{
   <div class="sl-entry-note">El navegador requiere una interacción para iniciar audio automáticamente. La entrada manual permite activar el sonido de forma fiable en móvil y PWA.</div>
   <div class="sl-entry-status" id="slEntryStatus"></div>
 </div>
-<audio id="slEntranceAudio" preload="auto" playsinline>
-  <source src="./audio/champions-anthem.mp3" type="audio/mpeg">
-</audio>
+<div id="slEntranceAudio" aria-hidden="true"></div>
 </div>
 <!-- Drawer Menu -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
@@ -2736,8 +2734,54 @@ body::before{
 (function(){
   const splash=document.getElementById('splashScreen');
   const btn=document.getElementById('slEnterAppBtn');
-  const audio=document.getElementById('slEntranceAudio');
   const status=document.getElementById('slEntryStatus');
+
+  // Original Seven League entrance fanfare — synthesized in-browser.
+  // No external recording or copyrighted audio is used.
+  function playSevenLeagueFanfare(){
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC) throw new Error('Web Audio unavailable');
+    const ctx=new AC();
+    const master=ctx.createGain();
+    const comp=ctx.createDynamicsCompressor();
+    master.gain.setValueAtTime(0.0001,ctx.currentTime);
+    master.gain.exponentialRampToValueAtTime(0.22,ctx.currentTime+0.06);
+    master.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+4.9);
+    comp.threshold.value=-18; comp.knee.value=12; comp.ratio.value=6; comp.attack.value=.01; comp.release.value=.25;
+    master.connect(comp); comp.connect(ctx.destination);
+
+    const now=ctx.currentTime+0.04;
+    const note=(freq,start,dur,type='sawtooth',gain=.12)=>{
+      const o=ctx.createOscillator(), g=ctx.createGain();
+      o.type=type; o.frequency.setValueAtTime(freq,now+start);
+      g.gain.setValueAtTime(.0001,now+start);
+      g.gain.exponentialRampToValueAtTime(gain,now+start+.025);
+      g.gain.exponentialRampToValueAtTime(.0001,now+start+dur);
+      o.connect(g); g.connect(master); o.start(now+start); o.stop(now+start+dur+.04);
+    };
+    const chord=(freqs,start,dur,gain=.035)=>freqs.forEach(f=>note(f,start,dur,'triangle',gain));
+
+    // Grand, short, original sports-broadcast fanfare in D minor.
+    chord([146.83,220,293.66],0,1.05,.035);
+    chord([174.61,261.63,349.23],.72,1.05,.04);
+    chord([196,293.66,392],1.48,1.25,.045);
+    chord([220,329.63,440],2.35,2.35,.038);
+
+    const melody=[
+      [293.66,0,.28],[349.23,.28,.28],[392,.56,.42],
+      [440,1.04,.34],[392,1.38,.25],[349.23,1.63,.28],
+      [392,1.98,.28],[440,2.26,.42],[523.25,2.72,.82],
+      [493.88,3.58,.28],[440,3.86,.28],[523.25,4.14,.68]
+    ];
+    melody.forEach(x=>note(x[0],x[1],x[2],'square',.075));
+
+    // Low ceremonial hits.
+    note(73.42,.02,.75,'sine',.12);
+    note(73.42,1.48,.75,'sine',.11);
+    note(98,2.72,1.2,'sine',.1);
+
+    setTimeout(()=>{try{ctx.close()}catch(e){}},5500);
+  }
   if(!splash||!btn)return;
 
   function finishEntry(){
@@ -2750,15 +2794,11 @@ body::before{
     btn.textContent='ENTRANDO…';
     let played=false;
     try{
-      if(audio){
-        audio.volume=0.72;
-        await audio.play();
-        played=true;
-        status.textContent='♪ SONIDO ACTIVADO';
-        audio.addEventListener('ended',()=>{try{audio.currentTime=0;}catch(e){}},{once:true});
-      }
+      playSevenLeagueFanfare();
+      played=true;
+      status.textContent='♪ FANFARRIA 7L ACTIVADA';
     }catch(e){
-      status.textContent='Entrada sin audio · el navegador bloqueó la reproducción';
+      status.textContent='Entrada sin audio · Web Audio no disponible';
     }
     finishEntry();
     if(!played){
