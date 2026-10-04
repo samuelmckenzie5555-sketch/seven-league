@@ -314,6 +314,19 @@
     @media(max-width:600px){.match-actions-grid{grid-template-columns:1fr}.attendance-row .check-label{font-size:.98rem}}
 
 
+
+/* ================= OFFICIAL OVERVIEW ================= */
+.overview-shell{display:grid;gap:14px}
+.ov-hero{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:20px;background:radial-gradient(circle at 100% 0%,rgba(211,47,47,.28),transparent 45%),radial-gradient(circle at 0% 100%,rgba(0,243,255,.13),transparent 42%),linear-gradient(145deg,rgba(24,24,34,.96),rgba(7,7,12,.96));box-shadow:0 16px 45px rgba(0,0,0,.38)}
+.ov-kicker{font:700 .68rem var(--font-cyber);letter-spacing:2px;color:#a9a9b8;text-transform:uppercase}.ov-title{font:900 2rem var(--font-cyber);letter-spacing:1px;margin:5px 0}.ov-title span{color:var(--accent-red)}.ov-sub{color:#aaaaba;font-size:.82rem}.ov-sync{display:inline-flex;align-items:center;gap:7px;margin-top:13px;padding:7px 10px;border-radius:999px;background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.2);font-size:.68rem;color:#c8ffe6}.ov-dot{width:7px;height:7px;border-radius:50%;background:#00ff88;box-shadow:0 0 10px #00ff88}
+.ov-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.ov-stat{border:1px solid var(--card-border);border-radius:15px;padding:13px;background:rgba(255,255,255,.035);min-width:0}.ov-stat-label{font-size:.62rem;text-transform:uppercase;color:var(--text-muted);font-weight:700;letter-spacing:1px}.ov-stat-main{font:900 1rem var(--font-cyber);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ov-stat-value{font:900 1.35rem var(--font-cyber);color:var(--accent-gold);margin-top:4px}
+.ov-section{border:1px solid var(--card-border);border-radius:18px;background:rgba(16,16,24,.78);overflow:hidden}.ov-section-head{display:flex;align-items:center;justify-content:space-between;padding:15px 16px 11px;border-bottom:1px solid rgba(255,255,255,.08)}.ov-section-title{font:900 .88rem var(--font-cyber);letter-spacing:.7px}.ov-section-meta{font-size:.65rem;color:var(--text-muted)}
+.ov-table{width:100%;border-collapse:collapse;font-size:.72rem}.ov-table th{padding:9px 7px;color:#747487;text-transform:uppercase;font-size:.58rem;text-align:right;font-weight:700}.ov-table th:first-child,.ov-table th:nth-child(2){text-align:left}.ov-table td{padding:10px 7px;border-top:1px solid rgba(255,255,255,.045);text-align:right}.ov-table td:first-child,.ov-table td:nth-child(2){text-align:left}.ov-rank{width:24px;color:#6e6e7d;font-family:var(--font-cyber)}.ov-team-name{font-weight:800;max-width:145px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ov-points{font:900 .8rem var(--font-cyber);color:#fff}
+.ov-match-list{padding:8px 10px 11px;display:grid;gap:8px}.ov-match{display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:10px;padding:11px;border:1px solid rgba(255,255,255,.06);border-radius:13px;background:rgba(255,255,255,.025)}.ov-match-date{text-align:center;border-right:1px solid rgba(255,255,255,.08);padding-right:9px}.ov-match-date b{display:block;font:900 .82rem var(--font-cyber)}.ov-match-date span{font-size:.58rem;color:var(--text-muted);text-transform:uppercase}.ov-match-teams{display:grid;gap:3px;font-size:.76rem;font-weight:800}.ov-match-teams div{display:flex;justify-content:space-between;gap:7px}.ov-score{font:900 .78rem var(--font-cyber);color:var(--accent-gold)}.ov-match-time{text-align:right;font:900 .72rem var(--font-cyber);color:#fff}.ov-match-status{font-size:.55rem;color:#777;text-transform:uppercase;margin-top:3px}
+.ov-topplayers{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:11px}.ov-player{position:relative;min-height:142px;overflow:hidden;border-radius:15px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(0,0,0,.3));padding:9px}.ov-player img{position:absolute;right:-8px;bottom:-2px;width:76px;height:105px;object-fit:contain;object-position:bottom;filter:drop-shadow(0 5px 9px rgba(0,0,0,.7))}.ov-player-rank{font:900 .7rem var(--font-cyber);color:var(--accent-gold)}.ov-player-name{position:relative;z-index:2;max-width:75%;font-weight:900;font-size:.73rem;line-height:1.08;margin-top:6px}.ov-player-team{position:relative;z-index:2;color:#858595;font-size:.56rem;margin-top:4px;max-width:70%}.ov-player-value{position:relative;z-index:2;font:900 1.25rem var(--font-cyber);margin-top:12px}.ov-player-caption{position:relative;z-index:2;color:#858595;font-size:.55rem;text-transform:uppercase}
+.ov-venue{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:12px}.ov-info{border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:11px;background:rgba(255,255,255,.025)}.ov-info b{display:block;font:800 .66rem var(--font-cyber);color:#fff;margin-bottom:4px}.ov-info span{font-size:.7rem;color:#9a9aa9}.ov-ref-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:11px}.ov-ref{padding:11px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}.ov-ref b{display:block;font-size:.7rem}.ov-ref span{display:block;color:#888895;font-size:.58rem;margin-top:4px}.ov-link{color:#fff;text-decoration:none;font:800 .62rem var(--font-cyber);border:1px solid rgba(255,255,255,.1);padding:7px 9px;border-radius:8px}.ov-empty{padding:22px;text-align:center;color:#777;font-size:.75rem}
+@media(max-width:520px){.ov-grid-3{grid-template-columns:1fr 1fr}.ov-grid-3 .ov-stat:last-child{grid-column:1/-1}.ov-topplayers{grid-template-columns:repeat(2,1fr)}.ov-topplayers .ov-player:nth-child(3){display:none}.ov-ref-list{grid-template-columns:1fr}.ov-title{font-size:1.55rem}.ov-match{grid-template-columns:48px 1fr auto}}
+
 </style>
 </head>
 <body>
@@ -345,6 +358,7 @@
 <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
 <div class="drawer-menu" id="drawerMenu">
 <div class="drawer-header">7L MATCH CENTER</div>
+<div class="drawer-item" onclick="switchTabNav('tab-overview')">📊 Overview</div>
 <div class="drawer-item" onclick="switchTabNav('tab-partido')">⚽ Partido en Vivo</div>
 <div class="drawer-item" onclick="switchTabNav('tab-equipos')">🛡️ Gestión de Equipos</div>
 <div class="drawer-item" onclick="switchTabNav('tab-asistencia')">📋 Lista de Asistencia</div>
@@ -365,11 +379,27 @@
     👨‍‍⚖️ Árbitro Oficial: <span id="refereeNameDisplay">SAMUEL MCKENZIE</span>
 </div>
 <nav class="tabs-nav">
-<button class="tab-button active" id="btn-tab-partido" onclick="switchTab('tab-partido')">1. Partido</button>
+<button class="tab-button active" id="btn-tab-overview" onclick="switchTab('tab-overview')">0. Overview</button>
+<button class="tab-button" id="btn-tab-partido" onclick="switchTab('tab-partido')">1. Partido</button>
 <button class="tab-button" id="btn-tab-equipos" onclick="switchTab('tab-equipos')">2. Equipos</button>
 <button class="tab-button" id="btn-tab-asistencia" onclick="switchTab('tab-asistencia')">3. Asistencia</button>
 <button class="tab-button" id="btn-tab-historial" onclick="switchTab('tab-historial')">4. Historial</button> <button class="tab-button" id="btn-tab-jugadores" onclick="switchTab('tab-jugadores')">5. Jugadores</button>
 </nav>
+
+<!-- TAB 0: OFFICIAL OVERVIEW -->
+<div class="tab-content active" id="tab-overview">
+<div class="overview-shell">
+<section class="ov-hero"><div class="ov-kicker">Seven League · Official Competition Data</div><div class="ov-title">BASEL <span>2026/27</span></div><div class="ov-sub">Competition Overview · datos oficiales sincronizados desde Seven League</div><div class="ov-sync" id="overviewSync"><span class="ov-dot"></span><span>Sincronizando datos oficiales…</span></div></section>
+<div class="ov-grid-3" id="overviewHighlights"></div>
+<section class="ov-section"><div class="ov-section-head"><div class="ov-section-title">🏆 CLASIFICACIÓN</div><div class="ov-section-meta" id="overviewTableMeta">—</div></div><div id="overviewStandings"></div></section>
+<section class="ov-section"><div class="ov-section-head"><div class="ov-section-title">⚽ PRÓXIMOS PARTIDOS</div><a class="ov-link" href="https://sevenleague.ch/seven-league-basel-competition-hub/" target="_blank" rel="noopener">OFICIAL ↗</a></div><div class="ov-match-list" id="overviewFixtures"></div></section>
+<section class="ov-section"><div class="ov-section-head"><div class="ov-section-title">🔥 JUGADORES DESTACADOS</div><div class="ov-section-meta">ESTADÍSTICAS OFICIALES</div></div><div class="ov-topplayers" id="overviewPlayers"></div></section>
+<section class="ov-section"><div class="ov-section-head"><div class="ov-section-title">📈 ÚLTIMOS RESULTADOS</div><div class="ov-section-meta">RESULTADOS OFICIALES</div></div><div class="ov-match-list" id="overviewResults"></div></section>
+<section class="ov-section"><div class="ov-section-head"><div class="ov-section-title">🏟️ COMPETICIÓN</div><div class="ov-section-meta">LOGÍSTICA</div></div><div class="ov-venue" id="overviewVenue"></div></section>
+<section class="ov-section"><div class="ov-section-head"><div class="ov-section-title">👨‍⚖️ ÁRBITROS</div><div class="ov-section-meta">ASIGNACIONES</div></div><div class="ov-ref-list" id="overviewReferees"></div></section>
+</div>
+</div>
+
 <!-- TAB 1: PARTIDO EN VIVO -->
 <div class="tab-content active" id="tab-partido">
 <div class="scoreboard-box" id="scoreboardCard">
@@ -857,8 +887,42 @@
       render();
     }
 
+
+    // ================= OFFICIAL COMPETITION OVERVIEW =================
+    let officialOverview=null;
+    let overviewRefreshTimer=null;
+    function overviewEscape(v){return String(v==null?'':v).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]})}
+    function overviewDateParts(s){var p=String(s||'').trim().split(/\s+/);return {day:p[0]||'—',month:(p[1]||'').slice(0,3)}}
+    function overviewMatchHtml(m){
+      var d=overviewDateParts(m.date), score=m.score?(m.score.home+'–'+m.score.away):'VS', status=m.status==='full_time'?'FINAL':(m.time||'PROGRAMADO');
+      return '<a href="'+overviewEscape(m.url||'#')+'" target="_blank" rel="noopener" class="ov-match" style="text-decoration:none;color:inherit"><div class="ov-match-date"><b>'+overviewEscape(d.day)+'</b><span>'+overviewEscape(d.month)+'</span></div><div class="ov-match-teams"><div><span>'+overviewEscape(m.home)+'</span><span class="ov-score">'+(m.status==='full_time'?overviewEscape(score):'')+'</span></div><div><span>'+overviewEscape(m.away)+'</span></div></div><div class="ov-match-time"><div>'+overviewEscape(status)+'</div><div class="ov-match-status">'+overviewEscape(m.referee||'')+'</div></div></a>';
+    }
+    function renderOfficialOverview(data){
+      officialOverview=data;
+      var updated=new Date(data.updatedAt), ago=Math.max(0,Math.round((Date.now()-updated.getTime())/60000)), sync=document.getElementById('overviewSync');
+      if(sync)sync.innerHTML='<span class="ov-dot"></span><span>Datos oficiales sincronizados · '+(ago<1?'ahora':ago+' min')+' · '+(data.matchCount||0)+' partidos</span>';
+      var h=data.highlights||{},hl=document.getElementById('overviewHighlights');
+      if(hl)hl.innerHTML='<div class="ov-stat"><div class="ov-stat-label">LÍDER</div><div class="ov-stat-main">'+overviewEscape(h.leader&&h.leader.team||'—')+'</div><div class="ov-stat-value">'+overviewEscape(h.leader&&h.leader.points!=null?h.leader.points:'—')+' pts</div></div><div class="ov-stat"><div class="ov-stat-label">MEJOR ATAQUE</div><div class="ov-stat-main">'+overviewEscape(h.bestAttack&&h.bestAttack.team||'—')+'</div><div class="ov-stat-value">'+overviewEscape(h.bestAttack&&h.bestAttack.goals!=null?h.bestAttack.goals:'—')+' G</div></div><div class="ov-stat"><div class="ov-stat-label">MEJOR DEFENSA</div><div class="ov-stat-main">'+overviewEscape(h.bestDefence&&h.bestDefence.team||'—')+'</div><div class="ov-stat-value">'+overviewEscape(h.bestDefence&&h.bestDefence.goalsConceded!=null?h.bestDefence.goalsConceded:'—')+' GA</div></div>';
+      var table=data.standings||[],meta=document.getElementById('overviewTableMeta'),st=document.getElementById('overviewStandings');
+      if(meta)meta.textContent=table.length+' equipos · '+(data.season||'');
+      if(st)st.innerHTML=table.length?'<table class="ov-table"><thead><tr><th>#</th><th>Equipo</th><th>G</th><th>D</th><th>GF</th><th>GD</th><th>PTS</th></tr></thead><tbody>'+table.map(function(x){return '<tr><td class="ov-rank">'+overviewEscape(x.position)+'</td><td class="ov-team-name">'+overviewEscape(x.team)+'</td><td>'+overviewEscape(x.wins)+'</td><td>'+overviewEscape(x.draws)+'</td><td>'+overviewEscape(x.gf)+'</td><td>'+overviewEscape(x.gd>0?'+'+x.gd:x.gd)+'</td><td class="ov-points">'+overviewEscape(x.points)+'</td></tr>'}).join('')+'</tbody></table>':'<div class="ov-empty">No hay clasificación disponible.</div>';
+      var fixtures=(data.fixtures||[]).slice(0,5),fx=document.getElementById('overviewFixtures');if(fx)fx.innerHTML=fixtures.length?fixtures.map(overviewMatchHtml).join(''):'<div class="ov-empty">No hay próximos partidos asignados.</div>';
+      var players=((data.rankings||{}).goals)||[],pl=document.getElementById('overviewPlayers');
+      if(pl)pl.innerHTML=players.slice(0,3).map(function(p,i){return '<div class="ov-player"><div class="ov-player-rank">#'+(i+1)+'</div>'+(p.photo?'<img src="'+overviewEscape(p.photo)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'')+'<div class="ov-player-name">'+overviewEscape(p.name)+'</div><div class="ov-player-team">'+overviewEscape(p.team||'')+'</div><div class="ov-player-value">'+overviewEscape(p.value)+'</div><div class="ov-player-caption">GOLES · '+overviewEscape(p.apps)+' APPS</div></div>'}).join('')||'<div class="ov-empty">Sin ranking disponible.</div>';
+      var results=(data.results||[]).slice(0,6),rr=document.getElementById('overviewResults');if(rr)rr.innerHTML=results.length?results.map(overviewMatchHtml).join(''):'<div class="ov-empty">No hay resultados registrados.</div>';
+      var v=data.venue||{},venue=document.getElementById('overviewVenue');if(venue)venue.innerHTML='<div class="ov-info"><b>📍 '+overviewEscape(v.name||'Sportplatz Landauer')+'</b><span>'+overviewEscape(v.days||'Lunes, martes y jueves')+'</span></div><div class="ov-info"><b>⚽ FORMATO</b><span>'+overviewEscape(v.format||'7-a-side')+' · '+overviewEscape(v.duration||'50 minutos · 2 × 25')+'</span></div><div class="ov-info"><b>🕐 HORARIOS</b><span>'+overviewEscape(v.matchTimes||'17:00–20:00')+'</span></div><div class="ov-info"><b>🏆 COMPETICIÓN</b><span>'+overviewEscape(v.competitionFormat||'League format')+'</span></div>';
+      var refs=data.referees||[],rc=document.getElementById('overviewReferees');if(rc)rc.innerHTML=refs.length?refs.map(function(r){return '<div class="ov-ref"><b>'+overviewEscape(r.name)+'</b><span>'+overviewEscape(r.assignedMatches)+' partidos asignados</span><span>Próximo: '+overviewEscape(r.nextAssignment||'—')+'</span></div>'}).join(''):'<div class="ov-empty">Sin asignaciones.</div>';
+    }
+    async function loadOfficialOverview(){
+      var cacheKey='sl_official_overview_v1';
+      try{var cached=JSON.parse(localStorage.getItem(cacheKey)||'null');if(cached)renderOfficialOverview(cached)}catch(e){localStorage.removeItem(cacheKey)}
+      try{var response=await fetch('./data/overview.json?v='+Date.now(),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);var data=await response.json();if(!data||!Array.isArray(data.standings))throw new Error('overview inválido');localStorage.setItem(cacheKey,JSON.stringify(data));renderOfficialOverview(data)}catch(e){console.warn('[Seven League] Official overview unavailable:',e);var sync=document.getElementById('overviewSync');if(sync&&!officialOverview)sync.innerHTML='<span class="ov-dot" style="background:#ffd166"></span><span>Modo offline · esperando datos oficiales</span>'}
+      if(!overviewRefreshTimer)overviewRefreshTimer=setInterval(loadOfficialOverview,5*60*1000);
+    }
+
     function init() {
       runSplashScreen();
+      loadOfficialOverview();
       const steps = [
         ['referee', () => {
           const refInput=document.getElementById('refNameInput');
