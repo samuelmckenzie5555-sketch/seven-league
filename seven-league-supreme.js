@@ -158,12 +158,41 @@
     }
   }
 
+
+  function showMatchReport(){
+    let events=[], attendance={}, mvp='';
+    try{events=JSON.parse(localStorage.getItem(window.getStorageKey?.('ev'))||'[]')}catch(e){}
+    try{attendance=JSON.parse(localStorage.getItem(window.getStorageKey?.('att'))||'{}')}catch(e){}
+    try{mvp=JSON.parse(localStorage.getItem(window.getStorageKey?.('mvp'))||'""')}catch(e){}
+    const t1=document.getElementById('scoreTeam1')?.innerText||document.getElementById('team1Name')?.innerText||'LOCAL';
+    const t2=document.getElementById('scoreTeam2')?.innerText||document.getElementById('team2Name')?.innerText||'VISITANTE';
+    const s1=document.getElementById('score1')?.innerText||'0',s2=document.getElementById('score2')?.innerText||'0';
+    const goals=(events||[]).filter(e=>e.type==='GOL'), assists=(events||[]).filter(e=>e.type==='A'||e.assist);
+    document.getElementById('slMatchReport')?.remove();
+    const o=document.createElement('div');o.id='slMatchReport';
+    const attendanceCount=Object.values(attendance||{}).reduce((n,a)=>n+(Array.isArray(a)?a.length:0),0);
+    o.innerHTML='<div class="sl-report-backdrop"><section class="sl-report"><div class="sl-report-top"><div><span>SEVEN LEAGUE · OFFICIAL MATCH REPORT</span><h2>FIN DE PARTIDO</h2></div><button id="slReportClose">×</button></div><div class="sl-report-score"><div><small>'+esc(t1)+'</small><b>'+esc(s1)+'</b></div><div class="sl-report-vs">FULL TIME</div><div><small>'+esc(t2)+'</small><b>'+esc(s2)+'</b></div></div><div class="sl-report-grid"><div><span>⚽ GOLES</span><b>'+goals.length+'</b></div><div><span>👟 ASISTENCIAS</span><b>'+assists.length+'</b></div><div><span>🏅 MVP</span><b>'+esc(mvp||'POR DEFINIR')+'</b></div><div><span>👥 ASISTENCIA</span><b>'+attendanceCount+'</b></div></div><div class="sl-report-events"><h3>MOMENTOS CLAVE</h3>'+(goals.length?goals.map(e=>'<div><strong>'+esc(e.minute||'—')+"'"+'</strong><span>⚽ '+esc(e.player||'Jugador')+(e.assist?' · 👟 '+esc(e.assist):'')+'</span></div>').join(''):'<p>Sin goles registrados.</p>')+'</div><div class="sl-report-actions"><button id="slReportShare">COMPARTIR ACTA</button><button id="slReportArchive">IR AL HISTORIAL</button></div></section></div>';
+    document.body.appendChild(o);
+    o.querySelector('#slReportClose').onclick=()=>o.remove();
+    o.querySelector('#slReportArchive').onclick=()=>{o.remove();window.switchTab?.('tab-historial')};
+    o.querySelector('#slReportShare').onclick=async()=>{const txt='🏁 SEVEN LEAGUE · FIN DE PARTIDO\n'+t1+' '+s1+' - '+s2+' '+t2+'\n⚽ Goles: '+goals.length+'\n👟 Asistencias: '+assists.length+'\n🏅 MVP: '+(mvp||'Por definir');try{await navigator.clipboard.writeText(txt);alert('✅ Acta copiada al portapapeles.')}catch(e){alert(txt)}};
+  }
+
+  function enhancePostMatch(){
+    if(window.__slSupremePostMatch)return;
+    window.__slSupremePostMatch=true;
+    if(typeof window.finishMatch==='function'){
+      const original=window.finishMatch;
+      window.finishMatch=function(){const out=original.apply(this,arguments);setTimeout(showMatchReport,180);return out};
+    }
+  }
+
   function boot(){
     try{window.officialOverview=JSON.parse(localStorage.getItem('sl_official_overview_v1')||'null')}catch(e){}
     autoEntry();
     // Prime the browser audio engine after the first interaction without showing a button.
     document.addEventListener('pointerdown',()=>{try{if(window.AudioContext||window.webkitAudioContext){const A=window.AudioContext||window.webkitAudioContext; const x=new A(); if(x.state==='suspended')x.resume(); setTimeout(()=>x.close(),250)}}catch(e){}},{once:true,passive:true});
-    const hook=()=>{renderSupreme(); enhancePlayerCard(); enhanceMatchCenter();};
+    const hook=()=>{renderSupreme(); enhancePlayerCard(); enhanceMatchCenter(); enhancePostMatch();};
     let n=0; const timer=setInterval(()=>{hook(); if(window.officialOverview||++n>20)clearInterval(timer)},500);
     window.addEventListener('sl:overview-updated',hook);
     const observer=new MutationObserver(()=>{if(window.officialOverview)hook()});
