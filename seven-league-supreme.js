@@ -65,7 +65,8 @@
     .sl-live-match-badge{display:flex;justify-content:space-between;align-items:center;margin:-4px 0 12px;padding:7px 10px;border-radius:9px;background:rgba(255,255,255,.035);font:800 .5rem var(--font-cyber);letter-spacing:1px;color:#aaa}.sl-live-match-badge i{width:7px;height:7px;border-radius:50%;background:#ff3030;box-shadow:0 0 10px #ff3030;animation:slPulse 1s infinite}.sl-live-match-badge span{color:#ff7777}@keyframes slPulse{50%{opacity:.35;transform:scale(.75)}}
     .sl-matchline{display:flex;justify-content:space-between;color:#777;font:800 .5rem var(--font-cyber);letter-spacing:1px;margin-bottom:7px}.sl-matchline b{color:var(--accent-gold)}
     @media(max-width:600px){.sl-elite-card-main{grid-template-columns:.9fr 1fr}.sl-elite-player-photo{height:210px}.sl-elite-ovr{font-size:3rem}.sl-elite-info h2{font-size:.92rem}.sl-elite-season span{font-size:.36rem}}
-`;\n  document.head.appendChild(css);
+`;
+  document.head.appendChild(css);
 
   function playFanfare(){
     const AC=window.AudioContext||window.webkitAudioContext;
