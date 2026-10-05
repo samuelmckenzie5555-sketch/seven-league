@@ -112,6 +112,7 @@
   }
 
   function boot(){
+    try{window.officialOverview=JSON.parse(localStorage.getItem('sl_official_overview_v1')||'null')}catch(e){}
     autoEntry();
     const hook=()=>renderSupreme();
     let n=0; const timer=setInterval(()=>{hook(); if(window.officialOverview||++n>20)clearInterval(timer)},500);
