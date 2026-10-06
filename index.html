@@ -1825,6 +1825,15 @@ body::before{
       link.click();
     }
 
+    function getCurrentAttendanceActa() {
+      try {
+        const raw = localStorage.getItem(getStorageKey('attendance_acta'));
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
     function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal, attendanceActa = null) {
       let text = `📋 *SEVEN LEAGUE - ACTA OFICIAL DE PARTIDO*\n`;
       text += `👨‍⚖️ *Árbitro:* ${referee}\n`;
@@ -1843,15 +1852,10 @@ body::before{
 
       if (mvpVal) text += `\n⭐ *MVP DEL PARTIDO:* ${mvpVal}\n`;
 
-      // Al compartir el acta de incidencias, adjuntamos automáticamente
-      // la última acta de asistencia archivada para este mismo partido.
-      let acta = attendanceActa;
-      if (!acta) {
-        try {
-          const raw = localStorage.getItem(getStorageKey('attendance_acta'));
-          if (raw) acta = JSON.parse(raw);
-        } catch (e) {}
-      }
+      // El acta de asistencia se añade únicamente cuando el llamador
+      // la entrega explícitamente. Así los partidos históricos no reciben
+      // accidentalmente la asistencia del partido actual.
+      const acta = attendanceActa;
 
       if (acta && ((acta.team1 && acta.team1.players) || (acta.team2 && acta.team2.players))) {
         text += `\n-----------------------------------\n`;
@@ -1882,7 +1886,7 @@ body::before{
       const s1 = document.getElementById('score1').innerText;
       const s2 = document.getElementById('score2').innerText;
 
-      const summaryText = generateSummaryText(t1, t2, s1, s2, refereeName, events, selectedMVP, JSON.parse(JSON.stringify(JSON.parse(localStorage.getItem(getStorageKey('attendance_acta')) || 'null'))));
+      const summaryText = generateSummaryText(t1, t2, s1, s2, refereeName, events, selectedMVP, getCurrentAttendanceActa());
 
       navigator.clipboard.writeText(summaryText);
       alert("✅ ¡Acta oficial en texto copiada al portapapeles!");
