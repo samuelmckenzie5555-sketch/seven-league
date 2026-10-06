@@ -4,8 +4,8 @@
   "season": "2026-27",
   "count": 201,
   "photos": 113,
-  "statful": 179,
-  "updatedAt": "2026-10-06T20:57:27.083109+00:00",
+  "statful": 181,
+  "updatedAt": "2026-10-06T21:06:41.845230+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -7394,7 +7394,7 @@
       "webUrl": "https://sevenleague.ch/player/karim-zahra/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 1,
+        "appearances": 2,
         "starts": 1,
         "goals": 0,
         "assists": 0,
@@ -7406,12 +7406,22 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 2,
+      "overall": 3,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "6 Oct 2026",
+          "opponent": "BG FC",
+          "result": "Scheduled",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "1 Oct 2026",
           "opponent": "DPS Basel FC",
@@ -7814,7 +7824,7 @@
       "webUrl": "https://sevenleague.ch/player/louis-vanoise/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Louis-Vanoise-BG-FC.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
@@ -7826,12 +7836,23 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 1,
+      "overall": 2,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
-      "matchLog": [],
+      "matchLog": [
+        {
+          "date": "6 Oct 2026",
+          "opponent": "Inter Basel",
+          "result": "Scheduled",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
@@ -8132,24 +8153,34 @@
       "webUrl": "https://sevenleague.ch/player/marvin-meier/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Marvin-Inter-Basel.png",
       "webStats": {
-        "appearances": 3,
+        "appearances": 4,
         "starts": 1,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 150,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 3,
+      "overall": 4,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "6 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "28 Sep 2026",
           "opponent": "Joga Bonito FC",
@@ -8432,24 +8463,34 @@
       "webUrl": "https://sevenleague.ch/player/micha-gelencser/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Micha-Inter-Basel.png",
       "webStats": {
-        "appearances": 2,
+        "appearances": 3,
         "starts": 2,
-        "goals": 0,
+        "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 100,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 2,
+      "overall": 7,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "6 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–5",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "22 Sep 2026",
           "opponent": "Inter Ya Ma FC",
@@ -9307,24 +9348,34 @@
       "webUrl": "https://sevenleague.ch/player/romain-de-guillebon/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Romain-de-Guillebon-BG-FC.png",
       "webStats": {
-        "appearances": 4,
+        "appearances": 5,
         "starts": 2,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 200,
+        "minutes": 250,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 5,
+      "overall": 6,
       "achievements": {
-        "unlocked": 0,
+        "unlocked": 1,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "6 Oct 2026",
+          "opponent": "Inter Basel",
+          "result": "5–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "1 Oct 2026",
           "opponent": "FC Max Basel",
@@ -9507,24 +9558,35 @@
       "webUrl": "https://sevenleague.ch/player/severin-hauser/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
-        "goalContributions": 0
+        "goalContributions": 1
       },
-      "overall": 0,
+      "overall": 3,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
-      "matchLog": [],
+      "matchLog": [
+        {
+          "date": "6 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },

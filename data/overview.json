@@ -2,7 +2,7 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "updatedAt": "2026-10-06T20:57:55.232164+00:00",
+  "updatedAt": "2026-10-06T21:07:08.560145+00:00",
   "standings": [
     {
       "position": 1,
@@ -136,18 +136,6 @@
     }
   ],
   "fixtures": [
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2570&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Inter Basel",
-      "away": "BG FC",
-      "date": "6 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 4",
-      "status": "scheduled",
-      "score": null,
-      "referee": "Cesar Galera",
-      "venue": "Sportplatz Landauer"
-    },
     {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2563&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "FC Baselona",
@@ -403,6 +391,21 @@
   ],
   "results": [
     {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2570&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "Inter Basel",
+      "away": "BG FC",
+      "date": "6 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 4",
+      "status": "full_time",
+      "score": {
+        "home": 2,
+        "away": 5
+      },
+      "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2569&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "FC Sportfreunde",
       "away": "FC Baselona",
@@ -565,21 +568,6 @@
         "away": 5
       },
       "referee": "",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2558&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Joga Bonito FC",
-      "away": "FC Baselona",
-      "date": "24 September 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 2",
-      "status": "full_time",
-      "score": {
-        "home": 8,
-        "away": 1
-      },
-      "referee": "Fabio Paonessa",
       "venue": "Sportplatz Landauer"
     }
   ],
@@ -936,8 +924,11 @@
       "date": "6 October 2026",
       "time": "6:00 pm",
       "matchday": "Matchday 4",
-      "status": "scheduled",
-      "score": null,
+      "status": "full_time",
+      "score": {
+        "home": 2,
+        "away": 5
+      },
       "referee": "Cesar Galera",
       "venue": "Sportplatz Landauer"
     },
@@ -1484,7 +1475,7 @@
     {
       "name": "Cesar Galera",
       "assignedMatches": 14,
-      "nextAssignment": "6 October 2026"
+      "nextAssignment": "13 October 2026"
     },
     {
       "name": "Fabio Paonessa",
