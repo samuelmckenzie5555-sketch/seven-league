@@ -2651,7 +2651,7 @@ body::before{
       const t2 = teams[currentTeam2Id]?.name || 'VISITANTE';
       const s1 = document.getElementById('score1')?.innerText || '0';
       const s2 = document.getElementById('score2')?.innerText || '0';
-      const text = generateSummaryText(t1,t2,s1,s2,refereeName,events,selectedMVP, JSON.parse(JSON.stringify(JSON.parse(localStorage.getItem(getStorageKey('attendance_acta')) || 'null'))));
+      const text = generateSummaryText(t1,t2,s1,s2,refereeName,events,selectedMVP,getCurrentAttendanceActa());
       try {
         if (navigator.share) await navigator.share({title:`Seven League | ${t1} vs ${t2}`, text});
         else { await navigator.clipboard.writeText(text); alert('✅ Acta copiada. Tu navegador no admite compartir directamente.'); }
