@@ -1661,110 +1661,40 @@ body::before{
 
     function generateFutMvpCard() {
       triggerHaptic();
-      const canvas = document.getElementById('futCanvas');
-      const ctx = canvas.getContext('2d');
-
-      const width = canvas.width = 450;
-      const height = canvas.height = 650;
-
-      const bgGrad = ctx.createRadialGradient(225, 200, 10, 225, 325, 400);
-      bgGrad.addColorStop(0, '#2a1a08');
-      bgGrad.addColorStop(0.5, '#120c02');
-      bgGrad.addColorStop(1, '#050508');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.strokeStyle = 'rgba(255, 215, 0, 0.04)';
-      ctx.lineWidth = 1;
-      for (let x = 0; x < width; x += 30) {
-        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
-      }
-      for (let y = 0; y < height; y += 30) {
-        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
-      }
-
-      ctx.strokeStyle = '#ffd700';
-      ctx.lineWidth = 6;
-      ctx.shadowColor = '#ffd700';
-      ctx.shadowBlur = 20;
-      ctx.strokeRect(18, 18, width - 36, height - 36);
-
-      ctx.shadowBlur = 0;
-      ctx.strokeStyle = '#00f3ff';
-      ctx.lineWidth = 2;
-      ctx.strokeRect(26, 26, width - 52, height - 52);
-
-      ctx.fillStyle = '#ffd700';
-      ctx.font = '900 28px Orbitron';
-      ctx.textAlign = 'center';
-      ctx.shadowColor = '#ffd700';
-      ctx.shadowBlur = 15;
-      ctx.fillText('SEVEN LEAGUE MVP', width / 2, 70);
-
-      ctx.font = '900 95px Orbitron';
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = '#00f3ff';
-      ctx.shadowBlur = 25;
-      ctx.fillText('99', width / 2, 175);
-
-      ctx.font = '700 18px Orbitron';
-      ctx.fillStyle = '#ffd700';
-      ctx.shadowBlur = 5;
-      ctx.fillText('PLAYER OF THE MATCH', width / 2, 205);
-
-      ctx.strokeStyle = 'rgba(255,255,255,0.2)';
-      ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.moveTo(50, 225); ctx.lineTo(width - 50, 225); ctx.stroke();
-
-      const mvpClean = selectedMVP ? selectedMVP.split('(')[0].trim() : 'JUGADOR STRIKER';
-      ctx.font = '900 32px Orbitron';
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = '#ffffff';
-      ctx.shadowBlur = 10;
-      ctx.fillText(mvpClean.toUpperCase(), width / 2, 275);
-
-      const mvpEvents = events.filter(e => e.player && e.player.toLowerCase() === mvpClean.toLowerCase());
-      
-      ctx.font = '700 16px Rajdhani';
-      ctx.fillStyle = '#00f3ff';
-      ctx.shadowBlur = 0;
-      ctx.fillText('ESTADÍSTICAS E INCIDENCIAS EN EL PARTIDO:', width / 2, 320);
-
-      let startY = 355;
-      if (mvpEvents.length === 0) {
-        ctx.font = '600 18px Rajdhani';
-        ctx.fillStyle = '#aaaaaa';
-        ctx.fillText('⭐ Rendimiento Táctico Destacado (MVP)', width / 2, startY);
-      } else {
-        mvpEvents.forEach(e => {
-          ctx.font = '700 20px Rajdhani';
-          ctx.fillStyle = e.type === 'GOL' ? '#00ff88' : e.type === 'A' ? '#ffea00' : '#ff1744';
-          const details = e.type === 'GOL' ? (e.assist ? `⚽ GOL a los ${e.minute}' (${e.period}) - Asist: ${e.assist}` : `⚽ GOL a los ${e.minute}' (${e.period})`) : `🟨 Tarjeta ${e.type} a los ${e.minute}' (${e.period})`;
-          ctx.fillText(details, width / 2, startY);
-          startY += 32;
-        });
-      }
-
-      const s1 = document.getElementById('score1').innerText;
-      const s2 = document.getElementById('score2').innerText;
-      const t1Name = teams[currentTeam1Id].name;
-      const t2Name = teams[currentTeam2Id].name;
-
-      ctx.fillStyle = 'rgba(0,0,0,0.6)';
-      ctx.fillRect(40, height - 165, width - 80, 110);
-      ctx.strokeStyle = 'rgba(255,215,0,0.4)';
-      ctx.strokeRect(40, height - 165, width - 80, 110);
-
-      ctx.font = '700 16px Orbitron';
-      ctx.fillStyle = '#ffd700';
-      ctx.fillText(`${t1Name}  ${s1} - ${s2}  ${t2Name}`, width / 2, height - 130);
-
-      ctx.font = '600 16px Rajdhani';
-      ctx.fillStyle = '#dddddd';
-      ctx.fillText(`👨‍⚖️ Árbitro Oficial: ${refereeName}`, width / 2, height - 95);
-      ctx.fillText(`📅 ${new Date().toLocaleDateString()} | Seven League Official`, width / 2, height - 70);
-
-      document.getElementById('futModal').classList.add('active');
+      const canvas=document.getElementById('futCanvas'),ctx=canvas.getContext('2d');
+      const width=canvas.width=450,height=canvas.height=650;
+      const bgGrad=ctx.createRadialGradient(225,200,10,225,325,400);
+      bgGrad.addColorStop(0,'#2a1a08');bgGrad.addColorStop(.5,'#120c02');bgGrad.addColorStop(1,'#050508');
+      ctx.fillStyle=bgGrad;ctx.fillRect(0,0,width,height);
+      ctx.strokeStyle='#ffd700';ctx.lineWidth=6;ctx.shadowColor='#ffd700';ctx.shadowBlur=20;ctx.strokeRect(18,18,width-36,height-36);
+      ctx.shadowBlur=0;ctx.strokeStyle='#00f3ff';ctx.lineWidth=2;ctx.strokeRect(26,26,width-52,height-52);
+      ctx.fillStyle='#ffd700';ctx.font='900 28px Orbitron';ctx.textAlign='center';ctx.shadowColor='#ffd700';ctx.shadowBlur=15;ctx.fillText('SEVEN LEAGUE MVP',width/2,70);
+      ctx.font='900 95px Orbitron';ctx.fillStyle='#fff';ctx.shadowColor='#00f3ff';ctx.shadowBlur=25;ctx.fillText('99',width/2,175);
+      ctx.font='700 18px Orbitron';ctx.fillStyle='#ffd700';ctx.shadowBlur=5;ctx.fillText('PLAYER OF THE MATCH',width/2,205);
+      const mvpClean=selectedMVP?selectedMVP.split('(')[0].trim():'JUGADOR STRIKER';
+      ctx.font='900 30px Orbitron';ctx.fillStyle='#fff';ctx.shadowColor='#fff';ctx.shadowBlur=10;ctx.fillText(mvpClean.toUpperCase(),width/2,265);
+      const norm=s=>normalizePlayerName(s||'');
+      const mvpPlayer=Object.values(playerProfiles||{}).find(p=>norm(p.name)===norm(mvpClean));
+      const photo=mvpPlayer&&mvpPlayer.photo?mvpPlayer.photo:'';
+      const drawRest=()=>{
+        const mvpEvents=events.filter(e=>e.player&&norm(e.player)===norm(mvpClean));
+        ctx.font='700 15px Rajdhani';ctx.fillStyle='#00f3ff';ctx.shadowBlur=0;ctx.fillText('ESTADÍSTICAS E INCIDENCIAS EN EL PARTIDO:',width/2,475);
+        let y=505;
+        if(!mvpEvents.length){ctx.font='600 16px Rajdhani';ctx.fillStyle='#aaa';ctx.fillText('⭐ Rendimiento Táctico Destacado (MVP)',width/2,y);}
+        else mvpEvents.slice(0,4).forEach(e=>{ctx.font='700 15px Rajdhani';ctx.fillStyle=e.type==='GOL'?'#00ff88':e.type==='A'?'#ffea00':'#ff1744';ctx.fillText((e.type==='GOL'?'⚽ GOL ':e.type==='A'?'👟 ASISTENCIA ':'🟨/🟥 ')+(e.minute||'—')+\"'\",width/2,y);y+=24;});
+        const s1=document.getElementById('score1').innerText,s2=document.getElementById('score2').innerText,t1=teams[currentTeam1Id].name,t2=teams[currentTeam2Id].name;
+        ctx.fillStyle='rgba(0,0,0,.65)';ctx.fillRect(40,height-88,width-80,52);ctx.font='700 14px Orbitron';ctx.fillStyle='#ffd700';ctx.fillText(t1+'  '+s1+' - '+s2+'  '+t2,width/2,height-61);
+        ctx.font='600 12px Rajdhani';ctx.fillStyle='#ddd';ctx.fillText(new Date().toLocaleDateString()+' · Seven League Official',width/2,height-42);
+        document.getElementById('futModal').classList.add('active');
+      };
+      if(photo){
+        const img=new Image();img.crossOrigin='anonymous';
+        img.onload=()=>{
+          const bx=65,by=285,bw=320,bh=175,scale=Math.min(bw/img.naturalWidth,bh/img.naturalHeight),iw=img.naturalWidth*scale,ih=img.naturalHeight*scale;
+          ctx.save();ctx.shadowColor='#000';ctx.shadowBlur=18;ctx.drawImage(img,bx+(bw-iw)/2,by+(bh-ih)/2,iw,ih);ctx.restore();drawRest();
+        };
+        img.onerror=()=>drawRest();img.src=photo;
+      }else drawRest();
     }
 
     function generateMatchGraphicCard() {
