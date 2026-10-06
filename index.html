@@ -1360,6 +1360,7 @@ body::before{
       } else {
         timerRunning = true;
         startTime = Date.now();
+        archiveAttendanceActa('inicio del partido');
         document.getElementById('btnStart').innerText = '⏸ Pausa';
         clearInterval(timerInterval);
         timerInterval = setInterval(updateTimerClock, 250);
@@ -1446,6 +1447,16 @@ body::before{
       });
     }
 
+    function archiveAttendanceActa(reason='actualización') {
+      try {
+        const t1=teams[currentTeam1Id], t2=teams[currentTeam2Id]; if(!t1||!t2)return;
+        const acta={schemaVersion:1,updatedAt:new Date().toISOString(),reason,matchStatus,
+          team1:{id:currentTeam1Id,name:t1.name,players:[...(attendance[currentTeam1Id]||[])]},
+          team2:{id:currentTeam2Id,name:t2.name,players:[...(attendance[currentTeam2Id]||[])]}};
+        localStorage.setItem(getStorageKey('attendance_acta'),JSON.stringify(acta));
+      }catch(e){console.warn('[Seven League] No se pudo guardar el acta de asistencia',e)}
+    }
+
     function toggleAttendance(teamId, player) {
       triggerHaptic();
       if (matchStatus === 'finished' || matchStatus === 'archived') return alert('🏁 El partido ya está finalizado. La asistencia se conserva en el acta.');
@@ -1459,6 +1470,7 @@ body::before{
       }
       
       saveAllData();
+      archiveAttendanceActa('cambio de asistencia durante el partido');
       updatePlayerDropdowns();
       populateMVPSelect();
     }
