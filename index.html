@@ -1825,7 +1825,7 @@ body::before{
       link.click();
     }
 
-    function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal) {
+    function generateSummaryText(t1Name, t2Name, score1, score2, referee, evtsList, mvpVal, attendanceActa = null) {
       let text = `📋 *SEVEN LEAGUE - ACTA OFICIAL DE PARTIDO*\n`;
       text += `👨‍⚖️ *Árbitro:* ${referee}\n`;
       text += `⚽ *${t1Name} [ ${score1} - ${score2} ] ${t2Name}*\n`;
@@ -1842,6 +1842,36 @@ body::before{
       }
 
       if (mvpVal) text += `\n⭐ *MVP DEL PARTIDO:* ${mvpVal}\n`;
+
+      // Al compartir el acta de incidencias, adjuntamos automáticamente
+      // la última acta de asistencia archivada para este mismo partido.
+      let acta = attendanceActa;
+      if (!acta) {
+        try {
+          const raw = localStorage.getItem(getStorageKey('attendance_acta'));
+          if (raw) acta = JSON.parse(raw);
+        } catch (e) {}
+      }
+
+      if (acta && ((acta.team1 && acta.team1.players) || (acta.team2 && acta.team2.players))) {
+        text += `\n-----------------------------------\n`;
+        text += `📋 *ACTA DE ASISTENCIA*\n`;
+        text += `🕒 Actualizada: ${acta.updatedAt ? new Date(acta.updatedAt).toLocaleString() : new Date().toLocaleString()}\n\n`;
+
+        [acta.team1, acta.team2].filter(Boolean).forEach(team => {
+          const present = Array.isArray(team.players) ? team.players : [];
+          const teamObj = teams[team.id];
+          const allPlayers = teamObj?.players || [];
+          const absent = allPlayers.filter(p => !present.includes(p));
+
+          text += `🛡️ *${team.name}*\n`;
+          text += `✅ *Asistentes (${present.length}):*\n`;
+          text += present.length ? present.map(p => `  • ${p}`).join('\n') + '\n' : `  - Ninguno\n`;
+          text += `❌ *Ausentes (${absent.length}):*\n`;
+          text += absent.length ? absent.map(p => `  • ${p}`).join('\n') + '\n\n` : `  - Ninguno (Plantel completo)\n\n`;
+        });
+      }
+
       return text;
     }
 
@@ -1852,7 +1882,7 @@ body::before{
       const s1 = document.getElementById('score1').innerText;
       const s2 = document.getElementById('score2').innerText;
 
-      const summaryText = generateSummaryText(t1, t2, s1, s2, refereeName, events, selectedMVP);
+      const summaryText = generateSummaryText(t1, t2, s1, s2, refereeName, events, selectedMVP, JSON.parse(JSON.stringify(JSON.parse(localStorage.getItem(getStorageKey('attendance_acta')) || 'null'))));
 
       navigator.clipboard.writeText(summaryText);
       alert("✅ ¡Acta oficial en texto copiada al portapapeles!");
@@ -1941,7 +1971,7 @@ body::before{
       const s1Val = document.getElementById('score1').innerText;
       const s2Val = document.getElementById('score2').innerText;
 
-      const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP);
+      const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP, JSON.parse(JSON.stringify(JSON.parse(localStorage.getItem(getStorageKey('attendance_acta')) || 'null'))));
 
       createRecoverySnapshot(false);
       const matchData = {
@@ -2617,7 +2647,7 @@ body::before{
       const t2 = teams[currentTeam2Id]?.name || 'VISITANTE';
       const s1 = document.getElementById('score1')?.innerText || '0';
       const s2 = document.getElementById('score2')?.innerText || '0';
-      const text = generateSummaryText(t1,t2,s1,s2,refereeName,events,selectedMVP);
+      const text = generateSummaryText(t1,t2,s1,s2,refereeName,events,selectedMVP, JSON.parse(JSON.stringify(JSON.parse(localStorage.getItem(getStorageKey('attendance_acta')) || 'null'))));
       try {
         if (navigator.share) await navigator.share({title:`Seven League | ${t1} vs ${t2}`, text});
         else { await navigator.clipboard.writeText(text); alert('✅ Acta copiada. Tu navegador no admite compartir directamente.'); }
