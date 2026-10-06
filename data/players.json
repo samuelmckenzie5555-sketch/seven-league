@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 200,
+  "count": 201,
   "photos": 113,
   "statful": 179,
-  "updatedAt": "2026-10-06T20:42:50.335804+00:00",
+  "updatedAt": "2026-10-06T20:57:27.083109+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -5402,6 +5402,35 @@
           "red": 0
         }
       ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "chamo",
+      "name": "Chamo",
+      "teamName": "Inter Basel",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/chamo/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 0,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
