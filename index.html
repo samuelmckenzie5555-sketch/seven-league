@@ -1872,7 +1872,7 @@ body::before{
           text += `✅ *Asistentes (${present.length}):*\n`;
           text += present.length ? present.map(p => `  • ${p}`).join('\n') + '\n' : `  - Ninguno\n`;
           text += `❌ *Ausentes (${absent.length}):*\n`;
-          text += absent.length ? absent.map(p => `  • ${p}`).join('\n') + '\n\n` : `  - Ninguno (Plantel completo)\n\n`;
+          text += absent.length ? absent.map(p => `  • ${p}`).join('\n') + '\n\n' : `  - Ninguno (Plantel completo)\n\n`;
         });
       }
 
@@ -1975,7 +1975,7 @@ body::before{
       const s1Val = document.getElementById('score1').innerText;
       const s2Val = document.getElementById('score2').innerText;
 
-      const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP, JSON.parse(JSON.stringify(JSON.parse(localStorage.getItem(getStorageKey('attendance_acta')) || 'null'))));
+      const summaryFormatted = generateSummaryText(t1Name, t2Name, s1Val, s2Val, refereeName, events, selectedMVP, getCurrentAttendanceActa());
 
       createRecoverySnapshot(false);
       const matchData = {
