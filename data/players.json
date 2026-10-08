@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 204,
+  "count": 209,
   "photos": 113,
   "statful": 185,
-  "updatedAt": "2026-10-08T05:42:56.753839+00:00",
+  "updatedAt": "2026-10-08T05:59:13.403092+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -5438,6 +5438,35 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "abdul-rahim-sami",
+      "name": "Abdul Rahim Sami",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/abdul-rahim-sami/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 0,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "alexandre-nascimento",
       "name": "Alexandre Nascimento",
       "teamName": "FC Sportfreunde",
@@ -6081,6 +6110,35 @@
       "teamName": "Inter Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/cristian-ernesto-castro/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 0,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "david-calleja-diaz",
+      "name": "David Calleja Diaz",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/david-calleja-diaz/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
         "appearances": 0,
@@ -7450,6 +7508,35 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "jamal-ibrahim",
+      "name": "Jamal Ibrahim",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/jamal-ibrahim/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 0,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "jaroslaw-strygner",
       "name": "Jaroslaw Strygner",
       "teamName": "",
@@ -8524,6 +8611,35 @@
           "red": 0
         }
       ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "mahdi-mohamed",
+      "name": "Mahdi Mohamed",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/mahdi-mohamed/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 0,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
@@ -10118,6 +10234,35 @@
           "red": 0
         }
       ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "sulaiman-alsadi",
+      "name": "Sulaiman Alsadi",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/sulaiman-alsadi/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 0,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
