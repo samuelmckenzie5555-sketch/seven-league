@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 209,
-  "photos": 115,
+  "photos": 116,
   "statful": 185,
-  "updatedAt": "2026-10-10T17:40:45.388080+00:00",
+  "updatedAt": "2026-10-10T17:54:10.838248+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -2999,7 +2999,7 @@
     },
     {
       "id": "brian-a",
-      "name": "Brian A.",
+      "name": "Brian Ashton",
       "teamName": "DPS Basel FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/brian-a/?sl_league=seven-league-basel&sl_season=2026-27",
@@ -4189,11 +4189,11 @@
     },
     {
       "id": "simon-blanche",
-      "name": "Simon Blanche",
+      "name": "Simon Blaschke",
       "teamName": "",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/simon-blanche/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Simon-Blaschke-DPS-Basel-FC.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -9293,7 +9293,7 @@
     },
     {
       "id": "noah-jose-carlos-bellakovics",
-      "name": "Noah Jose Carlos Bellakovics",
+      "name": "Noah Bellakovics",
       "teamName": "DPS Basel FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/noah-jose-carlos-bellakovics/?sl_league=seven-league-basel&sl_season=2026-27",
