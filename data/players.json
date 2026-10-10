@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 212,
-  "photos": 123,
+  "photos": 124,
   "statful": 188,
-  "updatedAt": "2026-10-10T19:54:21.519843+00:00",
+  "updatedAt": "2026-10-10T20:06:53.116074+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -2073,7 +2073,7 @@
       "teamName": "Inter Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/samy-balak/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Samy-Inter-Basel.png",
       "webStats": {
         "appearances": 2,
         "starts": 1,
