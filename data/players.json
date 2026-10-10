@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 211,
-  "photos": 122,
-  "statful": 187,
-  "updatedAt": "2026-10-10T19:27:17.536673+00:00",
+  "count": 212,
+  "photos": 123,
+  "statful": 188,
+  "updatedAt": "2026-10-10T19:40:35.053614+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -9142,6 +9142,46 @@
           "date": "5 Oct 2026",
           "opponent": "Joga Bonito FC",
           "result": "1–4",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "miguel-caballero",
+      "name": "Miguel Caballero",
+      "teamName": "FC Baselona",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/miguel-caballero/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Miguel-FC-Baselona.png",
+      "webStats": {
+        "appearances": 1,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 50,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "6 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–1",
           "started": "No",
           "goals": 0,
           "assists": 0,
