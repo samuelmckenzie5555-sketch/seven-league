@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 211,
-  "photos": 118,
+  "photos": 122,
   "statful": 187,
-  "updatedAt": "2026-10-10T19:08:46.293730+00:00",
+  "updatedAt": "2026-10-10T19:27:17.536673+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -1813,7 +1813,7 @@
       "teamName": "FC Baselona",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/francisco-yanez/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Paco-FC-Baselona.png",
       "webStats": {
         "appearances": 4,
         "starts": 2,
@@ -3143,7 +3143,7 @@
       "teamName": "FC Baselona",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/emanuele-ingenuo/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Emanuele-FC-Baselona.png",
       "webStats": {
         "appearances": 4,
         "starts": 2,
@@ -3263,7 +3263,7 @@
       "teamName": "FC Baselona",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/gaspar-riveros/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Gaspar-FC-Baselona.png",
       "webStats": {
         "appearances": 3,
         "starts": 1,
@@ -8600,7 +8600,7 @@
       "teamName": "FC Baselona",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/luis/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Luis-FC-Baselona.png",
       "webStats": {
         "appearances": 3,
         "starts": 1,
