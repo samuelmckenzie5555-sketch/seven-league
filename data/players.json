@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 209,
-  "photos": 113,
+  "photos": 115,
   "statful": 185,
-  "updatedAt": "2026-10-10T17:26:35.690484+00:00",
+  "updatedAt": "2026-10-10T17:40:45.388080+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -3593,7 +3593,7 @@
       "teamName": "Inter Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/karim-zahra/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Karim-Inter-Basel.png",
       "webStats": {
         "appearances": 2,
         "starts": 1,
@@ -4143,7 +4143,7 @@
       "teamName": "Inter Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/samuel-mckenzie/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Samuel-Inter-Basel.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Samuel-Inter-Basel-2.png",
       "webStats": {
         "appearances": 2,
         "starts": 1,
@@ -5273,7 +5273,7 @@
       "teamName": "Inter Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/severin-hauser/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Severin-Inter-Basel.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
