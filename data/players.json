@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 212,
-  "photos": 124,
+  "photos": 126,
   "statful": 188,
-  "updatedAt": "2026-10-10T20:25:18.233926+00:00",
+  "updatedAt": "2026-10-10T20:42:33.507599+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -7807,56 +7807,6 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "joao",
-      "name": "Joao",
-      "teamName": "Inter Basel",
-      "position": "Defender",
-      "webUrl": "https://sevenleague.ch/player/joao/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
-      "webStats": {
-        "appearances": 2,
-        "starts": 1,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 100,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 0
-      },
-      "overall": 2,
-      "achievements": {
-        "unlocked": 0,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "28 Sep 2026",
-          "opponent": "Joga Bonito FC",
-          "result": "2–4",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "22 Sep 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "1–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
       "id": "joao-carlos-pinto",
       "name": "5 Joao Carlos Pinto",
       "teamName": "FC Baselona",
@@ -7897,6 +7847,56 @@
           "opponent": "Inter Basel",
           "result": "8–1",
           "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "joao",
+      "name": "Joao Zavaleta",
+      "teamName": "Inter Basel",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/joao/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Joao-Inter-Basel.png",
+      "webStats": {
+        "appearances": 2,
+        "starts": 1,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 100,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "28 Sep 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "2–4",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "22 Sep 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "1–1",
+          "started": "No",
           "goals": 0,
           "assists": 0,
           "yellow": 0,
@@ -8560,7 +8560,7 @@
       "teamName": "Inter Ya Ma FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/lucas-baral/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Lucas-Inter-Ya-Ma-FC.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
