@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 216,
-  "photos": 127,
+  "photos": 132,
   "statful": 193,
-  "updatedAt": "2026-10-12T20:09:57.508969+00:00",
+  "updatedAt": "2026-10-12T20:32:28.824982+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -2023,7 +2023,7 @@
       "teamName": "FC Max Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/miguel-vidal/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Miguel-FC-Max-Basel.png",
       "webStats": {
         "appearances": 1,
         "starts": 1,
@@ -2543,7 +2543,7 @@
       "teamName": "FC Max Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/lenny-desfontaines/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Lenny-FC-Max-Basel.png",
       "webStats": {
         "appearances": 1,
         "starts": 1,
@@ -7506,7 +7506,7 @@
       "teamName": "FC Max Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/guillermo-garcia/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Guillermo-FC-Max-Basel.png",
       "webStats": {
         "appearances": 2,
         "starts": 1,
@@ -8770,7 +8770,7 @@
       "teamName": "FC Max Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/loick-faharoa/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Loick-FC-Max-Basel.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -10314,7 +10314,7 @@
       "teamName": "FC Max Basel",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/raul-bautista/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Raul-FC-Max-Basel.png",
       "webStats": {
         "appearances": 1,
         "starts": 1,
