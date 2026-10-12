@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 217,
-  "photos": 136,
+  "photos": 140,
   "statful": 194,
-  "updatedAt": "2026-10-12T21:26:47.911751+00:00",
+  "updatedAt": "2026-10-12T21:45:30.451324+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -2223,7 +2223,7 @@
       "teamName": "Rhine Lions FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nasser-mawad/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nasser-Rhine-Lions-FC.png",
       "webStats": {
         "appearances": 5,
         "starts": 2,
@@ -2583,7 +2583,7 @@
       "teamName": "Joga Bonito FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/sergio-marconi-fonseca/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Sergio-Joga-Bonito-FC.png",
       "webStats": {
         "appearances": 3,
         "starts": 0,
@@ -9683,11 +9683,11 @@
     },
     {
       "id": "nicola",
-      "name": "Nicola",
+      "name": "Nicola Di Franco",
       "teamName": "Rhine Lions FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nicola/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nicola-Rhine-Lions-FC.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -10241,11 +10241,11 @@
     },
     {
       "id": "rafael-silva",
-      "name": "Rafael Silva",
+      "name": "2 Rafael Silva",
       "teamName": "Joga Bonito FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/rafael-silva/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Rafael-Joga-Bonito-FC.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
