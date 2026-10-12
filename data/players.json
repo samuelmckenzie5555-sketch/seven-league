@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 216,
-  "photos": 132,
-  "statful": 193,
-  "updatedAt": "2026-10-12T20:50:53.443109+00:00",
+  "count": 217,
+  "photos": 136,
+  "statful": 194,
+  "updatedAt": "2026-10-12T21:09:06.991293+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -843,7 +843,7 @@
       "teamName": "Rhine Lions FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/daniel-wieland/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Daniel-Rhine-Lions-FC.png",
       "webStats": {
         "appearances": 2,
         "starts": 1,
@@ -1013,7 +1013,7 @@
       "teamName": "Rhine Madrid",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/nicolas-wehrli/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Nicolas-Rhine-Madrid-1.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nicolas-Rhine-Madrid.png",
       "webStats": {
         "appearances": 6,
         "starts": 4,
@@ -1883,7 +1883,7 @@
       "teamName": "Rhine Madrid",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/christian-schlote/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Christian-Rhine-Madrid.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Chris-Rhine-Madrid.png",
       "webStats": {
         "appearances": 5,
         "starts": 3,
@@ -2578,8 +2578,68 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "sergio-marconi-fonseca",
+      "name": "Sergio Marconi Fonseca",
+      "teamName": "Joga Bonito FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/sergio-marconi-fonseca/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 3,
+        "starts": 0,
+        "goals": 1,
+        "assists": 2,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 150,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 3
+      },
+      "overall": 23,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "12 Oct 2026",
+          "opponent": "Rhine Lions FC",
+          "result": "5–1",
+          "started": "No",
+          "goals": 1,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "5 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "4–1",
+          "started": "No",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "14 Sep 2026",
+          "opponent": "Rhine Madrid",
+          "result": "8–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "neto",
-      "name": "64 Neto",
+      "name": "64 Walter Neto",
       "teamName": "Joga Bonito FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/neto/?sl_league=seven-league-basel&sl_season=2026-27",
@@ -2640,66 +2700,6 @@
           "started": "Yes",
           "goals": 0,
           "assists": 1,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "sergio-marconi-fonseca",
-      "name": "Sergio Marconi Fonseca",
-      "teamName": "Joga Bonito FC",
-      "position": "Defender",
-      "webUrl": "https://sevenleague.ch/player/sergio-marconi-fonseca/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
-      "webStats": {
-        "appearances": 3,
-        "starts": 0,
-        "goals": 1,
-        "assists": 2,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 150,
-        "mvp": 1,
-        "cleanSheets": 0,
-        "goalContributions": 3
-      },
-      "overall": 23,
-      "achievements": {
-        "unlocked": 3,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "12 Oct 2026",
-          "opponent": "Rhine Lions FC",
-          "result": "5–1",
-          "started": "No",
-          "goals": 1,
-          "assists": 1,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "DPS Basel FC",
-          "result": "4–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 1,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "14 Sep 2026",
-          "opponent": "Rhine Madrid",
-          "result": "8–5",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
           "yellow": 0,
           "red": 0
         }
@@ -2813,7 +2813,7 @@
       "teamName": "Rhine Madrid",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/joonatan-van-eecke/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Joonatan-Rhine-Madrid-1.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Joonatan-Rhine-Madrid.png",
       "webStats": {
         "appearances": 2,
         "starts": 2,
@@ -3183,7 +3183,7 @@
       "teamName": "Rhine Madrid",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/antonio-lerma/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Antonio-Rhine-Madrid.png",
       "webStats": {
         "appearances": 2,
         "starts": 1,
@@ -3873,7 +3873,7 @@
       "teamName": "Rhine Madrid",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/khamlek-chaton/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Khamlek-Rhine-Madrid-1.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Khamlek-Rhine-Madrid.png",
       "webStats": {
         "appearances": 4,
         "starts": 4,
@@ -4253,7 +4253,7 @@
       "teamName": "Rhine Lions FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/panji-butra/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Panji-Rhine-Lions-FC.png",
       "webStats": {
         "appearances": 5,
         "starts": 3,
@@ -4593,7 +4593,7 @@
       "teamName": "Rhine Lions FC",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/xavier-plo/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Xavier-Plo.png",
       "webStats": {
         "appearances": 5,
         "starts": 1,
@@ -6340,7 +6340,7 @@
       "teamName": "Rhine Madrid",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/chris-xhaferri/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Chris-Rhine-Madrid.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Christian-Rhine-Madrid.png",
       "webStats": {
         "appearances": 3,
         "starts": 2,
@@ -9328,7 +9328,7 @@
       "teamName": "Rhine Madrid",
       "position": "Defender",
       "webUrl": "https://sevenleague.ch/player/matthias-vogler/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Matthias-Rhine-Madrid.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Matthias-Rhine-Madrid.png",
       "webStats": {
         "appearances": 3,
         "starts": 2,
@@ -9678,6 +9678,46 @@
         "total": 48
       },
       "matchLog": [],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "nicola",
+      "name": "Nicola",
+      "teamName": "Rhine Lions FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/nicola/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 1,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 50,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "12 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
