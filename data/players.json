@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 219,
+  "count": 220,
   "photos": 141,
   "statful": 196,
-  "updatedAt": "2026-10-14T13:43:54.143383+00:00",
+  "updatedAt": "2026-10-14T14:14:32.224449+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -8065,6 +8065,35 @@
           "red": 0
         }
       ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "jack-on-peng",
+      "name": "Jack On Peng",
+      "teamName": "DPS Basel FC",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/jack-on-peng/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 0,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
