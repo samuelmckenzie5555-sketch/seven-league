@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 220,
+  "count": 222,
   "photos": 141,
   "statful": 196,
-  "updatedAt": "2026-10-15T10:13:35.125320+00:00",
+  "updatedAt": "2026-10-15T10:46:13.702522+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -8994,6 +8994,35 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "leonardo-carvalho",
+      "name": "Leonardo Carvalho",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/leonardo-carvalho/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "leonardo-da-silva",
       "name": "Leonardo da Silva",
       "teamName": "Joga Bonito FC",
@@ -11243,6 +11272,35 @@
           "red": 0
         }
       ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "tariq-arnaz",
+      "name": "Tariq Arnaz",
+      "teamName": "FC Max Basel",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/tariq-arnaz/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
