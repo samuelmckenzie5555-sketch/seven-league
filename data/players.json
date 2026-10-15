@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 219,
-  "photos": 140,
-  "statful": 195,
-  "updatedAt": "2026-10-15T09:46:27.784963+00:00",
+  "count": 220,
+  "photos": 141,
+  "statful": 196,
+  "updatedAt": "2026-10-15T10:13:35.125320+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -1671,6 +1671,76 @@
           "goals": 1,
           "assists": 0,
           "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "cagatay-cinar",
+      "name": "Cagatay Cinar",
+      "teamName": "",
+      "position": "Defender",
+      "webUrl": "https://sevenleague.ch/player/cagatay-cinar/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-5.png",
+      "webStats": {
+        "appearances": 4,
+        "starts": 3,
+        "goals": 2,
+        "assists": 2,
+        "yellow": 1,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 200,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 4
+      },
+      "overall": 21,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "5 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–4",
+          "started": "No",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "1 Oct 2026",
+          "opponent": "Inter Basel",
+          "result": "2–4",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "21 Sep 2026",
+          "opponent": "Rhine Madrid",
+          "result": "2–9",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "15 Sep 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 1,
+          "yellow": 1,
           "red": 0
         }
       ],
@@ -11724,10 +11794,5 @@
       "competition": "Seven League Basel"
     }
   ],
-  "errors": [
-    {
-      "url": "https://sevenleague.ch/player/cagatay-cinar/?sl_league=seven-league-basel&sl_season=2026-27",
-      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
-    }
-  ]
+  "errors": []
 }
