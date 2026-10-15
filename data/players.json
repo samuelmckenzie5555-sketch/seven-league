@@ -5,7 +5,7 @@
   "count": 225,
   "photos": 141,
   "statful": 200,
-  "updatedAt": "2026-10-15T20:59:01.518277+00:00",
+  "updatedAt": "2026-10-15T21:22:53.189062+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -179,7 +179,7 @@
         "starts": 5,
         "goals": 6,
         "assists": 2,
-        "yellow": 1,
+        "yellow": 2,
         "red": 0,
         "ownGoals": 0,
         "minutes": 300,
@@ -200,7 +200,7 @@
           "started": "Yes",
           "goals": 2,
           "assists": 1,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         },
         {
@@ -6079,7 +6079,7 @@
         "starts": 1,
         "goals": 0,
         "assists": 1,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
         "minutes": 100,
@@ -6100,7 +6100,7 @@
           "started": "Yes",
           "goals": 0,
           "assists": 0,
-          "yellow": 0,
+          "yellow": 1,
           "red": 0
         },
         {
