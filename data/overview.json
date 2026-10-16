@@ -2,7 +2,7 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "updatedAt": "2026-10-16T21:10:41.322772+00:00",
+  "updatedAt": "2026-10-16T21:39:39.842917+00:00",
   "standings": [
     {
       "position": 1,
@@ -1149,7 +1149,7 @@
     "goals": [
       {
         "name": "Efraim Benoit Ferreira",
-        "team": "Joga Bonito FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
         "value": 23,
         "apps": 7,
@@ -1191,7 +1191,7 @@
     "assists": [
       {
         "name": "Efraim Benoit Ferreira",
-        "team": "Joga Bonito FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
         "value": 8,
         "apps": 7,
@@ -1233,7 +1233,7 @@
     "goalContributions": [
       {
         "name": "Efraim Benoit Ferreira",
-        "team": "Joga Bonito FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
         "value": 31,
         "apps": 7,
@@ -1275,7 +1275,7 @@
     "mvp": [
       {
         "name": "Efraim Benoit Ferreira",
-        "team": "Joga Bonito FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
         "value": 4,
         "apps": 7,
@@ -1333,7 +1333,7 @@
       },
       {
         "name": "Yousri Sghaier",
-        "team": "Inter Ya Ma FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
         "value": 2,
         "apps": 5,
@@ -1359,7 +1359,7 @@
     "red": [
       {
         "name": "Yousri Sghaier",
-        "team": "Inter Ya Ma FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
         "value": 1,
         "apps": 5,
@@ -1375,7 +1375,7 @@
       },
       {
         "name": "Efraim Benoit Ferreira",
-        "team": "Joga Bonito FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
         "value": 0,
         "apps": 7,
@@ -1383,7 +1383,7 @@
       },
       {
         "name": "André Filipe da Silva",
-        "team": "Joga Bonito FC",
+        "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/4dc4d421-8c84-4c64-a2ac-1215367a3186-1.png",
         "value": 0,
         "apps": 7,

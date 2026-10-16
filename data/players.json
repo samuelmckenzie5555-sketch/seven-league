@@ -3,14 +3,14 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 225,
-  "photos": 152,
+  "photos": 153,
   "statful": 203,
-  "updatedAt": "2026-10-16T21:10:12.703773+00:00",
+  "updatedAt": "2026-10-16T21:39:09.391172+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
       "name": "Efraim Benoit Ferreira",
-      "teamName": "Joga Bonito FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/efraim-benoit-ferreira/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
@@ -990,7 +990,7 @@
     {
       "id": "ricard-castells",
       "name": "Ricard Castells",
-      "teamName": "Inter Ya Ma FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/ricard-castells/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ricard-Inter-Ya-Ma-FC.png",
@@ -1760,7 +1760,7 @@
     {
       "id": "andre-filipe-da-silva",
       "name": "André Filipe da Silva",
-      "teamName": "Joga Bonito FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/andre-filipe-da-silva/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/4dc4d421-8c84-4c64-a2ac-1215367a3186-1.png",
@@ -1774,10 +1774,10 @@
         "ownGoals": 0,
         "minutes": 350,
         "mvp": 0,
-        "cleanSheets": 0,
+        "cleanSheets": 1,
         "goalContributions": 5
       },
-      "overall": 24,
+      "overall": 25,
       "achievements": {
         "unlocked": 4,
         "total": 48
@@ -3530,7 +3530,7 @@
     {
       "id": "yousri-sghaier",
       "name": "Yousri Sghaier",
-      "teamName": "Inter Ya Ma FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/yousri-sghaier/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
@@ -4113,7 +4113,7 @@
       "teamName": "FC Sportfreunde",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/hocine-meziane/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Meziane-FC-Sportfreunde.png",
       "webStats": {
         "appearances": 1,
         "starts": 1,
@@ -4990,7 +4990,7 @@
     {
       "id": "guilherme",
       "name": "3 Guilherme Lucas",
-      "teamName": "Joga Bonito FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/guilherme/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Guilherme-Lucas-Joga-Bonito-FC.png",
@@ -5403,7 +5403,7 @@
       "teamName": "FC Sportfreunde",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/elias-chigha/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/08/ChatGPT-Image-31-ago-2026-15_14_10.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Elias-FC-Sportfreunde.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -5440,7 +5440,7 @@
     {
       "id": "ethan-robinson",
       "name": "Ethan Robinson",
-      "teamName": "Inter Ya Ma FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/ethan-robinson/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ethan-Inter-Ya-Ma-FC.png",
@@ -7020,7 +7020,7 @@
       "teamName": "Inter Ya Ma FC",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/ciaran-oneill/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/08/ChatGPT-Image-31-ago-2026-15_13_59.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Ciaran-Inter-Ya-Ma-FC.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -8064,7 +8064,7 @@
     {
       "id": "gorka-tevar",
       "name": "Gorka Tevar",
-      "teamName": "Inter Ya Ma FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/gorka-tevar/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
@@ -8295,7 +8295,7 @@
       "teamName": "FC Baselona",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/hector-moya/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/08/ChatGPT-Image-31-ago-2026-15_14_08.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Hector-FC-Baselona.png",
       "webStats": {
         "appearances": 0,
         "starts": 0,
@@ -10195,7 +10195,7 @@
     {
       "id": "maxsuel-santos",
       "name": "Maxsuel Santos",
-      "teamName": "Joga Bonito FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/maxsuel-santos/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b1916128-a044-4be9-8fca-f8e5153203e1.png",
@@ -11042,7 +11042,7 @@
     {
       "id": "pol-castells",
       "name": "Pol Castells",
-      "teamName": "Inter Ya Ma FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/pol-castells/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
