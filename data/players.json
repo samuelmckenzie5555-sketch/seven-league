@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 225,
-  "photos": 153,
+  "photos": 156,
   "statful": 203,
-  "updatedAt": "2026-10-16T21:39:09.391172+00:00",
+  "updatedAt": "2026-10-16T22:09:05.082702+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -3608,76 +3608,6 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "alvaro-herrero",
-      "name": "6 Alvaro Herrero",
-      "teamName": "FC Baselona",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/alvaro-herrero/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/2865ba39-e0cc-4edb-a660-6b38c06d8157.png",
-      "webStats": {
-        "appearances": 4,
-        "starts": 1,
-        "goals": 1,
-        "assists": 0,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 200,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 1
-      },
-      "overall": 10,
-      "achievements": {
-        "unlocked": 0,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "13 Oct 2026",
-          "opponent": "BG FC",
-          "result": "3–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "6 Oct 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "2–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "3–3",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "14 Sep 2026",
-          "opponent": "Inter Basel",
-          "result": "8–1",
-          "started": "Yes",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
       "id": "anas-moutacharrif",
       "name": "Anas Moutacharrif",
       "teamName": "Inter Basel",
@@ -4988,6 +4918,76 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "alvaro-herrero",
+      "name": "6 Álvaro Herrero",
+      "teamName": "FC Baselona",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/alvaro-herrero/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/2865ba39-e0cc-4edb-a660-6b38c06d8157.png",
+      "webStats": {
+        "appearances": 4,
+        "starts": 1,
+        "goals": 1,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 200,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 1
+      },
+      "overall": 10,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "13 Oct 2026",
+          "opponent": "BG FC",
+          "result": "3–1",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "6 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–1",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "5 Oct 2026",
+          "opponent": "FC Sportfreunde",
+          "result": "3–3",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "14 Sep 2026",
+          "opponent": "Inter Basel",
+          "result": "8–1",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "guilherme",
       "name": "3 Guilherme Lucas",
       "teamName": "",
@@ -5150,10 +5150,10 @@
     {
       "id": "armando-babayan",
       "name": "Armando Babayan",
-      "teamName": "BG FC",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/armando-babayan/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Armando-Babayan.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Armando-BG-FC.png",
       "webStats": {
         "appearances": 6,
         "starts": 3,
@@ -5930,7 +5930,7 @@
     {
       "id": "pedro-prieto",
       "name": "6 Pedro Prieto",
-      "teamName": "FC Max Basel",
+      "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/pedro-prieto/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Pedro-FC-Max-Basel.png",
@@ -5944,10 +5944,10 @@
         "ownGoals": 0,
         "minutes": 300,
         "mvp": 0,
-        "cleanSheets": 0,
+        "cleanSheets": 1,
         "goalContributions": 1
       },
-      "overall": 10,
+      "overall": 12,
       "achievements": {
         "unlocked": 1,
         "total": 48
@@ -7478,7 +7478,7 @@
       "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/emilio-miro/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Emilio-BG-FC.png",
       "webStats": {
         "appearances": 4,
         "starts": 1,
@@ -10677,7 +10677,7 @@
       "teamName": "Rhine Lions FC",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/oliver-lanyi/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/08/ChatGPT-Image-31-ago-2026-15_14_05.png",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Oliver-Thine-Lions.png",
       "webStats": {
         "appearances": 2,
         "starts": 0,
@@ -11045,7 +11045,7 @@
       "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/pol-castells/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Pol-Inter-Ya-Ma-FC.png",
       "webStats": {
         "appearances": 2,
         "starts": 0,
@@ -12231,7 +12231,7 @@
       "teamName": "BG FC",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/alvaro-san-luis/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-San-Luis-BG-FC.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
