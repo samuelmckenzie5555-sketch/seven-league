@@ -3,9 +3,9 @@
   "competition": "Seven League Basel",
   "season": "2026-27",
   "count": 225,
-  "photos": 141,
-  "statful": 200,
-  "updatedAt": "2026-10-16T20:37:59.253549+00:00",
+  "photos": 152,
+  "statful": 203,
+  "updatedAt": "2026-10-16T21:10:12.703773+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -1579,11 +1579,11 @@
     },
     {
       "id": "devi-persia",
-      "name": "Devi Persia",
+      "name": "Devis Persia",
       "teamName": "FC Sportfreunde",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/devi-persia/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Devis-FC-Sportfreunde.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -2423,7 +2423,7 @@
       "teamName": "DPS Basel FC",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/conor-maye/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Conor-DPS-Basel-FC.png",
       "webStats": {
         "appearances": 4,
         "starts": 3,
@@ -2573,7 +2573,7 @@
       "teamName": "FC Max Basel",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/jairo-botello/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Jairo-FC-Max-Basel.png",
       "webStats": {
         "appearances": 3,
         "starts": 3,
@@ -2833,7 +2833,7 @@
       "teamName": "FC Sportfreunde",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/tim-genitsch/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Tim-FC-Sportfreunde.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -4953,7 +4953,7 @@
       "teamName": "FC Max Basel",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/tariq-arnaz/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Tariq-FC-Max-Basel.png",
       "webStats": {
         "appearances": 1,
         "starts": 1,
@@ -6800,26 +6800,37 @@
       "teamName": "FC Sportfreunde",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/caio/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Caio-FC-Sportfreunde.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
+      "overall": 1,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
-      "matchLog": [],
+      "matchLog": [
+        {
+          "date": "15 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
@@ -7427,26 +7438,37 @@
       "teamName": "FC Sportfreunde",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/elsar-dishallari/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Elsar-FC-Sportfreunde.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
+      "overall": 1,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
-      "matchLog": [],
+      "matchLog": [
+        {
+          "date": "15 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
@@ -8392,7 +8414,7 @@
       "teamName": "DPS Basel FC",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/jack-on-peng/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Jack-DPS-Basel-FC.png",
       "webStats": {
         "appearances": 0,
         "starts": 0,
@@ -9358,7 +9380,7 @@
       "teamName": "FC Max Basel",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/leonardo-carvalho/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Leonardo-FC-Max-Basel.png",
       "webStats": {
         "appearances": 1,
         "starts": 0,
@@ -10923,7 +10945,7 @@
       "teamName": "",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/patrick-kellehan/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Patrick-DPS-Basel-FC.png",
       "webStats": {
         "appearances": 3,
         "starts": 0,
@@ -11681,26 +11703,37 @@
       "teamName": "FC Sportfreunde",
       "position": "Forward",
       "webUrl": "https://sevenleague.ch/player/tauland/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Taulant-FC-Sportfreunde.png",
       "webStats": {
-        "appearances": 0,
+        "appearances": 1,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 0,
+        "minutes": 50,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 0,
+      "overall": 1,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
-      "matchLog": [],
+      "matchLog": [
+        {
+          "date": "15 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
