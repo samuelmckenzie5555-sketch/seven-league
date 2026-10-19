@@ -2,7 +2,7 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "updatedAt": "2026-10-19T18:07:08.500428+00:00",
+  "updatedAt": "2026-10-19T18:50:03.110308+00:00",
   "standings": [
     {
       "position": 1,
@@ -161,18 +161,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2580&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Rhine Madrid",
-      "away": "Inter Basel",
-      "date": "19 October 2026",
-      "time": "6:30 pm",
-      "matchday": "Matchday 6",
-      "status": "scheduled",
-      "score": null,
-      "referee": "Fabio Paonessa",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2579&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "FC Max Basel",
       "away": "Joga Bonito FC",
@@ -182,6 +170,18 @@
       "status": "scheduled",
       "score": null,
       "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2580&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "Rhine Madrid",
+      "away": "Inter Basel",
+      "date": "19 October 2026",
+      "time": "6:30 pm",
+      "matchday": "Matchday 6",
+      "status": "scheduled",
+      "score": null,
+      "referee": "Fabio Paonessa",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -457,21 +457,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2566&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Joga Bonito FC",
-      "away": "DPS Basel FC",
-      "date": "5 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 4",
-      "status": "full_time",
-      "score": {
-        "home": 4,
-        "away": 1
-      },
-      "referee": "Cesar Galera",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2567&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "Inter Ya Ma FC",
       "away": "Rhine Madrid",
@@ -485,24 +470,24 @@
       },
       "referee": "Samuel Mc'Kenzie",
       "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2566&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "Joga Bonito FC",
+      "away": "DPS Basel FC",
+      "date": "5 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 4",
+      "status": "full_time",
+      "score": {
+        "home": 4,
+        "away": 1
+      },
+      "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
     }
   ],
   "allMatches": [
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2547&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "FC Baselona",
-      "away": "Inter Basel",
-      "date": "14 September 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 1",
-      "status": "full_time",
-      "score": {
-        "home": 8,
-        "away": 1
-      },
-      "referee": "Fabio Paonessa",
-      "venue": "Sportplatz Landauer"
-    },
     {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2546&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "Joga Bonito FC",
@@ -516,6 +501,21 @@
         "away": 5
       },
       "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2547&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "FC Baselona",
+      "away": "Inter Basel",
+      "date": "14 September 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 1",
+      "status": "full_time",
+      "score": {
+        "home": 8,
+        "away": 1
+      },
+      "referee": "Fabio Paonessa",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -609,21 +609,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2554&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "FC Baselona",
-      "away": "Rhine Lions FC",
-      "date": "21 September 2026",
-      "time": "7:00 pm",
-      "matchday": "Matchday 2",
-      "status": "full_time",
-      "score": {
-        "home": 0,
-        "away": 7
-      },
-      "referee": "",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2555&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "DPS Basel FC",
       "away": "Rhine Madrid",
@@ -636,6 +621,21 @@
         "away": 9
       },
       "referee": "Fabio Paonessa",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2554&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "FC Baselona",
+      "away": "Rhine Lions FC",
+      "date": "21 September 2026",
+      "time": "7:00 pm",
+      "matchday": "Matchday 2",
+      "status": "full_time",
+      "score": {
+        "home": 0,
+        "away": 7
+      },
+      "referee": "",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -654,21 +654,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2557&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "FC Sportfreunde",
-      "away": "Rhine Lions FC",
-      "date": "24 September 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 2",
-      "status": "full_time",
-      "score": {
-        "home": 1,
-        "away": 5
-      },
-      "referee": "",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2558&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "Joga Bonito FC",
       "away": "FC Baselona",
@@ -684,18 +669,18 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2559&sl_league=seven-league-basel&sl_season=2026-27",
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2557&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "FC Sportfreunde",
-      "away": "BG FC",
-      "date": "28 September 2026",
+      "away": "Rhine Lions FC",
+      "date": "24 September 2026",
       "time": "6:00 pm",
-      "matchday": "Matchday 3",
+      "matchday": "Matchday 2",
       "status": "full_time",
       "score": {
-        "home": 0,
-        "away": 7
+        "home": 1,
+        "away": 5
       },
-      "referee": "Cesar Galera",
+      "referee": "",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -711,6 +696,21 @@
         "away": 5
       },
       "referee": "Samuel Mc'Kenzie",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2559&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "FC Sportfreunde",
+      "away": "BG FC",
+      "date": "28 September 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 0,
+        "away": 7
+      },
+      "referee": "Cesar Galera",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -774,21 +774,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2567&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Inter Ya Ma FC",
-      "away": "Rhine Madrid",
-      "date": "5 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 4",
-      "status": "full_time",
-      "score": {
-        "home": 0,
-        "away": 4
-      },
-      "referee": "Samuel Mc'Kenzie",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2566&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "Joga Bonito FC",
       "away": "DPS Basel FC",
@@ -801,6 +786,21 @@
         "away": 1
       },
       "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2567&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "Inter Ya Ma FC",
+      "away": "Rhine Madrid",
+      "date": "5 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 4",
+      "status": "full_time",
+      "score": {
+        "home": 0,
+        "away": 4
+      },
+      "referee": "Samuel Mc'Kenzie",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -978,18 +978,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2580&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Rhine Madrid",
-      "away": "Inter Basel",
-      "date": "19 October 2026",
-      "time": "6:30 pm",
-      "matchday": "Matchday 6",
-      "status": "scheduled",
-      "score": null,
-      "referee": "Fabio Paonessa",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2579&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "FC Max Basel",
       "away": "Joga Bonito FC",
@@ -999,6 +987,18 @@
       "status": "scheduled",
       "score": null,
       "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2580&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "Rhine Madrid",
+      "away": "Inter Basel",
+      "date": "19 October 2026",
+      "time": "6:30 pm",
+      "matchday": "Matchday 6",
+      "status": "scheduled",
+      "score": null,
+      "referee": "Fabio Paonessa",
       "venue": "Sportplatz Landauer"
     },
     {
