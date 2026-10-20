@@ -2,7 +2,7 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "updatedAt": "2026-10-20T20:56:53.416767+00:00",
+  "updatedAt": "2026-10-20T21:24:05.043566+00:00",
   "standings": [
     {
       "position": 1,
@@ -32,19 +32,32 @@
     },
     {
       "position": 3,
-      "team": "Rhine Lions FC",
-      "played": 6,
+      "team": "BG FC",
+      "played": 7,
       "wins": 3,
-      "draws": 1,
+      "draws": 2,
       "losses": 2,
-      "gf": 22,
-      "ga": 18,
-      "gd": 4,
-      "form": "W W L W L",
-      "points": 10
+      "gf": 25,
+      "ga": 16,
+      "gd": 9,
+      "form": "W D W L W",
+      "points": 11
     },
     {
       "position": 4,
+      "team": "Rhine Lions FC",
+      "played": 7,
+      "wins": 3,
+      "draws": 1,
+      "losses": 3,
+      "gf": 22,
+      "ga": 26,
+      "gd": -4,
+      "form": "W L W L L",
+      "points": 10
+    },
+    {
+      "position": 5,
       "team": "FC Baselona",
       "played": 6,
       "wins": 3,
@@ -57,7 +70,7 @@
       "points": 10
     },
     {
-      "position": 5,
+      "position": 6,
       "team": "Rhine Madrid",
       "played": 6,
       "wins": 3,
@@ -68,19 +81,6 @@
       "gd": 7,
       "form": "L W W W L",
       "points": 9
-    },
-    {
-      "position": 6,
-      "team": "BG FC",
-      "played": 6,
-      "wins": 2,
-      "draws": 2,
-      "losses": 2,
-      "gf": 17,
-      "ga": 16,
-      "gd": 1,
-      "form": "L W D W L",
-      "points": 8
     },
     {
       "position": 7,
@@ -97,6 +97,19 @@
     },
     {
       "position": 8,
+      "team": "Inter Ya Ma FC",
+      "played": 7,
+      "wins": 1,
+      "draws": 2,
+      "losses": 4,
+      "gf": 13,
+      "ga": 22,
+      "gd": -9,
+      "form": "D L L L W",
+      "points": 5
+    },
+    {
+      "position": 9,
       "team": "FC Sportfreunde",
       "played": 6,
       "wins": 1,
@@ -109,29 +122,16 @@
       "points": 5
     },
     {
-      "position": 9,
-      "team": "Inter Ya Ma FC",
-      "played": 6,
-      "wins": 0,
-      "draws": 2,
-      "losses": 4,
-      "gf": 7,
-      "ga": 22,
-      "gd": -15,
-      "form": "D D L L L",
-      "points": 2
-    },
-    {
       "position": 10,
       "team": "DPS Basel FC",
-      "played": 6,
+      "played": 7,
       "wins": 0,
       "draws": 2,
-      "losses": 4,
+      "losses": 5,
       "gf": 9,
-      "ga": 26,
-      "gd": -17,
-      "form": "L L L L D",
+      "ga": 32,
+      "gd": -23,
+      "form": "L L L D L",
       "points": 2
     }
   ],
@@ -178,30 +178,6 @@
       "away": "Inter Basel",
       "date": "19 October 2026",
       "time": "6:30 pm",
-      "matchday": "Matchday 6",
-      "status": "scheduled",
-      "score": null,
-      "referee": "Fabio Paonessa",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2581&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "BG FC",
-      "away": "Rhine Lions FC",
-      "date": "20 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 6",
-      "status": "scheduled",
-      "score": null,
-      "referee": "",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2582&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Inter Ya Ma FC",
-      "away": "DPS Basel FC",
-      "date": "20 October 2026",
-      "time": "6:00 pm",
       "matchday": "Matchday 6",
       "status": "scheduled",
       "score": null,
@@ -306,6 +282,36 @@
     }
   ],
   "results": [
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2582&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "Inter Ya Ma FC",
+      "away": "DPS Basel FC",
+      "date": "20 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 6",
+      "status": "full_time",
+      "score": {
+        "home": 6,
+        "away": 0
+      },
+      "referee": "Fabio Paonessa",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2581&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "BG FC",
+      "away": "Rhine Lions FC",
+      "date": "20 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 6",
+      "status": "full_time",
+      "score": {
+        "home": 8,
+        "away": 0
+      },
+      "referee": "",
+      "venue": "Sportplatz Landauer"
+    },
     {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2578&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "Inter Basel",
@@ -454,36 +460,6 @@
         "away": 1
       },
       "referee": "",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2567&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Inter Ya Ma FC",
-      "away": "Rhine Madrid",
-      "date": "5 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 4",
-      "status": "full_time",
-      "score": {
-        "home": 0,
-        "away": 4
-      },
-      "referee": "Samuel Mc'Kenzie",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2566&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Joga Bonito FC",
-      "away": "DPS Basel FC",
-      "date": "5 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 4",
-      "status": "full_time",
-      "score": {
-        "home": 4,
-        "away": 1
-      },
-      "referee": "Cesar Galera",
       "venue": "Sportplatz Landauer"
     }
   ],
@@ -1008,8 +984,11 @@
       "date": "20 October 2026",
       "time": "6:00 pm",
       "matchday": "Matchday 6",
-      "status": "scheduled",
-      "score": null,
+      "status": "full_time",
+      "score": {
+        "home": 8,
+        "away": 0
+      },
       "referee": "",
       "venue": "Sportplatz Landauer"
     },
@@ -1020,8 +999,11 @@
       "date": "20 October 2026",
       "time": "6:00 pm",
       "matchday": "Matchday 6",
-      "status": "scheduled",
-      "score": null,
+      "status": "full_time",
+      "score": {
+        "home": 6,
+        "away": 0
+      },
       "referee": "Fabio Paonessa",
       "venue": "Sportplatz Landauer"
     },
@@ -1164,20 +1146,20 @@
         "id": "hamed-goudarzi"
       },
       {
+        "name": "Álvaro Morcillo",
+        "team": "BG FC",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
+        "value": 8,
+        "apps": 7,
+        "id": "alvaro-morcillo"
+      },
+      {
         "name": "Greg Imber",
         "team": "",
         "photo": "",
         "value": 6,
         "apps": 6,
         "id": "greg-imber"
-      },
-      {
-        "name": "Álvaro Morcillo",
-        "team": "BG FC",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
-        "value": 6,
-        "apps": 6,
-        "id": "alvaro-morcillo"
       },
       {
         "name": "Matheus Nascimento",
@@ -1198,20 +1180,20 @@
         "id": "efraim-benoit-ferreira"
       },
       {
+        "name": "Juan Rodriguez",
+        "team": "",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
+        "value": 6,
+        "apps": 7,
+        "id": "juan-rodriguez"
+      },
+      {
         "name": "Jürgen Schneider",
         "team": "Rhine Madrid",
         "photo": "",
         "value": 5,
         "apps": 3,
         "id": "jurgen-schneider"
-      },
-      {
-        "name": "Juan Rodriguez",
-        "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
-        "value": 4,
-        "apps": 6,
-        "id": "juan-rodriguez"
       },
       {
         "name": "Hamed Goudarzi",
@@ -1248,28 +1230,28 @@
         "id": "hamed-goudarzi"
       },
       {
+        "name": "Juan Rodriguez",
+        "team": "",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
+        "value": 11,
+        "apps": 7,
+        "id": "juan-rodriguez"
+      },
+      {
+        "name": "Álvaro Morcillo",
+        "team": "BG FC",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
+        "value": 10,
+        "apps": 7,
+        "id": "alvaro-morcillo"
+      },
+      {
         "name": "Jürgen Schneider",
         "team": "Rhine Madrid",
         "photo": "",
         "value": 10,
         "apps": 3,
         "id": "jurgen-schneider"
-      },
-      {
-        "name": "Greg Imber",
-        "team": "",
-        "photo": "",
-        "value": 8,
-        "apps": 6,
-        "id": "greg-imber"
-      },
-      {
-        "name": "Junica Lucian",
-        "team": "Rhine Madrid",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lucian-Rhine-Madrid-1.png",
-        "value": 8,
-        "apps": 5,
-        "id": "junica-lucian"
       }
     ],
     "mvp": [
@@ -1286,7 +1268,7 @@
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
         "value": 2,
-        "apps": 6,
+        "apps": 7,
         "id": "juan-rodriguez"
       },
       {
@@ -1298,20 +1280,20 @@
         "id": "abdel"
       },
       {
-        "name": "Greg Imber",
-        "team": "",
-        "photo": "",
-        "value": 1,
-        "apps": 6,
-        "id": "greg-imber"
-      },
-      {
         "name": "Álvaro Morcillo",
         "team": "BG FC",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
         "value": 1,
-        "apps": 6,
+        "apps": 7,
         "id": "alvaro-morcillo"
+      },
+      {
+        "name": "Alejandro Signoret",
+        "team": "Rhine Lions FC",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Alejandro-Rhine-Lions-FC.png",
+        "value": 1,
+        "apps": 7,
+        "id": "alejandro-signoret"
       }
     ],
     "yellow": [
@@ -1324,6 +1306,22 @@
         "id": "greg-imber"
       },
       {
+        "name": "Yousri Sghaier",
+        "team": "",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
+        "value": 2,
+        "apps": 6,
+        "id": "yousri-sghaier"
+      },
+      {
+        "name": "Lorenzo di Gregorio",
+        "team": "",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lorenzo-Inter-Ya-Ma-FC.png",
+        "value": 2,
+        "apps": 6,
+        "id": "lorenzo-di-gregorio"
+      },
+      {
         "name": "William Tejada",
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/035e6720-285b-412b-9677-eb206655466c.png",
@@ -1332,28 +1330,12 @@
         "id": "william-tejada"
       },
       {
-        "name": "Yousri Sghaier",
-        "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
-        "value": 2,
-        "apps": 5,
-        "id": "yousri-sghaier"
-      },
-      {
-        "name": "Lorenzo di Gregorio",
-        "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lorenzo-Inter-Ya-Ma-FC.png",
-        "value": 2,
-        "apps": 5,
-        "id": "lorenzo-di-gregorio"
-      },
-      {
-        "name": "Oliver Dowling",
-        "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Oliver-DPS-Basel-FC.png",
+        "name": "Nasser Mawad",
+        "team": "Rhine Lions FC",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nasser-Rhine-Lions-FC.png",
         "value": 1,
         "apps": 6,
-        "id": "oliver-dowling"
+        "id": "nasser-mawad"
       }
     ],
     "red": [
@@ -1362,7 +1344,7 @@
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
         "value": 1,
-        "apps": 5,
+        "apps": 6,
         "id": "yousri-sghaier"
       },
       {
@@ -1370,7 +1352,7 @@
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lorenzo-Inter-Ya-Ma-FC.png",
         "value": 1,
-        "apps": 5,
+        "apps": 6,
         "id": "lorenzo-di-gregorio"
       },
       {
@@ -1382,20 +1364,20 @@
         "id": "efraim-benoit-ferreira"
       },
       {
-        "name": "André Filipe da Silva",
-        "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/4dc4d421-8c84-4c64-a2ac-1215367a3186-1.png",
+        "name": "Álvaro Morcillo",
+        "team": "BG FC",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
         "value": 0,
         "apps": 7,
-        "id": "andre-filipe-da-silva"
+        "id": "alvaro-morcillo"
       },
       {
-        "name": "17 Sergiu Petrica",
+        "name": "Juan Rodriguez",
         "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Petrica-FC-Max-Basel.png",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
         "value": 0,
         "apps": 7,
-        "id": "sergiu-petrica"
+        "id": "juan-rodriguez"
       }
     ]
   },
