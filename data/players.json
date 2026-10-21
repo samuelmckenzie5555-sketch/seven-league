@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 227,
-  "photos": 156,
-  "statful": 206,
-  "updatedAt": "2026-10-21T00:14:27.542417+00:00",
+  "count": 226,
+  "photos": 155,
+  "statful": 205,
+  "updatedAt": "2026-10-21T00:59:43.656588+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -10493,86 +10493,6 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "maxsuel-santos",
-      "name": "Maxsuel Santos",
-      "teamName": "",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/maxsuel-santos/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b1916128-a044-4be9-8fca-f8e5153203e1.png",
-      "webStats": {
-        "appearances": 5,
-        "starts": 1,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 1,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 250,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 0
-      },
-      "overall": 9,
-      "achievements": {
-        "unlocked": 2,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "13 Oct 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "4–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "12 Oct 2026",
-          "opponent": "Rhine Lions FC",
-          "result": "5–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "24 Sep 2026",
-          "opponent": "FC Baselona",
-          "result": "8–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "21 Sep 2026",
-          "opponent": "BG FC",
-          "result": "7–0",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 1,
-          "red": 0
-        },
-        {
-          "date": "14 Sep 2026",
-          "opponent": "Rhine Madrid",
-          "result": "8–5",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
       "id": "maxwell-stanyo-alves",
       "name": "Maxwell Stanyo Alves",
       "teamName": "Joga Bonito FC",
@@ -12567,5 +12487,10 @@
       "competition": "Seven League Basel"
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "url": "https://sevenleague.ch/player/maxsuel-santos/?sl_league=seven-league-basel&sl_season=2026-27",
+      "error": "HTTPSConnectionPool(host='sevenleague.ch', port=443): Read timed out. (read timeout=30)"
+    }
+  ]
 }
