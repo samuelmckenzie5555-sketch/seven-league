@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 229,
+  "count": 230,
   "photos": 158,
   "statful": 208,
-  "updatedAt": "2026-10-25T19:52:40.466478+00:00",
+  "updatedAt": "2026-10-25T22:13:52.880804+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -7431,6 +7431,35 @@
           "red": 0
         }
       ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "cedric-geraldes",
+      "name": "Cedric Geraldes",
+      "teamName": "BG FC",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/cedric-geraldes/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 0,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 0,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 1,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
