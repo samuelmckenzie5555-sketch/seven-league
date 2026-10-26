@@ -2,7 +2,7 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "updatedAt": "2026-10-26T17:21:22.451533+00:00",
+  "updatedAt": "2026-10-26T21:48:10.224579+00:00",
   "standings": [
     {
       "position": 1,
@@ -19,45 +19,58 @@
     },
     {
       "position": 2,
-      "team": "FC Max Basel",
-      "played": 7,
-      "wins": 4,
-      "draws": 1,
-      "losses": 2,
-      "gf": 31,
-      "ga": 15,
-      "gd": 16,
-      "form": "W D L W L",
-      "points": 13
+      "team": "Rhine Madrid",
+      "played": 8,
+      "wins": 5,
+      "draws": 0,
+      "losses": 3,
+      "gf": 38,
+      "ga": 28,
+      "gd": 10,
+      "form": "W W L W W",
+      "points": 15
     },
     {
       "position": 3,
-      "team": "Rhine Madrid",
-      "played": 7,
+      "team": "FC Max Basel",
+      "played": 8,
       "wins": 4,
-      "draws": 0,
+      "draws": 1,
       "losses": 3,
       "gf": 35,
-      "ga": 27,
-      "gd": 8,
-      "form": "W W W L W",
-      "points": 12
+      "ga": 23,
+      "gd": 12,
+      "form": "D L W L L",
+      "points": 13
     },
     {
       "position": 4,
-      "team": "BG FC",
-      "played": 7,
-      "wins": 3,
-      "draws": 2,
-      "losses": 2,
-      "gf": 25,
-      "ga": 16,
-      "gd": 9,
-      "form": "W D W L W",
-      "points": 11
+      "team": "FC Baselona",
+      "played": 8,
+      "wins": 4,
+      "draws": 1,
+      "losses": 3,
+      "gf": 29,
+      "ga": 30,
+      "gd": -1,
+      "form": "D W W L W",
+      "points": 13
     },
     {
       "position": 5,
+      "team": "BG FC",
+      "played": 8,
+      "wins": 3,
+      "draws": 2,
+      "losses": 3,
+      "gf": 26,
+      "ga": 19,
+      "gd": 7,
+      "form": "D W L W L",
+      "points": 11
+    },
+    {
+      "position": 6,
       "team": "Rhine Lions FC",
       "played": 7,
       "wins": 3,
@@ -67,19 +80,6 @@
       "ga": 26,
       "gd": -4,
       "form": "W L W L L",
-      "points": 10
-    },
-    {
-      "position": 6,
-      "team": "FC Baselona",
-      "played": 7,
-      "wins": 3,
-      "draws": 1,
-      "losses": 3,
-      "gf": 21,
-      "ga": 26,
-      "gd": -5,
-      "form": "L D W W L",
       "points": 10
     },
     {
@@ -185,30 +185,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2586&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "FC Max Basel",
-      "away": "FC Baselona",
-      "date": "26 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 7",
-      "status": "scheduled",
-      "score": null,
-      "referee": "Cesar Galera",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2585&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "BG FC",
-      "away": "Rhine Madrid",
-      "date": "26 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 7",
-      "status": "scheduled",
-      "score": null,
-      "referee": "Samuel Mc'Kenzie",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2588&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "Joga Bonito FC",
       "away": "FC Sportfreunde",
@@ -258,6 +234,36 @@
     }
   ],
   "results": [
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2586&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "FC Max Basel",
+      "away": "FC Baselona",
+      "date": "26 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 7",
+      "status": "full_time",
+      "score": {
+        "home": 4,
+        "away": 8
+      },
+      "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2585&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "BG FC",
+      "away": "Rhine Madrid",
+      "date": "26 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 7",
+      "status": "full_time",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
+      "referee": "Samuel Mc'Kenzie",
+      "venue": "Sportplatz Landauer"
+    },
     {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2584&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "Inter Basel",
@@ -404,36 +410,6 @@
       "score": {
         "home": 1,
         "away": 5
-      },
-      "referee": "",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2570&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "Inter Basel",
-      "away": "BG FC",
-      "date": "6 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 4",
-      "status": "full_time",
-      "score": {
-        "home": 2,
-        "away": 5
-      },
-      "referee": "Cesar Galera",
-      "venue": "Sportplatz Landauer"
-    },
-    {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2563&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "FC Baselona",
-      "away": "Inter Ya Ma FC",
-      "date": "6 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 4",
-      "status": "full_time",
-      "score": {
-        "home": 2,
-        "away": 1
       },
       "referee": "",
       "venue": "Sportplatz Landauer"
@@ -636,21 +612,6 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2560&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "DPS Basel FC",
-      "away": "FC Max Basel",
-      "date": "28 September 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 3",
-      "status": "full_time",
-      "score": {
-        "home": 0,
-        "away": 5
-      },
-      "referee": "Samuel Mc'Kenzie",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2559&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "FC Sportfreunde",
       "away": "BG FC",
@@ -663,6 +624,21 @@
         "away": 7
       },
       "referee": "Cesar Galera",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2560&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "DPS Basel FC",
+      "away": "FC Max Basel",
+      "date": "28 September 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 3",
+      "status": "full_time",
+      "score": {
+        "home": 0,
+        "away": 5
+      },
+      "referee": "Samuel Mc'Kenzie",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -1014,27 +990,33 @@
       "venue": "Sportplatz Landauer"
     },
     {
-      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2586&sl_league=seven-league-basel&sl_season=2026-27",
-      "home": "FC Max Basel",
-      "away": "FC Baselona",
-      "date": "26 October 2026",
-      "time": "6:00 pm",
-      "matchday": "Matchday 7",
-      "status": "scheduled",
-      "score": null,
-      "referee": "Cesar Galera",
-      "venue": "Sportplatz Landauer"
-    },
-    {
       "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2585&sl_league=seven-league-basel&sl_season=2026-27",
       "home": "BG FC",
       "away": "Rhine Madrid",
       "date": "26 October 2026",
       "time": "6:00 pm",
       "matchday": "Matchday 7",
-      "status": "scheduled",
-      "score": null,
+      "status": "full_time",
+      "score": {
+        "home": 1,
+        "away": 3
+      },
       "referee": "Samuel Mc'Kenzie",
+      "venue": "Sportplatz Landauer"
+    },
+    {
+      "url": "https://sevenleague.ch/seven-league-basel-competition-hub/?sl_match=2586&sl_league=seven-league-basel&sl_season=2026-27",
+      "home": "FC Max Basel",
+      "away": "FC Baselona",
+      "date": "26 October 2026",
+      "time": "6:00 pm",
+      "matchday": "Matchday 7",
+      "status": "full_time",
+      "score": {
+        "home": 4,
+        "away": 8
+      },
+      "referee": "Cesar Galera",
       "venue": "Sportplatz Landauer"
     },
     {
@@ -1128,28 +1110,28 @@
         "id": "hamed-goudarzi"
       },
       {
+        "name": "Lucian Junica",
+        "team": "Rhine Madrid",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lucian-Rhine-Madrid-1.png",
+        "value": 9,
+        "apps": 7,
+        "id": "junica-lucian"
+      },
+      {
         "name": "Álvaro Morcillo",
         "team": "BG FC",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
         "value": 8,
-        "apps": 7,
+        "apps": 8,
         "id": "alvaro-morcillo"
       },
       {
-        "name": "Junica Lucian",
-        "team": "Rhine Madrid",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lucian-Rhine-Madrid-1.png",
-        "value": 7,
-        "apps": 6,
-        "id": "junica-lucian"
-      },
-      {
-        "name": "20 Alexis Gabriel Martinez",
-        "team": "FC Baselona",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/a04f2e41-67d9-4df4-afe0-a538927e267a.png",
-        "value": 7,
-        "apps": 5,
-        "id": "alexis-gabriel-martinez"
+        "name": "13 Denis Cornelio",
+        "team": "",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Denis-Cornelio-FC-Max-Basel.png",
+        "value": 8,
+        "apps": 4,
+        "id": "denis-garcia"
       }
     ],
     "assists": [
@@ -1166,8 +1148,16 @@
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
         "value": 6,
-        "apps": 7,
+        "apps": 8,
         "id": "juan-rodriguez"
+      },
+      {
+        "name": "Steven Munyoo",
+        "team": "Rhine Madrid",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Steven-Rhine-Madrid.png",
+        "value": 5,
+        "apps": 6,
+        "id": "steven-munyoo"
       },
       {
         "name": "Jürgen Schneider",
@@ -1178,20 +1168,12 @@
         "id": "jurgen-schneider"
       },
       {
-        "name": "Hamed Goudarzi",
-        "team": "Rhine Madrid",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Hamed-Rhine-Madrid-1.png",
-        "value": 4,
-        "apps": 5,
-        "id": "hamed-goudarzi"
-      },
-      {
-        "name": "Steven Munyoo",
-        "team": "Rhine Madrid",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Steven-Rhine-Madrid.png",
-        "value": 4,
-        "apps": 5,
-        "id": "steven-munyoo"
+        "name": "Miguel Vidal",
+        "team": "FC Max Basel",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Miguel-FC-Max-Basel.png",
+        "value": 5,
+        "apps": 3,
+        "id": "miguel-vidal"
       }
     ],
     "goalContributions": [
@@ -1212,11 +1194,19 @@
         "id": "hamed-goudarzi"
       },
       {
+        "name": "Lucian Junica",
+        "team": "Rhine Madrid",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lucian-Rhine-Madrid-1.png",
+        "value": 12,
+        "apps": 7,
+        "id": "junica-lucian"
+      },
+      {
         "name": "Juan Rodriguez",
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
         "value": 11,
-        "apps": 7,
+        "apps": 8,
         "id": "juan-rodriguez"
       },
       {
@@ -1224,16 +1214,8 @@
         "team": "BG FC",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
         "value": 10,
-        "apps": 7,
+        "apps": 8,
         "id": "alvaro-morcillo"
-      },
-      {
-        "name": "Junica Lucian",
-        "team": "Rhine Madrid",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lucian-Rhine-Madrid-1.png",
-        "value": 10,
-        "apps": 6,
-        "id": "junica-lucian"
       }
     ],
     "mvp": [
@@ -1250,8 +1232,16 @@
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
         "value": 2,
-        "apps": 7,
+        "apps": 8,
         "id": "juan-rodriguez"
+      },
+      {
+        "name": "Lucian Junica",
+        "team": "Rhine Madrid",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lucian-Rhine-Madrid-1.png",
+        "value": 2,
+        "apps": 7,
+        "id": "junica-lucian"
       },
       {
         "name": "Abdel Akhrif",
@@ -1266,19 +1256,19 @@
         "team": "BG FC",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
         "value": 1,
-        "apps": 7,
+        "apps": 8,
         "id": "alvaro-morcillo"
-      },
-      {
-        "name": "Alejandro Signoret",
-        "team": "Rhine Lions FC",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Alejandro-Rhine-Lions-FC.png",
-        "value": 1,
-        "apps": 7,
-        "id": "alejandro-signoret"
       }
     ],
     "yellow": [
+      {
+        "name": "William Tejada",
+        "team": "",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/035e6720-285b-412b-9677-eb206655466c.png",
+        "value": 2,
+        "apps": 7,
+        "id": "william-tejada"
+      },
       {
         "name": "Greg Imber",
         "team": "",
@@ -1304,20 +1294,12 @@
         "id": "lorenzo-di-gregorio"
       },
       {
-        "name": "William Tejada",
-        "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/035e6720-285b-412b-9677-eb206655466c.png",
+        "name": "Luis Alexander",
+        "team": "FC Baselona",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Luis-FC-Baselona.png",
         "value": 2,
-        "apps": 6,
-        "id": "william-tejada"
-      },
-      {
-        "name": "Nasser Mawad",
-        "team": "Rhine Lions FC",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nasser-Rhine-Lions-FC.png",
-        "value": 1,
-        "apps": 6,
-        "id": "nasser-mawad"
+        "apps": 5,
+        "id": "luis"
       }
     ],
     "red": [
@@ -1338,19 +1320,11 @@
         "id": "lorenzo-di-gregorio"
       },
       {
-        "name": "Efraim Benoit Ferreira",
-        "team": "",
-        "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/b286e260-34a5-420e-96ab-4c0f96be667c.png",
-        "value": 0,
-        "apps": 7,
-        "id": "efraim-benoit-ferreira"
-      },
-      {
         "name": "Álvaro Morcillo",
         "team": "BG FC",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
         "value": 0,
-        "apps": 7,
+        "apps": 8,
         "id": "alvaro-morcillo"
       },
       {
@@ -1358,8 +1332,16 @@
         "team": "",
         "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Juan-BG-FC.png",
         "value": 0,
-        "apps": 7,
+        "apps": 8,
         "id": "juan-rodriguez"
+      },
+      {
+        "name": "Nicolas Wehrli",
+        "team": "Rhine Madrid",
+        "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nicolas-Rhine-Madrid.png",
+        "value": 0,
+        "apps": 8,
+        "id": "nicolas-wehrli"
       }
     ]
   },
@@ -1386,7 +1368,7 @@
     {
       "name": "Samuel Mc'Kenzie",
       "assignedMatches": 7,
-      "nextAssignment": "26 October 2026"
+      "nextAssignment": "27 October 2026"
     }
   ],
   "matchCount": 45,
