@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 231,
+  "count": 234,
   "photos": 158,
-  "statful": 213,
-  "updatedAt": "2026-10-29T15:16:26.931331+00:00",
+  "statful": 217,
+  "updatedAt": "2026-10-29T20:20:40.649131+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -255,24 +255,34 @@
       "webUrl": "https://sevenleague.ch/player/alvaro-morcillo/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Alvaro-Morcillo-BG-FC.png",
       "webStats": {
-        "appearances": 8,
-        "starts": 2,
-        "goals": 8,
+        "appearances": 9,
+        "starts": 3,
+        "goals": 9,
         "assists": 2,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 400,
+        "minutes": 450,
         "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 10
+        "goalContributions": 11
       },
-      "overall": 40,
+      "overall": 41,
       "achievements": {
-        "unlocked": 10,
+        "unlocked": 11,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 1,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "Rhine Madrid",
@@ -310,16 +320,6 @@
           "started": "No",
           "goals": 2,
           "assists": 1,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "1 Oct 2026",
-          "opponent": "FC Max Basel",
-          "result": "2–2",
-          "started": "Yes",
-          "goals": 1,
-          "assists": 0,
           "yellow": 0,
           "red": 0
         }
@@ -708,6 +708,76 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "nick",
+      "name": "Nick Erazo",
+      "teamName": "FC Baselona",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/nick/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nicky-FC-Baselona.png",
+      "webStats": {
+        "appearances": 4,
+        "starts": 2,
+        "goals": 6,
+        "assists": 1,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 200,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 7
+      },
+      "overall": 34,
+      "achievements": {
+        "unlocked": 8,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "26 Oct 2026",
+          "opponent": "FC Max Basel",
+          "result": "8–4",
+          "started": "Yes",
+          "goals": 3,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "22 Oct 2026",
+          "opponent": "Rhine Madrid",
+          "result": "4–5",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "6 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–1",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "juan-rodriguez",
       "name": "Juan Rodriguez",
       "teamName": "",
@@ -848,6 +918,86 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "ricard-castells",
+      "name": "Ricard Castells",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/ricard-castells/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ricard-Inter-Ya-Ma-FC.png",
+      "webStats": {
+        "appearances": 6,
+        "starts": 3,
+        "goals": 5,
+        "assists": 4,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 300,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 9
+      },
+      "overall": 42,
+      "achievements": {
+        "unlocked": 10,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "20 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "6–0",
+          "started": "No",
+          "goals": 1,
+          "assists": 3,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "13 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–4",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "22 Sep 2026",
+          "opponent": "Inter Basel",
+          "result": "1–1",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "17 Sep 2026",
+          "opponent": "Rhine Lions FC",
+          "result": "3–3",
+          "started": "Yes",
+          "goals": 2,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "abdel",
       "name": "Abdel Akhrif",
       "teamName": "Inter Basel",
@@ -908,118 +1058,48 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "ricard-castells",
-      "name": "Ricard Castells",
-      "teamName": "",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/ricard-castells/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ricard-Inter-Ya-Ma-FC.png",
-      "webStats": {
-        "appearances": 5,
-        "starts": 3,
-        "goals": 5,
-        "assists": 3,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 250,
-        "mvp": 1,
-        "cleanSheets": 0,
-        "goalContributions": 8
-      },
-      "overall": 39,
-      "achievements": {
-        "unlocked": 10,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "20 Oct 2026",
-          "opponent": "DPS Basel FC",
-          "result": "6–0",
-          "started": "No",
-          "goals": 1,
-          "assists": 3,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "13 Oct 2026",
-          "opponent": "Joga Bonito FC",
-          "result": "1–4",
-          "started": "No",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "22 Sep 2026",
-          "opponent": "Inter Basel",
-          "result": "1–1",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "17 Sep 2026",
-          "opponent": "Rhine Lions FC",
-          "result": "3–3",
-          "started": "Yes",
-          "goals": 2,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "14 Sep 2026",
-          "opponent": "FC Max Basel",
-          "result": "1–8",
-          "started": "Yes",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "nick",
-      "name": "Nick Erazo",
+      "id": "emanuele-ingenuo",
+      "name": "Emanuele Ingenuo",
       "teamName": "FC Baselona",
       "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/nick/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Nicky-FC-Baselona.png",
+      "webUrl": "https://sevenleague.ch/player/emanuele-ingenuo/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Emanuele-FC-Baselona.png",
       "webStats": {
-        "appearances": 3,
-        "starts": 1,
+        "appearances": 8,
+        "starts": 5,
         "goals": 5,
-        "assists": 1,
+        "assists": 2,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 150,
+        "minutes": 400,
         "mvp": 1,
         "cleanSheets": 0,
-        "goalContributions": 6
+        "goalContributions": 7
       },
-      "overall": 31,
+      "overall": 36,
       "achievements": {
-        "unlocked": 8,
+        "unlocked": 7,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "FC Max Basel",
           "result": "8–4",
           "started": "Yes",
-          "goals": 3,
-          "assists": 1,
+          "goals": 1,
+          "assists": 0,
           "yellow": 0,
           "red": 0
         },
@@ -1027,9 +1107,19 @@
           "date": "22 Oct 2026",
           "opponent": "Rhine Madrid",
           "result": "4–5",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "13 Oct 2026",
+          "opponent": "BG FC",
+          "result": "3–1",
           "started": "No",
-          "goals": 1,
-          "assists": 0,
+          "goals": 2,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         },
@@ -1038,7 +1128,7 @@
           "opponent": "Inter Ya Ma FC",
           "result": "2–1",
           "started": "No",
-          "goals": 1,
+          "goals": 0,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -1178,86 +1268,6 @@
           "opponent": "BG FC",
           "result": "7–0",
           "started": "Yes",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "emanuele-ingenuo",
-      "name": "Emanuele Ingenuo",
-      "teamName": "FC Baselona",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/emanuele-ingenuo/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Emanuele-FC-Baselona.png",
-      "webStats": {
-        "appearances": 7,
-        "starts": 4,
-        "goals": 4,
-        "assists": 2,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 350,
-        "mvp": 1,
-        "cleanSheets": 0,
-        "goalContributions": 6
-      },
-      "overall": 32,
-      "achievements": {
-        "unlocked": 6,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "26 Oct 2026",
-          "opponent": "FC Max Basel",
-          "result": "8–4",
-          "started": "Yes",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "22 Oct 2026",
-          "opponent": "Rhine Madrid",
-          "result": "4–5",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 1,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "13 Oct 2026",
-          "opponent": "BG FC",
-          "result": "3–1",
-          "started": "No",
-          "goals": 2,
-          "assists": 1,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "6 Oct 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "2–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "3–3",
-          "started": "No",
           "goals": 1,
           "assists": 0,
           "yellow": 0,
@@ -1775,24 +1785,34 @@
       "webUrl": "https://sevenleague.ch/player/azzaro-cespedes/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/e6c1508b-6efa-4b91-b4a6-1663cfa95628.png",
       "webStats": {
-        "appearances": 8,
-        "starts": 4,
+        "appearances": 9,
+        "starts": 5,
         "goals": 3,
         "assists": 4,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 400,
+        "minutes": 450,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 7
       },
       "overall": 33,
       "achievements": {
-        "unlocked": 7,
+        "unlocked": 8,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "FC Max Basel",
@@ -1830,16 +1850,6 @@
           "started": "No",
           "goals": 0,
           "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "3–3",
-          "started": "No",
-          "goals": 0,
-          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -2108,6 +2118,86 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "yousri-sghaier",
+      "name": "Yousri Sghaier",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/yousri-sghaier/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
+      "webStats": {
+        "appearances": 7,
+        "starts": 3,
+        "goals": 3,
+        "assists": 1,
+        "yellow": 2,
+        "red": 1,
+        "ownGoals": 0,
+        "minutes": 350,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 4
+      },
+      "overall": 23,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "20 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "6–0",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "6 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "1–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 2,
+          "red": 1
+        },
+        {
+          "date": "5 Oct 2026",
+          "opponent": "Rhine Madrid",
+          "result": "0–4",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "22 Sep 2026",
+          "opponent": "Inter Basel",
+          "result": "1–1",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "alejandro-signoret",
       "name": "Alejandro Signoret",
       "teamName": "Rhine Lions FC",
@@ -2295,24 +2385,34 @@
       "webUrl": "https://sevenleague.ch/player/pablo-cabrales/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Pablo-Cabrales-BG-FC.png",
       "webStats": {
-        "appearances": 7,
-        "starts": 2,
+        "appearances": 8,
+        "starts": 3,
         "goals": 3,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 350,
+        "minutes": 400,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 3
       },
-      "overall": 20,
+      "overall": 21,
       "achievements": {
         "unlocked": 4,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "Rhine Madrid",
@@ -2349,16 +2449,6 @@
           "result": "2–2",
           "started": "Yes",
           "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "28 Sep 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "7–0",
-          "started": "Yes",
-          "goals": 2,
           "assists": 0,
           "yellow": 0,
           "red": 0
@@ -2508,6 +2598,86 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "jorge-garcia",
+      "name": "Jorge Garcia",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/jorge-garcia/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jorge-Garcia-DPS-Basel-FC.png",
+      "webStats": {
+        "appearances": 5,
+        "starts": 2,
+        "goals": 2,
+        "assists": 3,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 250,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 5
+      },
+      "overall": 30,
+      "achievements": {
+        "unlocked": 7,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "Yes",
+          "goals": 2,
+          "assists": 2,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "20 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "0–6",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "15 Oct 2026",
+          "opponent": "FC Sportfreunde",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "5 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–4",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "15 Sep 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "armando-babayan",
       "name": "Armando Babayan",
       "teamName": "",
@@ -2515,24 +2685,34 @@
       "webUrl": "https://sevenleague.ch/player/armando-babayan/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Armando-BG-FC.png",
       "webStats": {
-        "appearances": 8,
-        "starts": 3,
+        "appearances": 9,
+        "starts": 4,
         "goals": 2,
         "assists": 2,
-        "yellow": 0,
+        "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 400,
+        "minutes": 450,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 4
       },
       "overall": 22,
       "achievements": {
-        "unlocked": 2,
+        "unlocked": 3,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 1,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "Rhine Madrid",
@@ -2570,16 +2750,6 @@
           "started": "No",
           "goals": 0,
           "assists": 1,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "1 Oct 2026",
-          "opponent": "FC Max Basel",
-          "result": "2–2",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
           "yellow": 0,
           "red": 0
         }
@@ -2858,6 +3028,76 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "simon-nobel",
+      "name": "Simon Nobel",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/simon-nobel/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-4.png",
+      "webStats": {
+        "appearances": 4,
+        "starts": 2,
+        "goals": 2,
+        "assists": 2,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 200,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 4
+      },
+      "overall": 20,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 2,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "20 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "0–6",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "15 Oct 2026",
+          "opponent": "FC Sportfreunde",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "15 Sep 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "christian-schlote",
       "name": "Christian Schlote",
       "teamName": "Rhine Madrid",
@@ -2930,6 +3170,76 @@
           "started": "Yes",
           "goals": 1,
           "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "conail-osullivan",
+      "name": "Conail O’Sullivan",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/conail-osullivan/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 4,
+        "starts": 1,
+        "goals": 2,
+        "assists": 1,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 200,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 3
+      },
+      "overall": 16,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "20 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "6–0",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "13 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–4",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "22 Sep 2026",
+          "opponent": "Inter Basel",
+          "result": "1–1",
+          "started": "No",
+          "goals": 0,
+          "assists": 1,
           "yellow": 0,
           "red": 0
         }
@@ -3145,24 +3455,34 @@
       "webUrl": "https://sevenleague.ch/player/tamas-dalmay/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/62c783b3-94b2-4cd1-9d73-b5710ebf5e09.png",
       "webStats": {
-        "appearances": 6,
-        "starts": 3,
+        "appearances": 7,
+        "starts": 4,
         "goals": 2,
         "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 300,
+        "minutes": 350,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 3
       },
-      "overall": 20,
+      "overall": 21,
       "achievements": {
         "unlocked": 3,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "FC Max Basel",
@@ -3198,96 +3518,6 @@
           "opponent": "Inter Ya Ma FC",
           "result": "2–1",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "3–3",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "yousri-sghaier",
-      "name": "Yousri Sghaier",
-      "teamName": "",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/yousri-sghaier/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Yousri-Inter-Ya-Ma-FC.png",
-      "webStats": {
-        "appearances": 6,
-        "starts": 3,
-        "goals": 2,
-        "assists": 1,
-        "yellow": 2,
-        "red": 1,
-        "ownGoals": 0,
-        "minutes": 300,
-        "mvp": 1,
-        "cleanSheets": 0,
-        "goalContributions": 3
-      },
-      "overall": 19,
-      "achievements": {
-        "unlocked": 2,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "20 Oct 2026",
-          "opponent": "DPS Basel FC",
-          "result": "6–0",
-          "started": "No",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "6 Oct 2026",
-          "opponent": "FC Baselona",
-          "result": "1–2",
-          "started": "No",
-          "goals": 0,
-          "assists": 1,
-          "yellow": 2,
-          "red": 1
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "Rhine Madrid",
-          "result": "0–4",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "22 Sep 2026",
-          "opponent": "Inter Basel",
-          "result": "1–1",
-          "started": "Yes",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "17 Sep 2026",
-          "opponent": "Rhine Lions FC",
-          "result": "3–3",
-          "started": "Yes",
           "goals": 0,
           "assists": 0,
           "yellow": 0,
@@ -3805,24 +4035,34 @@
       "webUrl": "https://sevenleague.ch/player/pol-castells/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Pol-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 3,
-        "starts": 0,
+        "appearances": 4,
+        "starts": 1,
         "goals": 2,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 150,
+        "minutes": 200,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 2
       },
-      "overall": 14,
+      "overall": 15,
       "achievements": {
         "unlocked": 2,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "DPS Basel FC",
@@ -4075,24 +4315,34 @@
       "webUrl": "https://sevenleague.ch/player/gaspar-riveros/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Gaspar-FC-Baselona.png",
       "webStats": {
-        "appearances": 6,
+        "appearances": 7,
         "starts": 3,
         "goals": 1,
         "assists": 2,
         "yellow": 1,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 300,
+        "minutes": 350,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 3
       },
-      "overall": 18,
+      "overall": 19,
       "achievements": {
         "unlocked": 2,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "FC Max Basel",
@@ -4131,16 +4381,6 @@
           "goals": 0,
           "assists": 0,
           "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "3–3",
-          "started": "No",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 1,
           "red": 0
         }
       ],
@@ -4538,66 +4778,6 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "conail-osullivan",
-      "name": "Conail O’Sullivan",
-      "teamName": "Inter Ya Ma FC",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/conail-osullivan/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
-      "webStats": {
-        "appearances": 3,
-        "starts": 0,
-        "goals": 1,
-        "assists": 1,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 150,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 2
-      },
-      "overall": 11,
-      "achievements": {
-        "unlocked": 0,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "20 Oct 2026",
-          "opponent": "DPS Basel FC",
-          "result": "6–0",
-          "started": "No",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "13 Oct 2026",
-          "opponent": "Joga Bonito FC",
-          "result": "1–4",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "22 Sep 2026",
-          "opponent": "Inter Basel",
-          "result": "1–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 1,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
       "id": "genni-marinello",
       "name": "4 Genni Mariniello",
       "teamName": "",
@@ -4605,14 +4785,14 @@
       "webUrl": "https://sevenleague.ch/player/genni-marinello/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Genni-Marinello-BG-FC.png",
       "webStats": {
-        "appearances": 7,
-        "starts": 4,
+        "appearances": 8,
+        "starts": 5,
         "goals": 1,
         "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 350,
+        "minutes": 400,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 2
@@ -4623,6 +4803,16 @@
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "Rhine Lions FC",
@@ -4657,16 +4847,6 @@
           "date": "1 Oct 2026",
           "opponent": "FC Max Basel",
           "result": "2–2",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "28 Sep 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "7–0",
           "started": "Yes",
           "goals": 0,
           "assists": 0,
@@ -4825,24 +5005,34 @@
       "webUrl": "https://sevenleague.ch/player/martin-jakob/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "",
       "webStats": {
-        "appearances": 4,
-        "starts": 0,
+        "appearances": 5,
+        "starts": 1,
         "goals": 1,
         "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 200,
+        "minutes": 250,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 2
       },
-      "overall": 12,
+      "overall": 13,
       "achievements": {
-        "unlocked": 0,
+        "unlocked": 1,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "DPS Basel FC",
@@ -4878,6 +5068,86 @@
           "opponent": "Rhine Madrid",
           "result": "0–4",
           "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "oliver-dowling",
+      "name": "Oliver Dowling",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/oliver-dowling/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Oliver-DPS-Basel-FC.png",
+      "webStats": {
+        "appearances": 7,
+        "starts": 4,
+        "goals": 1,
+        "assists": 1,
+        "yellow": 1,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 350,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 2
+      },
+      "overall": 14,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "15 Oct 2026",
+          "opponent": "FC Sportfreunde",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "5 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–4",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "1 Oct 2026",
+          "opponent": "Inter Basel",
+          "result": "2–4",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 1,
+          "red": 0
+        },
+        {
+          "date": "28 Sep 2026",
+          "opponent": "FC Max Basel",
+          "result": "0–5",
+          "started": "Yes",
           "goals": 0,
           "assists": 0,
           "yellow": 0,
@@ -5125,24 +5395,34 @@
       "webUrl": "https://sevenleague.ch/player/ciaran-oneill/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Ciaran-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 2,
-        "starts": 0,
+        "appearances": 3,
+        "starts": 1,
         "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 100,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 1
       },
-      "overall": 7,
+      "overall": 8,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "DPS Basel FC",
@@ -5197,6 +5477,86 @@
           "date": "21 Sep 2026",
           "opponent": "FC Sportfreunde",
           "result": "4–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "enzo-abdelmalek",
+      "name": "Enzo Abdelmalek",
+      "teamName": "BG FC",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/enzo-abdelmalek/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 50,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 1
+      },
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "filippo",
+      "name": "Filippo Busu",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/filippo/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Filippo-Busu-DPS-Basel-FC.png",
+      "webStats": {
+        "appearances": 1,
+        "starts": 1,
+        "goals": 1,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 50,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 1
+      },
+      "overall": 6,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
           "started": "Yes",
           "goals": 1,
           "assists": 0,
@@ -5438,18 +5798,18 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "oliver-dowling",
-      "name": "Oliver Dowling",
+      "id": "nils-chartier",
+      "name": "Nils Chartier",
       "teamName": "",
       "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/oliver-dowling/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Oliver-DPS-Basel-FC.png",
+      "webUrl": "https://sevenleague.ch/player/nils-chartier/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_19-2.png",
       "webStats": {
         "appearances": 6,
-        "starts": 3,
+        "starts": 5,
         "goals": 1,
         "assists": 0,
-        "yellow": 1,
+        "yellow": 0,
         "red": 0,
         "ownGoals": 0,
         "minutes": 300,
@@ -5464,19 +5824,19 @@
       },
       "matchLog": [
         {
-          "date": "15 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "2–2",
-          "started": "No",
-          "goals": 0,
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "Yes",
+          "goals": 1,
           "assists": 0,
           "yellow": 0,
           "red": 0
         },
         {
-          "date": "5 Oct 2026",
-          "opponent": "Joga Bonito FC",
-          "result": "1–4",
+          "date": "20 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "0–6",
           "started": "No",
           "goals": 0,
           "assists": 0,
@@ -5488,9 +5848,9 @@
           "opponent": "Inter Basel",
           "result": "2–4",
           "started": "Yes",
-          "goals": 1,
+          "goals": 0,
           "assists": 0,
-          "yellow": 1,
+          "yellow": 0,
           "red": 0
         },
         {
@@ -5808,66 +6168,6 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "simon-nobel",
-      "name": "Simon Nobel",
-      "teamName": "",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/simon-nobel/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-4.png",
-      "webStats": {
-        "appearances": 3,
-        "starts": 1,
-        "goals": 1,
-        "assists": 0,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 150,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 1
-      },
-      "overall": 7,
-      "achievements": {
-        "unlocked": 0,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "20 Oct 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "0–6",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "15 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "2–2",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "15 Sep 2026",
-          "opponent": "BG FC",
-          "result": "2–2",
-          "started": "Yes",
-          "goals": 1,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
       "id": "tariq-arnaz",
       "name": "Tariq Arnaz",
       "teamName": "FC Max Basel",
@@ -5915,14 +6215,14 @@
       "webUrl": "https://sevenleague.ch/player/alvaro-herrero/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/2865ba39-e0cc-4edb-a660-6b38c06d8157.png",
       "webStats": {
-        "appearances": 5,
-        "starts": 2,
+        "appearances": 6,
+        "starts": 3,
         "goals": 1,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 250,
+        "minutes": 300,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 1
@@ -5933,6 +6233,16 @@
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "FC Max Basel",
@@ -5972,15 +6282,85 @@
           "assists": 0,
           "yellow": 0,
           "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "arron-robinson",
+      "name": "Arron Robinson",
+      "teamName": "Inter Ya Ma FC",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/arron-robinson/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 6,
+        "starts": 2,
+        "goals": 0,
+        "assists": 3,
+        "yellow": 2,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 300,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 3
+      },
+      "overall": 15,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 1,
+          "red": 0
         },
         {
-          "date": "14 Sep 2026",
-          "opponent": "Inter Basel",
-          "result": "8–1",
-          "started": "Yes",
-          "goals": 1,
+          "date": "20 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "6–0",
+          "started": "No",
+          "goals": 0,
+          "assists": 2,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "13 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–4",
+          "started": "No",
+          "goals": 0,
           "assists": 0,
           "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "6 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "1–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "5 Oct 2026",
+          "opponent": "Rhine Madrid",
+          "result": "0–4",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 1,
           "red": 0
         }
       ],
@@ -6148,86 +6528,6 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "arron-robinson",
-      "name": "Arron Robinson",
-      "teamName": "Inter Ya Ma FC",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/arron-robinson/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
-      "webStats": {
-        "appearances": 5,
-        "starts": 1,
-        "goals": 0,
-        "assists": 2,
-        "yellow": 1,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 250,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 2
-      },
-      "overall": 12,
-      "achievements": {
-        "unlocked": 2,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "20 Oct 2026",
-          "opponent": "DPS Basel FC",
-          "result": "6–0",
-          "started": "No",
-          "goals": 0,
-          "assists": 2,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "13 Oct 2026",
-          "opponent": "Joga Bonito FC",
-          "result": "1–4",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "6 Oct 2026",
-          "opponent": "FC Baselona",
-          "result": "1–2",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "Rhine Madrid",
-          "result": "0–4",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 1,
-          "red": 0
-        },
-        {
-          "date": "22 Sep 2026",
-          "opponent": "Inter Basel",
-          "result": "1–1",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
       "id": "daniel-lyra",
       "name": "Daniel Lyra",
       "teamName": "Joga Bonito FC",
@@ -6358,6 +6658,86 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "joao-carlos-pinto",
+      "name": "5 Joao Carlos Pinto",
+      "teamName": "FC Baselona",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/joao-carlos-pinto/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/0b5d1431-9f47-4b33-8dbf-229e8c14e13b.png",
+      "webStats": {
+        "appearances": 5,
+        "starts": 3,
+        "goals": 0,
+        "assists": 2,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 250,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 2
+      },
+      "overall": 12,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "22 Oct 2026",
+          "opponent": "Rhine Madrid",
+          "result": "4–5",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "13 Oct 2026",
+          "opponent": "BG FC",
+          "result": "3–1",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "6 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–1",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "14 Sep 2026",
+          "opponent": "Inter Basel",
+          "result": "8–1",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "elias-chigha",
       "name": "Elias Chigha",
       "teamName": "FC Sportfreunde",
@@ -6405,14 +6785,14 @@
       "webUrl": "https://sevenleague.ch/player/ethan-robinson/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Ethan-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 6,
-        "starts": 3,
+        "appearances": 7,
+        "starts": 4,
         "goals": 0,
         "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 300,
+        "minutes": 350,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 1
@@ -6423,6 +6803,16 @@
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "DPS Basel FC",
@@ -6457,16 +6847,6 @@
           "date": "22 Sep 2026",
           "opponent": "Inter Basel",
           "result": "1–1",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "17 Sep 2026",
-          "opponent": "Rhine Lions FC",
-          "result": "3–3",
           "started": "Yes",
           "goals": 0,
           "assists": 0,
@@ -6558,35 +6938,35 @@
       "competition": "Seven League Basel"
     },
     {
-      "id": "joao-carlos-pinto",
-      "name": "5 Joao Carlos Pinto",
+      "id": "jean-pierre-ortiz",
+      "name": "Jean-Pierre Ortiz",
       "teamName": "FC Baselona",
       "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/joao-carlos-pinto/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/0b5d1431-9f47-4b33-8dbf-229e8c14e13b.png",
+      "webUrl": "https://sevenleague.ch/player/jean-pierre-ortiz/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
       "webStats": {
-        "appearances": 4,
+        "appearances": 2,
         "starts": 2,
         "goals": 0,
         "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 200,
+        "minutes": 100,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 1
       },
-      "overall": 9,
+      "overall": 5,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
       "matchLog": [
         {
-          "date": "22 Oct 2026",
-          "opponent": "Rhine Madrid",
-          "result": "4–5",
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
           "started": "Yes",
           "goals": 0,
           "assists": 1,
@@ -6594,29 +6974,9 @@
           "red": 0
         },
         {
-          "date": "13 Oct 2026",
-          "opponent": "BG FC",
-          "result": "3–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "6 Oct 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "2–1",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "14 Sep 2026",
-          "opponent": "Inter Basel",
-          "result": "8–1",
+          "date": "21 Sep 2026",
+          "opponent": "Rhine Lions FC",
+          "result": "0–7",
           "started": "Yes",
           "goals": 0,
           "assists": 0,
@@ -6655,76 +7015,6 @@
       "matchLog": [
         {
           "date": "1 Oct 2026",
-          "opponent": "BG FC",
-          "result": "2–2",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 1,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "jorge-garcia",
-      "name": "Jorge Garcia",
-      "teamName": "",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/jorge-garcia/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Jorge-Garcia-DPS-Basel-FC.png",
-      "webStats": {
-        "appearances": 4,
-        "starts": 1,
-        "goals": 0,
-        "assists": 1,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 200,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 1
-      },
-      "overall": 6,
-      "achievements": {
-        "unlocked": 0,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "20 Oct 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "0–6",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "15 Oct 2026",
-          "opponent": "FC Sportfreunde",
-          "result": "2–2",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "5 Oct 2026",
-          "opponent": "Joga Bonito FC",
-          "result": "1–4",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "15 Sep 2026",
           "opponent": "BG FC",
           "result": "2–2",
           "started": "Yes",
@@ -6988,6 +7278,46 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "rachid-el-makrini",
+      "name": "Rachid El Makrini",
+      "teamName": "BG FC",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/rachid-el-makrini/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 1,
+        "starts": 1,
+        "goals": 0,
+        "assists": 1,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 50,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 1
+      },
+      "overall": 7,
+      "achievements": {
+        "unlocked": 1,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "sameh",
       "name": "Sameh Abdrabo",
       "teamName": "DPS Basel FC",
@@ -6995,24 +7325,34 @@
       "webUrl": "https://sevenleague.ch/player/sameh/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Sameh-DPS-Basel-FC.png",
       "webStats": {
-        "appearances": 4,
+        "appearances": 5,
         "starts": 1,
         "goals": 0,
         "assists": 1,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 200,
+        "minutes": 250,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 1
       },
-      "overall": 6,
+      "overall": 8,
       "achievements": {
-        "unlocked": 0,
+        "unlocked": 1,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "Inter Ya Ma FC",
@@ -7742,24 +8082,34 @@
       "webUrl": "https://sevenleague.ch/player/brian-wickham/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-3.png",
       "webStats": {
-        "appearances": 7,
-        "starts": 3,
+        "appearances": 8,
+        "starts": 4,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 350,
+        "minutes": 400,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 6,
+      "overall": 8,
       "achievements": {
         "unlocked": 1,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "Inter Ya Ma FC",
@@ -7794,16 +8144,6 @@
           "date": "1 Oct 2026",
           "opponent": "Inter Basel",
           "result": "2–4",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "28 Sep 2026",
-          "opponent": "FC Max Basel",
-          "result": "0–5",
           "started": "Yes",
           "goals": 0,
           "assists": 0,
@@ -8072,24 +8412,34 @@
       "webUrl": "https://sevenleague.ch/player/christian-stevens/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Christian-Stevens-BG-FC.png",
       "webStats": {
-        "appearances": 8,
-        "starts": 4,
+        "appearances": 9,
+        "starts": 5,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 400,
+        "minutes": 450,
         "mvp": 0,
         "cleanSheets": 2,
         "goalContributions": 0
       },
-      "overall": 11,
+      "overall": 12,
       "achievements": {
-        "unlocked": 2,
+        "unlocked": 3,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "Rhine Madrid",
@@ -8125,16 +8475,6 @@
           "opponent": "Inter Basel",
           "result": "5–2",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "1 Oct 2026",
-          "opponent": "FC Max Basel",
-          "result": "2–2",
-          "started": "Yes",
           "goals": 0,
           "assists": 0,
           "yellow": 0,
@@ -8392,7 +8732,7 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 1,
+      "overall": 2,
       "achievements": {
         "unlocked": 0,
         "total": 48
@@ -8480,24 +8820,34 @@
       "webUrl": "https://sevenleague.ch/player/elena-whittle/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/10/Elena-DPS-Basel-FC.png",
       "webStats": {
-        "appearances": 2,
+        "appearances": 3,
         "starts": 0,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 100,
+        "minutes": 150,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 2,
+      "overall": 4,
       "achievements": {
         "unlocked": 0,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "15 Oct 2026",
           "opponent": "FC Sportfreunde",
@@ -8809,35 +9159,6 @@
           "red": 0
         }
       ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "filippo",
-      "name": "Filippo Busu",
-      "teamName": "",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/filippo/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Filippo-Busu-DPS-Basel-FC.png",
-      "webStats": {
-        "appearances": 0,
-        "starts": 0,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 0,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 0
-      },
-      "overall": 0,
-      "achievements": {
-        "unlocked": 0,
-        "total": 48
-      },
-      "matchLog": [],
       "season": "2026-27",
       "competition": "Seven League Basel"
     },
@@ -9422,6 +9743,46 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "hamid-el-hani",
+      "name": "Hamid El Hani",
+      "teamName": "BG FC",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/hamid-el-hani/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "",
+      "webStats": {
+        "appearances": 1,
+        "starts": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 50,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 0
+      },
+      "overall": 2,
+      "achievements": {
+        "unlocked": 0,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "Inter Ya Ma FC",
+          "result": "2–2",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "hamza-aboumendil",
       "name": "Hamza Aboumendil",
       "teamName": "BG FC",
@@ -9834,24 +10195,34 @@
       "webUrl": "https://sevenleague.ch/player/jaroslaw-strygner/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_20-6.png",
       "webStats": {
-        "appearances": 6,
-        "starts": 3,
+        "appearances": 7,
+        "starts": 4,
         "goals": 0,
         "assists": 0,
         "yellow": 0,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 300,
+        "minutes": 350,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 6,
+      "overall": 7,
       "achievements": {
         "unlocked": 1,
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "5–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "Inter Ya Ma FC",
@@ -9886,56 +10257,6 @@
           "date": "1 Oct 2026",
           "opponent": "Inter Basel",
           "result": "2–4",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "28 Sep 2026",
-          "opponent": "FC Max Basel",
-          "result": "0–5",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "jean-pierre-ortiz",
-      "name": "Jean-Pierre Ortiz",
-      "teamName": "FC Baselona",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/jean-pierre-ortiz/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "",
-      "webStats": {
-        "appearances": 1,
-        "starts": 1,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 50,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 0
-      },
-      "overall": 2,
-      "achievements": {
-        "unlocked": 0,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "21 Sep 2026",
-          "opponent": "Rhine Lions FC",
-          "result": "0–7",
           "started": "Yes",
           "goals": 0,
           "assists": 0,
@@ -10046,7 +10367,7 @@
         "cleanSheets": 0,
         "goalContributions": 0
       },
-      "overall": 1,
+      "overall": 2,
       "achievements": {
         "unlocked": 0,
         "total": 48
@@ -10803,14 +11124,14 @@
       "webUrl": "https://sevenleague.ch/player/lorenzo-di-gregorio/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Lorenzo-Inter-Ya-Ma-FC.png",
       "webStats": {
-        "appearances": 6,
-        "starts": 2,
+        "appearances": 7,
+        "starts": 3,
         "goals": 0,
         "assists": 0,
         "yellow": 2,
         "red": 1,
         "ownGoals": 0,
-        "minutes": 300,
+        "minutes": 350,
         "mvp": 0,
         "cleanSheets": 1,
         "goalContributions": 0
@@ -10821,6 +11142,16 @@
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "20 Oct 2026",
           "opponent": "DPS Basel FC",
@@ -10860,16 +11191,6 @@
           "assists": 0,
           "yellow": 0,
           "red": 0
-        },
-        {
-          "date": "17 Sep 2026",
-          "opponent": "Rhine Lions FC",
-          "result": "3–3",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 2,
-          "red": 1
         }
       ],
       "season": "2026-27",
@@ -11604,86 +11925,6 @@
           "opponent": "Joga Bonito FC",
           "result": "1–5",
           "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        }
-      ],
-      "season": "2026-27",
-      "competition": "Seven League Basel"
-    },
-    {
-      "id": "nils-chartier",
-      "name": "Nils Chartier",
-      "teamName": "",
-      "position": "Forward",
-      "webUrl": "https://sevenleague.ch/player/nils-chartier/?sl_league=seven-league-basel&sl_season=2026-27",
-      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_46_19-2.png",
-      "webStats": {
-        "appearances": 5,
-        "starts": 4,
-        "goals": 0,
-        "assists": 0,
-        "yellow": 0,
-        "red": 0,
-        "ownGoals": 0,
-        "minutes": 250,
-        "mvp": 0,
-        "cleanSheets": 0,
-        "goalContributions": 0
-      },
-      "overall": 5,
-      "achievements": {
-        "unlocked": 1,
-        "total": 48
-      },
-      "matchLog": [
-        {
-          "date": "20 Oct 2026",
-          "opponent": "Inter Ya Ma FC",
-          "result": "0–6",
-          "started": "No",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "1 Oct 2026",
-          "opponent": "Inter Basel",
-          "result": "2–4",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "28 Sep 2026",
-          "opponent": "FC Max Basel",
-          "result": "0–5",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "21 Sep 2026",
-          "opponent": "Rhine Madrid",
-          "result": "2–9",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "15 Sep 2026",
-          "opponent": "BG FC",
-          "result": "2–2",
-          "started": "Yes",
           "goals": 0,
           "assists": 0,
           "yellow": 0,
@@ -13087,14 +13328,14 @@
       "webUrl": "https://sevenleague.ch/player/william-tejada/?sl_league=seven-league-basel&sl_season=2026-27",
       "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/035e6720-285b-412b-9677-eb206655466c.png",
       "webStats": {
-        "appearances": 7,
+        "appearances": 8,
         "starts": 4,
         "goals": 0,
         "assists": 0,
         "yellow": 2,
         "red": 0,
         "ownGoals": 0,
-        "minutes": 350,
+        "minutes": 400,
         "mvp": 0,
         "cleanSheets": 0,
         "goalContributions": 0
@@ -13105,6 +13346,16 @@
         "total": 48
       },
       "matchLog": [
+        {
+          "date": "29 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "2–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
         {
           "date": "26 Oct 2026",
           "opponent": "FC Max Basel",
@@ -13143,16 +13394,6 @@
           "goals": 0,
           "assists": 0,
           "yellow": 0,
-          "red": 0
-        },
-        {
-          "date": "24 Sep 2026",
-          "opponent": "Joga Bonito FC",
-          "result": "1–8",
-          "started": "Yes",
-          "goals": 0,
-          "assists": 0,
-          "yellow": 1,
           "red": 0
         }
       ],
