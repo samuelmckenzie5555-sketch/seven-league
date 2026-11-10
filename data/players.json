@@ -2,10 +2,10 @@
   "source": "https://sevenleague.ch/seven-league-basel-competition-hub/",
   "competition": "Seven League Basel",
   "season": "2026-27",
-  "count": 235,
-  "photos": 162,
-  "statful": 218,
-  "updatedAt": "2026-11-09T22:25:45.437358+00:00",
+  "count": 240,
+  "photos": 167,
+  "statful": 223,
+  "updatedAt": "2026-11-10T04:17:09.111879+00:00",
   "players": [
     {
       "id": "efraim-benoit-ferreira",
@@ -2428,6 +2428,86 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "alejandro-signoret",
+      "name": "Alejandro Signoret",
+      "teamName": "Rhine Lions FC",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/alejandro-signoret/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Alejandro-Rhine-Lions-FC.png",
+      "webStats": {
+        "appearances": 9,
+        "starts": 6,
+        "goals": 3,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 450,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 3
+      },
+      "overall": 24,
+      "achievements": {
+        "unlocked": 6,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "2 Nov 2026",
+          "opponent": "DPS Basel FC",
+          "result": "3–3",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "27 Oct 2026",
+          "opponent": "Inter Basel",
+          "result": "2–7",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "20 Oct 2026",
+          "opponent": "BG FC",
+          "result": "0–8",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "12 Oct 2026",
+          "opponent": "Joga Bonito FC",
+          "result": "1–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "5 Oct 2026",
+          "opponent": "FC Max Basel",
+          "result": "2–1",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "antonio-lerma",
       "name": "Antonio Lerma",
       "teamName": "Rhine Madrid",
@@ -3068,6 +3148,136 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "goncalo-rodrigues",
+      "name": "Gonçalo Rodrigues",
+      "teamName": "FC Sportfreunde",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/goncalo-rodrigues/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Goncalo-FC-Sportfreunde.png",
+      "webStats": {
+        "appearances": 2,
+        "starts": 2,
+        "goals": 2,
+        "assists": 2,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 100,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 4
+      },
+      "overall": 24,
+      "achievements": {
+        "unlocked": 4,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "21 Sep 2026",
+          "opponent": "FC Max Basel",
+          "result": "2–4",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "17 Sep 2026",
+          "opponent": "Rhine Madrid",
+          "result": "3–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 2,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "javier-calderon",
+      "name": "Javier Calderón",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/javier-calderon/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/ChatGPT-Image-15-sept-2026-21_59_17-2.png",
+      "webStats": {
+        "appearances": 7,
+        "starts": 3,
+        "goals": 2,
+        "assists": 2,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 350,
+        "mvp": 1,
+        "cleanSheets": 0,
+        "goalContributions": 4
+      },
+      "overall": 24,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "20 Oct 2026",
+          "opponent": "Rhine Lions FC",
+          "result": "8–0",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "13 Oct 2026",
+          "opponent": "FC Baselona",
+          "result": "1–3",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "6 Oct 2026",
+          "opponent": "Inter Basel",
+          "result": "5–2",
+          "started": "No",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "1 Oct 2026",
+          "opponent": "FC Max Basel",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 2,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "28 Sep 2026",
+          "opponent": "FC Sportfreunde",
+          "result": "7–0",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "juan-lucas-gordillo",
       "name": "Juan Lucas Gordillo",
       "teamName": "FC Baselona",
@@ -3628,6 +3838,56 @@
       "competition": "Seven League Basel"
     },
     {
+      "id": "pablo-verdes",
+      "name": "8 Pablo Verdes",
+      "teamName": "",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/pablo-verdes/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Pablo-Verdes-FC-Max-Basel.png",
+      "webStats": {
+        "appearances": 2,
+        "starts": 2,
+        "goals": 2,
+        "assists": 1,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 100,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 3
+      },
+      "overall": 19,
+      "achievements": {
+        "unlocked": 3,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "1 Oct 2026",
+          "opponent": "BG FC",
+          "result": "2–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "28 Sep 2026",
+          "opponent": "DPS Basel FC",
+          "result": "5–0",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 1,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
       "id": "tamas-dalmay",
       "name": "8 Tamas Dalmay",
       "teamName": "FC Baselona",
@@ -3748,6 +4008,86 @@
           "opponent": "FC Baselona",
           "result": "1–3",
           "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        }
+      ],
+      "season": "2026-27",
+      "competition": "Seven League Basel"
+    },
+    {
+      "id": "athithiyan-senthilkumar",
+      "name": "Athithiyan Senthilkumar",
+      "teamName": "Inter Basel",
+      "position": "Forward",
+      "webUrl": "https://sevenleague.ch/player/athithiyan-senthilkumar/?sl_league=seven-league-basel&sl_season=2026-27",
+      "photo": "https://sevenleague.ch/wp-content/uploads/2026/09/Athithiyan-Inter-Basel.png",
+      "webStats": {
+        "appearances": 5,
+        "starts": 4,
+        "goals": 2,
+        "assists": 0,
+        "yellow": 0,
+        "red": 0,
+        "ownGoals": 0,
+        "minutes": 250,
+        "mvp": 0,
+        "cleanSheets": 0,
+        "goalContributions": 2
+      },
+      "overall": 14,
+      "achievements": {
+        "unlocked": 2,
+        "total": 48
+      },
+      "matchLog": [
+        {
+          "date": "2 Nov 2026",
+          "opponent": "Rhine Madrid",
+          "result": "3–2",
+          "started": "Yes",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "27 Oct 2026",
+          "opponent": "Rhine Lions FC",
+          "result": "7–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "15 Oct 2026",
+          "opponent": "FC Max Basel",
+          "result": "6–5",
+          "started": "No",
+          "goals": 0,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "1 Oct 2026",
+          "opponent": "DPS Basel FC",
+          "result": "4–2",
+          "started": "Yes",
+          "goals": 1,
+          "assists": 0,
+          "yellow": 0,
+          "red": 0
+        },
+        {
+          "date": "14 Sep 2026",
+          "opponent": "FC Baselona",
+          "result": "1–8",
+          "started": "Yes",
           "goals": 0,
           "assists": 0,
           "yellow": 0,
@@ -13671,26 +14011,5 @@
       "competition": "Seven League Basel"
     }
   ],
-  "errors": [
-    {
-      "url": "https://sevenleague.ch/player/alejandro-signoret/?sl_league=seven-league-basel&sl_season=2026-27",
-      "error": "HTTPSConnectionPool(host='sevenleague.ch', port=443): Read timed out. (read timeout=30)"
-    },
-    {
-      "url": "https://sevenleague.ch/player/goncalo-rodrigues/?sl_league=seven-league-basel&sl_season=2026-27",
-      "error": "HTTPSConnectionPool(host='sevenleague.ch', port=443): Read timed out."
-    },
-    {
-      "url": "https://sevenleague.ch/player/javier-calderon/?sl_league=seven-league-basel&sl_season=2026-27",
-      "error": "HTTPSConnectionPool(host='sevenleague.ch', port=443): Read timed out. (read timeout=30)"
-    },
-    {
-      "url": "https://sevenleague.ch/player/pablo-verdes/?sl_league=seven-league-basel&sl_season=2026-27",
-      "error": "HTTPSConnectionPool(host='sevenleague.ch', port=443): Read timed out. (read timeout=30)"
-    },
-    {
-      "url": "https://sevenleague.ch/player/athithiyan-senthilkumar/?sl_league=seven-league-basel&sl_season=2026-27",
-      "error": "HTTPSConnectionPool(host='sevenleague.ch', port=443): Read timed out. (read timeout=30)"
-    }
-  ]
+  "errors": []
 }
